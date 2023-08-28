@@ -2,6 +2,7 @@
 ##  Stock market prediction and analysis
 
 This is a repository for the group project of Software Engineering created under the mentorship of Prof. Saurabh  Tiwari
+
 ![giphy](https://github.com/swegrp30/IT314_Group30/assets/141057186/041136ec-e692-4a70-bfb4-412cd87da5ed)
 
 
