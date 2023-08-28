@@ -1,5 +1,5 @@
 # IT314_Group30
-##  Stock market prediction and analysis
+##  Stock market prediction and analysis 📊📈📢
 
 > This is a repository for the group project of Software Engineering created under the mentorship of Prof. Saurabh  Tiwari.
 
@@ -11,7 +11,7 @@
 
 
 
-## Group Members 
+## Group Members 🏆
 * Natvar Prajapati **(202101402)**
 * Naman Modi **(202101421)**
 * Bhavya Shah **(202101426)**
@@ -25,7 +25,7 @@
 * Nisha Savaliya **(202101486)**
 * Vasu Golakiya **(202101487)**
   
-## Group Mentor 
+## Group Mentor 👨🏻‍🏫
 * Meet Desai **(202311031)**
 
 
@@ -84,6 +84,7 @@
 **Link** : https://github.com/swegrp30/IT314_Group30/blob/main/User_Stories.pdf
 
 ### Lab4 :  Concept Mapping 
+> In this lab, we created the concept maps of the functional and non-functional requirements that we will be developing in our application.
 
 ## Formated By :
 * Bhavya Shah
