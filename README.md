@@ -44,8 +44,46 @@ This is a repository for the group project of Software Engineering created under
  * User feedback
  * Accuracy Analysis
 
+ ### 3. Non-Functional Requirements
+
+ * Security
+ * Scalability
+ * User - Friendliness
+ * Speed of model 
+ * Reliabilty
+
+ ### 4. Tools & Technologies
+
+ * Matplotlib
+ * Pandas, Numpy
+ * TensorFlow, Keras
+ * MERN 
+
+ ### 5. Roles
+
+ * ML Engineer 
+ * Data Analyst
+ * Web Developer
+ * Tester 
+
+ ### 6. Resources
+
+ * Web Hosting
+ * Database maintenance
+   
 
 ![123](https://github.com/swegrp30/IT314_Group30/assets/141057186/9c48179f-8694-40a5-896a-76fb1125a6c4)
+
+### Lab3 : User Stories 
+
+In this lab, we 
+
+
+
+## Formated By :
+* Bhavya Shah
+* Varun Vyas 
+
 
     
 
