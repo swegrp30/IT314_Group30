@@ -1,7 +1,10 @@
 # IT314_Group30
 ##  Stock market prediction and analysis
 
-This is a repository for the group project of Software Engineering created under the mentorship of Prof. Saurabh  Tiwari
+> This is a repository for the group project of Software Engineering created under the mentorship of Prof. Saurabh  Tiwari.
+
+## Description of the project:
+> In this project, we are designing and developing the web-based application where a user can visit and check for stock patterns and predictions. Application covers features such as Newbie Manual, Visualization of stock trends, Personalized portfolio, Comments, Feedback and many more 🚀🚀🚀
 
 ![giphy](https://github.com/swegrp30/IT314_Group30/assets/141057186/041136ec-e692-4a70-bfb4-412cd87da5ed)
 
@@ -76,9 +79,11 @@ This is a repository for the group project of Software Engineering created under
 
 ### Lab3 : User Stories 
 
-In this lab, we 
+> In this lab, we created the user stories along with their acceptance criteria covering all the functional and non-functional requirements where we bifurcated the requirements from the user perspective. 16 different user stories were designed and description of them is in the link given below:
 
+**Link** : https://github.com/swegrp30/IT314_Group30/blob/main/User_Stories.pdf
 
+### Lab4 :  Concept Mapping 
 
 ## Formated By :
 * Bhavya Shah
