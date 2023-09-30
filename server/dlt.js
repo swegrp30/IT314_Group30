@@ -11,7 +11,7 @@ const mail = require("./mailer/mailer");
 const mail_=(async (req,res)=>{
     console.log(req.body.name);
     console.log("III");
-    const x = await mail("Natvar_123","shubhampatel12233@gmail.com");
+    const x = await mail("Natvar_123","natvarprajapati555@gmail.com");
     res.send(200);
 })
 
