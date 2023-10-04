@@ -63,7 +63,7 @@ const mailer = (async (username,mail)=>{
     let mailDetails = {
         from: 'Stock Market',
         to: mail,
-        subject: 'SSSSS',
+        subject: 'SSS',
         template: 'mail',
         context: {
             demo:data,
