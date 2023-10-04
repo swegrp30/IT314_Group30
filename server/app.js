@@ -30,7 +30,7 @@ app.post("/signup",signup);
 
 // app.post("/dlt",mailer);
 
-app.post("./otp_verificatin",otp_verification);
+app.post("/otp_verification",otp_verification);
 
 
 

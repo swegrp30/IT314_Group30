@@ -8,6 +8,7 @@ const { v4: uuidv4 } = require('uuid');
 
 // models
 const user = require("../models/user");
+const otp = require("../models/otp");
 
 
 
@@ -75,8 +76,19 @@ const user_signup = async (req, res) => {
 
         try {
             // MAILER
-            const otp_ = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
-            const mail = mailer(new_user.username,new_user.mail,otp_);
+            console.log("FFFF");
+            const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
+            const mail = mailer(new_user.username,new_user.email,otp_number);
+            const data = new otp({
+                email : new_user.email,
+                otp : otp_number
+            })
+            try {
+                const saved = data.save();
+            } catch (error) {
+                console.log("This is error from signup.js -> mailer part");
+                console.log(error);
+            }
 
         } catch (error) {
             console.log("This is the error from signup.js -> otp block")

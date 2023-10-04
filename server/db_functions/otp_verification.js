@@ -3,8 +3,8 @@ const bcrypt = require("bcryptjs");
 
 
 // DB model
-const otp = require("../models/verification/otp");
-const user = require("./user");
+const otp = require("../models/otp");
+const user = require("../models/user");
 
 
 
@@ -15,6 +15,11 @@ const otp_verification = (async (req, res) => {
         const otp_number = req.body.otp;
 
         const data = await otp.findOne({ email : email });
+        
+        if(data == null){
+            res.status(500).send("There may be some problem in system please try later");
+        }
+
         const hashed_otp = data.otp;
 
         const match = await bcrypt.compare(otp_number, hashed_otp);
