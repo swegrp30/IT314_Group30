@@ -51,12 +51,11 @@ mailTransporter.use('compile', hbs({
 
 
 
-const mailer = (async (username,mail)=>{
-    const otp_ = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
+const mailer = (async (username,mail,otp)=>{
     
     const data = {
         name : username,
-        otp : otp_
+        otp : otp
     }
 
 
@@ -71,7 +70,7 @@ const mailer = (async (username,mail)=>{
     };
 
 
-    console.log(otp_);
+    console.log(otp);
 
 
     // mailDetails.context.demo=data;

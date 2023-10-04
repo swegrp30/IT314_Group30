@@ -2,16 +2,17 @@ const express = require("express");
 const { mongo, default: mongoose } = require("mongoose");
 const bcrypt = require("bcryptjs");
 const cors = require("cors");
+const otpGenerator = require('otp-generator')
 const { v4: uuidv4 } = require('uuid');
 
 
 // models
-const user = require("../models/signup");
+const user = require("../models/user");
 
 
 
 // otp-mailer
-// const mailer = 
+const mailer = require("../mailer/mailer");
 
 // MAILER IMPORT KRVNU BAKI 6
 
@@ -74,6 +75,9 @@ const user_signup = async (req, res) => {
 
         try {
             // MAILER
+            const otp_ = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
+            const mail = mailer(new_user.username,new_user.mail,otp_);
+
         } catch (error) {
             console.log("This is the error from signup.js -> otp block")
             console.log(error);

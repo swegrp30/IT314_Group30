@@ -21,12 +21,16 @@ const signup = require("./db_functions/signup");
 
 const mailer = require("./dlt");
 
+const otp_verification = require("./db_functions/otp_verification");
+
 
 
 
 app.post("/signup",signup);
 
-app.post("/dlt",mailer);
+// app.post("/dlt",mailer);
+
+app.post("./otp_verificatin",otp_verification);
 
 
 
