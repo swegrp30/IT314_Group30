@@ -35,5 +35,5 @@ app.post("/dlt",mailer);
 
 
 app.listen(7000,()=>{
-    console.log("Listening on 8000");
+    console.log("Listening on 7000");
 })
