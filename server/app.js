@@ -20,6 +20,7 @@ require("./connection/conection");
 const signup = require("./db_functions/signup");
 
 const mailer = require("./dlt");
+const login = require("./general/login");
 
 const otp_verification = require("./db_functions/otp_verification");
 
@@ -27,6 +28,7 @@ const otp_verification = require("./db_functions/otp_verification");
 
 
 app.post("/signup",signup);
+app.post("/login",login);
 
 // app.post("/dlt",mailer);
 
