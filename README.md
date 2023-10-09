@@ -91,7 +91,7 @@
 ### Activity Diagram
 > While making the activity diagram, we discussed different activities and triggers and the the diagrams for the corresponding activities page-wise.
 
-**Link** : https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Activity_Diagrams.pdf 
+**Link** : https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Activity_Diagram.pdf 
 
 ### Class Diagram
 > While making the class diagram, we discussed different types of classes and the relationship among them. Also about the cardinalities and and composition relations.
@@ -121,7 +121,7 @@
 * Class Diagram - Natvar, Dhairya, Om, Vasu
 * Use Case Diagram - Naman, Ayush, Varun, Bhavya
 * Use Case Documentation - Naman, Ayush, Varun, Bhavya
-* Sequence Diagram - Nisha, Darshana, Priya
+* Sequence Diagram - Nisha, Darshana, Priya, Shubham
 
 
 ## Formated By :
