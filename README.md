@@ -79,7 +79,7 @@
 
 ### User Stories 
 
-> In this lab, we created the user stories along with their acceptance criteria covering all the functional and non-functional requirements where we bifurcated the requirements from the user perspective. 16 different user stories were designed and description of them is in the link given below:
+> In this lab, we created the user stories along with their acceptance criteria covering all the functional and non-functional requirements where we bifurcated the requirements from the user perspective. 16 different user stories were designed and a description of them is in the link given below:
 
 **Link** : https://github.com/swegrp30/IT314_Group30/blob/main/User_Stories.pdf
 
@@ -87,7 +87,29 @@
 > In this lab, we created the concept maps of the functional and non-functional requirements that we will be developing in our application.
 
 ### Class Diagram
-> During making the class diagram, we discussed different types of classes and the relationship amoong them. Also about the cardinalities and and composition relations.
+> While making the class diagram, we discussed different types of classes and the relationship among them. Also about the cardinalities and and composition relations.
+
+### Use Case Diagram
+> While making the use-case  diagram, we discussed different types of actors, system boundaries, include and exclude requirements of our system and created the diagram.
+
+### Use Case Documentation
+> During making the use-case documentation, we discussed the actors, preconditions, postconditions, primary and alternative flow and exit conditions for each and every use case.
+
+
+### Sequence Diagram
+> During making the sequence diagram, we discussed the users, objects, activation, messages that a user should send to an object and responses of it.
+
+
+## Contributions :
+* Design Thinking activity - Everyone contributed as this was a lab activity.
+* User Stories - Everyone contributed as this was a lab activity.
+* Concept Mapping - Everyone contributed as this was a lab activity.
+* Activity Diagram - Everyone contributed as this was a lab activity.
+* Class Diagram - Natvar, Dhairya, Om, Vasu
+* Use Case Diagram - Naman, Ayush, Varun, Bhavya
+* Use Case Documentation - Naman, Ayush, Varun, Bhavya
+* Sequence Diagram - Nisha, Darshana, Priya
+
 
 ## Formated By :
 * Bhavya Shah
