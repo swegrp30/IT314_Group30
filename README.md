@@ -31,7 +31,7 @@
 
 ## Work Done 
 
-### Lab2 : Design Thinking Activity
+### Design Thinking Activity
 
  ### 1. Users
  * Traders
@@ -77,14 +77,17 @@
 
 ![123](https://github.com/swegrp30/IT314_Group30/assets/141057186/9c48179f-8694-40a5-896a-76fb1125a6c4)
 
-### Lab3 : User Stories 
+### User Stories 
 
 > In this lab, we created the user stories along with their acceptance criteria covering all the functional and non-functional requirements where we bifurcated the requirements from the user perspective. 16 different user stories were designed and description of them is in the link given below:
 
 **Link** : https://github.com/swegrp30/IT314_Group30/blob/main/User_Stories.pdf
 
-### Lab4 :  Concept Mapping 
+### Concept Mapping 
 > In this lab, we created the concept maps of the functional and non-functional requirements that we will be developing in our application.
+
+### Class Diagram
+> During making the class diagram, we discussed different types of classes and the relationship amoong them. Also about the cardinalities and and composition relations.
 
 ## Formated By :
 * Bhavya Shah
