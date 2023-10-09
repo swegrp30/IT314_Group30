@@ -111,7 +111,7 @@
 ### Sequence Diagram
 > During making the sequence diagram, we discussed the users, objects, activation, messages that a user should send to an object and responses of it.
 
-**Link** : https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Sequence Diagrams.pdf
+**Link** : [https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Sequence Diagrams.pdf](https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Sequence%20Diagrams.pdf)
 
 ## Contributions :
 * Design Thinking activity - Everyone contributed as this was a lab activity.
