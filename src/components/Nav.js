@@ -1,17 +1,16 @@
 import React from 'react';
 import '../style/Nav.css'
 import logo from '../Images/Logo.jpg';
+import {Link} from 'react-router-dom';
 
 function Nav() {
 
-    const handleUnderline = ()=> {
+    const handleUnderline = (event) => {
         const nav_links = document.querySelectorAll('.nav-link');
         nav_links.forEach(nav_link => {
-            nav_link.addEventListener('click',()=>{
-                document.querySelector('.specialClass')?.classList.remove('specialClass');
-                nav_link.classList.add('specialClass');
-            });
-        }); 
+            nav_link.classList.remove('specialClass'); // Remove 'specialClass' from all links
+        });
+        event.target.classList.add('specialClass'); // Add 'specialClass' to the clicked link
     }
 
     return (
@@ -27,19 +26,19 @@ function Nav() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2">
                             <li className="nav-item nav-text">
-                                <a className="nav-link specialClass" onClick={handleUnderline} href="/">Home</a>
+                                <Link className="nav-link specialClass" onClick={handleUnderline} to="/">Home</Link>
                             </li>
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="/news">News</a>
+                                <Link className="nav-link" onClick={handleUnderline} to="/news">News</Link>
                             </li>
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="/PriceAndAnalysis">Share Price and Analysis</a>
+                                <Link className="nav-link" onClick={handleUnderline} to="/PriceAndAnalysis">Share Price and Analysis</Link>
                             </li> 
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="/Wishlist">Wishlist</a>
+                                <Link className="nav-link" onClick={handleUnderline} to="/Wishlist">Wishlist</Link>
                             </li>
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="/QuickStartGuide">Quick Start Guide</a>
+                                <Link className="nav-link" onClick={handleUnderline} to="/QuickStartGuide">Quick Start Guide</Link>
                             </li>
                         </ul>
                         <div className='d-flex me-5'>
