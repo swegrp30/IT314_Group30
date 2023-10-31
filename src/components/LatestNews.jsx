@@ -3,7 +3,7 @@ import { VStack, HStack, Heading, Box, Text, Stack } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link, Route, BrowserRouter, Routes } from "react-router-dom";
-import NewsDetail from "./NewsDetail";
+import NewsDetail from "./NewsDetail.jsx";
 
 
 export const LatestNews = () => {
