@@ -1,0 +1,78 @@
+.Home {
+    text-align: center;
+}
+
+.home-logo {
+    height: 75px;
+    width: 225px;
+    pointer-events: none;
+}
+
+.home-h1 {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.home-h4 {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(182, 181, 181);
+    margin-top: 20px;
+    width: 100%;
+}
+
+.home-search {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.home-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-search-bar {
+    background-image: linear-gradient(to right, white, rgb(238, 114, 238));
+    border: none;
+    width: 30%;
+}
+
+input::placeholder {
+    font: 0.75rem/3 sans-serif;
+}
+
+.home-guide-image {
+    height: 396px;
+    width: 396px;
+}
+
+.home-para-brdr {
+    text-align: left !important;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 60px;
+    background-color: rgb(172, 0, 172);
+}
+
+.home-para-without-brdr {
+    text-align: left !important;
+    padding: 60px;
+}
+
+.col-3 {
+    background-color: black;
+}
+
+.btn-outline-success {
+    background-color: rgb(172, 0, 172);
+    color: white;
+}
+
+.btn-outline-success:hover {
+    background-color: white;
+    color: rgb(172, 0, 172);
+}
