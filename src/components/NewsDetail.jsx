@@ -1,4 +1,4 @@
-import { HStack, VStack, Text } from "@chakra-ui/react";
+import { HStack, VStack, Text, Heading } from "@chakra-ui/react";
 import { LatestNews } from "./LatestNews";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -50,13 +50,17 @@ function NewsDetail() {
     }
 
     return (
-        <HStack width={"full"} padding={"10"}>
-            <VStack width="60%" paddingRight="4rem">
-                <Text color="purple.500" fontWeight={"bold"} paddingBottom="14">
+        <HStack width={"full"} padding={"1"}>
+            <VStack width="60%" paddingRight="4rem" marginTop={'-250'} >
+                <Heading color="purple.500"  paddingBottom="20" p={'20'}>
                     {article.title}
-                </Text>
-                <img src={article.urlToImage} alt={article.title} />
-                <Text paddingTop="10">{article.description}</Text>
+                </Heading>
+                <img
+                    src={article.urlToImage}
+                    alt={article.title}
+                    style={{ maxWidth: "100%", maxHeight: "300px" }}
+                />
+                <Text pl={'10'} paddingTop="5">{article.description}</Text>
                 {/* You can display other details of the article here */}
             </VStack>
 
