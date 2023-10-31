@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style/Nav.css'
-import Footer from './Footer';
 import logo from '../Images/Logo.jpg';
 
 function Nav() {

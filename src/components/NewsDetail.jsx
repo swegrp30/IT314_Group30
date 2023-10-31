@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
 import { LatestNews } from "./LatestNews";
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom'
 
 function NewsDetail() {
     const { title } = useParams();
