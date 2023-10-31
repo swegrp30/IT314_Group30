@@ -53,9 +53,9 @@ export const LatestNews = () => {
 
                             />
 
-                            <Heading as="h2" fontWeight="bold">
+                            <Text fontWeight="bold" textColor={'black'} fontSize={'md'}>
                                 {article.title}
-                            </Heading>
+                            </Text>
                         </HStack >
                     </Link>
                 </HStack>

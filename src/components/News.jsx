@@ -33,8 +33,8 @@ function News() {
     }, []);
 
     return (
-        <HStack spacing="24px" align="top" className="p-8">
-            <VStack spacing="24px" align="top" width="60%" className="pr-16">
+        <HStack spacing="24px" align="top" padding='10'>
+            <VStack spacing="24px" align="top" width="60%" paddingRight='16'>
                 {/* News Carousel */}
                 <Carousel showThumbs={false} infiniteLoop autoPlay interval={3000}>
                     {carouselNews.map((article, index) => (
@@ -44,10 +44,10 @@ function News() {
                                     src={article.urlToImage}
                                     alt={article.title}
                                     style={{ width: "auto", height: "200px" }}
-                                    className="w-full h-64 object-cover rounded-lg"
+                                    
                                 />
 
-                                <Heading as="h2" fontWeight="bold">
+                                <Heading as="h2" fontWeight="bold" textColor={'black'} >
                                     {article.title}
                                 </Heading>
                             </Link>
@@ -58,10 +58,9 @@ function News() {
                 <HStack>
                     <VStack pr={"10"} top={"0"} width="100%" align="flex-start">
                         {leftleftNews.map((article, index) => (
-                            // < key={index}  >
 
                             <Link to={`/news/${article.title}`}>
-                                <HStack className="border-b-2 border-purple-700 pb-4">
+                                <HStack borderBottomWidth="2" borderBottomColor="purple.700" paddingBottom="4" >
                                     <img
                                         src={article.urlToImage}
                                         alt={article.title}
@@ -70,6 +69,7 @@ function News() {
 
                                     <Text
                                         fontWeight="bold"
+                                        textColor={'black'}
                                         style={{
                                             maxLines: 3,
                                             overflow: "hidden",
@@ -85,7 +85,7 @@ function News() {
                     <VStack top={"0"} pl={"10"} width="100%">
                         {leftrightNews.map((article, index) => (
                             <Link to={`/news/${article.title}`}>
-                                <HStack className="border-b-2 border-purple-700 pb-4">
+                                <HStack borderBottomWidth="2" borderBottomColor="purple.700" paddingBottom="4">
                                     <img
                                         src={article.urlToImage}
                                         alt={article.title}
@@ -94,6 +94,7 @@ function News() {
 
                                     <Text
                                         fontWeight="bold"
+                                        textColor={'black'}
                                         style={{
                                             maxLines: 3,
                                             overflow: "hidden",
@@ -109,12 +110,8 @@ function News() {
                 </HStack>
             </VStack>
             <VStack
-                spacing="24px"
                 align="top"
-                shadow="2xl"
-                padding="1.5"
                 width="40%"
-                pl={"10"}
             >
                 <LatestNews />
             </VStack>
