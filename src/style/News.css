@@ -1,0 +1,11 @@
+/* News.css */
+
+/* Remove text decoration (underlines) from text */
+.TextNoDecoration {
+    text-decoration: none;
+}
+
+/* Add a bottom border to the news items */
+.HStackBorderBottom {
+    border-bottom: 2px solid purple;
+}

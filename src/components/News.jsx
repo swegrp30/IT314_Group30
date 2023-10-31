@@ -44,19 +44,28 @@ function News() {
                                     src={article.urlToImage}
                                     alt={article.title}
                                     style={{ width: "auto", height: "200px" }}
-                                    
+
                                 />
 
-                                <Heading as="h2" fontWeight="bold" textColor={'black'} >
+                                <Text
+                                    className="TextNoDecoration"
+                                    fontWeight="bold"
+                                    textColor="black"
+                                    style={{
+                                        maxLines: 3,
+                                        overflow: "hidden",
+                                        textOverflow: "ellipsis",
+                                    }}
+                                >
                                     {article.title}
-                                </Heading>
+                                </Text>
                             </Link>
                         </div>
                     ))}
                 </Carousel>
 
                 <HStack>
-                    <VStack pr={"10"} top={"0"} width="100%" align="flex-start">
+                    <VStack pr={"10"} top={"0"} width="100%" align="flex-start" className="HStackBorderBottom">
                         {leftleftNews.map((article, index) => (
 
                             <Link to={`/news/${article.title}`}>
@@ -68,8 +77,9 @@ function News() {
                                     />
 
                                     <Text
+                                        className="TextNoDecoration"
                                         fontWeight="bold"
-                                        textColor={'black'}
+                                        textColor="black"
                                         style={{
                                             maxLines: 3,
                                             overflow: "hidden",
@@ -82,7 +92,7 @@ function News() {
                             </Link>
                         ))}
                     </VStack>
-                    <VStack top={"0"} pl={"10"} width="100%">
+                    <VStack top={"0"} pl={"10"} width="100%" className="HStackBorderBottom">
                         {leftrightNews.map((article, index) => (
                             <Link to={`/news/${article.title}`}>
                                 <HStack borderBottomWidth="2" borderBottomColor="purple.700" paddingBottom="4">
@@ -93,8 +103,9 @@ function News() {
                                     />
 
                                     <Text
+                                        className="TextNoDecoration"
                                         fontWeight="bold"
-                                        textColor={'black'}
+                                        textColor="black"
                                         style={{
                                             maxLines: 3,
                                             overflow: "hidden",

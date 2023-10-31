@@ -64,8 +64,8 @@ function NewsDetail() {
                 {/* You can display other details of the article here */}
             </VStack>
 
-            <VStack width="40%" paddingLeft="4rem">
-                <LatestNews />
+            <VStack width="40%" paddingLeft="4rem" pt={'20'}>
+                <LatestNews  / >
             </VStack>
         </HStack>
     );
