@@ -28,10 +28,10 @@ function Nav() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2">
                             <li className="nav-item nav-text">
-                                <a className="nav-link specialClass" onClick={handleUnderline} href="">Home</a>
+                                <a className="nav-link specialClass" onClick={handleUnderline} href="/">Home</a>
                             </li>
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="">News</a>
+                                <a className="nav-link" onClick={handleUnderline} href="/news">News</a>
                             </li>
                             <li className="nav-item nav-text">
                                 <a className="nav-link" onClick={handleUnderline} href="#">Share Price and Analysis</a>

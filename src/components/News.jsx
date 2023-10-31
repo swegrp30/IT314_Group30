@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { VStack, HStack, Heading, Box, Text, Stack } from "@chakra-ui/react";
+import { VStack, HStack, Heading, Text } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Link, Route, BrowserRouter, Routes } from "react-router-dom";
-import NewsDetail from "./NewsDetail.jsx";
+import { Link, Route, Routes } from "react-router-dom";
+import { NewsDetail } from "./NewsDetail.jsx";
 import { LatestNews } from "./LatestNews";
 function News() {
     const [news, setNews] = useState([]);
+
+    const leftleftNews = news.slice(0, 3);
+    const leftrightNews = news.slice(3, 6);
+    const rightNews = news.slice(6, 12);
+    const carouselNews = news.slice(15, 20);
 
     const api = async () => {
         try {
@@ -27,26 +32,6 @@ function News() {
     useEffect(() => {
         api();
     }, []);
-
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/news/" element={<Home news={news} />} />
-                <Route
-                    path="/news/:title/*"
-                    element={<NewsDetail news={news} />}
-                />{" "}
-                {/* Use * to capture the title */}
-            </Routes>
-        </BrowserRouter>
-    );
-}
-
-function Home({ news }) {
-    const leftleftNews = news.slice(0, 3);
-    const leftrightNews = news.slice(3, 6);
-    const rightNews = news.slice(6, 12);
-    const carouselNews = news.slice(15, 20);
 
     return (
         <HStack spacing="24px" align="top" className="p-8">
@@ -74,7 +59,7 @@ function Home({ news }) {
                 <HStack>
                     <VStack pr={"10"} top={"0"} width="100%" align="flex-start">
                         {leftleftNews.map((article, index) => (
-                            // <Box key={index}  >
+                            // < key={index}  >
 
                             <Link to={`/news/${article.title}`}>
                                 <HStack className="border-b-2 border-purple-700 pb-4">
@@ -96,8 +81,6 @@ function Home({ news }) {
                                     </Text>
                                 </HStack>
                             </Link>
-
-                            // </Box>
                         ))}
                     </VStack>
                     <VStack top={"0"} pl={"10"} width="100%">
@@ -122,7 +105,6 @@ function Home({ news }) {
                                     </Text>
                                 </HStack>
                             </Link>
-                            // </Box>
                         ))}
                     </VStack>
                 </HStack>
@@ -138,6 +120,8 @@ function Home({ news }) {
                 <LatestNews />
             </VStack>
         </HStack>
+
+
     );
 }
 
