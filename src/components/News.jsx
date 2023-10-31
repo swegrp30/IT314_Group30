@@ -23,7 +23,6 @@ function News() {
             }
             let result = await response.json();
             setNews(result.articles);
-            console.log(result.articles);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
