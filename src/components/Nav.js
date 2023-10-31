@@ -34,13 +34,13 @@ function Nav() {
                                 <a className="nav-link" onClick={handleUnderline} href="/news">News</a>
                             </li>
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="#">Share Price and Analysis</a>
+                                <a className="nav-link" onClick={handleUnderline} href="/PriceAndAnalysis">Share Price and Analysis</a>
                             </li> 
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="/wishlist">Wishlist</a>
+                                <a className="nav-link" onClick={handleUnderline} href="/Wishlist">Wishlist</a>
                             </li>
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="#">Quick Start Guide</a>
+                                <a className="nav-link" onClick={handleUnderline} href="/QuickStartGuide">Quick Start Guide</a>
                             </li>
                         </ul>
                         <div className='d-flex me-5'>
