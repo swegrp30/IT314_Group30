@@ -2,12 +2,6 @@
     text-align: center;
 }
 
-.home-logo {
-    height: 75px;
-    width: 225px;
-    pointer-events: none;
-}
-
 .home-h1 {
     display: block;
     text-align: center;

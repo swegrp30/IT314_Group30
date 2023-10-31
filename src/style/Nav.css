@@ -1,3 +1,9 @@
+.home-logo {
+    height: 75px;
+    width: 225px;
+    pointer-events: none;
+}
+
 .nav-button {
     border: 1px solid black;
     border-radius: 15px;
