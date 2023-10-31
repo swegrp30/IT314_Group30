@@ -2,35 +2,21 @@ import logo from './Images/Logo.jpg';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import Tour from "./Images/Tour.jpg"
 import './style/Home.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import News from './components/News';
 
 function App() {
   return (
-    <div>
-      <div className='text-center'>
-        <img src={logo} className='home-logo img-fluid' alt="" />
-      </div>
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/news' element={<News />} />
+      </Routes>
+      <Footer />
+    </Router>
 
-      <div>
-        <Nav />
-      </div>
-
-      <div>
-        <Home />
-      </div>
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
-      <div>
-        <Footer />
-      </div>
-      
-    </div>
   );
 }
 
