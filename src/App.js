@@ -1,4 +1,3 @@
-import logo from './Images/Logo.jpg';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Footer from './components/Footer';
@@ -16,7 +15,6 @@ function App() {
       </Routes>
       <Footer />
     </Router>
-
   );
 }
 

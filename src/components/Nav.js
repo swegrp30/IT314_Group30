@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style/Nav.css'
 import Footer from './Footer';
+import logo from '../Images/Logo.jpg';
 
 function Nav() {
 
@@ -16,6 +17,9 @@ function Nav() {
 
     return (
         <div>
+            <div className='text-center'>
+                <img src={logo} className='home-logo img-fluid' alt="" />
+            </div>
             <nav className="navbar nav-border navbar-expand-lg bg-body-tertiary">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -33,7 +37,7 @@ function Nav() {
                                 <a className="nav-link" onClick={handleUnderline} href="#">Share Price and Analysis</a>
                             </li> 
                             <li className="nav-item nav-text">
-                                <a className="nav-link" onClick={handleUnderline} href="#">Wishlist</a>
+                                <a className="nav-link" onClick={handleUnderline} href="/wishlist">Wishlist</a>
                             </li>
                             <li className="nav-item nav-text">
                                 <a className="nav-link" onClick={handleUnderline} href="#">Quick Start Guide</a>
