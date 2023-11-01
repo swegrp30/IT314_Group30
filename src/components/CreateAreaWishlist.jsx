@@ -30,11 +30,14 @@ function CreateArea(props) {
 
   function submitNote(event) {
     event.preventDefault(); // Prevent form submission
-    props.onAdd(note);
-    setNote({
-      title: "",
-      content: ""
-    });
+    if (note.title.trim() !== "" && note.content.trim() !== "") {
+      // Only add the wish if both title and content are not empty or only whitespace
+      props.onAdd(note);
+      setNote({
+        title: "",
+        content: ""
+      });
+    }
   }
 
   return (
