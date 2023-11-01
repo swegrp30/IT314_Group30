@@ -2,7 +2,7 @@ import { HStack, VStack, Text, Heading } from "@chakra-ui/react";
 import { LatestNews } from "./LatestNews";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import Loader from "./Loader.jsx";
 function NewsDetail() {
     const { title } = useParams();
     const [news, setNews] = useState([]);
@@ -42,7 +42,7 @@ function NewsDetail() {
     }, [title]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>  <Loader /> </div>
     }
 
     if (!article) {
@@ -52,7 +52,7 @@ function NewsDetail() {
     return (
         <HStack width={"full"} padding={"1"}>
             <VStack width="60%" paddingRight="4rem" marginTop={'-250'} >
-                <Heading color="purple.500"  paddingBottom="20" p={'20'}>
+                <Heading color="purple.500" paddingBottom="20" p={'20'}>
                     {article.title}
                 </Heading>
                 <img
@@ -65,7 +65,7 @@ function NewsDetail() {
             </VStack>
 
             <VStack width="40%" paddingLeft="4rem" pt={'20'}>
-                <LatestNews  / >
+                <LatestNews />
             </VStack>
         </HStack>
     );
