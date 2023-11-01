@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import News from './components/News';
 import NewsDetail from './components/NewsDetail';
+import Wishlist from './components/Wishlist';
+
 function App() {
   return (
     <Router>
@@ -13,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/news' element={<News />} />
         <Route path='/news/:title' element={<NewsDetail />} />
+        <Route path='/wishlist' element={<Wishlist />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+}
+
+::placeholder {
+    font-size: 20px !important;
+}
+
+.wishlist-container {
+    min-height: calc(80vh - 80px); 
+    overflow-y: auto; 
+}
+
+.wishlist-header {
+    background-color: rgb(172, 0, 172); 
+    width: 200px; 
+    margin: 30px auto;
+    padding: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 10px; 
+}
+
+.wishlist-header h1 {
+    color: #fff;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+    font-size: 1.2em; 
+}
+
+.wishlist-created-wish {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #848484;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    float: left;
+}
+
+.wishlist-created-wish h1 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+}
+
+.wishlist-created-wish p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.wishlist-created-wish button {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    color: rgb(172, 0, 172);
+    border: none;
+    width: 55px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
+}
+
+.wishlist-form {
+    position: relative;
+    width: 480px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+.wishlist-form-input,
+.wishlist-form-textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+}
+
+.wishlist-form-add-button {
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: rgb(100, 0, 100);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .wishlist-header {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .wishlist-header h1 {
+        font-size: 1.5em; 
+    }
+
+    .note {
+        width: 100%; 
+    }
+
+    form {
+        width: 100%; 
+    }
+}
