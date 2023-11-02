@@ -21,9 +21,12 @@ function CreateArea(props) {
   function handleKeyUp(event) {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault(); // Prevent form submission on Enter press
-      if (note.title.trim() !== "" || note.content.trim() !== "") {
+      if (note.title.trim() !== "" && note.content.trim() !== "") {
         // Only add the wish if at least one of the fields (title, content) is not empty.
-        props.onAdd(note);
+        props.onAdd({
+          title: note.title.trim().replace(/\s{2,}/g, ' '),
+          content: note.content.trim().replace(/\s{2,}/g, ' ').replace(/\n{2,}/g, '\n')
+        });
         setNote({
           title: "",
           content: ""
@@ -34,9 +37,12 @@ function CreateArea(props) {
 
   function submitNote(event) {
     event.preventDefault(); // Prevent form submission
-    if (note.title.trim() !== "" || note.content.trim() !== "") {
+    if (note.title.trim() !== "" && note.content.trim() !== "") {
       // Only add the wish if anyone of the field (title, content) is not empty.
-      props.onAdd(note);
+      props.onAdd({
+        title: note.title.trim().replace(/\s{2,}/g, ' '),
+        content: note.content.trim().replace(/\s{2,}/g, ' ').replace(/\n{2,}/g, '\n')
+      });
       setNote({
         title: "",
         content: ""
