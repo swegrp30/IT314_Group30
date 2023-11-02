@@ -19,19 +19,23 @@ function CreateArea(props) {
   }
 
   function handleKeyUp(event) {
-    if (event.keyCode === 13) {
-      props.onAdd(note);
-      setNote({
-        title: "",
-        content: ""
-      });
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault(); // Prevent form submission on Enter press
+      if (note.title.trim() !== "" || note.content.trim() !== "") {
+        // Only add the wish if at least one of the fields (title, content) is not empty.
+        props.onAdd(note);
+        setNote({
+          title: "",
+          content: ""
+        });
+      }
     }
   }
 
   function submitNote(event) {
     event.preventDefault(); // Prevent form submission
-    if (note.title.trim() !== "" && note.content.trim() !== "") {
-      // Only add the wish if both title and content are not empty or only whitespace
+    if (note.title.trim() !== "" || note.content.trim() !== "") {
+      // Only add the wish if anyone of the field (title, content) is not empty.
       props.onAdd(note);
       setNote({
         title: "",
