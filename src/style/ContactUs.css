@@ -1,0 +1,66 @@
+.contact-us-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(240, 155, 240);
+    margin-top: 50px;
+    margin-bottom: -25px;
+}
+
+.contact-us-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-us-container p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-us-container a {
+    text-decoration: none;
+    color: #555;
+}
+
+.contactus-field {
+    margin: 10px 0;
+}
+
+.contactus-field label {
+    display: block;
+    font-weight: bold;
+}
+
+.contactus-field input[type="email"],
+.contactus-field input[type="text"],
+.contactus-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contactus-field textarea {
+    height: 150px;
+}
+
+.contactus-button {
+    background-color: rgb(172, 0, 172);
+    color: white;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.contactus-button:hover {
+    background-color: white;
+    color: rgb(172, 0, 172) !important;
+}
+
