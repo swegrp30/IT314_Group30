@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../Images/LOGO.svg';
+import { Link } from 'react-router-dom';
 import '../style/Footer.css';
 
 function Footer() {
@@ -15,34 +16,34 @@ function Footer() {
                         <div className="footer-col">
                             <h4>Resources</h4>
                             <ul>
-                                <li><a href="#">Github</a></li>
-                                <li><a href="#">ML Model</a></li>
-                                <li><a href="#">Slack</a></li>
-                                <li><a href="#">Hosting</a></li>
-                                <li><a href="#">Database</a></li>
+                                <li><Link to="#">Github</Link></li>
+                                <li><Link to="#">ML Model</Link></li>
+                                <li><Link to="#">Slack</Link></li>
+                                <li><Link to="#">Hosting</Link></li>
+                                <li><Link to="#">Database</Link></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
                             <h4>Company</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Teams</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><Link to="/aboutus">About Us</Link></li>
+                                <li><Link to="#">Careers</Link></li>
+                                <li><Link to="#">FAQs</Link></li>
+                                <li><Link to="#">Teams</Link></li>
+                                <li><Link to="#">Contact Us</Link></li>
                             </ul>
                         </div>
 
                         <div className="footer-col-social">
                             <h4>Let's do it!</h4>
                             <div className="social-links">
-                                <a href=""><i className='fab fa-facebook-f'></i></a>
-                                <a href=""><i className='fab fa-twitter'></i></a>
-                                <a href=""><i className='fab fa-github'></i></a>
-                                <a href=""><i className='fab fa-telegram'></i></a>
-                                <a href=""><i className='fab fa-instagram'></i></a>
-                                <a href=""><i className='fab fa-figma'></i></a>
+                                <Link to=""><i className='fab fa-facebook-f'></i></Link>
+                                <Link to=""><i className='fab fa-twitter'></i></Link>
+                                <Link to=""><i className='fab fa-github'></i></Link>
+                                <Link to=""><i className='fab fa-telegram'></i></Link>
+                                <Link to=""><i className='fab fa-instagram'></i></Link>
+                                <Link to=""><i className='fab fa-figma'></i></Link>
                             </div>
                         </div>
                     </div>
