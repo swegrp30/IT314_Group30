@@ -8,7 +8,7 @@ import img3 from '../Images/education.svg'
 import img4 from '../Images/wallet.svg'
 import img5 from '../Images/forum.svg'
 import img6 from '../Images/feedback.svg'
-
+import ProfileCard from './ProfileCard';
 import { HStack, VStack } from '@chakra-ui/react';
 const slides = [
   {
@@ -47,6 +47,126 @@ const slides = [
 
 const AboutUs = () => {
   const [index, set] = useState(0);
+
+  const profiles = [
+    {
+      name: 'Julie L. Arsenault',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Frank A. Lopes',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'James M. Hinkle',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(28).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Maria C. Boucher',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(27).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Rasheed A. Harrison',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Karen I. McCluskey',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(25).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Michael K. Bayne',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(24).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Josephine S. Darakjy',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Eddie L. Johnson',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Chloe A. Roberts',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(20).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-instagram', url: '#' },
+      ],
+    },
+    {
+      name: 'Thomas A. Anderson',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).jpg',
+      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' }, { icon: 'fa-instagram', url: '#' }],
+    },
+    {
+      name: 'Cynthia J. Olson',
+      username: 'Programmer',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(16).jpg',
+      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' }, { icon: 'fa-instagram', url: '#' }],
+
+    }
+
+  ];
+
+
+
 
   const transitions = useTransition(slides[index], {
     from: { opacity: 0, transform: 'translate3d(-50%, 0, -200px) scale(0.8)' },
@@ -143,6 +263,26 @@ const AboutUs = () => {
       <div className='g'>
         Our Team Members
         </div>
+
+
+      <div className='h'>
+
+      <section className="vh-400" style={{ backgroundColor: 'white' }}>
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          {profiles.map((profile, index) => (
+            <ProfileCard key={index} {...profile} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+
+      </div>
+
+
+
 
 
     </div>
