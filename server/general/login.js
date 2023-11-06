@@ -3,7 +3,8 @@ const cors = require("cors");
 const bcrypt = require("bcryptjs");
 
 const user = require("../models/user");
-
+const { response } = require("express");
+const jwt=require('jsonwebtoken');
 
 const login = (async (req, res) => {
     const data = req.body;
@@ -17,18 +18,14 @@ const login = (async (req, res) => {
     }
     const real_password = obj.password;
     const password_match = await bcrypt.compare(password, real_password);
-
-    // const pipe = [{
-    //     $project: {
-    //         _id: 0,
-    //         password: 0
-    //     }
-    // }]
-
-    // const aggrigated_obj = await user.aggregate(pipe);
-
+    const secretKey = username+"bearandbull"
     if (password_match == true) {
         res.status(200).send(obj);
+        jwt.sign({obj},secretKey,{expiresIn: '300s'},(err,token) =>{
+            response.json({
+                token
+            })
+        })
     }
     else {
         res.status(211).send();
