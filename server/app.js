@@ -23,14 +23,18 @@ const mailer = require("./dlt");
 const login = require("./general/login");
 
 const otp_verification = require("./db_functions/otp_verification");
-
+const addcomments = require("./general/addcomments");
+const getcomments=require("./general/getcomments");
 
 
 
 app.post("/signup",signup);
 app.post("/login",login);
-
+app.post("/addcomments",addcomments);
+app.post("/getcomments",getcomments);
 // app.post("/dlt",mailer);
+
+
 app.post("/profile",verifyToken,(req,resp) => {
     jwt.verify(req.token,secretKey,(err,authData)=>{
     if(err){
