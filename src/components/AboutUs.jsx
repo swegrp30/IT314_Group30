@@ -10,39 +10,6 @@ import img5 from '../Images/forum.svg'
 import img6 from '../Images/feedback.svg'
 import ProfileCard from './ProfileCard';
 import { HStack, VStack } from '@chakra-ui/react';
-const slides = [
-  {
-    id: 1,
-    name: "John Doe",
-    role: "Frontend Developer",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: 2,
-    name: "Alice Brown",
-    role: "Backend Developer",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: 3,
-    name: "David Lee",
-    role: "AI Modeler",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: 4,
-    name: "Grace Robinson",
-    role: "Tester",
-    image: "https://via.placeholder.com/150",
-  },
-  {
-    id: 5,
-    name: "Mark Turner",
-    role: "Documentation Specialist",
-    image: "https://via.placeholder.com/150",
-  },
-  // Add more team members here
-];
 
 
 const AboutUs = () => {
@@ -166,16 +133,6 @@ const AboutUs = () => {
   ];
 
 
-
-
-  const transitions = useTransition(slides[index], {
-    from: { opacity: 0, transform: 'translate3d(-50%, 0, -200px) scale(0.8)' },
-    enter: { opacity: 1, transform: 'translate3d(0%, 0, 0) scale(1)' },
-    leave: { opacity: 0, transform: 'translate3d(50%, 0, -200px) scale(0.8)' },
-  });
-
-  const nextSlide = () => set((state) => (state + 1) % slides.length);
-  const prevSlide = () => set((state) => (state - 1 + slides.length) % slides.length);
 
   return (
     <div>
