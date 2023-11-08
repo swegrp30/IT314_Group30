@@ -26,7 +26,7 @@ const ContactUs = () => {
         <div className="contact-us-container">
             <h2>Contact Us</h2>
             <p>Fill out the form below or email us at <a href="abc@gmail.com">abc@gmail.com</a></p>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='conatctus-form'>
                 <div className="contactus-field">
                     <label htmlFor="email">Email:</label>
                     <input
