@@ -3,11 +3,13 @@ import { LatestNews } from "./LatestNews";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader.jsx";
+import ErrorPage from "./ErrorPage.jsx";
 function NewsDetail() {
     const { title } = useParams();
     const [news, setNews] = useState([]);
     const [article, setArticle] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -34,6 +36,7 @@ function NewsDetail() {
                 setLoading(false);
             } catch (error) {
                 console.error("Error fetching data:", error);
+                setError(true);
                 setLoading(false);
             }
         };
@@ -48,6 +51,10 @@ function NewsDetail() {
     if (!article) {
         return <div>Article not found</div>;
     }
+    if (error) {
+        return <ErrorPage />;
+    }
+
 
     return (
         <HStack width={"full"} padding={"1"}>
