@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Center, Icon, Text, VStack, Button } from '@chakra-ui/react';
-import { FaExclamationCircle } from 'react-icons/fa';
+import error from '../Images/Eoor.svg';
 import { Link } from 'react-router-dom';
 function ErrorPage() {
 
@@ -24,7 +24,7 @@ function ErrorPage() {
                 textAlign="center"
                 minW="300px"
             >
-                <Icon as={FaExclamationCircle} boxSize={12} color="red.500" />
+                <Icon as error boxSize={12} color="red.500" />
                 <VStack spacing={4}>
                     <Text fontSize="2xl" fontWeight="bold" color={'red.500'}>
                         Oops! Something went wrong.
