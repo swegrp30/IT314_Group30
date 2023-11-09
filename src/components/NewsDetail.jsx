@@ -59,7 +59,7 @@ function NewsDetail() {
     return (
         <HStack width={"full"} padding={"1"}>
             <VStack width="60%" paddingRight="4rem" marginTop={'-250'} >
-                <Heading color="purple.500" paddingBottom="20" p={'20'}>
+                <Heading color="#962B92" paddingBottom="20" p={'20'}>
                     {article.title}
                 </Heading>
                 <img

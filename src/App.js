@@ -7,7 +7,8 @@ import NewsDetail from './components/NewsDetail';
 import Wishlist from './components/Wishlist';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
-
+import Share from './components/Share';
+import ShareDetails from './components/ShareDetails';
 function App() {
   return (
     <Router>
@@ -19,10 +20,13 @@ function App() {
         <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/contactus' element={<ContactUs />} />
+        <Route path='/PriceAndAnalysis' element={<Share />} />
+        <Route path='/share/:id' element={<ShareDetails  />} />
+
       </Routes>
       <Footer />
     </Router>
   );
 }
 
-export default App;
+export default App; 
