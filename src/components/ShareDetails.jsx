@@ -134,7 +134,7 @@ const CoinDetails = () => {
                                     }
                                 />
                                 {coin.market_data.price_change_percentage_24h}%
-                            </StatHelpText>
+                                </StatHelpText>
                         </Stat>
                     </VStack>
 
