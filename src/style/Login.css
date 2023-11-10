@@ -85,3 +85,9 @@
     background-color: #852683;
     border:none;
 }
+.btn-secondary{
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #2D3748;
+    border:none;
+}

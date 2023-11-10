@@ -30,51 +30,51 @@ const Signup = () => {
             For Traders and Investors
           </div>
           <form className="form-edit row g-3 mt-3">
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">
+            <div className="col-md-6">
+              <label htmlFor="inputEmail4" className="form-label">
                 First Name
               </label>
-              <input type="text" class="form-control" id="inputEmail4" />
+              <input type="text" className="form-control" id="inputEmail4" />
             </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">
+            <div className="col-md-6">
+              <label htmlFor="inputPassword4" className="form-label">
                 Last Name
               </label>
-              <input type="text" class="form-control" id="inputPassword4" />
+              <input type="text" className="form-control" id="inputPassword4" />
             </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">
+            <div className="col-md-6">
+              <label htmlFor="inputEmail4" className="form-label">
                 Email
               </label>
-              <input type="email" class="form-control" id="inputEmail4" />
+              <input type="email" className="form-control" id="inputEmail4" />
             </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">
+            <div className="col-md-6">
+              <label htmlFor="inputPassword4" className="form-label">
                 Date of Birth
               </label>
-              <input type="date" class="form-control" id="inputPassword4" />
+              <input type="date" className="form-control" id="inputPassword4" />
             </div>
-            <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">
+            <div className="col-md-6">
+              <label htmlFor="inputEmail4" className="form-label">
                 Password
               </label>
-              <input type="password" class="form-control" id="inputEmail4" />
+              <input type="password" className="form-control" id="inputEmail4" />
             </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">
+            <div className="col-md-6">
+              <label htmlFor="inputPassword4" className="form-label">
                 Confirm Password
               </label>
-              <input type="password" class="form-control" id="inputPassword4" />
+              <input type="password" className="form-control" id="inputPassword4" />
             </div>
-            <div class="col-md-6">
-            <button type="submit" class="btn btn-primary">Create Account</button>
+            <div className="col-md-6">
+            <button type="submit" className="btn btn-primary">Create Account</button>
             </div>
-            <div class="col-md-6">
-            <button type="submit" class="btn btn-primary">Sign in with Google </button>
+            <div className="col-md-6">
+            <button type="submit" className="btn btn-secondary">Sign in with Google </button>
             </div>
           </form>
           <div className="pt-3">
-            Don't have an account?
+            Already have account?
             <span className="colorChange" onClick={() => navigate("/login")}>
               {" "}
               Log in
