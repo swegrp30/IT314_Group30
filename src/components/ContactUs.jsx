@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../style/ContactUs.css';
 
 const ContactUs = () => {
@@ -20,13 +20,24 @@ const ContactUs = () => {
         event.preventDefault();
         // code for handle the form submission will be added here
         console.log('Form data submitted:', formData);
+
+        // Scroll to the top of the page after form submission
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    useEffect(() => {
+        // Scroll to the top when the component is mounted
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="contact-us-container">
             <h2>Contact Us</h2>
-            <p>Fill out the form below or email us at <a href="abc@gmail.com">abc@gmail.com</a></p>
-            <form onSubmit={handleSubmit} className='conatctus-form'>
+            <p>
+                Fill out the form below or email us at{' '}
+                <a href="abc@gmail.com">abc@gmail.com</a>
+            </p>
+            <form onSubmit={handleSubmit} className="contactus-form">
                 <div className="contactus-field">
                     <label htmlFor="email">Email:</label>
                     <input
@@ -59,7 +70,9 @@ const ContactUs = () => {
                         required
                     />
                 </div>
-                <button className='contactus-button' type="submit">Submit</button>
+                <button className="contactus-button" type="submit">
+                    Submit
+                </button>
             </form>
         </div>
     );

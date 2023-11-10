@@ -1,7 +1,9 @@
 .home-logo {
     height: 75px;
     width: 225px;
-    pointer-events: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav-button {
@@ -29,7 +31,7 @@
     text-decoration-color: rgb(172, 0, 172);
 }
 
-.nav-button:hover{
+.nav-button:hover {
     background-color: white;
     color: rgb(172, 0, 172) !important;
 }

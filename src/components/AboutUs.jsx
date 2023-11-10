@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTransition, a } from 'react-spring';
 import '../style/AboutUs.css'
 import line from '../Images/line.png';
@@ -132,7 +132,10 @@ const AboutUs = () => {
 
   ];
 
-
+  // Scroll to the top when the component is mounted
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
@@ -219,20 +222,20 @@ const AboutUs = () => {
 
       <div className='g'>
         Our Team Members
-        </div>
+      </div>
 
 
       <div className='h'>
 
-      <section className="vh-400" style={{ backgroundColor: 'white' }}>
-      <div className="container py-5 h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          {profiles.map((profile, index) => (
-            <ProfileCard key={index} {...profile} />
-          ))}
-        </div>
-      </div>
-    </section>
+        <section className="vh-400" style={{ backgroundColor: 'white' }}>
+          <div className="container py-5 h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              {profiles.map((profile, index) => (
+                <ProfileCard key={index} {...profile} />
+              ))}
+            </div>
+          </div>
+        </section>
 
 
 
