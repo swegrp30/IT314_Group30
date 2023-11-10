@@ -13,10 +13,6 @@ const Share = () => {
     const [error, setError] = useState(false);
     const [page, setpage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
-
-
-
-
     useEffect(() => {
         const fecthShare = async () => {
             try {
@@ -67,7 +63,7 @@ const Share = () => {
 
                 <HStack wrap={'wrap'} justifyContent={'space-evenly'} padding={'10'} align={'baseline'}>
                     {
-                        Share.map((i) => (
+                        filteredShares.map((i) => (
                             <ShareCard
                                 id={i.id}
                                 key={i.id}
