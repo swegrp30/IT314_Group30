@@ -2,9 +2,18 @@ import React from 'react';
 import '../style/Nav.css'
 import logo from '../Images/Logo.jpg';
 import {Link} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
 function Nav() {
-
+    const navigate = useNavigate();
+    const routeToSignup = () => {
+        // 👇️ navigate to /contacts
+        navigate('/signup');
+      };
+      const routeToSignIn = () => {
+        // 👇️ navigate to /contacts
+        navigate('/login');
+      };
     const handleUnderline = (event) => {
         const nav_links = document.querySelectorAll('.nav-link');
         nav_links.forEach(nav_link => {
@@ -42,8 +51,8 @@ function Nav() {
                             </li>
                         </ul>
                         <div className='d-flex me-5'>
-                            <button className="nav-button text-white me-3">Sign Up</button>
-                            <button className="nav-button text-white">Sign In</button>
+                            <button  onClick={routeToSignup} className="nav-button text-white me-3">Sign Up</button>
+                            <button onClick={routeToSignIn} className="nav-button text-white">Sign In</button>
                         </div>
                     </div>
                 </div>
