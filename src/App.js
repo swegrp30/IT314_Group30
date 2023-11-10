@@ -9,22 +9,33 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Share from './components/Share';
 import ShareDetails from './components/ShareDetails';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import ShowNavbar from './components/Show/ShowNavbar';
+import ShowFooter from './components/Show/ShowFooter';
+
 function App() {
   return (
     <Router>
+      <ShowNavbar>
       <Nav />
+      </ShowNavbar>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/news' element={<News />} />
         <Route path='/news/:title' element={<NewsDetail />} />
         <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/aboutus' element={<AboutUs />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/PriceAndAnalysis' element={<Share />} />
         <Route path='/share/:id' element={<ShareDetails  />} />
 
       </Routes>
+      <ShowFooter>
       <Footer />
+      </ShowFooter>
     </Router>
   );
 }
