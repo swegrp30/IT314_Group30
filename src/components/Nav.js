@@ -11,6 +11,9 @@ function Nav() {
     const routeToSignup = () => {
         navigate('/signup');
     };
+    const routeToHome = () => {
+        navigate('/');
+    };
 
     const routeToSignIn = () => {
         navigate('/login');
@@ -40,7 +43,7 @@ function Nav() {
     return (
         <div>
             <div className='text-center'>
-                <img src={logo} className='home-logo img-fluid' alt='' />
+                <img src={logo} onClick={routeToHome} className='home-logo img-fluid' alt='' />
             </div>
             <nav className='navbar nav-border navbar-expand-lg bg-body-tertiary'>
                 <button
