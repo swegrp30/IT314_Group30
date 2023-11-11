@@ -43,8 +43,27 @@ body{
     width: 30%;
 }
 
+.btn-outline-success {
+    background-color: rgb(238, 114, 238);
+    color: white;
+    border:none;
+    border-radius: 0 10px  10px 0px;
+}
+.btn-outline-success:hover {
+    background-color: white;
+    color: rgb(172, 0, 172);
+}
+input{
+    height:5.1vh;
+    /* border-color: transparent; */
+}
+input:focus{
+    outline: none;
+}
+
 input::placeholder {
-    font: 0.75rem/3 sans-serif;
+    color: #777272;
+    padding-left: 40px;
 }
 
 .home-guide-image {
@@ -69,12 +88,3 @@ input::placeholder {
     background-color: black;
 }
 
-.btn-outline-success {
-    background-color: rgb(172, 0, 172);
-    color: white;
-}
-
-.btn-outline-success:hover {
-    background-color: white;
-    color: rgb(172, 0, 172);
-}

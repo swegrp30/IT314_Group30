@@ -1,7 +1,7 @@
 import React from 'react';
 import Tour from "../Images/Tour.jpg"
 import '../style/Home.css';
-
+import search from '../Images/search.png'
 function Home() {
     return (
         <div>
@@ -12,8 +12,8 @@ function Home() {
 
             <div className='mt-4'>
                 <div className='home-search'>
-                    <input className='me-2 home-search-bar' type="search" placeholder="Search Share" aria-label="Search" />
-                    <button className="btn btn-outline-success" type="submit">Search</button>
+                    <input className=' home-search-bar' type="search" placeholder="Search Share" aria-label="Search" />
+                    <button className="btn btn-outline-success" style={{width:"4vw",}} type="submit"><img src={search} style={{height:"3.4vh",}} alt="" /></button>
                 </div>
             </div>
 
