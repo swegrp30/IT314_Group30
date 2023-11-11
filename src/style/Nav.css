@@ -44,22 +44,23 @@
 }
 
 
-ul {
+.navbar-ul {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+    list-style: none;
 }
 
 
 /* Underline styles */
-a {
+.nav-link {
 	display: block;
 	position: relative;
 	padding: 0.2em 0;
 }
 
 /* Fade in */
-a::after {
+.nav-link::after {
 	content: '';
 	position: absolute;
 	bottom: 0;
@@ -71,8 +72,8 @@ a::after {
 	transition: opacity 300ms, transform 300ms;
 }
 
-a:hover::after,
-a:focus::after {
+.nav-link:hover::after,
+.nav-link:focus::after {
 	opacity: 1;
 	transform: translate3d(0, 0.1em, 0);
 }

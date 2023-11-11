@@ -15,7 +15,7 @@ function Footer() {
                     <div className="footer-row text-white">
                         <div className="footer-col">
                             <h4>Resources</h4>
-                            <ul>
+                            <ul className='footer-ul'>
                                 <li><Link to="#">Github</Link></li>
                                 <li><Link to="#">ML Model</Link></li>
                                 <li><Link to="#">Slack</Link></li>
@@ -26,7 +26,7 @@ function Footer() {
 
                         <div className="footer-col">
                             <h4>Company</h4>
-                            <ul>
+                            <ul className='footer-ul'>
                                 <li><Link to="/aboutus">About Us</Link></li>
                                 <li><Link to="#">Careers</Link></li>
                                 <li><Link to="#">FAQs</Link></li>
