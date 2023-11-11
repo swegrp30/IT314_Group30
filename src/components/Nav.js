@@ -59,7 +59,7 @@ function Nav() {
                 </button>
                 <div className='container-fluid'>
                     <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-                        <ul className='navbar-nav me-auto mb-2'>
+                        <ul className='me-auto mb-2 navbar-ul'>
                             <li className='nav-item nav-text'>
                                 <Link
                                     className='nav-link'
