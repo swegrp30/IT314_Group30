@@ -13,6 +13,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import ShowNavbar from './components/Show/ShowNavbar';
 import ShowFooter from './components/Show/ShowFooter';
+import Profile from './components/Profile';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/signup' element={<Signup />} />
         <Route path='/contactus' element={<ContactUs />} />
         <Route path='/PriceAndAnalysis' element={<Share />} />
+        <Route path='/Profile' element={<Profile />} />
         <Route path='/share/:id' element={<ShareDetails  />} />
 
       </Routes>
