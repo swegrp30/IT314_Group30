@@ -34,7 +34,7 @@ function App() {
         <Route path='/PriceAndAnalysis' element={<Share />} />
         <Route path='/Profile' element={<Profile />} />
         <Route path='/share/:id' element={<ShareDetails  />} />
-        <Route path='/changePassword' element={<Changepassword  />
+        <Route path='/changePassword' element={<Changepassword  />}/>
 
       </Routes>
       <ShowFooter>
