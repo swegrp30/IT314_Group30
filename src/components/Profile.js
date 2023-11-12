@@ -1,8 +1,10 @@
 import React from 'react';
 import Tour from "../Images/Tour.jpg"
 import '../style/Profile.css';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
+    const navigate = useNavigate();
     return (
     <div className="container">
       <div className="left">
@@ -24,7 +26,8 @@ function Profile() {
 
         <div className="right">
             <div className='r_profile'>
-                MY PROFILE
+                    <button className='r_profile_btn1'> My Profile </button>
+                    <button className='r_profile_btn2' onClick={()=>navigate('/changePassword')}> Change Password </button>
             </div>
             <div className='r'>
                 <div className='right_name1'>

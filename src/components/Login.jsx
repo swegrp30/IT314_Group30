@@ -73,7 +73,7 @@ const Signup = () => {
 
           <div className="pt-4">
             
-            <span className="colorChange" onClick={() => navigate("/ChangePassword")}>
+            <span className="colorChange" onClick={() => navigate("/Forgotpassword")}>
               {" "}
               Forgot Password?
             </span>

@@ -11,10 +11,10 @@
   flex-shrink: 0;
   border-radius: 1.25rem;
   background: #962B92;
-  margin-left: 3.5rem;
+  /* margin-left: 3.5rem; */
   margin-top: 4.875rem;
   margin-bottom: 5.25rem;
-  margin-right: 1.6875rem;
+  /* margin-right: 1.6875rem; */
 }
 
 .left_member{
@@ -90,7 +90,7 @@
   flex-shrink: 0;
   border-radius: 1.25rem;
   background: #FCFCFC;
-  margin-right: 2.5625rem;
+  /* margin-right: 2.5625rem; */
   margin-top: 4.875rem;
   margin-bottom: 5.25rem;
 }
@@ -108,7 +108,21 @@
   margin-left: 6.25rem;
   justify-content: left;
   margin-bottom: 4.0625rem;
-  text-decoration: underline;
+  display: flex;
+}
+
+
+
+.r_profile_btn2 {
+    border-radius: 15px;
+    background-color: rgb(172, 0, 172);
+    font-weight: bold;
+    padding: 4px 11px;
+    /* margin-left: 30px; */
+    font-weight: bold;
+    margin-left: 50px; 
+    font-size: 1.2rem;
+    color: #FFF;
 }
 
 .r{
