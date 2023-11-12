@@ -14,6 +14,7 @@ import Login from './components/Login';
 import ShowNavbar from './components/Show/ShowNavbar';
 import ShowFooter from './components/Show/ShowFooter';
 import Profile from './components/Profile';
+import Changepassword from './components/Changepassword';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path='/PriceAndAnalysis' element={<Share />} />
         <Route path='/Profile' element={<Profile />} />
         <Route path='/share/:id' element={<ShareDetails  />} />
+        <Route path='/changePassword' element={<Changepassword  />} />
 
       </Routes>
       <ShowFooter>
