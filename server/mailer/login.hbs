@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Login Notification</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    h1 {
+      margin: 0;
+      color: #fff;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 20px;
+      background-color: #e44d26;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #d33f21;
+    }
+
+    .footer {
+      color: #777;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Account Login Notification</h1>
+    </div>
+
+    <div class="content">
+      <p>Hello {{ demo.name }},</p>
+
+      <p>We wanted to inform you that your account has been accessed. Below are the details of the login:</p>
+
+      <ul>
+        <li><strong>Date and Time:</strong> {{ demo.time }}</li>
+        <!-- Add more details as needed -->
+      </ul>
+
+      <p>If you did not perform this action or if you have any concerns about the security of your account, please contact our support team immediately at {{ demo.support_email }}.</p>
+
+      <p style="text-align: center;">
+        <a class="cta-button" href="#">Contact Support</a>
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>Thank you for choosing our services!</p>
+      <p>Best regards,<br>Stock MarketPrediction</p>
+    </div>
+  </div>
+</body>
+</html>

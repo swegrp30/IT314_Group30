@@ -11,9 +11,9 @@ require('dotenv').config();
 
 
 const mailTransporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com', 
-    service : 'gmail',
-    port:'587',
+    host: 'smtp.gmail.com',
+    service: 'gmail',
+    port: '587',
     // secure:'true', 
     auth: {
         user: process.env.MAIL,
@@ -50,12 +50,44 @@ mailTransporter.use('compile', hbs({
 // };
 
 
+const login = (async (name, username, email) => {
 
-const mailer = (async (username,mail,otp)=>{
-    
+    const date = new Date();
+    const dateTime = date.toLocaleString("en-IN");
+    const istDateTime = new Date(dateTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+    console.log(istDateTime);
+
     const data = {
-        name : username,
-        otp : otp
+        name: username,
+        time: istDateTime,
+    }
+    console.log(email);
+    let mailDetails = {
+        from: 'Stock Market',
+        to: email,
+        subject: 'Account Login Notification',
+        template: 'login',
+        context: {
+            demo: data,
+        }
+    };
+
+    const s = await mailTransporter.sendMail(mailDetails, function (err, data) {
+        if (err) {
+            console.log('Error Occurs');
+            console.log(err);
+        } else {
+            console.log('Email sent successfully');
+        }
+    });
+})
+
+
+const mailer = (async (username, mail, otp) => {
+
+    const data = {
+        name: username,
+        otp: otp
     }
 
 
@@ -65,7 +97,7 @@ const mailer = (async (username,mail,otp)=>{
         subject: 'SSS',
         template: 'mail',
         context: {
-            demo:data,
+            demo: data,
         }
     };
 
@@ -74,9 +106,9 @@ const mailer = (async (username,mail,otp)=>{
 
 
     // mailDetails.context.demo=data;
-  
-    const s = await mailTransporter.sendMail(mailDetails, function(err, data) {
-        if(err) {
+
+    const s = await mailTransporter.sendMail(mailDetails, function (err, data) {
+        if (err) {
             console.log('Error Occurs');
             console.log(err);
         } else {
@@ -87,4 +119,4 @@ const mailer = (async (username,mail,otp)=>{
 })
 
 
-module.exports = mailer;
+module.exports = { mailer, login };
