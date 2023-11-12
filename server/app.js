@@ -28,9 +28,13 @@ const otp_verification = require("./db_functions/otp_verification");
 
 
 app.post("/signup",signup);
+
 app.post("/login",login);
+
 app.post("/addcomments",addcomments);
+
 app.post("/getcomments",getcomments);
+
 // app.post("/dlt",mailer);
 
 

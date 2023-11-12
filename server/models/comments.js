@@ -1,16 +1,21 @@
 const mongoose = require("mongoose");
-const subschema=mongoose.Schema({
-    username:{
-        type:String
+
+
+
+
+const subschema = mongoose.Schema({
+    username: {
+        type: String
     },
-    reply:{
-        type:String
+    reply: {
+        type: String
     }
 })
+
 const schema = mongoose.Schema({
     comment_id: {
         type: String,
-        unique:true,
+        unique: true,
         required: true
     },
     comment: {
@@ -26,16 +31,16 @@ const schema = mongoose.Schema({
         required: true
     },
     replies: {
-        type:[subschema],
-        default:[]
+        type: [subschema],
+        default: []
     },
-    created_at:{
-        type:Date,
-        default:Date.now
+    created_at: {
+        type: Date,
+        default: Date.now
     }
 })
 
 
-const comments = mongoose.model("comments",schema);
+const comments = mongoose.model("comments", schema);
 
 module.exports = comments;
