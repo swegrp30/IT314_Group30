@@ -19,6 +19,10 @@ function Nav() {
         navigate('/login');
     };
 
+    const routeToProfile = () => {
+        navigate('/Profile');
+    };
+
     const handleUnderline = (event) => {
         const nav_links = document.querySelectorAll('.nav-link');
         nav_links.forEach((nav_link) => {
@@ -84,7 +88,7 @@ function Nav() {
                                     onClick={handleUnderline}
                                     to='/PriceAndAnalysis'
                                 >
-                                    Share Price and Analysis
+                                    Price and Analysis
                                 </Link>
                             </li>
                             <li className='nav-item nav-text'>
@@ -103,6 +107,16 @@ function Nav() {
                                     to='/QuickStartGuide'
                                 >
                                     Quick Start Guide
+                                </Link>
+                            </li>
+
+                            <li className='nav-item nav-text'>
+                                <Link
+                                    className='nav-link'
+                                    onClick={handleUnderline}
+                                    to='/Profile'
+                                >
+                                    Profile
                                 </Link>
                             </li>
                         </ul>
