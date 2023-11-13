@@ -1,5 +1,5 @@
 import React from 'react'
-import { VStack, Image, Heading, Text, HStack , Badge, Box, Button} from '@chakra-ui/react';
+import { VStack, Image, Heading, Text, HStack, Badge, Box, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import star from "../Images/star.svg";
 const ShareCard = ({ id, name, img, price, symbol, priceChangePercentage }) => {
@@ -14,7 +14,7 @@ const ShareCard = ({ id, name, img, price, symbol, priceChangePercentage }) => {
     };
 
     return (
-        <Link to={`/Share/${id}`} >
+        <>
             <HStack
                 w={"300px"}
                 cursor={"pointer"}
@@ -31,14 +31,17 @@ const ShareCard = ({ id, name, img, price, symbol, priceChangePercentage }) => {
                     },
                 }}
             >
-                <Image
-                    src={img}
-                    w={"50"}
-                    h={"50"}
+                <Link to={`/Share/${id}`} >
+                    <Image
+                        src={img}
+                        w={"50"}
+                        h={"50"}
 
-                    objectFit={"contain"}
-                    alt={"Exchange"}
-                />
+                        objectFit={"contain"}
+                        alt={"Exchange"}
+                    />
+                </Link>
+
                 <Box>
 
 
@@ -68,7 +71,7 @@ const ShareCard = ({ id, name, img, price, symbol, priceChangePercentage }) => {
                 </Button>
 
             </HStack>
-        </Link>
+        </>
     );
 };
 export default ShareCard;
