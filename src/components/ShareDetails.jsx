@@ -111,15 +111,8 @@ const CoinDetails = () => {
                 <Loader />
             ) : (
                 <>
-
-
-
                     <VStack spacing={'4'} p="16" alignItems={'flex-start'}>
-
-
                         <Heading size={'lg'}>{coin.name}</Heading>
-
-
                         <Stat>
                             <StatNumber>
                                 ₹
@@ -134,7 +127,7 @@ const CoinDetails = () => {
                                     }
                                 />
                                 {coin.market_data.price_change_percentage_24h}%
-                                </StatHelpText>
+                            </StatHelpText>
                         </Stat>
                     </VStack>
 
@@ -159,9 +152,6 @@ const CoinDetails = () => {
                             <Text color={'blackAlpha.700'}>All Time High</Text>
                             <Text>₹ {coin.market_data.ath.inr}</Text>
                         </VStack>
-
-
-
                     </HStack>
 
                     <Divider
@@ -176,19 +166,17 @@ const CoinDetails = () => {
                         {Date(coin.market_data.last_updated).split('G')[0]}
                     </Text>
 
-
                     <HStack p="4" overflowX={'auto'}>
-    {timeRanges.map(i => (
-        <Button
-            disabled={days === i}
-            key={i}
-            onClick={() => switchChartStats(i)}
-        >
-            {i}
-        </Button>
-    ))}
-</HStack>
-
+                        {timeRanges.map(i => (
+                            <Button
+                                disabled={days === i}
+                                key={i}
+                                onClick={() => switchChartStats(i)}
+                            >
+                                {i}
+                            </Button>
+                        ))}
+                    </HStack>
 
                     <Slider min={0} max={7} step={1} onChange={switchChartStats}>
                         <SliderTrack>

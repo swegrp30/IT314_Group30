@@ -16,6 +16,7 @@ import ShowFooter from './components/Show/ShowFooter';
 import Profile from './components/Profile';
 import Changepassword from './components/Changepassword';
 import Forgotpassword from './components/ForgotPassword';
+import Wishlist from './components/Wishlist';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/news' element={<News />} />
         <Route path='/news/:title' element={<NewsDetail />} />
-        <Route path='/wishlist' element={<Notes />} />
+        <Route path='/wishlist' element={<Wishlist />} />
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />

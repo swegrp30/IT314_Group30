@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CreateAreaNotes from "./CreateAreaNotes";
 import '../style/Notes.css'
 
-function App() {
+function Notes() {
   const [notes, setNotes] = useState([]);
 
   function addNote(newNote) {
@@ -39,4 +39,4 @@ function App() {
   );
 }
 
-export default App;
+export default Notes;
