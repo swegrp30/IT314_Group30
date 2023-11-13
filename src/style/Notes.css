@@ -10,15 +10,15 @@ html {
 
 ::placeholder {
     font-size: 18px !important;
-    padding-left: 5px;
+    padding-left: 5px !important;
 }
 
-.wishlist-container {
+.notes-container {
     min-height: calc(80vh - 80px); 
     overflow-y: auto; 
 }
 
-.wishlist-header {
+.notes-header {
     background-color: rgb(172, 0, 172); 
     width: 200px; 
     margin: 30px auto;
@@ -28,14 +28,14 @@ html {
     border-radius: 10px; 
 }
 
-.wishlist-header h1 {
+.notes-header h1 {
     color: #fff;
     font-family: "McLaren", cursive;
     font-weight: 200;
     font-size: 1.2em; 
 }
 
-.wishlist-created-wish {
+.notes-created-wish {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #848484;
@@ -45,19 +45,19 @@ html {
     float: left;
 }
 
-.wishlist-created-wish h1 {
+.notes-created-wish h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
 }
 
-.wishlist-created-wish p {
+.notes-created-wish p {
     font-size: 1.1em;
     margin-bottom: 10px;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 
-.wishlist-created-wish button {
+.notes-created-wish button {
     position: relative;
     float: right;
     margin-right: 10px;
@@ -69,7 +69,7 @@ html {
     outline: none;
 }
 
-.wishlist-form {
+.notes-form {
     position: relative;
     width: 480px;
     margin: 30px auto 20px auto;
@@ -79,8 +79,8 @@ html {
     box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
-.wishlist-form-input,
-.wishlist-form-textarea {
+.notes-form-input,
+.notes-form-textarea {
     width: 100%;
     border: none;
     padding: 4px;
@@ -90,7 +90,7 @@ html {
     resize: none;
 }
 
-.wishlist-form-add-button {
+.notes-form-add-button {
     position: absolute;
     right: 18px;
     bottom: -18px;
@@ -106,12 +106,12 @@ html {
 }
 
 @media (max-width: 768px) {
-    .wishlist-header {
+    .notes-header {
         width: 100%;
         padding: 20px;
     }
 
-    .wishlist-header h1 {
+    .notes-header h1 {
         font-size: 1.5em; 
     }
 
@@ -119,7 +119,7 @@ html {
         width: 100%; 
     }
 
-    .wishlist-form {
+    .notes-form {
         width: 100%; 
     }
 }

@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import News from './components/News';
 import NewsDetail from './components/NewsDetail';
-import Wishlist from './components/Wishlist';
+import Notes from './components/Notes';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Share from './components/Share';
@@ -24,7 +24,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/news' element={<News />} />
         <Route path='/news/:title' element={<NewsDetail />} />
-        <Route path='/wishlist' element={<Wishlist />} />
+        <Route path='/wishlist' element={<Notes />} />
         <Route path='/aboutus' element={<AboutUs />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />

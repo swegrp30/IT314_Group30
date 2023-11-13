@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style/Wishlist.css'
+import '../style/Notes.css'
 
 function CreateArea(props) {
   const [note, setNote] = useState({
@@ -52,9 +52,9 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form className="wishlist-form">
+      <form className="notes-form">
         <input
-          className="wishlist-form-input"
+          className="notes-form-input"
           name="title"
           onChange={handleChange}
           onKeyUp={handleKeyUp}
@@ -62,15 +62,15 @@ function CreateArea(props) {
           placeholder="Title"
         />
         <textarea
-          className="wishlist-form-textarea"
+          className="notes-form-textarea"
           name="content"
           onChange={handleChange}
           onKeyUp={handleKeyUp}
           value={note.content}
-          placeholder="Take a wish..."
+          placeholder="Take a note"
           rows="3"
         />
-        <button className="wishlist-form-add-button" onClick={submitNote}>Add</button>
+        <button className="notes-form-add-button" onClick={submitNote}>Add</button>
       </form>
     </div>
   );
