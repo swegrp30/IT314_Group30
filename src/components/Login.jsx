@@ -70,6 +70,14 @@ const Signup = () => {
               Sign Up
             </span>
           </div>
+
+          <div className="pt-4">
+            
+            <span className="colorChange" onClick={() => navigate("/Forgotpassword")}>
+              {" "}
+              Forgot Password?
+            </span>
+          </div>
         </div>
       </div>
     </div>
