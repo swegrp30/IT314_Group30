@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
+
+
 
 
 const user = require("../models/user");
@@ -40,12 +43,26 @@ const login = (async (req, res) => {
 
                 const object = await user.aggregate(pipe);
 
-                // Send An Email
+                
                 const aggrigated_obj = object[0];
                 
                 console.log(aggrigated_obj);
+
+                // Mailing 
                 email(aggrigated_obj.name,aggrigated_obj.username,aggrigated_obj.email);
 
+                // Storing Cookies
+                const token = jwt.sign(
+                {
+                    email: aggrigated_obj.email,
+                    username:aggrigated_obj.username
+                },
+                process.env.JWT_KEY,
+                {
+                    expiresIn: "1h"
+                }
+            );
+                res.cookies("token",token,{httpOnly:true});
                 res.status(200).send(aggrigated_obj);
             }
             else {
