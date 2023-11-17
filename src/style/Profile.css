@@ -1,11 +1,11 @@
-.container {
+.container-box {
   display: flex;
   border: 1.25rem;
   margin: 5rem;
   margin-bottom: 65%;
 }
 
-.left{
+.left-box{
   width: 24.5625rem;
   height: 51.75rem;
   flex-shrink: 0;
@@ -83,7 +83,7 @@
   display: flex;
 }
 
-.right {
+.right-box {
   border:1.25rem;
   width: 52.3125rem;
   height: 51.75rem;

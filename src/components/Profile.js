@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 function Profile() {
     const navigate = useNavigate();
     return (
-    <div className="container">
-      <div className="left">
+    <div className="container-box">
+      <div className="left-box">
         <img src={Tour} className="photo"/>
         <div className='left_name'>
             Bhavya Shah
@@ -24,7 +24,7 @@ function Profile() {
       </div>
 
 
-        <div className="right">
+        <div className="right-box">
             <div className='r_profile'>
                     <button className='r_profile_btn1'> My Profile </button>
                     <button className='r_profile_btn2' onClick={()=>navigate('/changePassword')}> Change Password </button>

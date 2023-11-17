@@ -4,8 +4,8 @@ import '../style/Profile.css';
 
 function Changepassword() {
     return (
-        <div className="container">
-      <div className="left">
+        <div className="container-box">
+      <div className="left-box">
         <img src={Tour} className="photo"/>
         <div className='left_name'>
             Bhavya Shah
@@ -22,7 +22,7 @@ function Changepassword() {
       </div>
 
 
-        <div className="right">
+        <div className="right-box">
             <div className='r_cp'>
                 CHANGE PASSWORD
             </div>
