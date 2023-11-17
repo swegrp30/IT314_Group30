@@ -65,15 +65,18 @@ schema.pre("save",(async function(next){
     next();
 }))
 
-schema.pre("updateOne",{ document: true, query: false },(async function(next){
-
-    const password = this.password;
-
-    const hashed_pass = await bcrypt.hash(password,5);
-
-    this.password = hashed_pass;
+schema.pre('findOneAndUpdate', async function (next) {
+    let update = {...this.getUpdate()};
+  
+    // Only run this function if password was modified
+    if (update.password){
+  
+    // Hash the password
+    update.password = await bcrypt.hash(password,5);
+    this.setUpdate(update);
     next();
-}))
+    }
+})
 
 const user = mongoose.model("user",schema);
 
