@@ -119,7 +119,7 @@ const signup = (async (username, mail, otp) => {
 })
 
 
-const forgotPassword = (async (otp, username, email) => {
+const forgotPassword = (async (username, email, otp) => {
 
     const data = {
         name: username,

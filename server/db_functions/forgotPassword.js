@@ -21,11 +21,12 @@ const forgotPassword =(async(req,res)=>{
             const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
             const mailer = mail(x.username,x.email,otp_number);
             const data = new otp({
-                email : new_user.email,
+                email : x.email,
                 otp : otp_number
             })
             try {
                 const saved = data.save();
+                res.status(200).send()
             } catch (error) {
                 console.log("This is error from signup.js -> mailer part");
                 console.log(error);
