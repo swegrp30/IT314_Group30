@@ -13,8 +13,8 @@ const otp = require("../models/otp");
 
 
 // otp-mailer
-const mailer = require("../mailer/mailer");
-
+const x = require("../mailer/mailer");
+const mailer = x.signup
 // MAILER IMPORT KRVNU BAKI 6
 
 

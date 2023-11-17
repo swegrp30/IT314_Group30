@@ -83,7 +83,7 @@ const login = (async (name, username, email) => {
 })
 
 
-const mailer = (async (username, mail, otp) => {
+const signup = (async (username, mail, otp) => {
 
     const data = {
         name: username,
@@ -119,4 +119,4 @@ const mailer = (async (username, mail, otp) => {
 })
 
 
-module.exports = { mailer, login };
+module.exports = { signup, login };
