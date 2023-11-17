@@ -65,7 +65,7 @@ schema.pre("save",(async function(next){
     next();
 }))
 
-schema.pre("findOneAndUpdate",(async function(next){
+schema.pre("updateOne",{ document: true, query: false },(async function(next){
 
     const password = this.password;
 
