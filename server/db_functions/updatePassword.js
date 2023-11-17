@@ -11,8 +11,8 @@ const changePassword =(async (req,res)=>{
     const email = req.body.email;
 
     try{
-
-            const update = await user.updateOne({email:email},{password:newPass});
+            const hashed_pass = await bcrypt.hash(newPass,5);
+            const update = await user.updateOne({email:email},{password:hashed_pass});
             res.status(200).send();
 
     }catch(error){
