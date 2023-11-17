@@ -84,7 +84,7 @@ app.post("/changePassword",auth,changePassword);
 
 app.post("/forgotPassword",forgotPassword);
 
-app.post("/updatePassword",auth,updatePassword);
+app.post("/updatePassword",updatePassword);
 
 app.post("/verifyEmail",verifyEmail);
 
