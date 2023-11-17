@@ -80,7 +80,7 @@ app.post("/addReply",auth,addReplytoComment);
 
 app.post("/changePassword",auth,changePassword);
 
-app.post("/forgotPassword",auth,forgotPassword);
+app.post("/forgotPassword",forgotPassword);
 
 app.post("/updatePassword",auth,updatePassword);
 
