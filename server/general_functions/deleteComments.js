@@ -8,7 +8,7 @@ const deleteComments = (async(req,res)=>{
 
     try {
         
-        const dlt = cmnt.deleteOne({comment_id:comment_id});
+        const dlt = await cmnt.deleteOne({comment_id:comment_id});
         res.status(200).send();
 
     } catch (error) {
