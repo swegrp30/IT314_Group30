@@ -9,7 +9,7 @@ const myComments = (async(req,res)=>{
     
     try {
         
-        const cmnt = comment.find({username:user}).exec();
+        const cmnt = await comment.find({username:user}).exec();
         // console.log(cmnt);
         
         res.status(200).send(cmnt);
