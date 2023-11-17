@@ -27,15 +27,6 @@ const otp_verification = (async (req, res) => {
             res.status(200).send("Verified");
         }
         else {
-
-            try {
-                const dlt = await user.deleteOne({ email: email });
-                
-            } catch (error) {
-                console.log("This is error from otp_verification.js -> delete part");
-                console.log(error);
-                res.status(400).send();
-            }
             res.status(288).send("Not-Valid");
         }
     }

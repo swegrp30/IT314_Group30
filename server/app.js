@@ -52,6 +52,8 @@ const forgotPassword = require("./db_functions/forgotPassword");
 
 const updatePassword = require("./db_functions/updatePassword");
 
+const verifyEmail = require("./db_functions/verifyEmail");
+
 
 
 
@@ -83,6 +85,8 @@ app.post("/changePassword",auth,changePassword);
 app.post("/forgotPassword",forgotPassword);
 
 app.post("/updatePassword",auth,updatePassword);
+
+app.post("/verifyEmail",verifyEmail);
 
 
 
