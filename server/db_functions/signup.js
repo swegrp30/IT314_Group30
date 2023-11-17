@@ -75,29 +75,6 @@ const user_signup = async (req, res) => {
             res.status(400).send();
         }
 
-        try {
-            // MAILER
-            console.log("FFFF");
-            const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
-            const mail = mailer(new_user.username,new_user.email,otp_number);
-            const data = new otp({
-                email : new_user.email,
-                otp : otp_number
-            })
-            try {
-                const saved = data.save();
-            } catch (error) {
-                console.log("This is error from signup.js -> mailer part");
-                console.log(error);
-                res.status(400).send();
-            }
-
-        } catch (error) {
-            console.log("This is the error from signup.js -> otp block")
-            console.log(error);
-            res.status(400).send();
-        }
-
     }
 
     // console.log()

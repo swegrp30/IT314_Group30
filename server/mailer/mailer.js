@@ -83,10 +83,9 @@ const login = (async (name, username, email) => {
 })
 
 
-const signup = (async (username, mail, otp) => {
+const signup = (async (mail, otp) => {
 
     const data = {
-        name: username,
         otp: otp
     }
 
