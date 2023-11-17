@@ -13,11 +13,12 @@ const changePassword =(async (req,res)=>{
 
     try{
 
-        const oldPassword = await user.findOne({email:email}).password;
-
+        const x = await user.findOne({email:email});
+        console.log(x)
+        const oldPassword = x.password
         const verify = await bcrypt.compare(oldPass,oldPassword);
-        if(verify){
-            const update = await user.findOneAndUpdate({email:email},{password:newPass});
+        if(verify==true){
+            const update = await user.updateOne({email:email},{$set:{password:newPass}});
             res.status(200).send();
         }
         else{
