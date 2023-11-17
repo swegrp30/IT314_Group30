@@ -18,7 +18,10 @@ const changePassword =(async (req,res)=>{
         const oldPassword = x.password
         const verify = await bcrypt.compare(oldPass,oldPassword);
         if(verify==true){
-            const update = await user.updateOne({email:email},{$set:{password:newPass}});
+
+            const hashed_pass = await bcrypt.hash(newPass,5);
+
+            const update = await user.updateOne({email:email},{$set:{password:hashed_pass}});
             res.status(200).send();
         }
         else{
