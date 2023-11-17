@@ -1,6 +1,8 @@
 const { mongo, default: mongoose } = require("mongoose");
+const otpGenerator = require('otp-generator')
 
 const user = require("../models/user");
+const otp = require("../models/otp");
 
 const x = require("../mailer/mailer");
 const mail = x.signup;
@@ -25,7 +27,8 @@ const verifyEmail = (async(req,res)=>{
             otp : otp_number
         })
         try {
-            const saved = data.save();
+            const saved = await data.save();
+            res.status(200).send()
         } catch (error) {
             console.log("This is error from signup.js -> mailer part");
             console.log(error);

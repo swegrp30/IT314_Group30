@@ -26,7 +26,7 @@ const forgotPassword =(async(req,res)=>{
                 otp : otp_number
             })
             try {
-                const saved = data.save();
+                const saved = await data.save();
                 res.status(200).send()
             } catch (error) {
                 console.log("This is error from signup.js -> mailer part");
