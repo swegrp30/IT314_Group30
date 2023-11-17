@@ -3,6 +3,7 @@ const otpGenerator = require('otp-generator')
 
 
 const user = require("../models/user");
+const otp = require("../models/otp");
 
 const x = require("../mailer/mailer");
 const mail = x.forgotPassword;
