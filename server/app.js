@@ -44,6 +44,8 @@ const myComments = require("./general_functions/myComments");
 
 const deleteComments = require("./general_functions/deleteComments");
 
+const addReplytoComment = require("./general_functions/addReplytoComment");
+
 
 
 
@@ -51,7 +53,6 @@ const deleteComments = require("./general_functions/deleteComments");
 
 
 app.post("/signup",signup);
-
 
 app.post("/otp_verification",otp_verification);
 
@@ -68,6 +69,8 @@ app.post("/getComments",auth,getComments);
 app.get("/myComments",auth,myComments);
 
 app.get("/dltComments",auth,deleteComments);
+
+app.post("/addReply",auth,addReplytoComment);
 
 
 

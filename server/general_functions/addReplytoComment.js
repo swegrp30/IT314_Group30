@@ -10,7 +10,7 @@ const rply = (async(req,res)=>{
     const commentID = req.body.commentID;
 
     try {
-        const reply={
+        const reply = {
             username : user,
             reply : comment
         }
