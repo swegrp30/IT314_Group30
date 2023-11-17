@@ -9,7 +9,9 @@ const myComments = (async(req,res)=>{
     
     try {
         
-        const cmnt = comment.find({username:user});
+        const cmnt = comment.find({username:user}).exec();
+        // console.log(cmnt);
+        
         res.status(200).send(cmnt);
 
     } catch (error) {
