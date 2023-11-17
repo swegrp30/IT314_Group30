@@ -46,6 +46,8 @@ const deleteComments = require("./general_functions/deleteComments");
 
 const addReplytoComment = require("./general_functions/addReplytoComment");
 
+const changePassword = require("./db_function/changePassword");
+
 
 
 
@@ -71,6 +73,8 @@ app.get("/myComments",auth,myComments);
 app.get("/dltComments",auth,deleteComments);
 
 app.post("/addReply",auth,addReplytoComment);
+
+app.post("/changePassword",auth,changePassword);
 
 
 
