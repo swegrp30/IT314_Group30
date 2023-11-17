@@ -14,7 +14,7 @@ const ShareCard = ({ id, name, img, price, symbol, priceChangePercentage, addToW
             </Badge>
         );
     };
-
+    console.log(addToWishlist);
     return (
         <HStack
             w={'300px'}

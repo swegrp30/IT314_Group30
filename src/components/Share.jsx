@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import search from '../Images/search.png'
-// import { server } from '../index'
 import {
   Container,
   HStack,
@@ -21,6 +20,9 @@ const Share = () => {
   const [error, setError] = useState(false);
   const [page, setpage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const [wishlist, setWishlist] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+
   useEffect(() => {
     const fecthShare = async () => {
       try {
@@ -28,6 +30,7 @@ const Share = () => {
           `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr`
         );
         setShare(data);
+        console.log(data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -41,6 +44,20 @@ const Share = () => {
   const filteredShares = Share.filter((Share) =>
     Share.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const addToWishlist = (share) => {
+    if (!wishlist.find((item) => item.id === share.id)) {
+      setWishlist([...wishlist, { ...share, additionalDetails: true }]);
+    }
+  };
+
+  const removeFromWishlist = (id) => {
+    setWishlist(wishlist.filter((item) => item.id !== id));
+  };
+
+  const showAdditionalDetails = (item) => {
+    setSelectedItem(item);
+  };
 
   if (error) return <ErrorPage />;
 
@@ -72,7 +89,7 @@ const Share = () => {
                   <img src={search} style={{ height: "3.4vh" }} alt="" />
                 </button>
               </div>
-              
+
             </Box>
           </HStack>
 
@@ -91,6 +108,7 @@ const Share = () => {
                 price={i.current_price}
                 symbol={i.symbol}
                 priceChangePercentage={i.price_change_percentage_24h}
+                addToWishlist={()=>addToWishlist(i)}
               />
             ))}
           </HStack>
