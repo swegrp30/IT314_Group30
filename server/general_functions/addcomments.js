@@ -35,6 +35,7 @@ const addcomments = async (req, res) => {
     } catch (error) {
         console.log("THIS IS ERROR FROM addcomments.js -> save");
         console.log(error);
+        res.status(400).send();
     }
 }
 

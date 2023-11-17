@@ -15,6 +15,7 @@ const addFavourite = (async(req,res)=>{
     } catch (error) {
         console.log("Error From addFav.js");
         console.log(error);
+        res.status(400).send();
     }
 
     res.status(200).send();

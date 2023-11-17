@@ -72,6 +72,7 @@ const user_signup = async (req, res) => {
         } catch (error) {
             console.log("THIS IS ERROR FROM signup.js -> save");
             console.log(error);
+            res.status(400).send();
         }
 
         try {
@@ -88,11 +89,13 @@ const user_signup = async (req, res) => {
             } catch (error) {
                 console.log("This is error from signup.js -> mailer part");
                 console.log(error);
+                res.status(400).send();
             }
 
         } catch (error) {
             console.log("This is the error from signup.js -> otp block")
             console.log(error);
+            res.status(400).send();
         }
 
     }

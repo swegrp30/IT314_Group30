@@ -34,6 +34,7 @@ const otp_verification = (async (req, res) => {
             } catch (error) {
                 console.log("This is error from otp_verification.js -> delete part");
                 console.log(error);
+                res.status(400).send();
             }
             res.status(288).send("Not-Valid");
         }
@@ -41,6 +42,7 @@ const otp_verification = (async (req, res) => {
     catch(e){
         console.log("There is error in otp_verification");
         console.log(e);
+        res.status(400).send();
     }
 
 })

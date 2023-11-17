@@ -21,6 +21,7 @@ const rply = (async(req,res)=>{
     } catch (error) {
         console.log("This is error from addReplytoComments.js");
         console.log(error);
+        res.status(400).send();
     }
 
 })
