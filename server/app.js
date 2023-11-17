@@ -36,16 +36,17 @@ const addFavourite = require("./general_functions/addFav");
 
 const deleteFav = require("./general_functions/deleteFav");
 
+const addcomments = require("./general_functions/addcomments");
+
+const getcomments = require("./general_functions/getcomments");
+
+
+
 
 
 
 app.post("/signup",signup);
 
-// app.post("/addcomments",addcomments);
-
-// app.post("/getcomments",getcomments);
-
-// app.post("/dlt",mailer);
 
 app.post("/otp_verification",otp_verification);
 
@@ -55,9 +56,15 @@ app.post("/add-fav",auth,addFavourite);
 
 app.post("/del-fav",auth,deleteFav);
 
+app.post("/addcomments",auth,addcomments);
+
+app.post("/getcomments",auth,getcomments);
+
+app.get("/my-comments",auth,myComments);
 
 
 
+// app.post("/dlt",mailer);
 
 
 

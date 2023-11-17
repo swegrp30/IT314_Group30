@@ -13,8 +13,10 @@ const addcomments = async (req, res) => {
 
     console.log(data);
 
+    const cmnt_id = uuidv4();
+
     const new_comment = new comments({
-        comment_id: uuidv4(),
+        comment_id: cmnt_id,
         comment: data.comment,
         company: data.company,
         username: data.username,
@@ -23,26 +25,12 @@ const addcomments = async (req, res) => {
     try {
         const save = await new_comment.save()
             .then(async () => {
-                const x = await comments.find({ comment: data.comment });
-                console.log("SAVED");
-                res.status(200).send(x);
+                const x = await comments.find({ comment_id: cmnt_id });
+                // console.log("SAVED");
+                res.status(200).send();
             }).catch((e) => {
                 console.log("THIS IS ERROR FROM addcomments.js file");
                 console.log(e);
-                const err = e.keyPattern;
-                // console.log(err);
-                // if (err.hasOwnProperty('email') == true && err.email == 1) {
-                //     res.status(410).send();
-                // }
-                // else if (err.hasOwnProperty('phone') == true && err.phone == 1) {
-                //     res.status(411).send();
-                // }
-                // else if (err.hasOwnProperty('username') == true && err.username == 1) {
-                //     res.status(412).send();
-                // }
-                // else {
-                //     res.status(413).send("Bad Request");
-                // }
             })
     } catch (error) {
         console.log("THIS IS ERROR FROM addcomments.js -> save");
