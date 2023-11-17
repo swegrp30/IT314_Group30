@@ -2,6 +2,7 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import News from './components/News';
 import NewsDetail from './components/NewsDetail';
 import Notes from './components/Notes';
