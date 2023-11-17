@@ -14,6 +14,7 @@ mongoose.connect("mongodb+srv://backend2:backend2@cluster0.qxwolth.mongodb.net/?
 }).catch((err)=>{
     console.log("ERROR FROM connect.js")
     console.log(err);
+    res.status(400).send();
 })
 
 

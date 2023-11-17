@@ -17,6 +17,7 @@ const myComments = (async(req,res)=>{
     } catch (error) {
         console.log("This is error from myComments.js");
         console.log(error);
+        res.status(400).send();
     }
 
 })
