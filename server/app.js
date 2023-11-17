@@ -15,6 +15,13 @@ app.use(cors({
 
 require("./connection/conection");
 
+
+
+
+const auth = require("./middleware/auth");
+
+
+
 // FUCTIONs
 
 const signup = require("./db_functions/signup");
@@ -24,6 +31,10 @@ const signup = require("./db_functions/signup");
 const login = require("./general_functions/login");
 
 const otp_verification = require("./db_functions/otp_verification");
+
+const addFavourite = require("./general_functions/addFav");
+
+const deleteFav = require("./general_functions/deleteFav");
 
 
 
@@ -40,38 +51,14 @@ app.post("/otp_verification",otp_verification);
 
 app.get("/login",login);
 
+app.post("/add-fav",auth,addFavourite);
+
+app.post("/del-fav",auth,deleteFav);
 
 
 
 
-// function verifyToken(req,resp,next){
-//     const bearerHeader = req.headers('authorization');
-//     if(typeof bearerHeader !== 'undefined'){
-//         const bearerHeader = bearerHeader.split(" ");
-//         const token = bearer[1];
-//         req.token = token;
-//         next();
-//     }else{
-//         resp.send({
-//             result:'Token is not valid'
-//         })
-//     }
-// }
 
-
-
-// app.post("/profile",verifyToken,(req,resp) => {
-//     jwt.verify(req.token,secretKey,(err,authData)=>{
-//     if(err){
-//         resp.send({result:'invalid token'})
-//     }else{
-//         resp.json({
-//             message: "profile accessed",
-//             authData
-//         })
-//     }
-//   })
-// })
 
 
 

@@ -46,6 +46,9 @@ const schema = mongoose.Schema({
         type: String,
         required: true
     },
+    favourites:{
+        type: [String]
+    },
     created_at:{
         type:Date,
         default:Date.now

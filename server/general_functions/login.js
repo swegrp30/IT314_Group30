@@ -46,23 +46,26 @@ const login = (async (req, res) => {
                 
                 const aggrigated_obj = object[0];
                 
-                console.log(aggrigated_obj);
-
+                
                 // Mailing 
                 email(aggrigated_obj.name,aggrigated_obj.username,aggrigated_obj.email);
-
-                // Storing Cookies
+                
+                // Generating Cookies
                 const token = jwt.sign(
-                {
-                    email: aggrigated_obj.email,
-                    username:aggrigated_obj.username
-                },
-                process.env.JWT_KEY,
-                {
-                    expiresIn: "1h"
-                }
-            );
-                res.cookies("token",token,{httpOnly:true});
+                    {
+                        email: aggrigated_obj.email,
+                        username:aggrigated_obj.username
+                    },
+                    process.env.JWT_KEY,
+                    {
+                        expiresIn: "1h"
+                    }
+                );
+                    
+                // Adding token to response Object
+                aggrigated_obj.token = token;
+                // console.log(aggrigated_obj);
+
                 res.status(200).send(aggrigated_obj);
             }
             else {
