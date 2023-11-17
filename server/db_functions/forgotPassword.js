@@ -11,11 +11,13 @@ const mail = x.forgotPassword;
 const forgotPassword =(async(req,res)=>{
 
     const email = req.body.email;
+
     try {
         
         const x = await user.findOne({email:email});
 
         if(x !== undefined){
+            
             const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
             const mailer = mail(x.username,x.email,otp_number);
             const data = new otp({

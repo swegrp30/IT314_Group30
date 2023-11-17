@@ -48,6 +48,10 @@ const addReplytoComment = require("./general_functions/addReplytoComment");
 
 const changePassword = require("./db_functions/changePassword");
 
+const forgotPassword = require("./db_functions/forgotPassword");
+
+const updatePassword = require("./db_functions/updatePassword");
+
 
 
 
@@ -75,6 +79,10 @@ app.get("/dltComments",auth,deleteComments);
 app.post("/addReply",auth,addReplytoComment);
 
 app.post("/changePassword",auth,changePassword);
+
+app.post("/forgotPassword",auth,forgotPassword);
+
+app.post("/updatePassword",auth,updatePassword);
 
 
 

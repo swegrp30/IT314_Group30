@@ -65,6 +65,16 @@ schema.pre("save",(async function(next){
     next();
 }))
 
+schema.pre("update",(async function(next){
+
+    const password = this.password;
+
+    const hashed_pass = await bcrypt.hash(password,5);
+
+    this.password = hashed_pass;
+    next();
+}))
+
 const user = mongoose.model("user",schema);
 
 module.exports = user;
