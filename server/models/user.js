@@ -55,30 +55,31 @@ const schema = mongoose.Schema({
     }
 })
 
-schema.pre("save",(async function(next){
+// schema.pre("save",(async function(next){
 
-    const password = this.password;
+//     const password = this.password;
 
-    const hashed_pass = await bcrypt.hash(password,5);
+//     const hashed_pass = await bcrypt.hash(password,5);
 
-    this.password = hashed_pass;
-    next();
-}))
+//     this.password = hashed_pass;
+//     next();
+// }))
 
-schema.pre("update", function(next) {
-    const password = this.getUpdate().$set.password;
-    if (!password) {
-        return next();
+schema.pre('save', function (next) {
+    const user = this
+    if (user.isModified('password')) {
+      bcrypt.genSalt(5, function (err, salt) {
+        if (err) return next(err)
+        bcrypt.hash(user.password, salt, function (err, hash) {
+          if (err) return next(err)
+          user.password = hash
+          next()
+        })
+      })
+    } else {
+      next()
     }
-    try {
-        const salt = bcrypt.genSaltSync();
-        const hash = bcrypt.hashSync(password, salt);
-        this.getUpdate().$set.password = hash;
-        next();
-    } catch (error) {
-        return next(error);
-    }
-});
+  })
 
 const user = mongoose.model("user",schema);
 
