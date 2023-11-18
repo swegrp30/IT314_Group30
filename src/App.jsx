@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import News from './components/News';
 import NewsDetail from './components/NewsDetail';
 import Notes from './components/Notes';
+import Comments from './components/Comments';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Share from './components/Share';
@@ -43,6 +44,7 @@ function App() {
         <Route path='/changePassword' element={<Changepassword  />}/>
         <Route path='/forgotPassword' element={<Forgotpassword  />}/>
         <Route path='/signupwithemail' element={<Signupemail />} />
+        <Route path='/comments' element={<Comments />} />
 
       </Routes>
       <ShowFooter>
