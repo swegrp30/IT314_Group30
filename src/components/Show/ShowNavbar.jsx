@@ -6,7 +6,7 @@ const ShowNavbar = ({children}) => {
     const [noNavbar, setNoNavbar]= useState(false)
     useEffect(()=>{
         // console.log('This is a location ',location)
-        if(location.pathname==='/login'||location.pathname==='/signup'){
+        if(location.pathname==='/login'||location.pathname==='/signupwithemail'||location.pathname=='/signup'){
             setNoNavbar(false)
         }
         else{

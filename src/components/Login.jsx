@@ -5,11 +5,11 @@ import google from "../Images/google.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {ToastContainer, toast} from 'react-toastify'
-//import {FcGoogle} from 'react-icons/fc';
+import axios from "axios";
 
 import React from "react";
 
-const Signup = () => {
+const Login = () => {
   const navigate = useNavigate();
   const [form,setForm]= useState({
     
@@ -18,8 +18,9 @@ const Signup = () => {
     
     
   })
-  const handleSubmit =(e)=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault()
+    console.log("Hlel")
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     
     if(!regex.test(form?.email)){
@@ -36,12 +37,24 @@ const Signup = () => {
     }
     
     else{
-      console.log(form)
+      const res = await axios
+          .post("http://localhost:7000/login", {
+            
+            email: form.email,
+            password: form.password
+            
+          })
+          const token = res.data.token;
+          if(token){
       toast.success("You have logged in successfully")
-      sessionStorage.setItem('user',JSON.stringify(form))
+      localStorage.setItem('authToken',token)
       setInterval(()=>{
-        navigate('/PriceAndAnalysis')
-      })
+        navigate('/')
+      },1000)
+    }
+    else{
+      toast.error("Email or password incorrect ")
+    }
     }
 
 }
@@ -70,7 +83,7 @@ const handleChange =(e)=>{
           <div className="text-small  text-black">
             Welcome back to the website
           </div>
-          <form className="form-edit row g-3 mt-3" onSubmit={handleSubmit}>
+          <form className="form-edit row g-3 mt-3" >
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
                 Email
@@ -84,7 +97,7 @@ const handleChange =(e)=>{
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="formGroupExampleInput2" className="form-label">
+              <label htmlFor="password" className="form-label">
                 Password
               </label>
               <input
@@ -96,15 +109,11 @@ const handleChange =(e)=>{
               />
             </div>
             <div className="col-md-6">
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
                 Sign In
               </button>
             </div>
-            <div className="col-md-6">
-              <button  className="btn btn-secondary">
-                Sign in with Google{" "}
-              </button>
-            </div>
+           
           </form>
           <div className="pt-3">
             Don't have an account?
@@ -125,4 +134,4 @@ const handleChange =(e)=>{
   );
 };
 
-export default Signup;
+export default Login;

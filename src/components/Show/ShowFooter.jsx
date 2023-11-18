@@ -6,7 +6,7 @@ const ShowFooter = ({children}) => {
     const [noFooter, setNoFooter]= useState(false)
     useEffect(()=>{
         console.log('This is a location ',location)
-        if(location.pathname==='/login'||location.pathname==='/signup'){
+        if(location.pathname==='/login'||location.pathname==='/signup'||location.pathname==='/signupwithemail'){
             setNoFooter(false)
         }
         else{
