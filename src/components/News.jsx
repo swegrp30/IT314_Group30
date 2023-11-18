@@ -18,7 +18,7 @@ function News() {
     const api = async () => {
         try {
             let response = await fetch(
-                "https://newsapi.org/v2/top-headlines?country=in&apiKey=7684b9a0b5e94656819efef1c0ed1b85"
+                "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=7684b9a0b5e94656819efef1c0ed1b85"
             );
             if (!response.ok) {
                 throw new Error("Network response was not ok");
