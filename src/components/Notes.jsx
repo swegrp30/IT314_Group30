@@ -22,7 +22,7 @@ function Notes() {
   return (
     <div className="notes-container">
       <div className="notes-header">
-        <h1>My Notes</h1>
+        <h1>Opinions </h1>
       </div>
 
       <CreateAreaNotes onAdd={addNote} />
