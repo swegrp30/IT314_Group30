@@ -8,16 +8,16 @@ function Nav() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const routeToSignup = () => {
-        navigate('/signupwithemail');
-    };
+    // const routeToSignup = () => {
+    //     navigate('/signupwithemail');
+    // };
     const routeToHome = () => {
         navigate('/');
     };
 
-    const routeToSignIn = () => {
-        navigate('/login');
-    };
+    // const routeToSignIn = () => {
+    //     navigate('/login');
+    // };
 
     const routeToProfile = () => {
         navigate('/Profile');
@@ -128,16 +128,28 @@ function Nav() {
                         
                         {!authToken && <div className='d-flex me-5'>
                             <button
-                                onClick={routeToSignup}
+                                
                                 className='nav-button text-white me-3'
                             >
-                                Sign Up
+                               <Link
+                                    // className='nav-link'
+                                    // onClick={handleUnderline}
+                                    to='/signupwithemail'
+                                >
+                                    Sign Up
+                                </Link>
                             </button>
                             <button
-                                onClick={routeToSignIn}
+                                
                                 className='nav-button text-white'
                             >
-                                Sign In
+                               <Link
+                                    // className='nav-link'
+                                    // onClick={handleUnderline}
+                                    to='/login'
+                                >
+                                    Sign In
+                                </Link>
                             </button>
                         </div>}
                         {authToken && <div className='d-flex me-5'>

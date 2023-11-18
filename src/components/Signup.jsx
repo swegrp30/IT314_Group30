@@ -50,9 +50,14 @@ const Signup = (props) => {
             password: data.password,
             phone: data.phone,
           })
-          const data1 = res.data.token
-          localStorage.setItem("authToken", data1);
-          navigate('/')
+          const token = res.data.token
+          localStorage.setItem("authToken", token);
+          toast.success("You have signed up successfully")
+      
+          setInterval(()=>{
+            navigate('/')
+          },1000)
+          
       } catch (err) {
         if (err.response) {
           // ✅ log status code here
