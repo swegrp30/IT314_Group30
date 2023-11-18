@@ -34,7 +34,7 @@ const ShareCard = ({ id, name, img, price, symbol, priceChangePercentage, addToW
         >
             <Link to={`/Share/${id}`}>
                 <Image src={img} w={'50'} h={'50'} objectFit={'contain'} alt={'Exchange'} />
-            </Link>
+            
 
             <Box>
                 <Heading size={'md'} noOfLines={1} textTransform={'uppercase'}>
@@ -51,6 +51,7 @@ const ShareCard = ({ id, name, img, price, symbol, priceChangePercentage, addToW
                     </>
                 )}
             </Box>
+            </Link>
 
             <Button onClick={() => addToWishlist({ id, name, img, price, symbol, priceChangePercentage })}>
                 <Image src={star} w={'5'} h={'5'} alt={'Favorite'} />
