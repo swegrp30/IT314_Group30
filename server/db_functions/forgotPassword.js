@@ -18,7 +18,17 @@ const forgotPassword =(async(req,res)=>{
         const x = await user.findOne({email:email});
 
         if(x !== undefined){
-            
+            const match = await otp.findOne({email:email});
+            if (match) {
+                try {
+                  await otp.deleteOne({ email: email });
+                  console.log("Document deleted successfully");
+                } catch (error) {
+                  console.log("Error deleting document:", error);
+                  res.status(500).send("Internal Server Error");
+                  return;
+                }
+            }
             const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
             const mailer = mail(x.username,x.email,otp_number);
             const data = new otp({
