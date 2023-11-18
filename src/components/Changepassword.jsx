@@ -52,7 +52,7 @@ function Changepassword() {
       const res = await axios
           .post("http://localhost:7000/changePassword",{oldPass:password.oldPass,newPass:password.newPass}, {headers:headers})
        console.log(res.status)   
-      
+       toast.success("Password changed sucessfully")
 
 
     }
