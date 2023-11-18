@@ -12,12 +12,12 @@ const all = require("../mailer/mailer")
 const email = all.login;
 
 const login = (async (req, res) => {
-    const phone = req.body.phone;
+    const email = req.body.email;
     const password = req.body.password;
 
     try {
 
-        const saved_data = await user.findOne({ phone: phone });
+        const saved_data = await user.findOne({ email: email });
         if (saved_data == null) {
             res.status(404).send();
         }
@@ -30,7 +30,7 @@ const login = (async (req, res) => {
                 const pipe = [
                     {
                         $match: {
-                            phone: phone
+                            email: email
                         }   
                     },
                     {
