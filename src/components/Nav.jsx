@@ -30,7 +30,12 @@ function Nav() {
         });
         event.target.classList.add('specialClass');
     };
-
+    const authToken = localStorage.getItem('authToken')
+    // console.log(authToken)
+    const clearLocalStorage =()=>{
+        localStorage.clear()
+        navigate('/')
+    }
     // Set initial underline based on the current location
     useEffect(() => {
         const nav_links = document.querySelectorAll('.nav-link');
@@ -120,7 +125,8 @@ function Nav() {
                                 </Link>
                             </li>
                         </ul>
-                        <div className='d-flex me-5'>
+                        
+                        {!authToken && <div className='d-flex me-5'>
                             <button
                                 onClick={routeToSignup}
                                 className='nav-button text-white me-3'
@@ -133,7 +139,16 @@ function Nav() {
                             >
                                 Sign In
                             </button>
-                        </div>
+                        </div>}
+                        {authToken && <div className='d-flex me-5'>
+                            
+                            <button
+                                onClick={clearLocalStorage}
+                                className='nav-button text-white'
+                            >
+                                Sign Out
+                            </button>
+                        </div>}
                     </div>
                 </div>
             </nav>
