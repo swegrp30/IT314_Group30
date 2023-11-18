@@ -28,6 +28,7 @@ import { useParams } from 'react-router-dom';
 import Chart from './Chart';
 import ErrorPage from './ErrorPage';
 import Loader from './Loader';
+import Notes from './Notes';
 
 const CoinDetails = () => {
     const params = useParams();
@@ -184,6 +185,8 @@ const CoinDetails = () => {
                     </Box>
                 </>
             )}
+
+            <Notes />   
         </Container>
     );
 };
@@ -197,15 +200,5 @@ const Item = ({ title, value }) => (
     </HStack>
 );
 
-const CustomBar = ({ high, low }) => (
-    <VStack w={'full'}>
-        <Progress value={50} colorScheme={'teal'} w={'full'} />
-        <HStack justifyContent={'space-between'} w={'full'}>
-            <Badge children={low} colorScheme={'red'} />
-            <Text fontSize={'sm'}>24H Range</Text>
-            <Badge children={high} colorScheme={'green'} />
-        </HStack>
-    </VStack>
-);
 
 export default CoinDetails;
