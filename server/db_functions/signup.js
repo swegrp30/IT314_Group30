@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const otpGenerator = require('otp-generator')
 const { v4: uuidv4 } = require('uuid');
-
+const jwt = require('jsonwebtoken');
 
 // models
 const user = require("../models/user");
@@ -49,8 +49,21 @@ const user_signup = async (req, res) => {
             const save = await new_user.save()
                 .then(async () => {
                     const x = await user.find({ email: data.email });
+                    const token = jwt.sign(
+                        {
+                            email: x.email,
+                            username:x.username
+                        },
+                        process.env.JWT_KEY,
+                        {
+                            expiresIn: "5h"
+                        }
+                    )
                     console.log("SAVED");
-                    res.status(200).send(x);
+                    res.status(200).send({
+                        user: x,
+                        token: token
+                    });
                 }).catch((e) => {
                     console.log("THIS IS ERROR FROM signup.js file");
                     console.log(e);
