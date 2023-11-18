@@ -178,14 +178,6 @@ const CoinDetails = () => {
                         ))}
                     </HStack>
 
-                    <Slider min={0} max={7} step={1} onChange={switchChartStats}>
-                        <SliderTrack>
-                            <SliderFilledTrack />
-                        </SliderTrack>
-                        <SliderThumb boxSize={6}>
-                            <Box color="tomato" />
-                        </SliderThumb>
-                    </Slider>
 
                     <Box width={'full'} borderWidth={1}>
                         <Chart arr={chartArray} days={days} />
