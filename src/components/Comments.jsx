@@ -16,12 +16,11 @@ const Comments = () => {
         'auth-token': token,
         
       }
-  const [data,setData] = useState({comment:"This is a good boy",company:'SBI',username:'dbxop'})
   const handleAdd = async (e)=>{
     
     // console.log(data)
     // console.log(data.comment)
-    const res = await axios.post('http://localhost:7000/addComments',{comment:data.comment,company:'SBI',username:'dbxop'},{headers:headers})
+    const res = await axios.post('http://localhost:7000/addComments',{comment:comments,company:'SBI',username:'dbxop'},{headers:headers})
     console.log(res.status)
   }
   return (
