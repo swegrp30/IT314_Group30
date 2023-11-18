@@ -57,20 +57,21 @@ function NewsDetail() {
 
 
     return (
-        <HStack width={"full"} padding={"1"}>
-            <VStack width="60%" paddingRight="4rem" marginTop={'-250'} >
-                <Heading color="#962B92" paddingBottom="20" p={'20'}>
+        <HStack width={'96%'} padding={"1"} border={'4px'} margin={'10'} shadow={'dark-lg'} borderRadius={'20'} marginBottom={'-10'} alignItems={'center'}  >
+            <VStack width="60%" paddingRight="3rem"  >
+                <Heading color="#962B92" paddingBottom="10"  textAlign={'center'} fontFamily={'inherit'}  >
                     {article.title}
+                    
                 </Heading>
                 <img
                     src={article.urlToImage}
                     alt={article.title}
                     style={{ maxWidth: "100%", maxHeight: "300px" }}
                 />
-                <Text pl={'10'} paddingTop="5">{article.description}</Text>
+                <Text pl={'10'} paddingTop="4" fontSize={'2xl'}>{article.description}</Text>
                 {/* You can display other details of the article here */}
             </VStack>
-            <VStack width="40%" paddingLeft="4rem" pt={'20'}>
+            <VStack width="45%"  textAlign={'center'}>
                 <LatestNews />
             </VStack>
         </HStack>

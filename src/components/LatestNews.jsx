@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { VStack, HStack, Heading, Box, Text, Stack, Divider } from "@chakra-ui/react";
+import { VStack, HStack, Heading, Box, Text, Stack, Divider, Container } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link, Route, BrowserRouter, Routes } from "react-router-dom";
@@ -39,32 +39,38 @@ export const LatestNews = () => {
 
     return (
         <>
-            <Heading as="h1" size="lg" fontWeight="bold" top={'0'} >
-                Latest News
-            </Heading>
+            <Container borderLeft={'2px'} pl={'10'}  >
 
-            <Box position={'relative'} overflow={'scroll'} h={'70vh'}>
-            {rightNews.map((article, index) => (
-                <HStack key={index} >
-                    <Link to={`/news/${article.title}`}>
-                        <HStack className="border-b-2 border-purple-700 pb-4">
-                            <img
-                                src={article.urlToImage}
-                                alt={article.title}
-                                style={{ width: "100px", height: "100px" }}
+                <Heading as="h1" size="lg" fontWeight="bold" top={'0'} marginTop={'10'} borderBottom={'2px'}  paddingBottom={'5'} textAlign={'center'}>
+                    Latest News
+                </Heading>
+               
 
-                            />
+                <Box position={'relative'} overflow={'scroll'} h={'70vh'}  mt={'5'}>
+                    {rightNews.map((article, index) => (
+                        <HStack key={index} >
+                            <Link to={`/news/${article.title}`}>
+                                <HStack className="border-b-2 border-purple-700 pb-4">
+                                    <img
+                                        src={article.urlToImage}
+                                        alt={article.title}
+                                        style={{ width: "100px", height: "100px" }}
 
-                            <Text textColor={'black'} fontSize={'md'}>
-                                {article.title}
-                            </Text>
-                        </HStack >
-                    </Link>
-                </HStack>
-            ))}
+                                    />
 
-            </Box>
-            
+                                    <Text textColor={'black'} fontSize={'md'}>
+                                        {article.title}
+                                    </Text>
+                                </HStack >
+                            </Link>
+                        </HStack>
+                    ))}
+
+                </Box>
+
+            </Container>
+
+
         </>
     )
 }

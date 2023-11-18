@@ -44,7 +44,7 @@ function News() {
                     <Loader />
                 ) : (
 
-                    <HStack spacing="24px" align="top" padding='10'>
+                    <HStack spacing="24px" align="top" padding='10' border={'4px'} margin={'10'} marginBottom={'-10'} borderRadius={'20'} shadow={'dark-lg'}>
                         <VStack spacing="24px" align="top" width="60%" paddingRight='16'>
                             {/* News Carousel */}
                             <Carousel showThumbs={false} infiniteLoop autoPlay interval={3000}>
