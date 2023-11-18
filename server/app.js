@@ -7,10 +7,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors({
-    origin:"http://127.0.0.1:3000",
-    // credentials:true
-}))
+app.use(cors())
 
 
 require("./connection/conection");
