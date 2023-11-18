@@ -129,10 +129,9 @@ const Signup = () => {
           </form>
           <div className="pt-3">
             Already have account?
-            <span className="colorChange" onClick={() => navigate("/login")}>
-              {" "}
-              Log in
-            </span>
+            <button className="colorChange" onClick={() => navigate("/login")}>
+              <p> &nbsp; Log in</p>
+            </button>
           </div>
         </div>
       </div>
