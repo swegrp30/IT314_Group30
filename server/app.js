@@ -61,7 +61,7 @@ app.post("/signup",signup);
 
 app.post("/otp_verification",otp_verification);
 
-app.get("/login",login);
+app.post("/login",login);
 
 app.post("/add-fav",auth,addFavourite);
 

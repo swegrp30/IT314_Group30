@@ -9,15 +9,16 @@ const user = require("../models/user");
 const { default: isEmail } = require("validator/lib/isEmail");
 
 const all = require("../mailer/mailer")
-const email = all.login;
+const mail = all.login;
 
 const login = (async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
     try {
-
+        console.log(req.body)
         const saved_data = await user.findOne({ email: email });
+        console.log(saved_data)
         if (saved_data == null) {
             res.status(404).send();
         }
@@ -48,7 +49,7 @@ const login = (async (req, res) => {
                 
                 
                 // Mailing 
-                email(aggrigated_obj.name,aggrigated_obj.username,aggrigated_obj.email);
+                mail(aggrigated_obj.name,aggrigated_obj.username,aggrigated_obj.email);
                 
                 // Generating Cookies
                 const token = jwt.sign(
