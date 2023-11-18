@@ -9,7 +9,7 @@ function Nav() {
     const location = useLocation();
 
     const routeToSignup = () => {
-        navigate('/signup');
+        navigate('/signupwithemail');
     };
     const routeToHome = () => {
         navigate('/');

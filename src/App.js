@@ -18,9 +18,12 @@ import Profile from './components/Profile';
 import Changepassword from './components/Changepassword';
 import Forgotpassword from './components/ForgotPassword';
 import Wishlist from './components/Wishlist';
+import Signupemail from './components/Signupemail'
+import UserState from './Context/UserState'
 
 function App() {
   return (
+    <UserState>
     <Router>
       <ShowNavbar>
       <Nav />
@@ -39,12 +42,14 @@ function App() {
         <Route path='/share/:id' element={<ShareDetails  />} />
         <Route path='/changePassword' element={<Changepassword  />}/>
         <Route path='/forgotPassword' element={<Forgotpassword  />}/>
+        <Route path='/signupwithemail' element={<Signupemail />} />
 
       </Routes>
       <ShowFooter>
       <Footer />
       </ShowFooter>
     </Router>
+    </UserState>
   );
 }
 
