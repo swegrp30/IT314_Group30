@@ -117,7 +117,7 @@ const handleChange =(e)=>{
           </form>
           <div className="pt-3">
             Don't have an account?
-            <button className="colorChange" onClick={() => navigate("/signup")}>
+            <button className="colorChange" onClick={() => navigate("/signupwithemail")}>
               <p> &nbsp; Sign Up</p>
             </button>
           </div>
