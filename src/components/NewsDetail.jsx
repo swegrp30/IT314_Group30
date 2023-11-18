@@ -1,4 +1,4 @@
-import { HStack, VStack, Text, Heading } from "@chakra-ui/react";
+import { HStack, VStack, Text, Heading,Divider} from "@chakra-ui/react";
 import { LatestNews } from "./LatestNews";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -70,7 +70,6 @@ function NewsDetail() {
                 <Text pl={'10'} paddingTop="5">{article.description}</Text>
                 {/* You can display other details of the article here */}
             </VStack>
-
             <VStack width="40%" paddingLeft="4rem" pt={'20'}>
                 <LatestNews />
             </VStack>

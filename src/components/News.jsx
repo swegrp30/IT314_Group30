@@ -12,8 +12,8 @@ function News() {
 
     const leftleftNews = news.slice(0, 3);
     const leftrightNews = news.slice(3, 6);
-    const rightNews = news.slice(6, 12);
-    const carouselNews = news.slice(15, 20);
+    const rightNews = news.slice(6, 20);
+    const carouselNews = news.slice(2, 5);
 
     const api = async () => {
         try {
@@ -60,7 +60,6 @@ function News() {
 
                                             <Text
                                                 className="TextNoDecoration"
-                                                fontWeight="bold"
                                                 textColor="black"
                                                 style={{
                                                     maxLines: 3,
@@ -89,7 +88,6 @@ function News() {
 
                                                 <Text
                                                     className="TextNoDecoration"
-                                                    fontWeight="bold"
                                                     textColor="black"
                                                     style={{
                                                         maxLines: 3,
@@ -115,7 +113,6 @@ function News() {
 
                                                 <Text
                                                     className="TextNoDecoration"
-                                                    fontWeight="bold"
                                                     textColor="black"
                                                     style={{
                                                         maxLines: 3,
