@@ -46,11 +46,12 @@ export const LatestNews = () => {
                 </Heading>
                
 
-                <Box position={'relative'} overflow={'scroll'} h={'70vh'}  mt={'5'}>
+                <Box position={'relative'} overflow={'scroll'} h={'130vh'}  mt={'5'} w={'100'} >
                     {rightNews.map((article, index) => (
-                        <HStack key={index} >
+                        <HStack key={index}  >
                             <Link to={`/news/${article.title}`}>
-                                <HStack className="border-b-2 border-purple-700 pb-4">
+                                <Box borderBottom={'2px'} borderColor={'rgb(172, 0, 172)'} p={'1'} >
+                                <HStack  m={'1'}  >
                                     <img
                                         src={article.urlToImage}
                                         alt={article.title}
@@ -62,6 +63,7 @@ export const LatestNews = () => {
                                         {article.title}
                                     </Text>
                                 </HStack >
+                                </Box>
                             </Link>
                         </HStack>
                     ))}

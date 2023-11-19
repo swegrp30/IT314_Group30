@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { VStack, HStack, Heading, Text } from "@chakra-ui/react";
+import { VStack, HStack, Heading, Text, Container, Box } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link, Route, Routes } from "react-router-dom";
@@ -10,9 +10,8 @@ function News() {
     const [news, setNews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const leftleftNews = news.slice(0, 3);
-    const leftrightNews = news.slice(3, 6);
-    const rightNews = news.slice(6, 20);
+    const leftleftNews = news.slice(0, 10);
+    const rightNews = news.slice(11, 20);
     const carouselNews = news.slice(2, 5);
 
     const api = async () => {
@@ -54,7 +53,7 @@ function News() {
                                             <img
                                                 src={article.urlToImage}
                                                 alt={article.title}
-                                                style={{ width: "auto", height: "200px" }}
+                                                style={{ width: "auto", height: "250px" }}
 
                                             />
 
@@ -75,7 +74,7 @@ function News() {
                             </Carousel>
 
                             <HStack>
-                                <VStack pr={"10"} top={"0"} width="100%" align="flex-start" className="HStackBorderBottom">
+                                {/* <VStack pr={"10"} top={"0"} width="100%" align="flex-start" className="HStackBorderBottom">
                                     {leftleftNews.map((article, index) => (
 
                                         <Link to={`/news/${article.title}`}>
@@ -125,12 +124,36 @@ function News() {
                                             </HStack>
                                         </Link>
                                     ))}
-                                </VStack>
+                                </VStack> */}
+
+<Box h="100vh" display="flex" flexWrap="wrap" justifyContent="space-between" overflow={'scroll'}>
+    {leftleftNews.map((article, index) => (
+        <Container key={index} p={4} borderWidth="1px" borderRadius="md" maxW={'48%'} mb={2} >
+            <Link to={`/news/${article.title}`} style={{ textDecoration: 'none' }}>
+                <Box>
+                    <img
+                        src={article.urlToImage}
+                        alt={article.title}
+                        style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: 'md' }}
+                    />
+                </Box>
+                <Box mt={2}>
+                    <Text textColor={'black'} fontSize={'md'} fontWeight="bold">
+                        {article.title}
+                    </Text>
+                </Box>
+            </Link>
+        </Container>
+    ))}
+</Box>
+
+
                             </HStack>
                         </VStack>
                         <VStack
                             align="top"
                             width="40%"
+                            h={'100vh'}
                         >
                             <LatestNews />
                         </VStack>
