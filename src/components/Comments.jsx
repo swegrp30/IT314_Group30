@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-const Comments = () => {
+const Comments = async () => {
   const [comments, setComments] = useState();
   const handleChange = (e) => {
     // 👇️ access textarea value
