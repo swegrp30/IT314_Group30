@@ -4,23 +4,23 @@ const Comments = () => {
   const [comments, setComments] = useState();
   const handleChange = (e) => {
     // 👇️ access textarea value
-    setComments( e.target.value );
+    setComments(e.target.value);
     // console.log(e.target.value);
   };
-  
   const token = localStorage.getItem('authToken')
-        // console.log(token)
+  // console.log(token)
 
-      const headers = {
-        'Content-Type': 'application/json',
-        'auth-token': token,
-        
-      }
-  const handleAdd = async (e)=>{
-    
+  const headers = {
+    'Content-Type': 'application/json',
+    'auth-token': token,
+
+  }
+
+  const handleAdd = async (e) => {
+
     // console.log(data)
     // console.log(data.comment)
-    const res = await axios.post('http://localhost:7000/addComments',{comment:comments,company:'SBI',username:'dbxop'},{headers:headers})
+    const res = await axios.post('http://localhost:7000/addComments', { comment: comments, company: 'SBI', username: 'dbxop' }, { headers: headers })
     console.log(res.status)
   }
   return (
