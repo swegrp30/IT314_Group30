@@ -4,9 +4,9 @@ const user = require("../models/user");
 const { response } = require("express");
 
 const getuser = (async (req, res) => {
-    const data = req.body;
+    const data = req.userdata;
     // console.log(data);
-    const obj = await user.find({ username: data.username });
+    const obj = await user.find({ username: data.email });
     if (obj == null) {
         res.status(404).send();
     }
