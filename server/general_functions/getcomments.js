@@ -8,7 +8,7 @@ const comments = require("../models/comments");
 
 const getcomments = (async (req, res) => {
     const data = req.body;
-    console.log(data);
+    // console.log(data);
     const obj = await comments.find({ company: data.company });
     if (obj == null) {
         res.status(404).send();
