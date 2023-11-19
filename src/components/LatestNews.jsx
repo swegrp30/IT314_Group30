@@ -50,7 +50,7 @@ export const LatestNews = () => {
                     {rightNews.map((article, index) => (
                         <HStack key={index}  >
                             <Link to={`/news/${article.title}`}>
-                                <Box borderBottom={'2px'} borderColor={'rgb(172, 0, 172)'} p={'1'} >
+                                <Box borderBottom={'2px'}  p={'1'} >
                                 <HStack  m={'1'}  >
                                     <img
                                         src={article.urlToImage}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { VStack, HStack, Heading, Text, Container, Box } from "@chakra-ui/react";
+import { VStack, HStack, Heading, Text, Container, Box, Divider } from "@chakra-ui/react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link, Route, Routes } from "react-router-dom";
@@ -72,80 +72,30 @@ function News() {
                                     </div>
                                 ))}
                             </Carousel>
-
+                                
+                            <Divider orientation="horizontal" borderColor='black' borderWidth="2px" my={4} />
                             <HStack>
-                                {/* <VStack pr={"10"} top={"0"} width="100%" align="flex-start" className="HStackBorderBottom">
+
+                                <Box h="100vh" display="flex" flexWrap="wrap" justifyContent="space-between" overflow={'scroll'}>
                                     {leftleftNews.map((article, index) => (
-
-                                        <Link to={`/news/${article.title}`}>
-                                            <HStack borderBottomWidth="2" borderBottomColor="purple.700" paddingBottom="4" >
-                                                <img
-                                                    src={article.urlToImage}
-                                                    alt={article.title}
-                                                    style={{ width: "100px", height: "100px" }}
-                                                />
-
-                                                <Text
-                                                    className="TextNoDecoration"
-                                                    textColor="black"
-                                                    style={{
-                                                        maxLines: 3,
-                                                        overflow: "hidden",
-                                                        textOverflow: "ellipsis",
-                                                    }}
-                                                >
-                                                    {article.title}
-                                                </Text>
-                                            </HStack>
-                                        </Link>
+                                        <Container key={index} p={4} borderWidth="2px" borderRadius="md" maxW={'48%'} mb={2} borderColor={'black'} >
+                                            <Link to={`/news/${article.title}`} style={{ textDecoration: 'none' }}>
+                                                <Box>
+                                                    <img
+                                                        src={article.urlToImage}
+                                                        alt={article.title}
+                                                        style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: 'md' }}
+                                                    />
+                                                </Box>
+                                                <Box mt={2}>
+                                                    <Text textColor={'black'} fontSize={'md'} fontWeight="bold">
+                                                        {article.title}
+                                                    </Text>
+                                                </Box>
+                                            </Link>
+                                        </Container>
                                     ))}
-                                </VStack>
-                                <VStack top={"0"} pl={"10"} width="100%" className="HStackBorderBottom">
-                                    {leftrightNews.map((article, index) => (
-                                        <Link to={`/news/${article.title}`}>
-                                            <HStack borderBottomWidth="2" borderBottomColor="purple.700" paddingBottom="4">
-                                                <img
-                                                    src={article.urlToImage}
-                                                    alt={article.title}
-                                                    style={{ width: "100px", height: "100px" }}
-                                                />
-
-                                                <Text
-                                                    className="TextNoDecoration"
-                                                    textColor="black"
-                                                    style={{
-                                                        maxLines: 3,
-                                                        overflow: "hidden",
-                                                        textOverflow: "ellipsis",
-                                                    }}
-                                                >
-                                                    {article.title}
-                                                </Text>
-                                            </HStack>
-                                        </Link>
-                                    ))}
-                                </VStack> */}
-
-<Box h="100vh" display="flex" flexWrap="wrap" justifyContent="space-between" overflow={'scroll'}>
-    {leftleftNews.map((article, index) => (
-        <Container key={index} p={4} borderWidth="1px" borderRadius="md" maxW={'48%'} mb={2} >
-            <Link to={`/news/${article.title}`} style={{ textDecoration: 'none' }}>
-                <Box>
-                    <img
-                        src={article.urlToImage}
-                        alt={article.title}
-                        style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: 'md' }}
-                    />
-                </Box>
-                <Box mt={2}>
-                    <Text textColor={'black'} fontSize={'md'} fontWeight="bold">
-                        {article.title}
-                    </Text>
-                </Box>
-            </Link>
-        </Container>
-    ))}
-</Box>
+                                </Box>
 
 
                             </HStack>
