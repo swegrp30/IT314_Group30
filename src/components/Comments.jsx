@@ -1,31 +1,53 @@
 import React, { useState } from "react";
 import axios from "axios";
-const Comments = () => {
+const Comments = async () => {
   const [comments, setComments] = useState();
+  const [company_coms, setComs] = useState({});
   const handleChange = (e) => {
     // 👇️ access textarea value
-    setComments( e.target.value );
+    setComments(e.target.value);
     // console.log(e.target.value);
   };
-  
   const token = localStorage.getItem('authToken')
-        // console.log(token)
+  // console.log(token)
 
-      const headers = {
-        'Content-Type': 'application/json',
-        'auth-token': token,
-        
-      }
-  const handleAdd = async (e)=>{
-    
+  const headers = {
+    'Content-Type': 'application/json',
+    'auth-token': token,
+
+  }
+  
+  const res = await axios.post('http://localhost:7000/getComments', {
+    company: 'SBI'
+  },{headers:headers})
+  setComs(res.obj)
+
+  const handleAdd = async (e) => {
+
     // console.log(data)
     // console.log(data.comment)
-    const res = await axios.post('http://localhost:7000/addComments',{comment:comments,company:'SBI',username:'dbxop'},{headers:headers})
+    const res = await axios.post('http://localhost:7000/addComments', { comment: comments, company: 'SBI', username: 'dbxop' }, { headers: headers })
     console.log(res.status)
   }
   return (
     <div>
       <section>
+      {company_coms.map((noteItem, index) => {
+        return (
+          <div className="container my-5 py-5">
+          <div className="row d-flex justify-content-center">
+            <div className="col-md-12 col-lg-10 col-xl-8">
+              <div className="card">
+                <div className="card-footer py-3 border-0">
+                  <div className="d-flex flex-column flex-start w-100">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        )})}
         <div className="container my-5 py-5">
           <div className="row d-flex justify-content-center">
             <div className="col-md-12 col-lg-10 col-xl-8">
