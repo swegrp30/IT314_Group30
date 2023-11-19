@@ -26,62 +26,38 @@ function Profile() {
 
         <div className="right-box">
             <div className='r_profile'>
-                    <button className='r_profile_btn1'> My Profile </button>
-                    <button className='r_profile_btn2' onClick={()=>navigate('/changePassword')}> Change Password </button>
+                    <button className='r_profile_btn1' style={{ textDecoration: 'underline' }}> My Profile </button>
+                    <button className='r_profile_btn1' onClick={()=>navigate('/changePassword')}> Change Password </button>
             </div>
+
             <div className='r'>
+            <form className="form-edit row g-3 mt-3">
                 <div className='right_name1'>
-                    <div className='rmain1'>
-                        <div className='r1'>Name</div>
-                        <input className='input_box' type="name" name="Name" />
-                    </div>
-                   
-                    <div className='rmain1'>
-                        <div className='r1'>DOB</div>
-                        <input className='input_box' type="date" name="DOB"/>
-                    </div>
-                    <div className='rmain1'>
-                        <div className='r1'>Mobile Number</div>
-                        <input className='input_box' type="number" name="MobileNo" />
-                    </div>
-
-                    <div className='rmain1'>
-                        <div className='r1'>State</div>
-                        <input className='input_box' />
-                    </div>
-
-                    <div className='rmain1'>
-                        <div className='r1'>Pin Code</div>
-                        <input className='input_box' />
-                    </div>
-
-                </div>
+                    <div class="col-md-5"><label class="labels">Name</label><input type="text" class="form-control" placeholder="Name" value=""/></div>
+                    <div class="col-md-5"><label class="labels">Email</label><input type="email" class="form-control" value="" placeholder="Email"/></div>
+               </div>
                 <div className='right_name1'>
-                    <div className='rmain1'>
-                        <div className='r1'>Email</div>
-                        <input className='input_box' />
-                    </div>
-                   
-                    <div className='rmain1'>
-                        <div className='r1'>Gender</div>
-                        <input className='input_box' />
-                    </div>
-                    <div className='rmain1'>
-                        <div className='r1'>Country</div>
-                        <input className='input_box' />
-                    </div>
+                    <div class="col-md-5"><label class="labels">DOB</label><input type="date" class="form-control" placeholder="DOB" value=""/></div>
+                    <div class="col-md-5"><label class="labels">Gender</label><input type="gender" class="form-control" value="" placeholder="Gender"/></div>
+               </div>
 
-                    <div className='rmain1'>
-                        <div className='r1'>City</div>
-                        <input className='input_box' />
-                    </div>
+                <div className='right_name1'>
+                    <div class="col-md-5"><label class="labels">Mobile Number</label><input type="number" class="form-control" placeholder="Mobile Number" value=""/></div>
+                    <div class="col-md-5"><label class="labels">Country</label><input type="text" class="form-control" value="" placeholder="Country"/></div>
+               </div>
 
-                    <div className='rmain1'>
-                        <div className='r1'>Occupation</div>
-                        <input className='input_box' />
-                    </div>
-                </div>
+                <div className='right_name1'>
+                    <div class="col-md-5"><label class="labels">State</label><input type="text" class="form-control" placeholder="State" value=""/></div>
+                    <div class="col-md-5"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="City"/></div>
+               </div>
+
+                <div className='right_name1'>
+                    <div class="col-md-5"><label class="labels">Pin Code</label><input type="text" class="form-control" placeholder="first name" value=""/></div>
+                    <div class="col-md-5"><label class="labels">Occupation</label><input type="text" class="form-control" value="" placeholder="Occupation"/></div>
+               </div>
+            </form>
             </div>
+
         </div> 
         
     </div>

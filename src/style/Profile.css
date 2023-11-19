@@ -96,6 +96,17 @@
 }
 
 
+
+.r_profile_btn1, .r_profile_btn2{
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 42px */
+  letter-spacing: -0.56px;
+}
+
 .r_profile,.r_cp{
   color: #000;
   font-family: 'Poppins', sans-serif;
@@ -109,24 +120,25 @@
   justify-content: left;
   margin-bottom: 4.0625rem;
   display: flex;
+  justify-content: space-between;
 }
 
 
 
-.r_profile_btn2 {
+/* .r_profile_btn2 {
     border-radius: 15px;
     background-color: rgb(172, 0, 172);
     font-weight: bold;
     padding: 4px 11px;
     /* margin-left: 30px; */
-    font-weight: bold;
+    /* font-weight: bold;
     margin-left: 50px; 
     font-size: 1.2rem;
     color: #FFF;
-}
+} */ 
 
 .r{
-  display: flex;
+  /* display: flex; */
   color: #000;
   font-family: 'Poppins',sans-serif;
   font-size: 1.125rem;
@@ -134,7 +146,7 @@
   font-weight: 600;
   line-height: 150%; /* 27px */
   letter-spacing: -0.0225rem;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   
 }
 
@@ -157,6 +169,8 @@
   margin-left: 5rem;
   margin-right: 5rem;
   justify-content: left;
+  display: flex;
+  justify-content: space-between;
 }
 
 .rmain1{

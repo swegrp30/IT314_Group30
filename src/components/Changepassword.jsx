@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Tour from "../Images/Tour.jpg";
 // import "../style/Profile.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import axios
  from "axios";
+ import { useNavigate } from 'react-router-dom';
 function Changepassword() {
   const [password, setPassword] = useState({
     oldPass: "",
@@ -52,12 +54,13 @@ function Changepassword() {
       const res = await axios
           .post("http://localhost:7000/changePassword",{oldPass:password.oldPass,newPass:password.newPass}, {headers:headers})
        console.log(res.status)   
-       toast.success("Password changed sucessfully")
-
-
+       toast.success("Password changed sucessfully");
+          
     }
   };
+  const navigate = useNavigate();
   return (
+    
     <div className="container-box">
       <div className="left-box">
         <img src={Tour} className="photo" />
@@ -68,7 +71,10 @@ function Changepassword() {
       </div>
 
       <div className="right-box container mx-auto">
-        <div className="r_cp">Change Password</div>
+            <div className='r_profile'>
+                    <button className='r_profile_btn1' onClick={()=>navigate('/Profile')} > My Profile </button>
+                    <button className='r_profile_btn1' style={{ textDecoration: 'underline' }}> Change Password </button>
+            </div>
         <div className="rc">
           <form className="form-edit row g-3 mt-3">
             <div className="mb-3">
@@ -112,7 +118,11 @@ function Changepassword() {
                 type="submit"
                 className="btn btn-primary"
                 onClick={handleSubmit}
+                
               >
+              
+                
+                
                 Change Password
               </button>
             </div>
