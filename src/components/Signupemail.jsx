@@ -9,8 +9,9 @@ import UserContext from "../Context/UserContext";
 import Signup from "./Signup";
 //import {FcGoogle} from 'react-icons/fc';
 import axios from "axios";
-
+import { HStack } from "@chakra-ui/layout";
 import React from "react";
+import Timer from "./Timer";
 
 const Signupemail = () => {
     const context = useContext(UserContext);
@@ -21,12 +22,24 @@ const Signupemail = () => {
     otp: "",
   });
 
+  const [showTimer, setShowTimer] = useState(false);
+  const [showResend, setResend] = useState(false);
+
+
+
+
+  const handleTimerComplete = () => {
+    setShowTimer(false);
+    setResend(true);
+    
+  };
+
   const navigate = useNavigate();
 
   const handleSendOTP = async (e) => {
     e.preventDefault();
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
+    setShowTimer(true);
     if (!regex.test(form?.email)) {
       toast.error("Invalid Email");
     } else {
@@ -57,6 +70,7 @@ const Signupemail = () => {
   };
   const handleResubmit = async(e)=>{
     e.preventDefault()
+    setShowTimer(true);
     try {
         const res = await axios.post("http://localhost:7000/verifyEmail", {
           email: form.email,
@@ -75,6 +89,10 @@ const Signupemail = () => {
   }
 }
   const handleVerifyOTP = async(e) => {
+
+    
+
+
     e.preventDefault();
     if (!form.otp) {
         toast.error("OTP is required");
@@ -152,6 +170,7 @@ const Signupemail = () => {
                   type="submit"
                   className="btn btn-primary"
                   onClick={handleSendOTP}
+                  
                 >
                   Send OTP
                 </button>
@@ -170,6 +189,7 @@ const Signupemail = () => {
                 />
               </div>
               <div className="col-md-6 mt-3">
+                <HStack>
                 <button
                   type="submit"
                   className="btn btn-primary"
@@ -177,18 +197,25 @@ const Signupemail = () => {
                 >
                   Verify OTP
                 </button>
+                {showTimer && <Timer onComplete={handleTimerComplete} />}
+
+                </HStack>
+
+                
               </div>
               <div className="pt-3">
-            
-            <span className="colorChange" onClick={handleResubmit}>
+            {
+              showResend && <span className="colorChange " style={{ cursor: 'pointer'}} onClick={handleResubmit} >
               Resend OTP
             </span>
+            }
+            
           </div>
             </div>
           </form>
           <div className="pt-3">
             Already have account?
-            <span className="colorChange" onClick={() => navigate("/login")}>
+            <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/login")}>
               {" "}
               Log in
             </span>
