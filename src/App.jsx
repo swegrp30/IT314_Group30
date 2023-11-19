@@ -22,37 +22,75 @@ import Wishlist from './components/Wishlist';
 import Signupemail from './components/Signupemail'
 import UserState from './Context/UserState'
 import ShowComments from './components/ShowComments';
+import Error401 from './components/Error401';
 
 function App() {
-  return (
-    <UserState>
-    <Router>
-      <ShowNavbar>
-      <Nav />
-      </ShowNavbar>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/news' element={<News />} />
-        <Route path='/news/:title' element={<NewsDetail />} />
-        <Route path='/wishlist' element={<Wishlist />} />
-        <Route path='/aboutus' element={<AboutUs />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/contactus' element={<ContactUs />} />
-        <Route path='/PriceAndAnalysis' element={<Share />} />
-        <Route path='/Profile' element={<Profile />} />
-        <Route path='/share/:id' element={<ShareDetails  />} />
-        <Route path='/changePassword' element={<Changepassword  />}/>
-        <Route path='/forgotPassword' element={<Forgotpassword  />}/>
-        <Route path='/signupwithemail' element={<Signupemail />} />
-        <Route path='/showcomments' element={<ShowComments />} />
+  const isAuthenticated = () => {
+    const authToken = localStorage.getItem('authToken');
+    return authToken !== null && authToken !== undefined;
+  };
 
-      </Routes>
-      <ShowFooter>
-      <Footer />
-      </ShowFooter>
-    </Router>
-    </UserState>
+  return (
+    <>
+
+      <UserState>
+        <Router>
+          {
+            isAuthenticated() ? (
+              <>
+                <ShowNavbar>
+                  <Nav />
+                </ShowNavbar>
+                <Routes>
+                  <Route path='/' element={<Home />} />
+                  <Route path='/news' element={<News />} />
+                  <Route path='/news/:title' element={<NewsDetail />} />
+                  <Route path='/wishlist' element={<Wishlist />} />
+                  <Route path='/aboutus' element={<AboutUs />} />
+                  <Route path='/login' element={<Login />} />
+                  <Route path='/signup' element={<Signup />} />
+                  <Route path='/contactus' element={<ContactUs />} />
+                  <Route path='/PriceAndAnalysis' element={<Share />} />
+                  <Route path='/Profile' element={<Profile />} />
+                  <Route path='/share/:id' element={<ShareDetails />} />
+                  <Route path='/changePassword' element={<Changepassword />} />
+                  <Route path='/forgotPassword' element={<Forgotpassword />} />
+                  <Route path='/signupwithemail' element={<Signupemail />} />
+                  <Route path='/showcomments' element={<ShowComments />} />
+
+                </Routes>
+                
+
+              </>
+            ) : (
+              <>
+              <ShowNavbar>
+                  <Nav />
+                </ShowNavbar>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/news/:title' element={<NewsDetail />} />
+                <Route path='/aboutus' element={<AboutUs />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/contactus' element={<ContactUs />} />
+            <Route path='/forgotPassword' element={<Forgotpassword />} />
+            <Route path='/signupwithemail' element={<Signupemail />} />
+            <Route path='/Profile' element={<Profile />} />
+            <Route path='/news' element={<News />} />
+            {/* <Route path='*' element={<Error401 />} /> */}
+            
+            </Routes>
+              </>
+            )
+          }
+          <ShowFooter>
+                  <Footer />
+                </ShowFooter>
+        </Router>
+      </UserState>
+
+    </>
   );
 }
 
