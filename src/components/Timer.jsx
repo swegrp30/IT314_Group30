@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const Timer = ({ onComplete }) => {
-    const [seconds, setSeconds] = useState(300); 
+    const [seconds, setSeconds] = useState(300);
+
     useEffect(() => {
         const timer = setInterval(() => {
             setSeconds(prevSeconds => (prevSeconds > 0 ? prevSeconds - 1 : 0));
@@ -9,7 +10,7 @@ const Timer = ({ onComplete }) => {
 
         if (seconds === 0) {
             clearInterval(timer);
-
+            onComplete();
         }
         return () => clearInterval(timer);
     }, [seconds, onComplete]);
