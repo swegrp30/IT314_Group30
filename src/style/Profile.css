@@ -107,6 +107,7 @@
   letter-spacing: -0.56px;
 }
 
+
 .r_profile,.r_cp{
   color: #000;
   font-family: 'Poppins', sans-serif;
@@ -120,7 +121,9 @@
   justify-content: left;
   margin-bottom: 4.0625rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap:20px;
+
 }
 
 
