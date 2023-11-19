@@ -39,9 +39,9 @@ export const LatestNews = () => {
 
     return (
         <>
-            <Container borderLeft={'2px'} pl={'10'}  >
+            <Container borderLeft={'4px'} pl={'20'}  pr={'-10'} >
 
-                <Heading as="h1" size="lg" fontWeight="bold" top={'0'} marginTop={'10'} borderBottom={'2px'}  paddingBottom={'5'} textAlign={'center'}>
+                <Heading as="h1" size="lg" fontWeight="bold" top={'0'} marginTop={'10'} borderBottom={'4px'}  paddingBottom={'5'} textAlign={'center'}>
                     Latest News
                 </Heading>
                
