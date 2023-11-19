@@ -73,7 +73,7 @@ app.post("/del-fav",auth,deleteFav);
 
 app.post("/addComments",auth,addComments);
 
-app.get("/getComments",auth,getComments);
+app.post("/getComments",auth,getComments);
 
 app.get("/myComments",auth,myComments);
 
