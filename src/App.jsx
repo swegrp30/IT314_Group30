@@ -21,6 +21,7 @@ import Forgotpassword from './components/ForgotPassword';
 import Wishlist from './components/Wishlist';
 import Signupemail from './components/Signupemail'
 import UserState from './Context/UserState'
+import ShowComments from './components/ShowComments';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
         <Route path='/changePassword' element={<Changepassword  />}/>
         <Route path='/forgotPassword' element={<Forgotpassword  />}/>
         <Route path='/signupwithemail' element={<Signupemail />} />
-        <Route path='/comments' element={<Comments />} />
+        <Route path='/showcomments' element={<ShowComments />} />
 
       </Routes>
       <ShowFooter>

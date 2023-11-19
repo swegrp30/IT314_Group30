@@ -15,7 +15,9 @@ const Comments =  () => {
     'auth-token': token,
 
   }
-
+  const handleClear=()=>{
+    setComments('')
+  }
   const handleAdd = async (e) => {
 
     // console.log(data)
@@ -26,8 +28,8 @@ const Comments =  () => {
   return (
     <div>
       <section>
-        <div className="container my-5 py-5">
-          <div className="row d-flex justify-content-center">
+        <div >
+          <div className="row d-flex justify-content-start">
             <div className="col-md-12 col-lg-10 col-xl-8">
               <div className="card">
                 <div className="card-footer py-3 border-0">
@@ -48,7 +50,7 @@ const Comments =  () => {
                     <button type="button" className="btn btn-primary  me-2 " onClick={handleAdd}>
                       Add comment
                     </button>
-                    <button type="button" className="btn btn-primary">
+                    <button type="button" className="btn btn-primary" onClick={handleClear}>
                       Clear
                     </button>
                   </div>
