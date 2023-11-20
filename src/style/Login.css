@@ -91,3 +91,7 @@
     background-color: #2D3748;
     border:none;
 }
+
+.form-control {
+   width:50%;
+}
