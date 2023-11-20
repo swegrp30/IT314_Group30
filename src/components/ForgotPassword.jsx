@@ -1,10 +1,11 @@
 import React from 'react';
-import '../style/Profile.css';
 import { useState } from 'react';
 import { Center } from '@chakra-ui/react';
 import axios from 'axios';
+import logo from '../Images/logo.png'
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+// import '../style/ForgotPassword.css'
 
 function Forgotpassword() {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ function Forgotpassword() {
         confirmPass: "",
         newPass: "",
 
-      });
+    });
     const [gotOTP, setGotOTP] = useState(false);
     const [gotEmail, setGotEmail] = useState(false);
     const [form, setEmail] = useState({
@@ -73,34 +74,34 @@ function Forgotpassword() {
     }
     const handlePass = async (e) => {
         e.preventDefault();
-         if(!password?.newPass){
+        if (!password?.newPass) {
             toast.error('New Password  is required')
-          }
-          else if(password?.newPass.length<4){
+        }
+        else if (password?.newPass.length < 4) {
             toast.error('New Password  of atleast 4 characters is required')
-          }
-          else if(password?.newPass.length>10){
+        }
+        else if (password?.newPass.length > 10) {
             toast.error('New Password  of atmost 10 characters is required')
-          }
-          else if(password.newPass != password.confirmPass){
+        }
+        else if (password.newPass != password.confirmPass) {
             toast.error('New password and confirm password should be same')
-          }
-          else{
-            try{
+        }
+        else {
+            try {
                 const res = await axios.post("http://localhost:7000/updatePassword", {
                     email: form.email,
                     newPass: password.newPass
                 });
 
-                if(res.status === 200){
+                if (res.status === 200) {
                     toast.success('Password changed succesfully')
-                    setInterval(()=>{
+                    setTimeout(() => {
                         navigate('/')
-                      },1000)
+                    }, 1000)
                 }
-                
+
             }
-            catch(err){
+            catch (err) {
                 if (err.response) {
                     // ✅ log status code here
                     console.log(err.response.status);
@@ -109,78 +110,105 @@ function Forgotpassword() {
                     console.log(err.response.data); // 👉️ {... response data here}
                 }
             }
-          }
+        }
     }
     return (
-        <div className="forgotPW">
-            <div className='r_cp'>
-                FORGOT PASSWORD
-
-            </div>
+        <div className="d-flex h-100 w-100  justify-content-center align-items-center">
             <ToastContainer />
-            <div className='rc'>
-                <div className='right_name1'>
-                    {!gotEmail && <>
-                        <div className='rmain1'>
-                            <div className='r1' align='center'>Email ID</div>
+            <div className="d-flex align-items-center justify-content-center">
+                <div className="d-flex align-items-center justify-content-center flex-column detailform">
+                    <div className="logo">
+                        <img src={logo} className="logo-main" alt="" />
+                    </div>
+                    <div className="text-medium text-black">Forgot Password</div>
+
+                    <form className="h-100 w-100 form-edit col justify-content-center align-items-center g-3 mt-5">
+                        {!gotEmail && <><div className="col-md-12 text-center">
+                            <label htmlFor="name" className="form-label">
+                                Email
+                            </label>
                             <input
                                 type="email"
-                                className="form-control mt-2"
+                                className="form-control"
                                 name="email"
-                                placeholder="Email"
+                                placeholder='Email'
                                 onChange={handleChange}
                             />
                         </div>
-                        <button className='r_profile_btn2 mt-3' onClick={handleSubmit}>
-                            Get OTP
-                        </button>
-                    </>}
+                            <div className="col-md-6 mt-3 text-center">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary mt-3"
+                                    onClick={handleSubmit}
+                                >
+                                    Send OTP
+                                </button>
 
-                    {gotEmail && !gotOTP && <>
-                        <div className='rmain1'>
-                            <div className='r1'>Enter OTP</div>
+                            </div>
+                        </>}
+
+                        {gotEmail&& !gotOTP&& <><div className="col-md-12 text-center">
+                            <label htmlFor="name" className="form-label">
+                                OTP
+                            </label>
                             <input
                                 type="number"
-                                className="form-control mt-2"
+                                className="form-control"
                                 name="otp"
-                                placeholder="Enter OTP"
+                                placeholder='OTP'
                                 onChange={handleChange}
                             />
                         </div>
-                        <button className='r_profile_btn2' onClick={handleOTP}>
-                            Submit
-                        </button>
-                    </>}
+                            <div className="col-md-6 mt-3 text-center">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary mt-3"
+                                    onClick={handleOTP}
+                                >
+                                    Submit
+                                </button>
 
-
-                    {gotOTP && <>
-                        <div className='rmain1'>
-                            <div className='r1'>New Password</div>
+                            </div>
+                        </>}
+                        {gotOTP && <>
+                        <div className="col-md-12 text-center">
+                            <label htmlFor="name" className="form-label text-lg">
+                                New Password
+                            </label>
                             <input
                                 type="password"
                                 className="form-control"
                                 name="newPass"
-                                placeholder="New Password"
+                                placeholder='New Password'
                                 onChange={handleChange}
                             />
                         </div>
-                        <div className='rmain1'>
-                            <div className='r1'>Confirm Password</div>
+                        <div className="col-md-12 text-center mt-3">
+                            <label htmlFor="name" className="form-label text-lg">
+                                Confirm Password
+                            </label>
                             <input
                                 type="password"
                                 className="form-control"
                                 name="confirmPass"
-                                placeholder="Confirm Password"
+                                placeholder='Confirm Password'
                                 onChange={handleChange}
                             />
                         </div>
-                        <button className='r_profile_btn2' onClick={handlePass}>
-                            Confirm
-                        </button>
-                    </>}
+                            <div className="col-md-6 mt-3 text-center">
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary mt-3"
+                                    onClick={handlePass}
+                                >
+                                    Confirm 
+                                </button>
+
+                            </div>
+                        </>}
+                    </form>
 
                 </div>
-
             </div>
         </div>
 
