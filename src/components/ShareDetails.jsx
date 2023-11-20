@@ -29,6 +29,8 @@ import Chart from './Chart';
 import ErrorPage from './ErrorPage';
 import Loader from './Loader';
 import Notes from './Notes';
+import Nav from './Nav';
+import Footer from './Footer';
 
 const CoinDetails = () => {
     const params = useParams();
@@ -107,6 +109,8 @@ const CoinDetails = () => {
     if (error) return <ErrorPage />;
 
     return (
+        <>
+        <Nav/>
         <Container maxW={'container.xl'}>
             {loading ? (
                 <Loader />
@@ -188,6 +192,8 @@ const CoinDetails = () => {
 
             <Notes />   
         </Container>
+        <Footer/>
+        </>
     );
 };
 

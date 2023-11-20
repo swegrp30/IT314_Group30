@@ -2,10 +2,13 @@ import React from 'react';
 import Tour from "../Images/Tour.jpg"
 import '../style/Profile.css';
 import { useNavigate } from 'react-router-dom';
-
+import Nav from './Nav';
+import Footer from './Footer';
 function Profile() {
     const navigate = useNavigate();
     return (
+        <>
+        <Nav/>
     <div className="container-box">
       <div className="left-box">
         <img src={Tour} className="photo"/>
@@ -61,6 +64,8 @@ function Profile() {
         </div> 
         
     </div>
+    <Footer/>
+    </>
     )
 }
 

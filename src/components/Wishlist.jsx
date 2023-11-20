@@ -26,6 +26,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/Wishlist.css';
 import ShareCard from './ShareCard';
+import Nav from './Nav';
+import Footer from './Footer';
 
 function Wishlist() {
     const [wishlist, setWishlist] = useState([{
@@ -101,6 +103,7 @@ function Wishlist() {
     };
 
     return (
+        <><Nav/>
         <div className="wishlist-container">
             <div className="wishlist-header">
                 <h2>Your Wishlist</h2>
@@ -172,6 +175,8 @@ function Wishlist() {
                 </div>
             )}
         </div>
+        <Footer/>
+        </>
     );
 }
 

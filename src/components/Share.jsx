@@ -14,6 +14,9 @@ import Loader from "./Loader";
 import ErrorPage from "./ErrorPage";
 import ShareCard from "./ShareCard";
 import "../style/Home.css";
+import Nav from "./Nav";
+import Footer from "./Footer";
+
 const Share = () => {
   const [Share, setShare] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -62,6 +65,9 @@ const Share = () => {
   if (error) return <ErrorPage />;
 
   return (
+    <>
+    <Nav/>
+    
     <Container maxW={"container.xl"}>
       {loading ? (
         <Loader />
@@ -115,6 +121,8 @@ const Share = () => {
         </>
       )}
     </Container>
+    <Footer/>
+    </>
   );
 };
 

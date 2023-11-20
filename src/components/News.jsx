@@ -5,6 +5,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link, Route, Routes } from "react-router-dom";
 import { NewsDetail } from "./NewsDetail.jsx";
 import { LatestNews } from "./LatestNews";
+import Nav from "./Nav.jsx";
+import Footer from "./Footer.jsx";
 import Loader from "./Loader.jsx";
 function News() {
     const [news, setNews] = useState([]);
@@ -38,11 +40,12 @@ function News() {
 
     return (
         <>
+        <Nav/>
             {
                 isLoading ? (
                     <Loader />
                 ) : (
-
+                    
                     <HStack spacing="24px" align="top" padding='10' border={'4px'} margin={'10'} marginBottom={'-10'} borderRadius={'20'} shadow={'dark-lg'}>
                         <VStack spacing="24px" align="top" width="60%" paddingRight='16'>
                             {/* News Carousel */}
@@ -110,6 +113,7 @@ function News() {
                     </HStack>
 
                 )}
+                <Footer/>
         </>
     );
 }

@@ -46,7 +46,7 @@ export const LatestNews = () => {
                 </Heading>
                
 
-                <Box position={'relative'} overflow={'scroll'} h={'130vh'}  mt={'5'} w={'100'} >
+                <Box position={'relative'} overflow={'scroll'} h={'140vh'}  mt={'5'} w={'100'} >
                     {rightNews.map((article, index) => (
                         <HStack key={index}  >
                             <Link to={`/news/${article.title}`}>
