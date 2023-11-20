@@ -64,9 +64,9 @@ function App() {
               </>
             ) : (
               <>
-              <ShowNavbar>
+              {/* <ShowNavbar>
                   <Nav />
-                </ShowNavbar>
+                </ShowNavbar> */}
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/news/:title' element={<NewsDetail />} />
