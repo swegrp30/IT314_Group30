@@ -111,7 +111,6 @@ const CoinDetails = () => {
 
     return (
         <>
-        <Nav/>
         <Container maxW={'container.xl'}>
             {loading ? (
                 <Loader />
@@ -193,7 +192,6 @@ const CoinDetails = () => {
 
             <Notes />   
         </Container>
-        <Footer/>
         </>
     );
 };
