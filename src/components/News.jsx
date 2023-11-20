@@ -40,7 +40,7 @@ function News() {
 
     return (
         <>
-        <Nav/>
+        
             {
                 isLoading ? (
                     <Loader />
@@ -113,7 +113,7 @@ function News() {
                     </HStack>
 
                 )}
-                <Footer/>
+                
         </>
     );
 }
