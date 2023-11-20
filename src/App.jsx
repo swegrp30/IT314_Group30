@@ -38,9 +38,7 @@ function App() {
           {
             isAuthenticated() ? (
               <>
-                {/* <ShowNavbar>
-                  <Nav />
-                </ShowNavbar> */}
+                
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/news' element={<News />} />
@@ -64,9 +62,7 @@ function App() {
               </>
             ) : (
               <>
-              {/* <ShowNavbar>
-                  <Nav />
-                </ShowNavbar> */}
+
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/news/:title' element={<NewsDetail />} />
@@ -84,9 +80,7 @@ function App() {
               </>
             )
           }
-          {/* <ShowFooter>
-                  <Footer />
-                </ShowFooter> */}
+
         </Router>
       </UserState>
 
