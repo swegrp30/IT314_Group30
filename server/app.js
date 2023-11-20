@@ -11,6 +11,7 @@ app.use(cors())
 
 
 require("./connection/conection");
+require("./connection/connect_ML_DB");
 
 
 
@@ -58,6 +59,20 @@ const verifyEmail = require("./db_functions/verifyEmail");
 
 
 
+// ML APIS
+
+const reliance = require("./ml_apis/reliance");
+
+
+
+
+
+
+
+
+// Routes
+
+
 
 app.post("/signup",signup);
 
@@ -89,7 +104,9 @@ app.post("/updatePassword",updatePassword);
 
 app.post("/verifyEmail",verifyEmail);
 
+// ML Routes
 
+app.get("/ml_data/reliance",reliance);
 
 
 app.post("/dlt",xxx);

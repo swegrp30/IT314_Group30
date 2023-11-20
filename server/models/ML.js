@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
+
 
 const subschema = mongoose.Schema({
-    Date: {
-        type: Date
+    date: {
+        type: Date,
+        required: true
+
     },
     value: {
-        type: Number
+        type: Number,
+        required: true
     }
 })
 
@@ -20,6 +25,6 @@ const schema = mongoose.Schema({
 
 
 
-const RELIANCENS_3 = mongoose.model("RELIANCE.NS_3",schema);
+const RELIANCENS_3 = mongoose.model("reliance",schema);
 
 module.exports = RELIANCENS_3;
