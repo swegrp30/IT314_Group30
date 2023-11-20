@@ -229,6 +229,13 @@ const Signupemail = () => {
               Log in
             </span>
           </div>
+          <div className="pt-3">
+            Go to
+            <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/")}>
+              {" "}
+              Home
+            </span>
+          </div>
         </div>
       </div>
     </div>

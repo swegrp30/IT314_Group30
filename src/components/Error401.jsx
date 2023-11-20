@@ -27,7 +27,9 @@ const Error401 = () => {
 
                   <p>the page you are looking for is Unauthorized!</p>
 
-                  <Link className="link_404" to='/login'>Go to Login</Link>
+                  <Link className="link_404" to='/login' style={{ marginRight: '10px' }}>Go to Login</Link>
+                  <Link className="link_404" to='/'>Go to Home Page</Link>
+
                 </div>
               </div>
             </div>

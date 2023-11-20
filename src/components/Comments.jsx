@@ -24,6 +24,7 @@ const Comments =  () => {
     // console.log(data.comment)
     const res = await axios.post('http://localhost:7000/addComments', { comment: comments, company: 'SBI', username: 'dbxop' }, { headers: headers })
     console.log(res.status)
+    setComments('')
   }
   return (
     <div>
