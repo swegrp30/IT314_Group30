@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const otpGenerator = require('otp-generator')
 const { v4: uuidv4 } = require('uuid');
-
+const jwt = require('jsonwebtoken');
 
 // models
 const user = require("../models/user");
@@ -13,8 +13,8 @@ const otp = require("../models/otp");
 
 
 // otp-mailer
-const mailer = require("../mailer/mailer");
-
+const x = require("../mailer/mailer");
+const mailer = x.signup
 // MAILER IMPORT KRVNU BAKI 6
 
 
@@ -49,8 +49,21 @@ const user_signup = async (req, res) => {
             const save = await new_user.save()
                 .then(async () => {
                     const x = await user.find({ email: data.email });
+                    const token = jwt.sign(
+                        {
+                            email: x.email,
+                            username:x.username
+                        },
+                        process.env.JWT_KEY,
+                        {
+                            expiresIn: "5h"
+                        }
+                    )
                     console.log("SAVED");
-                    res.status(200).send(x);
+                    res.status(200).send({
+                        user: x,
+                        token: token
+                    });
                 }).catch((e) => {
                     console.log("THIS IS ERROR FROM signup.js file");
                     console.log(e);
@@ -72,27 +85,7 @@ const user_signup = async (req, res) => {
         } catch (error) {
             console.log("THIS IS ERROR FROM signup.js -> save");
             console.log(error);
-        }
-
-        try {
-            // MAILER
-            console.log("FFFF");
-            const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
-            const mail = mailer(new_user.username,new_user.email,otp_number);
-            const data = new otp({
-                email : new_user.email,
-                otp : otp_number
-            })
-            try {
-                const saved = data.save();
-            } catch (error) {
-                console.log("This is error from signup.js -> mailer part");
-                console.log(error);
-            }
-
-        } catch (error) {
-            console.log("This is the error from signup.js -> otp block")
-            console.log(error);
+            res.status(400).send();
         }
 
     }

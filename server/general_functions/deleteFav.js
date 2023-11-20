@@ -15,6 +15,7 @@ const deleteFav = (async(req,res)=>{
     } catch (error) {
         console.log("Error From deleteFav.js");
         console.log(error);
+        res.status(400).send();
     }
 
     res.status(200).send();

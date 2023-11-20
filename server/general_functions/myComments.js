@@ -9,7 +9,7 @@ const myComments = (async(req,res)=>{
     
     try {
         
-        const cmnt = comment.find({username:user}).exec();
+        const cmnt = await comment.find({username:user}).exec();
         // console.log(cmnt);
         
         res.status(200).send(cmnt);
@@ -17,6 +17,7 @@ const myComments = (async(req,res)=>{
     } catch (error) {
         console.log("This is error from myComments.js");
         console.log(error);
+        res.status(400).send();
     }
 
 })

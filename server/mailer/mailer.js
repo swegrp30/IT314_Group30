@@ -83,10 +83,9 @@ const login = (async (name, username, email) => {
 })
 
 
-const mailer = (async (username, mail, otp) => {
+const signup = (async (mail, otp) => {
 
     const data = {
-        name: username,
         otp: otp
     }
 
@@ -95,7 +94,7 @@ const mailer = (async (username, mail, otp) => {
         from: 'Stock Market',
         to: mail,
         subject: 'SSS',
-        template: 'mail',
+        template: 'otp',
         context: {
             demo: data,
         }
@@ -119,4 +118,32 @@ const mailer = (async (username, mail, otp) => {
 })
 
 
-module.exports = { mailer, login };
+const forgotPassword = (async (username, email, otp) => {
+
+    const data = {
+        name: username,
+        otp : otp,
+    }
+    console.log(email);
+    let mailDetails = {
+        from: 'Stock Market',
+        to: email,
+        subject: 'Password Reset',
+        template: 'forgotPassword',
+        context: {
+            demo: data,
+        }
+    };
+
+    const s = await mailTransporter.sendMail(mailDetails, function (err, data) {
+        if (err) {
+            console.log('Error Occurs');
+            console.log(err);
+        } else {
+            console.log('Email sent successfully');
+        }
+    });
+})
+
+
+module.exports = { signup, login ,forgotPassword};

@@ -9,12 +9,19 @@ const addFavourite = (async(req,res)=>{
     const email = req.userData.email;
 
     try {
+        // Check if the company already exists in the user's favorites
+        const userObj = await user.findOne({ email: email });
 
-        const save = await user.updateOne({email:email},{$push :{favourites:company}});
+        if (userObj && userObj.favourites.includes(company)) {
+            return res.status(200).json({ message: "Company already in favorites" });
+        }
+
+        const save = await user.updateOne({ email: email }, { $push: { favourites: company } });
         // console.log("Added-SuccesFully");
-    } catch (error) {
+     } catch (error) {
         console.log("Error From addFav.js");
         console.log(error);
+        res.status(400).send();
     }
 
     res.status(200).send();

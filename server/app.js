@@ -7,10 +7,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors({
-    origin:"http://127.0.0.1:3000",
-    // credentials:true
-}))
+app.use(cors())
 
 
 require("./connection/conection");
@@ -28,6 +25,8 @@ const signup = require("./db_functions/signup");
 
 // const mailer = require("./dlt");
 
+const getuser = require("./general_functions/getuser");
+
 const login = require("./general_functions/login");
 
 const otp_verification = require("./db_functions/otp_verification");
@@ -44,6 +43,16 @@ const myComments = require("./general_functions/myComments");
 
 const deleteComments = require("./general_functions/deleteComments");
 
+const addReplytoComment = require("./general_functions/addReplytoComment");
+
+const changePassword = require("./db_functions/changePassword");
+
+const forgotPassword = require("./db_functions/forgotPassword");
+
+const updatePassword = require("./db_functions/updatePassword");
+
+const verifyEmail = require("./db_functions/verifyEmail");
+
 
 
 
@@ -52,10 +61,11 @@ const deleteComments = require("./general_functions/deleteComments");
 
 app.post("/signup",signup);
 
-
 app.post("/otp_verification",otp_verification);
 
-app.get("/login",login);
+app.post("/login",login);
+
+app.post("/getuser",auth,getuser);
 
 app.post("/add-fav",auth,addFavourite);
 
@@ -68,6 +78,16 @@ app.post("/getComments",auth,getComments);
 app.get("/myComments",auth,myComments);
 
 app.get("/dltComments",auth,deleteComments);
+
+app.post("/addReply",auth,addReplytoComment);
+
+app.post("/changePassword",auth,changePassword);
+
+app.post("/forgotPassword",forgotPassword);
+
+app.post("/updatePassword",updatePassword);
+
+app.post("/verifyEmail",verifyEmail);
 
 
 
