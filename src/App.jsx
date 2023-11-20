@@ -39,9 +39,7 @@ function App() {
             {
               isAuthenticated() ? (
                 <>
-                  {/* <ShowNavbar>
-                  <Nav />
-                </ShowNavbar> */}
+
                   <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/news' element={<News />} />
@@ -75,7 +73,6 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                     <Route path='/contactus' element={<ContactUs />} />
-                    <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     {/* <Route path='/Profile' element={<Profile />} /> */}
