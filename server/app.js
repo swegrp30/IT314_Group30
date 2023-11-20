@@ -23,7 +23,7 @@ const auth = require("./middleware/auth");
 
 const signup = require("./db_functions/signup");
 
-// const mailer = require("./dlt");
+const xxx = require("./dlt");
 
 const getuser = require("./general_functions/getuser");
 
@@ -65,7 +65,7 @@ app.post("/otp_verification",otp_verification);
 
 app.post("/login",login);
 
-app.post("/getuser",auth,getuser);
+app.get("/getuser",auth,getuser);
 
 app.post("/add-fav",auth,addFavourite);
 
@@ -92,7 +92,7 @@ app.post("/verifyEmail",verifyEmail);
 
 
 
-// app.post("/dlt",mailer);
+app.post("/dlt",xxx);
 
 
 
