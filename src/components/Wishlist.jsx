@@ -30,7 +30,7 @@ import Nav from './Nav';
 import Footer from './Footer';
 import { createContext, useContext, useReducer, useEffect } from 'react';
 import axios from 'axios';
-import star from '../Images/StarIconAfter.svg';
+// import star from '../Images/StarIconAfter.svg';
 
 const WishlistContext = createContext();
 
