@@ -23,7 +23,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -33,7 +33,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -43,7 +43,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -53,7 +53,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -63,7 +63,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -73,7 +73,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -83,7 +83,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -93,7 +93,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -103,7 +103,7 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
@@ -113,20 +113,20 @@ const AboutUs = () => {
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
-        { icon: 'fa-instagram', url: '#' },
+
       ],
     },
     {
       name: 'Thomas A. Anderson',
       username: 'Programmer',
       imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).jpg',
-      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' }, { icon: 'fa-instagram', url: '#' }],
+      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' },],
     },
     {
       name: 'Cynthia J. Olson',
       username: 'Programmer',
       imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(16).jpg',
-      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' }, { icon: 'fa-instagram', url: '#' }],
+      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' }, ],
 
     }
 

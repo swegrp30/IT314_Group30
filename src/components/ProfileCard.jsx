@@ -5,8 +5,8 @@ const ProfileCard = ({ name, username, imageSrc, socialLinks }) => {
         <div className="col-md-12 col-xl-4">
             <div className="card" style={{ borderRadius: '15px' }}>
                 <div className="card-body text-center">
-                    <div className="mt-3 mb-4">
-                        <img src={imageSrc} className="rounded-circle img-fluid" style={{ width: '100px' }} alt="Profile Image" />
+                    <div className="mb-4 mt-4">
+                        <img src={imageSrc} className="rounded mx-auto d-block" style={{ width: '100px' }} alt="Profile Image" />
                     </div>
                     <h4 className="mb-2">{name}</h4>
                     <p className="text-muted mb-4">@{username}</p>
@@ -19,9 +19,6 @@ const ProfileCard = ({ name, username, imageSrc, socialLinks }) => {
                             </a>
                         ))}
                     </div>
-                    <button type="button" className="btn btn-primary btn-rounded btn-lg">
-                        Message now
-                    </button>
                 </div>
             </div>
         </div>

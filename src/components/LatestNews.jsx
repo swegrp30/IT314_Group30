@@ -44,7 +44,6 @@ export const LatestNews = () => {
                 <Heading as="h1" size="lg" fontWeight="bold" top={'0'} marginTop={'10'} borderBottom={'4px'}  paddingBottom={'5'} textAlign={'center'}>
                     Latest News
                 </Heading>
-               
 
                 <Box position={'relative'} overflow={'scroll'} h={'140vh'}  mt={'5'} w={'100'} >
                     {rightNews.map((article, index) => (
