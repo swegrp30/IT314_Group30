@@ -53,14 +53,7 @@ function News() {
                                 {carouselNews.map((article, index) => (
                                     <div key={index}>
                                         <Link to={`/news/${article.title}`}>
-                                            <img
-                                                src={article.urlToImage}
-                                                alt={article.title}
-                                                style={{ width: "auto", height: "250px" }}
-
-                                            />
-
-                                            <Text
+                                        <Text
                                                 className="TextNoDecoration"
                                                 textColor="black"
                                                 style={{
@@ -71,6 +64,14 @@ function News() {
                                             >
                                                 {article.title}
                                             </Text>
+                                            <img
+                                                src={article.urlToImage}
+                                                alt={article.title}
+                                                style={{ width: "auto", height: "250px" }}
+
+                                            />
+
+                                           
                                         </Link>
                                     </div>
                                 ))}
