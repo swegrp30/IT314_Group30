@@ -18,7 +18,7 @@ import ShowFooter from './components/Show/ShowFooter';
 import Profile from './components/Profile';
 import Changepassword from './components/Changepassword';
 import Forgotpassword from './components/ForgotPassword';
-import Wishlist from './components/Wishlist';
+import { WishlistProvider, useWishlist, Wishlist } from './components/Wishlist';
 import Signupemail from './components/Signupemail'
 import UserState from './Context/UserState'
 import ShowComments from './components/ShowComments';
