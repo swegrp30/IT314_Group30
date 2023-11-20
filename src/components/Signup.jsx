@@ -73,6 +73,10 @@ const Signup = (props) => {
     setData({ ...data, [e.target.name]: e.target.value });
     console.log(data);
   };
+
+  const backToSignup = () => {
+    navigate('/signupwithemail')
+  }
   return (
     <div className="signupform d-flex flex-row">
       <div className="left d-flex flex-column">
@@ -151,7 +155,7 @@ const Signup = (props) => {
               </label>
               <input type="password" className="form-control" name="confirmpassword" onChange={handleChange}/>
             </div> */}
-            <div className="col-md-6">
+            <div className="col-md-6 mt-3">
               <button
                 type="submit"
                 className="btn btn-primary mt-3"
@@ -159,6 +163,13 @@ const Signup = (props) => {
               >
                 Create Account
               </button>
+              <button
+                  type="submit"
+                  className="btn btn-primary mt-3"
+                    onClick={backToSignup}
+                >
+                  Back
+                </button>
             </div>
             {/* <div className="col-md-6">
             <button  className="btn btn-secondary">Sign in with Google </button>

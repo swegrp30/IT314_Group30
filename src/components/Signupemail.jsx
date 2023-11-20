@@ -90,9 +90,6 @@ const Signupemail = () => {
 }
   const handleVerifyOTP = async(e) => {
 
-    
-
-
     e.preventDefault();
     if (!form.otp) {
         toast.error("OTP is required");
@@ -128,6 +125,10 @@ const Signupemail = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
     console.log(form);
   };
+
+  const backToSignup = () => {
+    navigate('/signupwithemail')
+  }
   return (
     <div>
         <div className="d-none">
@@ -196,6 +197,14 @@ const Signupemail = () => {
                   onClick={handleVerifyOTP}
                 >
                   Verify OTP
+                </button>
+
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                    onClick={backToSignup}
+                >
+                  Back
                 </button>
                 {showTimer && <Timer onComplete={handleTimerComplete} />}
 
