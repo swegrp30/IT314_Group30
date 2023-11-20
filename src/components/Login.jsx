@@ -48,9 +48,11 @@ const Login = () => {
           if(token){
       toast.success("You have logged in successfully")
       localStorage.setItem('authToken',token)
-      setInterval(()=>{
+      setTimeout(function() {
         navigate('/')
-      },1000)
+      }, 1000);
+        
+      
     }
     else{
       toast.error("Email or password incorrect ")

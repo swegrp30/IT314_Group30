@@ -97,6 +97,7 @@ const CoinDetails = () => {
                 );
                 setCoin(data);
                 setChartArray(chartData.prices);
+                console.log(chartData.prices);
                 setLoading(false);
             } catch (error) {
                 setError(true);

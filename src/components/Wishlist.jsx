@@ -103,7 +103,8 @@ function Wishlist() {
     };
 
     return (
-        <><Nav/>
+        <>
+
         <div className="wishlist-container">
             <div className="wishlist-header">
                 <h2>Your Wishlist</h2>
@@ -175,7 +176,7 @@ function Wishlist() {
                 </div>
             )}
         </div>
-        <Footer/>
+        
         </>
     );
 }

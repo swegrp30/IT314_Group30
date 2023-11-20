@@ -7,7 +7,7 @@ import Footer from './Footer';
 function Home() {
     return (
         <div>
-            <Nav/>
+            
             <div>
                 <h1 className='home-h1'>Stock market analysis for the <br /> serious part-time investor</h1>
                 <h4 className='home-h4'>We use intuitive data visualizations and automated stock analysis to help <br /> you understand a stock's fundamentals within minutes.</h4>
@@ -44,7 +44,7 @@ function Home() {
                     <p>Jake Wood <br /> Anonymous User</p>
                 </div>
             </div>
-            <Footer/>
+            
         </div>
     )
 }

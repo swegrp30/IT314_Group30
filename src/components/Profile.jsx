@@ -8,7 +8,7 @@ function Profile() {
     const navigate = useNavigate();
     return (
         <>
-        <Nav/>
+        
     <div className="container-box">
       <div className="left-box">
         <img src={Tour} className="photo"/>
@@ -64,7 +64,7 @@ function Profile() {
         </div> 
         
     </div>
-    <Footer/>
+    
     </>
     )
 }

@@ -33,7 +33,6 @@ const Share = () => {
           `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr`
         );
         setShare(data);
-        console.log(data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -66,7 +65,7 @@ const Share = () => {
 
   return (
     <>
-    <Nav/>
+    
     
     <Container maxW={"container.xl"}>
       {loading ? (
@@ -121,7 +120,7 @@ const Share = () => {
         </>
       )}
     </Container>
-    <Footer/>
+    
     </>
   );
 };
