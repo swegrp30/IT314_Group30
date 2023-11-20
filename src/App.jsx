@@ -18,7 +18,7 @@ import ShowFooter from './components/Show/ShowFooter';
 import Profile from './components/Profile';
 import Changepassword from './components/Changepassword';
 import Forgotpassword from './components/ForgotPassword';
-import Wishlist from './components/Wishlist';
+import { WishlistProvider, useWishlist, Wishlist } from './components/Wishlist';
 import Signupemail from './components/Signupemail'
 import UserState from './Context/UserState'
 import ShowComments from './components/ShowComments';
@@ -35,58 +35,61 @@ function App() {
 
       <UserState>
         <Router>
-          {
-            isAuthenticated() ? (
-              <>
-                {/* <ShowNavbar>
+          <WishlistProvider>
+            {
+              isAuthenticated() ? (
+                <>
+                  {/* <ShowNavbar>
                   <Nav />
                 </ShowNavbar> */}
-                <Routes>
-                  <Route path='/' element={<Home />} />
-                  <Route path='/news' element={<News />} />
-                  <Route path='/news/:title' element={<NewsDetail />} />
-                  <Route path='/wishlist' element={<Wishlist />} />
-                  <Route path='/aboutus' element={<AboutUs />} />
-                  <Route path='/login' element={<Login />} />
-                  <Route path='/signup' element={<Signup />} />
-                  <Route path='/contactus' element={<ContactUs />} />
-                  <Route path='/PriceAndAnalysis' element={<Share />} />
-                  <Route path='/Profile' element={<Profile />} />
-                  <Route path='/share/:id' element={<ShareDetails />} />
-                  <Route path='/changePassword' element={<Changepassword />} />
-                  <Route path='/forgotPassword' element={<Forgotpassword />} />
-                  <Route path='/signupwithemail' element={<Signupemail />} />
-                  <Route path='/showcomments' element={<ShowComments />} />
+                  <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/news' element={<News />} />
+                    <Route path='/news/:title' element={<NewsDetail />} />
+                    <Route path='/wishlist' element={<Wishlist />} />
+                    <Route path='/aboutus' element={<AboutUs />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/contactus' element={<ContactUs />} />
+                    <Route path='/PriceAndAnalysis' element={<Share />} />
+                    <Route path='/Profile' element={<Profile />} />
+                    <Route path='/share/:id' element={<ShareDetails />} />
+                    <Route path='/changePassword' element={<Changepassword />} />
+                    <Route path='/forgotPassword' element={<Forgotpassword />} />
+                    <Route path='/signupwithemail' element={<Signupemail />} />
+                    <Route path='/showcomments' element={<ShowComments />} />
 
-                </Routes>
-                
+                  </Routes>
 
-              </>
-            ) : (
-              <>
-              {/* <ShowNavbar>
+
+                </>
+              ) : (
+                <>
+                  {/* <ShowNavbar>
                   <Nav />
                 </ShowNavbar> */}
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/news/:title' element={<NewsDetail />} />
-                <Route path='/aboutus' element={<AboutUs />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/contactus' element={<ContactUs />} />
-            <Route path='/forgotPassword' element={<Forgotpassword />} />
-            <Route path='/signupwithemail' element={<Signupemail />} />
-            {/* <Route path='/Profile' element={<Profile />} /> */}
-            <Route path='/news' element={<News />} />
-            <Route path='*' element={<Error401 />} />
-            
-            </Routes>
-              </>
-            )
-          }
-          {/* <ShowFooter>
+                  <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/news/:title' element={<NewsDetail />} />
+                    <Route path='/aboutus' element={<AboutUs />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/contactus' element={<ContactUs />} />
+                    <Route path='/wishlist' element={<Wishlist />} />
+                    <Route path='/forgotPassword' element={<Forgotpassword />} />
+                    <Route path='/signupwithemail' element={<Signupemail />} />
+                    {/* <Route path='/Profile' element={<Profile />} /> */}
+                    <Route path='/news' element={<News />} />
+                    <Route path='*' element={<Error401 />} />
+
+                  </Routes>
+                </>
+              )
+            }
+            {/* <ShowFooter>
                   <Footer />
                 </ShowFooter> */}
+          </WishlistProvider>
         </Router>
       </UserState>
 
