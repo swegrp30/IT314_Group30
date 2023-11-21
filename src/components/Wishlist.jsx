@@ -105,18 +105,18 @@ const useWishlist = () => {
 const Wishlist = () => {
     const { wishlist } = useWishlist();
 
+    useEffect(() => {
+        console.log("Wishlist data:", wishlist);
+    }, [wishlist]);
+
     return (
         <div className="wishlist-container">
-            <Nav />
             <div className="wishlist-header">
                 <h2>Your Wishlist</h2>
             </div>
-            
-            <h1>Wishlist</h1>
             {wishlist.map(item => (
                 <ShareCard key={item.id} {...item} />
             ))}
-            <Footer />
         </div>
     );
 };
