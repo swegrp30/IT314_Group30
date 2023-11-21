@@ -25,6 +25,7 @@ import ShowComments from './components/ShowComments';
 import Error401 from './components/Error401';
 import { useEffect, useState } from 'react';
 import TempNewNews from './components/TempNewNews';
+import CompanyNewsPage from './components/CompanyNewsPage';
 function App() {
   const isAuthenticated = () => {
     const authToken = localStorage.getItem('authToken');
@@ -48,6 +49,7 @@ function App() {
                   <Route path='/' element={<Home />} />
                   <Route path='/news' element={<News />} />
                   <Route path='/tempnews' element={<TempNewNews />} />
+                  <Route path='/:companyName' element={<CompanyNewsPage />} />
                   <Route path='/news/:title' element={<NewsDetail />} />
                   <Route path='/wishlist' element={<Wishlist />} />
                   <Route path='/aboutus' element={<AboutUs />} />
