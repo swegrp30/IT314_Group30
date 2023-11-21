@@ -3,7 +3,7 @@ const user = require("../models/user");
 const { response } = require("express");
 
 const getuser = async (req, res) => {
-    const data = req.userdata;
+    const data = req.userData;
     console.log(data);
 
     try {
