@@ -92,7 +92,7 @@ const Login = () => {
               </label>
               <input
                 type="email"
-                className="form-control"
+                className="form-control form-control-login"
                 name="email"
                 placeholder="Email"
                 onChange={handleChange}
@@ -104,7 +104,7 @@ const Login = () => {
               </label>
               <input
                 type="password"
-                className="form-control"
+                className="form-control form-control-login"
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
