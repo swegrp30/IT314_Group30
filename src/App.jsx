@@ -32,69 +32,71 @@ function App() {
     return authToken !== null && authToken !== undefined;
   };
 
-  const [token,setToken] = useState(isAuthenticated())
-  setInterval(() => {setToken(isAuthenticated())}, 1000);
+  const [token, setToken] = useState(isAuthenticated())
+  setInterval(() => { setToken(isAuthenticated()) }, 1000);
   return (
     <>
 
       <UserState>
         <Router>
-          {
-            token ? (
-              <>
-                <ShowNavbar>
-                  <Nav />
-                </ShowNavbar>
-                <Routes>
-                  <Route path='/' element={<Home />} />
-                  <Route path='/news' element={<News />} />
-                  <Route path='/tempnews' element={<TempNewNews />} />
-                  <Route path='/:companyName' element={<CompanyNewsPage />} />
+          <WishlistProvider>
+            {
+              token ? (
+                <>
+                  <ShowNavbar>
+                    <Nav />
+                  </ShowNavbar>
+                  <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/news' element={<News />} />
+                    <Route path='/tempnews' element={<TempNewNews />} />
+                    <Route path='/:companyName' element={<CompanyNewsPage />} />
                   <Route path='/news/:title' element={<NewsDetail />} />
-                  <Route path='/wishlist' element={<Wishlist />} />
-                  <Route path='/aboutus' element={<AboutUs />} />
-                  <Route path='/login' element={<Login />} />
-                  <Route path='/signup' element={<Signup />} />
-                  <Route path='/contactus' element={<ContactUs />} />
-                  <Route path='/PriceAndAnalysis' element={<Share />} />
-                  <Route path='/Profile' element={<Profile />} />
-                  <Route path='/share/:id' element={<ShareDetails />} />
-                  <Route path='/changePassword' element={<Changepassword />} />
-                  <Route path='/forgotPassword' element={<Forgotpassword />} />
-                  <Route path='/signupwithemail' element={<Signupemail />} />
-                  <Route path='/showcomments' element={<ShowComments />} />
+                    <Route path='/wishlist' element={<Wishlist />} />
+                    <Route path='/aboutus' element={<AboutUs />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/contactus' element={<ContactUs />} />
+                    <Route path='/PriceAndAnalysis' element={<Share />} />
+                    <Route path='/Profile' element={<Profile />} />
+                    <Route path='/share/:id' element={<ShareDetails />} />
+                    <Route path='/changePassword' element={<Changepassword />} />
+                    <Route path='/forgotPassword' element={<Forgotpassword />} />
+                    <Route path='/signupwithemail' element={<Signupemail />} />
+                    <Route path='/showcomments' element={<ShowComments />} />
 
-                </Routes>
-                <ShowFooter>
-                  <Footer />
-                </ShowFooter>
-
-              </>
-            ) : (
-              <>
-              <ShowNavbar>
-                  <Nav />
-                </ShowNavbar>
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/news/:title' element={<NewsDetail />} />
-                <Route path='/aboutus' element={<AboutUs />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
-            <Route path='/contactus' element={<ContactUs />} />
-            <Route path='/forgotPassword' element={<Forgotpassword />} />
-            <Route path='/signupwithemail' element={<Signupemail />} />
-            {/* <Route path='/Profile' element={<Profile />} /> */}
-            <Route path='/news' element={<News />} />
-            <Route path='*' element={<Error401 />} />
-            
-            </Routes>
-            <ShowFooter>
+                  </Routes>
+                  <ShowFooter>
                     <Footer />
                   </ShowFooter>
-              </>
-            )
-          }
+
+                </>
+              ) : (
+                <>
+                  <ShowNavbar>
+                    <Nav />
+                  </ShowNavbar>
+                  <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/news/:title' element={<NewsDetail />} />
+                    <Route path='/aboutus' element={<AboutUs />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/contactus' element={<ContactUs />} />
+                    <Route path='/forgotPassword' element={<Forgotpassword />} />
+                    <Route path='/signupwithemail' element={<Signupemail />} />
+                    {/* <Route path='/Profile' element={<Profile />} /> */}
+                    <Route path='/news' element={<News />} />
+                    <Route path='*' element={<Error401 />} />
+
+                  </Routes>
+                  <ShowFooter>
+                    <Footer />
+                  </ShowFooter>
+                </>
+              )
+            }
+          </WishlistProvider>
         </Router>
       </UserState>
 

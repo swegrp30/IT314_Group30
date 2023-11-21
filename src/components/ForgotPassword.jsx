@@ -9,6 +9,10 @@ import { useNavigate } from "react-router-dom";
 
 function Forgotpassword() {
     const navigate = useNavigate();
+
+    const backToForgotpw = () => {
+        navigate('/Forgotpassword')
+      }
     const [password, setPassword] = useState({
         confirmPass: "",
         newPass: "",
@@ -159,13 +163,22 @@ function Forgotpassword() {
                                 onChange={handleChange}
                             />
                         </div>
-                            <div className="col-md-6 mt-3 text-center">
+                            <div className="row-md-6 mt-3 text-center">
                                 <button
                                     type="submit"
                                     className="btn btn-primary mt-3"
+                                    style={{width:150, marginRight:2}}
                                     onClick={handleOTP}
                                 >
                                     Submit
+                                </button>
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary mt-3"
+                                    style={{width:150, marginLeft:2}}
+                                    onClick={backToForgotpw}
+                                >
+                                    Change Email
                                 </button>
 
                             </div>
@@ -195,15 +208,23 @@ function Forgotpassword() {
                                 onChange={handleChange}
                             />
                         </div>
-                            <div className="col-md-6 mt-3 text-center">
+                            <div className="row-md-6 mt-3 text-center">
                                 <button
                                     type="submit"
                                     className="btn btn-primary mt-3"
+                                    style={{width:150, marginLeft:2}}
                                     onClick={handlePass}
                                 >
                                     Confirm 
                                 </button>
-
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary mt-3"
+                                    style={{width:150, marginLeft:2}}
+                                    onClick={backToForgotpw}
+                                >
+                                    Change Email
+                                </button>
                             </div>
                         </>}
                     </form>
