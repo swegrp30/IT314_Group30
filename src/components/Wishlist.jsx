@@ -57,19 +57,19 @@ const WishlistProvider = ({ children }) => {
     'auth-token': token,
 
   }
-    useEffect(() => {
-        // Fetch wishlist data from the backend when the component mounts
-        const fetchWishlist = async () => {
-            try {
-                const response = await axios.get('http://localhost:7000/getuser',{headers});
-                dispatch({ type: 'SET_WISHLIST', payload: response.data });
-            } catch (error) {
-                console.error('Error fetching wishlist data', error);
-            }
-        };
+    // useEffect(() => {
+    //     // Fetch wishlist data from the backend when the component mounts
+    //     const fetchWishlist = async () => {
+    //         try {
+    //             const response = await axios.get('http://localhost:7000/getuser',{headers});
+    //             dispatch({ type: 'SET_WISHLIST', payload: response.data });
+    //         } catch (error) {
+    //             console.error('Error fetching wishlist data', error);
+    //         }
+    //     };
 
-        fetchWishlist();
-    }, []);
+    //     fetchWishlist();
+    // }, []);
 
     const addToWishlist = async (item) => {
         try {

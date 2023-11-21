@@ -1,35 +1,41 @@
 import React, { useState } from "react";
 import axios from "axios";
 const Comments =  () => {
+  const token = localStorage.getItem('authToken')
+  
+  const headers = {
+    'Content-Type': 'application/json',
+    'auth-token': token,
+    
+  }
   const [comments, setComments] = useState();
   const handleChange = (e) => {
     // 👇️ access textarea value
     setComments(e.target.value);
-
+    
   };
-  const token = localStorage.getItem('authToken')
-  // console.log(token)
-
-  const headers = {
-    'Content-Type': 'application/json',
-    'auth-token': token,
-
-  }
   const handleClear=()=>{
     setComments('')
   }
   const handleUser=async (e)=>{
-    const res = await axios.get('http://localhost:7000/getuser',{headers})
-    const username = res.data[0].username
-    // console.log(username)
+    try{
+    
+      const res = await axios.get('http://localhost:7000/getuser',{headers})
+    console.log(res)
+    const username = res.data.username
+    
     return username
+  }
+  catch(error){
+    console.log(error)
+  }
   }
   const handleAdd = async (e) => {
     const username = await handleUser();
     
-    // console.log(username)
+    
     const res = await axios.post('http://localhost:7000/addComments', { comment: comments, company: 'SBI', username: username}, { headers: headers })
-    console.log(res.status)
+    
     setComments('')
   }
   return (
