@@ -4,67 +4,67 @@ import logo from "../Images/logo.png";
 import google from "../Images/google.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {ToastContainer, toast} from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import axios from "axios";
 
 import React from "react";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [form,setForm]= useState({
-    
-    email:'',
-    password:'',
-    
-    
+  const [form, setForm] = useState({
+
+    email: '',
+    password: '',
+
+
   })
-  const handleSubmit = async (e)=>{
+  const handleSubmit = async (e) => {
     e.preventDefault()
     console.log("Hlel")
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    
-    if(!regex.test(form?.email)){
+
+    if (!regex.test(form?.email)) {
       toast.error('Invalid Email')
     }
-    else if(!form?.password){
+    else if (!form?.password) {
       toast.error('Password  is required')
     }
-    else if(form?.password.length<4){
+    else if (form?.password.length < 4) {
       toast.error('Password  of atleast 4 characters is required')
     }
-    else if(!form?.password.length>10){
+    else if (!form?.password.length > 10) {
       toast.error('Password of atmost 10 characters is required')
     }
-    
-    else{
+
+    else {
       const res = await axios
-          .post("http://localhost:7000/login", {
-            
-            email: form.email,
-            password: form.password
-            
-          })
-          const token = res.data.token;
-          if(token){
-      toast.success("You have logged in successfully")
-      localStorage.setItem('authToken',token)
-      setTimeout(function() {
-        navigate('/')
-      }, 1000);
-        
-      
-    }
-    else{
-      toast.error("Email or password incorrect ")
-    }
+        .post("http://localhost:7000/login", {
+
+          email: form.email,
+          password: form.password
+        })
+      const token = res.data.token;
+      console.log(res.data);
+      if (token) {
+        toast.success("You have logged in successfully")
+        localStorage.setItem('authToken', token)
+        setTimeout(function () {
+          navigate('/')
+        }, 1000);
+
+
+      }
+      else {
+        toast.error("Email or password incorrect ")
+      }
     }
 
-}
-const handleChange =(e)=>{
-  setForm({...form,[e.target.name]:e.target.value})
-  console.log(form)
-    
-}
+  }
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+    console.log(form)
+
+  }
   return (
     <div className="signupform d-flex flex-row">
       <div className="left d-flex flex-column">
@@ -76,7 +76,7 @@ const handleChange =(e)=>{
         </div>
       </div>
       <div className="right d-flex flex-column align-items-start">
-        <ToastContainer/>
+        <ToastContainer />
         <div className="detailform my-5 mx-5 w-100">
           <div className="logo">
             <img src={logo} className="logo-main" alt="" />
@@ -92,7 +92,7 @@ const handleChange =(e)=>{
               </label>
               <input
                 type="email"
-                className="form-control"
+                className="form-control form-control-login"
                 name="email"
                 placeholder="Email"
                 onChange={handleChange}
@@ -104,7 +104,7 @@ const handleChange =(e)=>{
               </label>
               <input
                 type="password"
-                className="form-control"
+                className="form-control form-control-login"
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
@@ -115,7 +115,7 @@ const handleChange =(e)=>{
                 Sign In
               </button>
             </div>
-           
+
           </form>
           <div className="pt-3">
             Don't have an account?
@@ -125,7 +125,7 @@ const handleChange =(e)=>{
           </div>
 
           <div className="pt-4">
-            
+
             <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
               <p> &nbsp; Forgot Password?</p>
             </button>
