@@ -15,7 +15,8 @@ html {
 
 .notes-container {
     min-height: calc(80vh - 80px); 
-    overflow-y: auto; 
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .notes-header {
@@ -24,6 +25,11 @@ html {
     padding: 20px;
     text-align: center;
     
+}
+
+.comments-container {
+    max-height: 700px;
+    overflow-y: scroll;
 }
 
 .notes-header h1 {
