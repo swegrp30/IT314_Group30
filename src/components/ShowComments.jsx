@@ -38,7 +38,7 @@ const ShowComments = () => {
               <div className="card-body mt-3">
                 <div className="d-flex flex-start align-items-center">
                   <div>
-                    <h6 className="fw-bold text-primary mb-1">
+                    <h6 className="fw-bold  mb-1 usernameComment">
                       {data[index].username}
                     </h6>
                     <p className="text-muted small mb-0">
