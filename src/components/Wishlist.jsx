@@ -68,8 +68,8 @@ const WishlistProvider = ({ children }) => {
     //         }
     //     };
 
-        fetchWishlist();
-    }, []);
+    //     fetchWishlist();
+    // }, []);
 
     const addToWishlist = async (item) => {
         try {
