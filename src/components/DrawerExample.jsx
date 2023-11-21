@@ -9,7 +9,7 @@ import {
     DrawerCloseButton,
     Button, Input, useDisclosure, VStack
 } from '@chakra-ui/react'
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -20,7 +20,7 @@ function DrawerExample() {
     return (
         <>
             <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-                Open
+                Companies
             </Button>
             <Drawer
                 isOpen={isOpen}
@@ -31,16 +31,42 @@ function DrawerExample() {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerCloseButton />
-                    <DrawerHeader>Companys </DrawerHeader>
+                    <DrawerHeader>Companies </DrawerHeader>
 
                     <DrawerBody>
                         <Input p={'2'} placeholder='Type here...' />
                         <VStack p={'2'}>
-                        <Button w={'full'} colorScheme='blue'>Apple</Button>
-                        <Button w={'full'} colorScheme='blue'>Apple</Button>
-                        <Button w={'full'} colorScheme='blue'>Apple</Button>
-                        <Button w={'full'} colorScheme='blue'>Apple</Button>
-                        <Button w={'full'} colorScheme='blue'>Apple</Button>
+                            <Link to='/Apple'> 
+                            <Button w={'full'} colorScheme='blue' >
+                                Apple
+                            </Button>
+                            </Link>
+                            <Link to='/amazon'> 
+                            <Button w={'full'} colorScheme='blue' >
+                                Amazon
+                            </Button>
+                            </Link>
+                            <Link to='/google'> 
+                            <Button w={'full'} colorScheme='blue' >
+                                Google
+                            </Button>
+                            </Link>
+                            <Link to='/netflix'> 
+                            <Button w={'full'} colorScheme='blue' >
+                                Netflix
+                            </Button>
+                            </Link>
+                            <Link to='/cnbc'> 
+                            <Button w={'full'} colorScheme='blue' >
+                                Cnbc
+                            </Button>
+                            </Link>
+                            <Link to='/hdfc'> 
+                            <Button w={'full'} colorScheme='blue' >
+                                HDFC
+                            </Button>
+                            </Link>
+                            
 
                         </VStack>
 
@@ -52,3 +78,4 @@ function DrawerExample() {
     )
 }
 export default DrawerExample;
+
