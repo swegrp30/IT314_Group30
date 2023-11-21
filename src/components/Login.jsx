@@ -1,8 +1,8 @@
 import "../style/Login.css";
 import hero from "../Images/hero.png";
 import logo from "../Images/logo.png";
-import google from "../Images/google.png";
-import { useState } from "react";
+import UserContext from "../Context/UserContext";
+import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
 import axios from "axios";
@@ -10,6 +10,8 @@ import axios from "axios";
 import React from "react";
 
 const Login = () => {
+  const context = useContext(UserContext);
+  const {setValueToken,setValueUser}=context;
   const navigate = useNavigate();
   const [form, setForm] = useState({
 
@@ -20,7 +22,6 @@ const Login = () => {
   })
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log("Hlel")
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
     if (!regex.test(form?.email)) {
@@ -44,7 +45,10 @@ const Login = () => {
           password: form.password
         })
       const token = res.data.token;
-      console.log(res.data);
+      // console.log(res.data);
+      setValueToken(token);
+      setValueUser(res.data);
+      
       if (token) {
         toast.success("You have logged in successfully")
         localStorage.setItem('authToken', token)
