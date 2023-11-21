@@ -39,7 +39,6 @@ function App() {
             {
               isAuthenticated() ? (
                 <>
-
                   <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/news' element={<News />} />
@@ -56,16 +55,10 @@ function App() {
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
-
                   </Routes>
-
-
                 </>
               ) : (
                 <>
-                  {/* <ShowNavbar>
-                  <Nav />
-                </ShowNavbar> */}
                   <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/news/:title' element={<NewsDetail />} />
@@ -83,9 +76,6 @@ function App() {
                 </>
               )
             }
-            {/* <ShowFooter>
-                  <Footer />
-                </ShowFooter> */}
           </WishlistProvider>
         </Router>
       </UserState>
