@@ -13,8 +13,7 @@ const TempNewNews = () => {
 
     const fetchData = async () => {
         try {
-            // const response = await fetch(genralNewsData);
-            // const data = await response.json();
+            
             setNewsData(genralNewsData.stories.slice(0, 7)); // Use the first 8 stories
         } catch (error) {
             console.error('Error fetching data:', error);
