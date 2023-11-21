@@ -49,6 +49,27 @@ const schema = mongoose.Schema({
     favourites:{
         type: [String]
     },
+    gender:{
+        type:String
+    },
+    city:{
+        type:String
+    },
+    state:{
+        type:String
+    },
+    country:{
+        type:String
+    },
+    pincode:{
+        type:Number
+    },
+    occupation:{
+        type:String
+    },
+    dob:{
+        type:Date
+    },
     created_at:{
         type:Date,
         default:Date.now

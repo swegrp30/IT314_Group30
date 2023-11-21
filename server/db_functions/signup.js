@@ -42,7 +42,14 @@ const user_signup = async (req, res) => {
             phone: data.phone,
             email: data.email,
             password: data.password,
-            username: data.username
+            username: data.username,
+            gender:data.gender,
+            city:data.city,
+            state:data.state,
+            country:data.country,
+            pincode:data.pincode,
+            occupation:data.occupation,
+            dob:data.dob
         })
 
         try {
