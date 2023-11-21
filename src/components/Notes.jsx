@@ -13,8 +13,9 @@ function Notes() {
       <div className="notes-header">
         <h1>Comments</h1>
       </div>
-      <ShowComments/>
       <Comments/>
+      <ShowComments/>
+      
       
       
     </div>

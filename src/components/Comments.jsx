@@ -36,10 +36,10 @@ const Comments =  () => {
     <div>
       <section>
         <div >
-          <div className="row d-flex justify-content-start">
+          <div className="row d-flex justify-content-left">
             <div className="col-md-12 col-lg-10 col-xl-8">
-              <div className="card">
-                <div className="card-footer py-3 border-0">
+              <div className="cardComment" style={{marginLeft:100}}>
+                <div className="card-footer py-3 border-0" style={{backgroundColor:"white"}}>
                   <div className="d-flex flex-column flex-start w-100">
                     <h3>Add Comment</h3>
                     <div className="form-outline w-100">
@@ -49,7 +49,7 @@ const Comments =  () => {
                         name="comments"
                         value={comments}
                         onChange={handleChange}
-                        rows="4"
+                        rows="3"
                       ></textarea>
                     </div>
                   </div>

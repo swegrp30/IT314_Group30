@@ -18,7 +18,7 @@ const ShowComments = () => {
       { headers }
     );
     // console.log(res.data[0].comment);
-    setData(res.data);
+    setData(res.data.reverse());
     // console.log(data[0].comment)
   };
   useEffect(() => {
@@ -27,10 +27,11 @@ const ShowComments = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, [data]);
-
   //   window.addEventListener('load',getData())
   return (
+    
     <div className="container mt-5">
+      
       {data.length > 0 &&
         data.map((dataItem, index) => {
           return (

@@ -19,13 +19,11 @@ html {
 }
 
 .notes-header {
-    background-color: rgb(172, 0, 172); 
-    width: 200px; 
-    margin: 30px auto;
-    padding: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    width: 100px; 
+    margin: auto;
+    padding: 20px;
     text-align: center;
-    border-radius: 10px; 
+    
 }
 
 .notes-header h1 {
