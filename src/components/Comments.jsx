@@ -5,7 +5,7 @@ const Comments =  () => {
   const handleChange = (e) => {
     // 👇️ access textarea value
     setComments(e.target.value);
-    // console.log(e.target.value);
+
   };
   const token = localStorage.getItem('authToken')
   // console.log(token)
@@ -18,12 +18,19 @@ const Comments =  () => {
   const handleClear=()=>{
     setComments('')
   }
+  const handleUser=async (e)=>{
+    const res = await axios.get('http://localhost:7000/getuser',{headers})
+    const username = res.data[0].username
+    // console.log(username)
+    return username
+  }
   const handleAdd = async (e) => {
-
-    // console.log(data)
-    // console.log(data.comment)
-    const res = await axios.post('http://localhost:7000/addComments', { comment: comments, company: 'SBI', username: 'dbxop' }, { headers: headers })
+    const username = await handleUser();
+    
+    // console.log(username)
+    const res = await axios.post('http://localhost:7000/addComments', { comment: comments, company: 'SBI', username: username}, { headers: headers })
     console.log(res.status)
+    setComments('')
   }
   return (
     <div>

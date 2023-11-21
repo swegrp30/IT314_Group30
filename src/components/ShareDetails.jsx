@@ -97,6 +97,7 @@ const CoinDetails = () => {
                 );
                 setCoin(data);
                 setChartArray(chartData.prices);
+                console.log(chartData.prices);
                 setLoading(false);
             } catch (error) {
                 setError(true);
@@ -110,7 +111,6 @@ const CoinDetails = () => {
 
     return (
         <>
-        <Nav/>
         <Container maxW={'container.xl'}>
             {loading ? (
                 <Loader />
@@ -192,7 +192,6 @@ const CoinDetails = () => {
 
             <Notes />   
         </Container>
-        <Footer/>
         </>
     );
 };

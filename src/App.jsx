@@ -23,13 +23,16 @@ import Signupemail from './components/Signupemail'
 import UserState from './Context/UserState'
 import ShowComments from './components/ShowComments';
 import Error401 from './components/Error401';
-
+import { useEffect, useState } from 'react';
+import TempNewNews from './components/TempNewNews';
 function App() {
   const isAuthenticated = () => {
     const authToken = localStorage.getItem('authToken');
     return authToken !== null && authToken !== undefined;
   };
 
+  const [token, setToken] = useState(isAuthenticated())
+  setInterval(() => { setToken(isAuthenticated()) }, 1000);
   return (
     <>
 
@@ -37,11 +40,15 @@ function App() {
         <Router>
           <WishlistProvider>
             {
-              isAuthenticated() ? (
+              token ? (
                 <>
+                  <ShowNavbar>
+                    <Nav />
+                  </ShowNavbar>
                   <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/news' element={<News />} />
+                    <Route path='/tempnews' element={<TempNewNews />} />
                     <Route path='/news/:title' element={<NewsDetail />} />
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/aboutus' element={<AboutUs />} />
@@ -55,10 +62,18 @@ function App() {
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
+
                   </Routes>
+                  <ShowFooter>
+                    <Footer />
+                  </ShowFooter>
+
                 </>
               ) : (
                 <>
+                  <ShowNavbar>
+                    <Nav />
+                  </ShowNavbar>
                   <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/news/:title' element={<NewsDetail />} />
@@ -73,6 +88,9 @@ function App() {
                     <Route path='*' element={<Error401 />} />
 
                   </Routes>
+                  <ShowFooter>
+                    <Footer />
+                  </ShowFooter>
                 </>
               )
             }

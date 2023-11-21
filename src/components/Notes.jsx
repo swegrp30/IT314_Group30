@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CreateAreaNotes from "./CreateAreaNotes";
 import '../style/Notes.css'
 import ShowComments from "./ShowComments";
 import Comments from "./Comments";
