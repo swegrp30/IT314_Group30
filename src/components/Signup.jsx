@@ -55,7 +55,7 @@ const Signup = (props) => {
           toast.success("You have signed up successfully")
       
           setInterval(()=>{
-            navigate('/')
+            navigate('/login')
           },1000)
           
       } catch (err) {

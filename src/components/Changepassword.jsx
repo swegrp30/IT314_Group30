@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import Tour from "../Images/Tour.jpg";
-// import "../style/Profile.css";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+import image from "../Images/hero.png";
+import axios from "axios";
+import "../style/Profile.css";
 import { ToastContainer, toast } from "react-toastify";
-import axios
- from "axios";
- import { useNavigate } from 'react-router-dom';
+
 function Changepassword() {
+  const location = useLocation();
   const [password, setPassword] = useState({
     oldPass: "",
     newPass: "",
@@ -16,67 +17,117 @@ function Changepassword() {
     setPassword({ ...password, [e.target.name]: e.target.value });
     console.log(password);
   };
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if(!password?.oldPass){
-        toast.error('Old Password  is required')
-    }
-    else if(password?.oldPass.length<4){
-        toast.error('Password  of atleast 4 characters is required')
-    }
-    else if(password?.oldPass.length>10){
-        toast.error('Password  of atmost 10 characters is required')
-    }
-    else if(!password?.newPass){
-        toast.error('New Password  is required')
-    }
-    else if(password?.newPass.length<4){
-        toast.error('Password  of atleast 4 characters is required')
-    }
-    else if(!password?.newPass.length>10){
-        toast.error('Password of atmost 10 characters is required')
-    }
-    else if(password.newPass!=password.confirmPass){
-        toast.error('New password and confirm password should be same')
-    }
-    else{
-        delete password.confirmPass
-        const token = localStorage.getItem('authToken')
-        console.log(token)
+
+    if (!password?.oldPass) {
+      toast.error("Old Password  is required");
+    } else if (password?.oldPass.length < 4) {
+      toast.error("Password  of atleast 4 characters is required");
+    } else if (password?.oldPass.length > 10) {
+      toast.error("Password  of atmost 10 characters is required");
+    } else if (!password?.newPass) {
+      toast.error("New Password  is required");
+    } else if (password?.newPass.length < 4) {
+      toast.error("Password  of atleast 4 characters is required");
+    } else if (!password?.newPass.length > 10) {
+      toast.error("Password of atmost 10 characters is required");
+    } else if (password.newPass != password.confirmPass) {
+      toast.error("New password and confirm password should be same");
+    } else {
+      delete password.confirmPass;
+      const token = localStorage.getItem("authToken");
+      console.log(token);
 
       const headers = {
-        'Content-Type': 'application/json',
-        'auth-token': token,
-        
-      }
-      console.log(headers)
-      const res = await axios
-          .post("http://localhost:7000/changePassword",{oldPass:password.oldPass,newPass:password.newPass}, {headers:headers})
-       console.log(res.status)   
-       toast.success("Password changed sucessfully");
-          
+        "Content-Type": "application/json",
+        "auth-token": token,
+      };
+      console.log(headers);
+      const res = await axios.post(
+        "http://localhost:7000/changePassword",
+        { oldPass: password.oldPass, newPass: password.newPass },
+        { headers: headers }
+      );
+      console.log(res.status);
+      var inputs = document.querySelectorAll('input');
+      inputs.forEach((input) => (input.value = ""));
+
+      toast.success("Password changed sucessfully");
     }
   };
-  const navigate = useNavigate();
-  return (
-    
-    <div className="container-box">
-      <div className="left-box">
-        <img src={Tour} className="photo" />
-        <div className="left_name">Bhavya Shah</div>
-        <div className="left_email">202101426@daiict.ac.in</div>
-        <div className="left_bdate">12-12-2001</div>
-        <div className="left_member">Member since: November 2023</div>
-      </div>
 
-      <div className="right-box container mx-auto">
-            <div className='r_profile'>
-                    <button className='r_profile_btn1' onClick={()=>navigate('/Profile')} > My Profile </button>
-                    <button className='r_profile_btn1' style={{ textDecoration: 'underline' }}> Change Password </button>
+  useEffect(() => {
+    const active_links = document.querySelectorAll(".active-link");
+    active_links.forEach((active_link) => {
+      active_link.classList.remove("specialClass");
+      active_link.classList.remove("activeClass");
+    });
+
+    const currentLink = document.querySelector(
+      `.active-link[href="${location.pathname}"]`
+    );
+    if (currentLink) {
+      currentLink.classList.add("specialClass");
+      currentLink.classList.add("activeClass");
+    }
+  }, [location.pathname]);
+
+  return (
+    <div>
+      <div className="d-flex mx-4 flex-row justify-content-center mt-3 ">
+        <div className="d-flex flex-column w-25 " style={{ height: "100vh" }}>
+          <div className=" left d-flex flex-column align-items-center   h-75 w-100">
+            <img className=" avatar mt-5 rounded-circle" src={image} />
+            <div className="d-flex flex-column h-100 justify-content-around ">
+              <div className="d-flex flex-column align-items-center mt-3 ">
+                <div className="fs-2 fw-bold" style={{ color: "white" }}>
+                  Bhavya Shah
+                </div>
+                <div className="fs-5 mt-2" style={{ color: "white" }}>
+                  202101426@daiict.ac.in
+                </div>
+                <div className="fs-5" style={{ color: "white" }}>
+                  8200090380
+                </div>
+              </div>
+              <div style={{ color: "white" }}>
+                Member since : 23 November, 2023
+              </div>
             </div>
-        <div className="rc">
-          <form className="form-edit row g-3 mt-3">
+          </div>
+          <div
+            className="d-flex flex-column h-25 align-items-center"
+            style={{}}
+          >
+            <Link
+              className="active-link hoverClass  text-center p-3 fs-5 w-100"
+              to="/Profile"
+            >
+              Profile
+            </Link>
+
+            <Link
+              className="active-link text-center hoverClass p-3 fs-5 w-100"
+              to="/changePassword"
+            >
+              My Comments
+            </Link>
+            <Link
+              className="active-link  text-center hoverClass  p-3 fs-5 w-100 "
+              to="/changePassword"
+            >
+              Change Password
+            </Link>
+          </div>
+        </div>
+        <div
+          className="d-flex w-75 flex-column justify-content-start mt-5 align-items-center"
+          style={{ height: "100vh" }}
+        >
+          <ToastContainer />
+          <div className="fs-2 fw-bold">Change Password</div>
+          <form className="form-edit row justify-content-center g-3 mt-3">
             <div className="mb-3">
               <label htmlFor="password" className="form-label">
                 Old Password
@@ -118,11 +169,7 @@ function Changepassword() {
                 type="submit"
                 className="btn btn-primary"
                 onClick={handleSubmit}
-                
               >
-              
-                
-                
                 Change Password
               </button>
             </div>

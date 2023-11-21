@@ -1,72 +1,84 @@
-import React from 'react';
-import Tour from "../Images/Tour.jpg"
-import '../style/Profile.css';
-import { useNavigate } from 'react-router-dom';
-import Nav from './Nav';
-import Footer from './Footer';
-function Profile() {
-    const navigate = useNavigate();
-    return (
-        <>
-        
-    <div className="container-box">
-      <div className="left-box">
-        <img src={Tour} className="photo"/>
-        <div className='left_name'>
-            Bhavya Shah
-        </div>
-      <div className='left_email'>
-            202101426@daiict.ac.in
-      </div>
-      <div className='left_bdate'>
-           12-12-2001
-      </div>
-      <div className='left_member'>
-           Member since: November 2023
-      </div>
-      </div>
+import React , {useEffect} from "react";
+import { Link, useLocation } from 'react-router-dom';
+
+import image from '../Images/hero.png'
+import axios from 'axios'
+import '../style/Profile.css'
 
 
-        <div className="right-box">
-            <div className='r_profile'>
-                    <button className='r_profile_btn1' style={{ textDecoration: 'underline' }}> My Profile </button>
-                    <button className='r_profile_btn1' onClick={()=>navigate('/changePassword')}> Change Password </button>
-            </div>
-
-            <div className='r'>
-            <form className="form-edit row g-3 mt-3">
-                <div className='right_name1'>
-                    <div class="col-md-5"><label class="labels">Name</label><input type="text" class="form-control" placeholder="Name" value=""/></div>
-                    <div class="col-md-5"><label class="labels">Email</label><input type="email" class="form-control" value="" placeholder="Email"/></div>
-               </div>
-                <div className='right_name1'>
-                    <div class="col-md-5"><label class="labels">DOB</label><input type="date" class="form-control" placeholder="DOB" value=""/></div>
-                    <div class="col-md-5"><label class="labels">Gender</label><input type="gender" class="form-control" value="" placeholder="Gender"/></div>
-               </div>
-
-                <div className='right_name1'>
-                    <div class="col-md-5"><label class="labels">Mobile Number</label><input type="number" class="form-control" placeholder="Mobile Number" value=""/></div>
-                    <div class="col-md-5"><label class="labels">Country</label><input type="text" class="form-control" value="" placeholder="Country"/></div>
-               </div>
-
-                <div className='right_name1'>
-                    <div class="col-md-5"><label class="labels">State</label><input type="text" class="form-control" placeholder="State" value=""/></div>
-                    <div class="col-md-5"><label class="labels">City</label><input type="text" class="form-control" value="" placeholder="City"/></div>
-               </div>
-
-                <div className='right_name1'>
-                    <div class="col-md-5"><label class="labels">Pin Code</label><input type="text" class="form-control" placeholder="first name" value=""/></div>
-                    <div class="col-md-5"><label class="labels">Occupation</label><input type="text" class="form-control" value="" placeholder="Occupation"/></div>
-               </div>
-            </form>
-            </div>
-
-        </div> 
-        
-    </div>
+const Profile = () => {
+    const token = localStorage.getItem('authToken')
+    const location = useLocation();
+  const headers = {
+    'Content-Type': 'application/json',
+    'auth-token': token,
     
-    </>
-    )
-}
+  }
+  
+  useEffect(() => {
+    const active_links = document.querySelectorAll('.active-link');
+    active_links.forEach((active_link) => {
+        active_link.classList.remove('specialClass');
+        active_link.classList.remove('activeClass');
+    });
+
+    const currentLink = document.querySelector(`.active-link[href="${location.pathname}"]`);
+    if (currentLink) {
+        currentLink.classList.add('specialClass');
+        currentLink.classList.add('activeClass');
+        
+    }
+}, [location.pathname]);
+  const handleUser=async (e)=>{
+    try{
+    
+      const res = await axios.get('http://localhost:7000/getuser',{headers})
+    console.log(res)
+     
+    
+    
+  }
+  catch(error){
+    console.log(error)
+  }
+  }
+  return (
+    <div>
+      <div className="d-flex mx-4 flex-row justify-content-center mt-3 ">
+        <div className="d-flex flex-column w-25 " style={{ height:"100vh"}}>
+            <div className=" left d-flex flex-column align-items-center   h-75 w-100">
+                    <img className=" avatar mt-5 rounded-circle" src={image}   />
+                    <div className="d-flex flex-column h-100 justify-content-around ">
+
+                    <div className="d-flex flex-column align-items-center mt-3 ">
+                        <div className="fs-2 fw-bold" style={{ color:"white"}}>
+                           Bhavya Shah  
+                        </div>
+                        <div className="fs-5 mt-2" style={{ color:"white"}}>
+                           202101426@daiict.ac.in  
+                        </div>
+                        <div className="fs-5" style={{ color:"white"}}>
+                           8200090380 
+                        </div>
+                    </div>
+                    <div style={{ color:"white"}} >Member since : 23 November, 2023</div>
+                    </div>
+            </div>
+            <div className="d-flex flex-column h-25 align-items-center" style={{}}>
+                
+                    
+                    <Link className="active-link hoverClass  text-center p-3 fs-5 w-100" to='/Profile'>Profile</Link>
+                
+                <Link className="active-link text-center hoverClass p-3 fs-5 w-100" to='/changePassword'>My Comments</Link>
+                <Link className="active-link  text-center hoverClass  p-3 fs-5 w-100 " to='/changePassword'>Change Password</Link>
+            </div>
+        </div>
+        <div  className="d-flex w-75 " style={{ height:"100vh"}}>
+
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Profile;
