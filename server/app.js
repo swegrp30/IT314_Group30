@@ -54,6 +54,8 @@ const updatePassword = require("./db_functions/updatePassword");
 
 const verifyEmail = require("./db_functions/verifyEmail");
 
+const editProfile = require("./general_functions/editProfile");
+
 
 
 
@@ -104,12 +106,14 @@ app.post("/updatePassword",updatePassword);
 
 app.post("/verifyEmail",verifyEmail);
 
+app.post("/editProfile",editProfile);
+
 // ML Routes
 
 app.get("/ml_data/reliance",reliance);
 
 
-app.post("/dlt",xxx);
+// app.post("/dlt",xxx);
 
 
 
