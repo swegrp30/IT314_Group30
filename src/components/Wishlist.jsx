@@ -50,26 +50,28 @@ const wishlistReducer = (state, action) => {
 const WishlistProvider = ({ children }) => {
     const [wishlist, dispatch] = useReducer(wishlistReducer, []);
     const token = localStorage.getItem('authToken')
-  // console.log(token)
+    // console.log(token)
 
-  const headers = {
-    'Content-Type': 'application/json',
-    'auth-token': token,
+    const headers = {
+        'Content-Type': 'application/json',
+        'auth-token': token,
 
-  }
-    // useEffect(() => {
-    //     // Fetch wishlist data from the backend when the component mounts
-    //     const fetchWishlist = async () => {
-    //         try {
-    //             const response = await axios.get('http://localhost:7000/getuser',{headers});
-    //             dispatch({ type: 'SET_WISHLIST', payload: response.data });
-    //         } catch (error) {
-    //             console.error('Error fetching wishlist data', error);
-    //         }
-    //     };
+    }
+    useEffect(() => {
+        // Fetch wishlist data from the backend when the component mounts
+        const fetchWishlist = async () => {
+            try {
+                const response = await axios.get('http://localhost:7000/getuser', { headers });
+                console.log(response.data);
+                console.log("hahahaha");
+                dispatch({ type: 'SET_WISHLIST', payload: response.data });
+            } catch (error) {
+                console.error('Error fetching wishlist data', error);
+            }
+        };
 
-    //     fetchWishlist();
-    // }, []);
+        fetchWishlist();
+    }, []);
 
     const addToWishlist = async (item) => {
         try {
