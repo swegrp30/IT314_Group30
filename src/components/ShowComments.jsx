@@ -30,7 +30,7 @@ const ShowComments = () => {
   //   window.addEventListener('load',getData())
   return (
     
-    <div className="container mt-5">
+    <div className="container mt-5 comments-container">
       
       {data.length > 0 &&
         data.map((dataItem, index) => {

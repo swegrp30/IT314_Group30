@@ -42,9 +42,9 @@ const Comments =  () => {
     <div>
       <section>
         <div >
-          <div className="row d-flex justify-content-left">
+          <div className="row d-flex justify-content-center">
             <div className="col-md-12 col-lg-10 col-xl-8">
-              <div className="cardComment" style={{marginLeft:100}}>
+              <div className="cardComment" >
                 <div className="card-footer py-3 border-0" style={{backgroundColor:"white"}}>
                   <div className="d-flex flex-column flex-start w-100">
                     <h3>Add Comment</h3>
