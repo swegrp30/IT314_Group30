@@ -40,7 +40,7 @@ body{
 .home-search-bar {
     background-image: linear-gradient(to right, white, rgb(238, 114, 238));
     border: none;
-    width: 30%;
+    width: 35%;
 }
 
 .btn-outline-success {

@@ -13,12 +13,6 @@ function Home() {
                 <h4 className='home-h4'>We use intuitive data visualizations and automated stock analysis to help <br /> you understand a stock's fundamentals within minutes.</h4>
             </div>
 
-            <div className='mt-4'>
-                <div className='home-search'>
-                    <input className=' home-search-bar' type="search" placeholder="Search Share" aria-label="Search" />
-                    <button className="btn btn-outline-success" style={{width:"4vw",}} type="submit"><img src={search} style={{height:"3.4vh",}} alt="" /></button>
-                </div>
-            </div>
 
             <div>
                 <h1 className='home-h1'>A quick guide to our product</h1>
