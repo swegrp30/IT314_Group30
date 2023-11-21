@@ -42,9 +42,9 @@ const Login = () => {
 
           email: form.email,
           password: form.password
-
         })
       const token = res.data.token;
+      console.log(res.data);
       if (token) {
         toast.success("You have logged in successfully")
         localStorage.setItem('authToken', token)
