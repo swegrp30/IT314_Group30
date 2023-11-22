@@ -6,7 +6,7 @@ const user = require("../models/user");
 
 const editProfile = (async(req,res)=>{
 
-    const email = req.userdata.email;
+    const email = req.userData.email;
     const dob = req.body.dob;
     const name = req.body.name;
     const occupation = req.body.occupation;
