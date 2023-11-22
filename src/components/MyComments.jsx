@@ -33,9 +33,8 @@ const MyComments = () => {
             "Content-Type": "application/json",
             "auth-token": token,
         };
-        const res = await axios.post(
-            "http://localhost:7000/getComments",
-            { company: "SBI" },
+        const res = await axios.get(
+            "http://localhost:7000/myComments",
             { headers }
         );
         // console.log(res.data[0].comment);
@@ -48,6 +47,24 @@ const MyComments = () => {
         }, 1000);
         return () => clearInterval(interval);
     }, [data]);
+
+    const handleDelete=async(e)=>{
+        const headers = {
+            "Content-Type": "application/json",
+            "auth-token": token,
+        };
+        const res = await axios.post(
+            "http://localhost:7000/dltComments",
+            {id:e},
+            { headers }
+        );
+        if(res.status===200){
+            toast.success('Comment Deleted Successfully ')
+        }
+        else{
+            toast.error('Try Again')
+        }
+    }
     //   window.addEventListener('load',getData())
     return (
 
@@ -108,8 +125,9 @@ const MyComments = () => {
                                     <div className="card-body mt-3">
                                         <div className="d-flex flex-start align-items-center">
                                             <div>
-                                                <h6 className="fw-bold  mb-1 usernameComment">
+                                                <h6 className="d-flex fw-bold  mb-1 usernameComment">
                                                     {data[index].username}
+                                                    <button className="btn btn-primary margin-cl" onClick={() => handleDelete(dataItem.comment_id)}>Delete</button>
                                                 </h6>
                                                 <p className="text-muted small mb-0">
                                                     Shared on{" "}
@@ -125,6 +143,7 @@ const MyComments = () => {
                                         </div>
 
                                         <p className="comment mt-3 mb-2 pb-2">{data[index].comment}</p>
+                                        
                                     </div>
                                 </div>
                             );
