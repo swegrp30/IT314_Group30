@@ -106,7 +106,7 @@ app.post("/updatePassword",updatePassword);
 
 app.post("/verifyEmail",verifyEmail);
 
-app.post("/editProfile",editProfile);
+app.post("/editProfile",auth,editProfile);
 
 // ML Routes
 
