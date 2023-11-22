@@ -30,6 +30,8 @@ const Profile = () => {
       );
       if(res.status===200){
       toast.success('Change Successfully ')
+      localStorage.clear()
+      localStorage.setItem('authToken',token)
       secureLocalStorage.setItem('user',user)
     }
     else{
