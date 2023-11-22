@@ -94,7 +94,7 @@ app.post("/getComments",auth,getComments);
 
 app.get("/myComments",auth,myComments);
 
-app.get("/dltComments",auth,deleteComments);
+app.post("/dltComments",auth,deleteComments);
 
 app.post("/addReply",auth,addReplytoComment);
 
