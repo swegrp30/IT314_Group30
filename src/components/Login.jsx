@@ -5,6 +5,8 @@ import UserContext from "../Context/UserContext";
 import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
+import  secureLocalStorage  from  "react-secure-storage";
+
 import axios from "axios";
 
 import React from "react";
@@ -46,8 +48,9 @@ const Login = () => {
         })
       const token = res.data.token;
       // console.log(res.data);
-      setValueToken(token);
-      setValueUser(res.data);
+      secureLocalStorage.setItem('user',res.data)
+      
+      
       
       if (token) {
         toast.success("You have logged in successfully")

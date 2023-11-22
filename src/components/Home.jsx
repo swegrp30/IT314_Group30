@@ -1,10 +1,12 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import Tour from "../Images/Tour.jpg"
 import '../style/Home.css';
 import search from '../Images/search.png'
 import Nav from './Nav';
 import Footer from './Footer';
+import UserContext from '../Context/UserContext';
 function Home() {
+    
     return (
         <div>
             
