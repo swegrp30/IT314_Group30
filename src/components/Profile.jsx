@@ -10,7 +10,7 @@ import "../style/Profile.css";
 
 const Profile = () => {
   const val = secureLocalStorage.getItem("user");
-  const token = val.token;
+  const token = localStorage.getItem('authToken');
   
   const headers = {
     "Content-Type": "application/json",
