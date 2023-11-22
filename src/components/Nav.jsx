@@ -8,21 +8,6 @@ function Nav() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // const routeToSignup = () => {
-    //     navigate('/signupwithemail');
-    // };
-    const routeToHome = () => {
-        navigate('/');
-    };
-
-    // const routeToSignIn = () => {
-    //     navigate('/login');
-    // };
-
-    const routeToProfile = () => {
-        navigate('/Profile');
-    };
-
     const handleUnderline = (event) => {
         const nav_links = document.querySelectorAll('.nav-link');
         nav_links.forEach((nav_link) => {
@@ -30,29 +15,26 @@ function Nav() {
         });
         event.target.classList.add('specialClass');
     };
-    const authToken = localStorage.getItem('authToken')
-    // console.log(authToken)
-    const clearLocalStorage =()=>{
-        localStorage.clear()
-        navigate('/')
-    }
-    // Set initial underline based on the current location
-    useEffect(() => {
-        const nav_links = document.querySelectorAll('.nav-link');
-        nav_links.forEach((nav_link) => {
-            nav_link.classList.remove('specialClass');
-        });
 
+    const authToken = localStorage.getItem('authToken');
+
+    const clearLocalStorage = () => {
+        localStorage.clear();
+        navigate('/');
+    };
+
+    // Set initial underline when the component mounts
+    useEffect(() => {
         const currentLink = document.querySelector(`.nav-link[href="${location.pathname}"]`);
         if (currentLink) {
             currentLink.classList.add('specialClass');
         }
-    }, [location.pathname]);
+    }, []);
 
     return (
         <div>
             <div className='text-center'>
-                <img src={logo} onClick={routeToHome} className='home-logo img-fluid' alt='' />
+                <img src={logo} onClick={() => navigate('/')} className='home-logo img-fluid' alt='' />
             </div>
             <nav className='navbar nav-border navbar-expand-lg bg-body-tertiary'>
                 <button
@@ -70,11 +52,7 @@ function Nav() {
                     <div className='collapse navbar-collapse' id='navbarSupportedContent'>
                         <ul className='me-auto mb-2 navbar-ul'>
                             <li className='nav-item nav-text'>
-                                <Link
-                                    className='nav-link'
-                                    onClick={handleUnderline}
-                                    to='/'
-                                >
+                                <Link className='nav-link' onClick={handleUnderline} to='/'>
                                     Home
                                 </Link>
                             </li>
@@ -126,41 +104,30 @@ function Nav() {
                             </li>
                         </ul>
                         
-                        {!authToken && <div className='d-flex me-5'>
-                            <button
-                                
-                                className='nav-button text-white me-3'
-                            >
-                               <Link
-                                    // className='nav-link'
-                                    // onClick={handleUnderline}
-                                    to='/signupwithemail'
+                        {!authToken && (
+                            <div className='d-flex me-5'>
+                                <button className='nav-button text-white me-3'>
+                                    <Link to='/signupwithemail' onClick={handleUnderline}>
+                                        Sign Up
+                                    </Link>
+                                </button>
+                                <button className='nav-button text-white'>
+                                    <Link to='/login' onClick={handleUnderline}>
+                                        Sign In
+                                    </Link>
+                                </button>
+                            </div>
+                        )}
+                        {authToken && (
+                            <div className='d-flex me-5'>
+                                <button
+                                    onClick={clearLocalStorage}
+                                    className='nav-button text-white'
                                 >
-                                    Sign Up
-                                </Link>
-                            </button>
-                            <button
-                                
-                                className='nav-button text-white'
-                            >
-                               <Link
-                                    // className='nav-link'
-                                    // onClick={handleUnderline}
-                                    to='/login'
-                                >
-                                    Sign In
-                                </Link>
-                            </button>
-                        </div>}
-                        {authToken && <div className='d-flex me-5'>
-                            
-                            <button
-                                onClick={clearLocalStorage}
-                                className='nav-button text-white'
-                            >
-                                Sign Out
-                            </button>
-                        </div>}
+                                    Sign Out
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             </nav>

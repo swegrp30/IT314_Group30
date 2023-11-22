@@ -109,7 +109,7 @@ function Changepassword() {
 
             <Link
               className="active-link text-center hoverClass p-3 fs-5 w-100"
-              to="/changePassword"
+              to="/mycomments"
             >
               My Comments
             </Link>
