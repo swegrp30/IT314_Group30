@@ -60,25 +60,7 @@ const ShowComments = () => {
             </div>
           );
         })}
-      {/* <div className="card-body mt-3">
-        <div className="d-flex flex-start align-items-center">
-          <div>
-            <h6 className="fw-bold text-primary mb-1">Lily Coleman</h6>
-            <p className="text-muted small mb-0">Shared publicly - Jan 2020</p>
-          </div>
-        </div>
-
-        <p className="mt-3 mb-4 pb-2">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip consequat.
-        </p>
-
-        <div className="small d-flex justify-content-start">
-          <button className="btn btn-delete btn-primary btn-sm">Delete</button>
-        </div>
-      </div> */}
+      
     </div>
   );
 };
