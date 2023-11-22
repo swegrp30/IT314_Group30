@@ -23,6 +23,7 @@ import Signupemail from './components/Signupemail'
 import UserState from './Context/UserState'
 import ShowComments from './components/ShowComments';
 import Error401 from './components/Error401';
+import MyComments from './components/MyComments';
 import { useEffect, useState } from 'react';
 import TempNewNews from './components/TempNewNews';
 import CompanyNewsPage from './components/CompanyNewsPage';
@@ -64,6 +65,7 @@ function App() {
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
+                    <Route path='/mycomments' element={<MyComments />} />
 
                   </Routes>
                   <ShowFooter>
