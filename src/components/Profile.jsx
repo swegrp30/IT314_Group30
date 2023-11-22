@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import secureLocalStorage from "react-secure-storage";
+import { ToastContainer, toast } from 'react-toastify'
 
 import image from "../Images/hero.png";
 import axios from "axios";
@@ -19,16 +20,23 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(token)
-    console.log(user)
+
     try {
+        console.log(user)
       const res = await axios.post(
         "http://localhost:7000/editProfile",
-        { user },
+         user,
         { headers }
       );
+      if(res.status===200){
+      toast.success('Change Successfully ')
       secureLocalStorage.setItem('user',user)
-      
+    }
+    else{
+        toast.success('Try Again')
+    }
+
+
     } catch (error) {
       console.log(error);
     }
@@ -110,7 +118,7 @@ const Profile = () => {
           className="d-flex w-75 flex-column justify-content-start mt-5 align-items-center"
           style={{ height: "100vh" }}
         >
-          {/* <ToastContainer /> */}
+          <ToastContainer />
           <div className="fs-2 fw-bold">Profile</div>
           <form className="row g-5 w-75 mt-2">
             <div className="col-md-6">
@@ -149,7 +157,7 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="dob"
-                value={user.date}
+                value={val.date}
               />
             </div>
             <div className="col-md-6">
