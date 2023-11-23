@@ -13,7 +13,8 @@
             "description": "Through an AI Center of Excellence with Nvidia, Wipro engineers will receive large-scale ongoing training on Nvidia’s application frameworks in areas like generative AI, the metaverse, conversational AI, and data analytics to accelerate the development of custom solutions.",
             "tickers": [
                 "wit"
-            ]
+            ],
+            "img" : "https://img.etimg.com/thumb/msid-105392506,width-650,height-488,imgsize-193258,,resizemode-75/file-photo-illustration-shows-nvidia-logo.jpg"
         },
         {
             "id": "-46393060826337307",
@@ -45,7 +46,8 @@
             ],
             "tickers": [
                 "wit"
-            ]
+            ],
+            "img" : "https://img.etimg.com/thumb/msid-105370566,width-630,resizemode-4,imgsize-21140/wipro-stocks-live-updates-21-nov-2023.jpg"
         },
         {
             "id": "-574834326238498514",
@@ -60,7 +62,24 @@
             "description": "The country's fourth-largest IT firm recently implemented a compulsory hybrid work policy requiring employees to report to work from the office at least three days a week.",
             "tickers": [
                 "wit"
-            ]
+            ],
+            "img" : "https://img.etimg.com/thumb/msid-105370136,width-300,height-225,imgsize-46718,,resizemode-75/file-photo-illustration-shows-wipro-ltd-logo-source-reuters.jpg"
+        },
+        {
+            "id": "-9002480026013499519",
+            "title": "Radware (RDWR) to Equip North American Airport With Its Solutions",
+            "url": "https://finance.yahoo.com/news/radware-rdwr-equip-north-american-162900376.html?.tsrc=rss",
+            "site": "yahoo.com",
+            "time": 1700497740000,
+            "favicon_url": "https://static.tickertick.com/website_icons/yahoo.com.ico",
+            "tags": [
+                "wit"
+            ],
+            "description": "Radware (RDWR) to implement security solutions for a major North American airport with its Cloud DDoS Protection and Cloud Application Protection Services.",
+            "tickers": [
+                "wit"
+            ],
+            "img" : "https://th.bing.com/th?id=OVFT.1WJefzGmFn8-WfBdz15Mey&pid=News&w=300&h=186&c=14&rs=2&qlt=90&dpr=1.1"
         },
         {
             "id": "-16723373528337181",
@@ -78,21 +97,6 @@
             ]
         },
         {
-            "id": "-9002480026013499519",
-            "title": "Radware (RDWR) to Equip North American Airport With Its Solutions",
-            "url": "https://finance.yahoo.com/news/radware-rdwr-equip-north-american-162900376.html?.tsrc=rss",
-            "site": "yahoo.com",
-            "time": 1700497740000,
-            "favicon_url": "https://static.tickertick.com/website_icons/yahoo.com.ico",
-            "tags": [
-                "wit"
-            ],
-            "description": "Radware (RDWR) to implement security solutions for a major North American airport with its Cloud DDoS Protection and Cloud Application Protection Services.",
-            "tickers": [
-                "wit"
-            ]
-        },
-        {
             "id": "-7916194387201298436",
             "title": "IT stocks' rally overdone, says Jefferies; Infosys, 2 more stocks top picks",
             "url": "https://economictimes.indiatimes.com/markets/stocks/news/it-stocks-rally-overdone-says-jefferies-picks-infosys-2-more-stocks-as-buys/articleshow/105349376.cms",
@@ -105,7 +109,8 @@
             "description": "Jefferies has taken a 'Hold' view on Tata Consultancy Services (TCS), HCL Technologies and LTI MIndTree while an 'Underperform' stance on Wipro and Tech Mahindra.",
             "tickers": [
                 "wit"
-            ]
+            ],
+            "img" : "https://img.etimg.com/thumb/msid-105349338,width-210,height-158,imgsize-41512,,resizemode-75/it-stocks-rally-overdone-says-jefferies-picks-infosys-2-more-stocks-as-buys.jpg"
         },
         {
             "id": "-6357370975950335838",
