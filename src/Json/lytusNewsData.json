@@ -1,33 +1,6 @@
 {
     "stories": [
-        {
-            "id": "6041812941502214122",
-            "title": "Lytus Technologies Holdings PTV. Ltd.: Form 144 - Report of proposed sale of securities",
-            "url": "https://www.sec.gov/Archives/edgar/data/1816319/000196858223000629/0001968582-23-000629-index.htm",
-            "site": "sec.gov",
-            "time": 1699482199000,
-            "favicon_url": "https://static.tickertick.com/website_icons/sec.gov.ico",
-            "tags": [
-                "lyt"
-            ],
-            "tickers": [
-                "lyt"
-            ]
-        },
-        {
-            "id": "-6114438872629302993",
-            "title": "Lytus Technologies Holdings PTV. Ltd.: Form F-1/A [Amend] - Registration statement for certain foreign private issuers",
-            "url": "https://www.sec.gov/Archives/edgar/data/1816319/000121390023082051/0001213900-23-082051-index.htm",
-            "site": "sec.gov",
-            "time": 1698860029000,
-            "favicon_url": "https://static.tickertick.com/website_icons/sec.gov.ico",
-            "tags": [
-                "lyt"
-            ],
-            "tickers": [
-                "lyt"
-            ]
-        },
+       
         {
             "id": "692512037318313179",
             "title": "Lytus Technologies Holdings PTV. Ltd.'s (NASDAQ:LYT) 31% Dip In Price Shows Sentiment Is Matching Revenues",
@@ -41,7 +14,8 @@
             "description": "Unfortunately for some shareholders, the Lytus Technologies Holdings PTV. Ltd. ( NASDAQ:LYT ) share price has dived 31...",
             "tickers": [
                 "lyt"
-            ]
+            ],
+            "img":"https://s.yimg.com/ny/api/res/1.2/YjYWTlFb1FLKH8u4OIaUAw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTM4MDtjZj13ZWJw/https://media.zenfs.com/en/simply_wall_st__316/ac85b9dff3d3bb2fb96bae1f0ccf6a4f"
         },
         {
             "id": "1531685436522381910",

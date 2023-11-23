@@ -13,7 +13,8 @@
             "description": "Yatra Online, Inc. (NASDAQ:YTRA – Get Free Report)’s stock price crossed below its 50 day moving average during trading on Friday . The stock has a 50 day moving average of $1.90 and traded as low as $1.52. Yatra Online shares last traded at $1.53, with a volume of 189,982 shares traded. Analyst Upgrades and […]",
             "tickers": [
                 "ytra"
-            ]
+            ],
+            "img" : "https://www.marketbeat.com/logos/yatra-online-inc-logo.jpg?v=20221220145240"
         },
         {
             "id": "-5059646490351337795",
@@ -46,7 +47,8 @@
             ],
             "tickers": [
                 "ytra"
-            ]
+            ],
+            "img":"https://th.bing.com/th?id=OVFT.B4fSt71ubRBupvCdEmusLi&pid=News&w=300&h=186&c=14&rs=2&qlt=90&dpr=1.1"
         },
         {
             "id": "-8147222072933717196",
@@ -60,7 +62,8 @@
             ],
             "tickers": [
                 "ytra"
-            ]
+            ],
+            "img" : "https://th.bing.com/th?id=OVFT.wVf93hMNb_RKI24HdUJJ4C&pid=News&w=300&h=186&c=14&rs=2&qlt=90&dpr=1.1"
         },
         {
             "id": "5568366400678295532",
@@ -74,7 +77,8 @@
             ],
             "tickers": [
                 "ytra"
-            ]
+            ],
+            "img" :"https://www.livemint.com/lm-img/img/2023/11/14/600x338/Dhruv-Shringi--Yatra-Online-co-founder-and-CEO-_1699965936186_1699966015958.jpg"
         },
         {
             "id": "3224597697872365805",
@@ -103,7 +107,8 @@
             ],
             "tickers": [
                 "ytra"
-            ]
+            ],
+            "img":"https://th.bing.com/th/id/OIP.eV6I3C9rKcMwE6TNkbRA2QHaEK?w=202&h=113&c=7&r=0&o=5&dpr=1.1&pid=1.7"
         },
         {
             "id": "-7361698946497038394",
