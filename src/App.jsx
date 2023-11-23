@@ -20,7 +20,6 @@ import Changepassword from './components/Changepassword';
 import Forgotpassword from './components/ForgotPassword';
 import { WishlistProvider, useWishlist, Wishlist } from './components/Wishlist';
 import Signupemail from './components/Signupemail'
-import UserState from './Context/UserState'
 import ShowComments from './components/ShowComments';
 import Error401 from './components/Error401';
 import MyComments from './components/MyComments';
@@ -38,7 +37,6 @@ function App() {
   return (
     <>
 
-      <UserState>
         <Router>
           <WishlistProvider>
             {
@@ -100,7 +98,6 @@ function App() {
             }
           </WishlistProvider>
         </Router>
-      </UserState>
 
     </>
   );

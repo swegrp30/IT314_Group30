@@ -1,7 +1,6 @@
 import "../style/Login.css";
 import hero from "../Images/hero.png";
 import logo from "../Images/logo.png";
-import UserContext from "../Context/UserContext";
 import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
@@ -12,8 +11,6 @@ import axios from "axios";
 import React from "react";
 
 const Login = () => {
-  const context = useContext(UserContext);
-  const {setValueToken,setValueUser}=context;
   const navigate = useNavigate();
   const [form, setForm] = useState({
 

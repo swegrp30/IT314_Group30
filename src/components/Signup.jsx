@@ -5,19 +5,16 @@ import google from "../Images/google.png";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import UserContext from "../Context/UserContext";
 import axios from "axios";
 
 import React from "react";
 
 const Signup = (props) => {
-  const context = useContext(UserContext);
-  const { user } = context;
-
+  const email=localStorage.getItem('email')
   const [data, setData] = useState({
     name: "",
     username: "",
-    email: user.email,
+    email: email,
     password: "",
     phone: "",
   });
@@ -51,10 +48,10 @@ const Signup = (props) => {
             phone: data.phone,
           })
           const token = res.data.token
+          localStorage.clear()
           localStorage.setItem("authToken", token);
           toast.success("You have signed up successfully")
-      
-          setInterval(()=>{
+          setTimeout(()=>{
             navigate('/login')
           },1000)
           

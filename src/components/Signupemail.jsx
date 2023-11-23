@@ -5,7 +5,6 @@ import google from "../Images/google.png";
 import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import UserContext from "../Context/UserContext";
 import Signup from "./Signup";
 //import {FcGoogle} from 'react-icons/fc';
 import axios from "axios";
@@ -14,9 +13,6 @@ import React from "react";
 import Timer from "./Timer";
 
 const Signupemail = () => {
-    const context = useContext(UserContext);
-    const {setValueEmail}=context;
-    // console.log(context)  
   const [form, setForm] = useState({
     email: "",
     otp: "",
@@ -50,8 +46,7 @@ const Signupemail = () => {
         const data = res.status;
         if (data === 200) {
           const changeClass1 = document.querySelector(".send");
-          const changeClass2 = document.querySelector(".verify");
-          setValueEmail(form.email)  
+          const changeClass2 = document.querySelector(".verify"); 
           changeClass1.classList.add("d-none");
           changeClass2.classList.remove("d-none");
         }
@@ -101,7 +96,7 @@ const Signupemail = () => {
           });
           const data = res.status;
           if(data===200){
-            
+            localStorage.setItem('email',form.email)
             navigate('/signup')
           }
           else if(data===288){
