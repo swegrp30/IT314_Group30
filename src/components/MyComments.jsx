@@ -9,7 +9,12 @@ const MyComments = () => {
     const val = secureLocalStorage.getItem("user");
     const token = localStorage.getItem("authToken");
     const location = useLocation();
-    // console.log(token)
+    const [isediting, setediting] = useState()
+    const [comment, setComment] = useState();
+    const [incomment,setincomment]=useState();
+    const handleChange = (e) => {
+        setComment(e.target.value);
+    };
     useEffect(() => {
         const active_links = document.querySelectorAll(".active-link");
         active_links.forEach((active_link) => {
@@ -44,24 +49,54 @@ const MyComments = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             getData();
-        }, 1000);
+        }, 10);
         return () => clearInterval(interval);
     }, [data]);
 
-    const handleDelete=async(e)=>{
+    const handleEdit = async (e) => {
+        // console.log(e)
+        setincomment(data[e].comment)
+        setediting(e);
+        setComment(data[e].comment)
+    }
+    const handleSubmitchange = async (e) => {
+        setediting(-1);
+        const headers = {
+            "Content-Type": "application/json",
+            "auth-token": token,
+        };
+        const res = await axios.post(
+            "http://localhost:7000/editComments",
+            { comment_id: e, new_comment: comment },
+            { headers }
+        );
+        if (res.status === 200) {
+            toast.success('Comment Edited Successfully ')
+            setComment('')
+        }
+        else {
+            toast.error('Try Again')
+        }
+    }
+    const handleCancel = async (e) => {
+        setediting(-1);
+        setComment('')
+    }
+
+    const handleDelete = async (e) => {
         const headers = {
             "Content-Type": "application/json",
             "auth-token": token,
         };
         const res = await axios.post(
             "http://localhost:7000/dltComments",
-            {id:e},
+            { id: e },
             { headers }
         );
-        if(res.status===200){
+        if (res.status === 200) {
             toast.success('Comment Deleted Successfully ')
         }
-        else{
+        else {
             toast.error('Try Again')
         }
     }
@@ -127,7 +162,11 @@ const MyComments = () => {
                                             <div>
                                                 <h6 className="d-flex fw-bold  mb-1 usernameComment">
                                                     {data[index].username}
-                                                    <button className="btn btn-primary margin-cl" onClick={() => handleDelete(dataItem.comment_id)}>Delete</button>
+                                                    <div className="d-flex margin-cl">
+                                                        {index != isediting && <button className="btn btn-primary btn-ead" onClick={() => handleEdit(index)}>Edit</button>}
+                                                        {index == isediting && <button className="btn btn-primary btn-ead" onClick={() => handleSubmitchange(dataItem.comment_id)}>Change</button>}
+                                                        <button className="btn btn-primary btn-ead" onClick={() => handleDelete(dataItem.comment_id)}>Delete</button>
+                                                    </div>
                                                 </h6>
                                                 <p className="text-muted small mb-0">
                                                     Shared on{" "}
@@ -142,8 +181,22 @@ const MyComments = () => {
                                             </div>
                                         </div>
 
-                                        <p className="comment mt-3 mb-2 pb-2">{data[index].comment}</p>
-                                        
+                                        {index != isediting && <p className="comment mt-3 mb-2 pb-2">{data[index].comment}</p>}
+                                        {index == isediting && <div className="editcomment">
+                                            <button className="btn btn-primary btn-ead cancel" onClick={() => handleCancel(index)}>
+                                                Cancel
+                                            </button>
+                                            <textarea
+                                                className="form-control mt-3 mb-2 pb-2"
+                                                id="comments"
+                                                name="comments"
+                                                value={comment}
+                                                onChange={handleChange}
+                                                rows="3"
+                                            ></textarea>
+                                        </div>
+                                        }
+
                                     </div>
                                 </div>
                             );
