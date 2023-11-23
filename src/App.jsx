@@ -38,7 +38,6 @@ function App() {
     <>
 
         <Router>
-          <WishlistProvider>
             {
               token ? (
                 <>
@@ -96,7 +95,6 @@ function App() {
                 </>
               )
             }
-          </WishlistProvider>
         </Router>
 
     </>

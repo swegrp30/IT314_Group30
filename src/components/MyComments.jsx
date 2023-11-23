@@ -12,6 +12,7 @@ const MyComments = () => {
     const [isediting, setediting] = useState()
     const [comment, setComment] = useState();
     const [incomment,setincomment]=useState();
+    const [data, setData] = useState([]);
     const handleChange = (e) => {
         setComment(e.target.value);
     };
@@ -30,7 +31,6 @@ const MyComments = () => {
             currentLink.classList.add("activeClass");
         }
     }, [location.pathname]);
-    const [data, setData] = useState([]);
     const getData = async (e) => {
         // e.preventDefault();
 
