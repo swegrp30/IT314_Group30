@@ -87,9 +87,9 @@ function Nav() {
                                 <Link
                                     className='nav-link'
                                     onClick={handleUnderline}
-                                    to='/QuickStartGuide'
+                                    to='/aboutus'
                                 >
-                                    Quick Start Guide
+                                    About us
                                 </Link>
                             </li>
 

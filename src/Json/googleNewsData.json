@@ -13,7 +13,8 @@
             "description": "In today’s digital age, I’ve embarked on a radical experiment, a journey that has transformed my online experience entirely. I stopped…Continue reading on Predict »",
             "tickers": [
                 "goog"
-            ]
+            ],
+            "img" : "https://miro.medium.com/v2/resize:fit:786/format:webp/0*ClkxXCQjLPhsuANK"
         },
         {
             "id": "-2549111424905599668",
@@ -43,7 +44,8 @@
             "description": "Google's going trial with Epic is the gift that keeps on giving, at least for those interested in learning how the sausage is made.Read Entire Article",
             "tickers": [
                 "goog"
-            ]
+            ],
+            "img" : "https://www.techspot.com/images2/news/bigimage/2023/11/2023-11-21-image-13-j_1100.webp"
         },
         {
             "id": "1044121081529689423",
@@ -58,7 +60,8 @@
             "description": "The Sunbird-based app's re-release will now be delayed until Nothing can address several bugs.",
             "tickers": [
                 "goog"
-            ]
+            ],
+            "img" : "https://i.extremetech.com/imagery/content-types/00bB9IbkjHX4Vccu1fxLdre/hero-image.fill.size_994x559.v1700593224.png"
         },
         {
             "id": "826104617643868131",
@@ -73,7 +76,8 @@
             "description": "AppFlowy, a Singapore-based provider of an open source project management platform for the enterprise, raised $6.4m in seed funding. The round was led by OSS Capital with participation from Matt Mullenweg (Automattic), Steve Chen (YouTube), Tom Preston-Werner (GitHub), Bob Young (Red Hat), Amr Awadallah (Cloudera), as well as Justin Hoffman, Preetha Parthasarathy, Kevin Xu, Clint Smith, David Mytton, Paul Copplestone, Peer Richelsen, Maneesh Sharma, and […] The post AppFlowy Raises $6.4M in Seed Funding appeared first on FinSMEs.",
             "tickers": [
                 "goog"
-            ]
+            ],
+            "img" : "https://www.finsmes.com/wp-content/uploads/2023/11/appflowy-300x300.jpeg"
         },
         {
             "id": "8145846542999155027",
@@ -103,7 +107,8 @@
             "description": "Google has recently announced a new feature for BigQuery, its serverless data warehouse service, that allows users to create and run…Continue reading on Dev Genius »",
             "tickers": [
                 "goog"
-            ]
+            ],
+            "img" : "https://miro.medium.com/v2/resize:fit:640/format:webp/1*QUhf78WxSivkbkjL0498bg.png"
         },
         {
             "id": "-2192495630275052024",

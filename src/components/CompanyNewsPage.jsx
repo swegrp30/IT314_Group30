@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DrawerExample from './DrawerExample';
+import { Heading } from '@chakra-ui/react';
 
 const CompanyNewsPage = () => {
   const { companyName } = useParams();
@@ -23,6 +24,7 @@ const CompanyNewsPage = () => {
 
   const createArticle = (articleData) => (
     <a key={articleData.id} href={articleData.url} className="card">
+     
       {articleData.img && <img src={articleData.img} alt="" />}
       <article>
         {articleData.category && (
