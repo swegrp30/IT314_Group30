@@ -52,8 +52,12 @@ function Changepassword() {
       console.log(res.status);
       var inputs = document.querySelectorAll('input');
       inputs.forEach((input) => (input.value = ""));
-
+      if(res.status === 200){
       toast.success("Password changed sucessfully");
+      }
+      else if(res.status === 202){
+        toast.error("Enter correct current password")
+      }
     }
   };
 
