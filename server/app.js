@@ -56,6 +56,7 @@ const verifyEmail = require("./db_functions/verifyEmail");
 
 const editProfile = require("./general_functions/editProfile");
 
+const editComment = require("./general_functions/editcomment");
 
 
 
@@ -95,6 +96,8 @@ app.post("/getComments",auth,getComments);
 app.get("/myComments",auth,myComments);
 
 app.post("/dltComments",auth,deleteComments);
+
+app.post("/editComments",auth,editComment);
 
 app.post("/addReply",auth,addReplytoComment);
 
