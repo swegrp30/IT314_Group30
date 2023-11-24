@@ -11,6 +11,7 @@
       color: #333;
       margin: 0;
       padding: 0;
+      border: 2px solid #000000;
     }
 
     .container {
@@ -22,19 +23,15 @@
     }
 
     .header {
-      background-color: #504099;
-      color: #FE7BE5;
-      padding: 15px;
-      border-radius: 10px 10px 0 0;
+      background-color:rgb(172, 0, 172);
+      color: white;
+      padding: 10px;
+      border-radius: 10px;
     }
 
-    {{!-- h1 {
-      margin: 0;
-      color: #fff;
-    } --}}
-
     .content {
-      padding: 15px;
+      padding: 7px;
+      font-size: 16px; 
     }
 
     p {
@@ -50,49 +47,53 @@
     li {
       margin-bottom: 10px;
     }
-
+    
     .cta-button {
       display: inline-block;
-      padding: 12px 24px;
+      padding: 4px 11px;
+      border-radius: 10px;
       margin-top: 20px;
-      background-color: #504099;
-      color: #FE7BE5;
-      /*text-decoration: none;*/
-      /*border-radius: 5px;*/
+      background-color: rgb(172, 0, 172);
+      text-color: whitesmoke;
+      text-decoration: none;
       transition: background-color 0.3s ease;
     }
 
     .cta-button:hover {
-      background-color: #313866;
+      background-color: rgb(97, 20, 97);
     }
 
     .footer {
-      color: #777;
+      padding: 10px;
+      border-radius: 10px;
+      color: grey;
       text-align: center;
-      margin-top: 15px;
+      /*margin-top: 15px;*/
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>Account Login Notification</h1>
+      <h1>Account has been logged in!!</h1>
     </div>
 
     <div class="content">
-      <p>Hello {{ demo.name }},</p>
+      <p>Greetings {{ demo.name }}!!!</p>
 
-      <p>We wanted to inform you that your account has been accessed. Below are the details of the login event:</p>
-
+      <p>Glad to see you! You have been currently logged in to your account</p>
+      <p>Below are the login activity details: </p>
       <ul>
         <li><strong>Date and Time:</strong> {{ demo.time }}</li>
         <!-- Add more details as needed -->
       </ul>
 
-      <p>If you did not perform this action or if you have any concerns about the security of your account, please contact our support team immediately at {{ demo.support_email }}.</p>
+      <p>If you have not logged into the account, please contact our support team immediately by clicking below! </p>
+      {{!-- {{ demo.support_email }} --}}
 
       <p style="text-align: center;">
-        <a class="cta-button" href="#">Contact Support</a>
+        <a class="cta-button" href="#" style="color: whitesmoke">Click Here!</a>
       </p>
     </div>
 
