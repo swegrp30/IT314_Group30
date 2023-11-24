@@ -65,6 +65,8 @@ const editProfile = require("./general_functions/editProfile");
 
 const reliance = require("./ml_apis/reliance");
 
+const tata = require("./ml_apis/tata");
+
 
 
 
@@ -110,7 +112,9 @@ app.post("/editProfile",editProfile);
 
 // ML Routes
 
-app.get("/ml_data/reliance",reliance);
+app.get("/ml_data/reliance",auth,reliance);
+
+app.get("/ml_data/tata",auth,tata);
 
 
 // app.post("/dlt",xxx);
