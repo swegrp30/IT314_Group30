@@ -41,6 +41,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../style/stock.css';
+import { textDecoration } from "@chakra-ui/react";
 
 const Stock = (prop) => {
   const isPositiveChange = prop.lastChange > 0;
@@ -63,9 +64,9 @@ const Stock = (prop) => {
                 <h2 className="d-flex align-items-center mb-0">$ {prop.lastClose}</h2>
               </div>
               <div className="col-4 text-right">
-                <span className={percentageChangeColor}>
-                  {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
-                </span>
+              <span className={percentageChangeColor} style={{ fontWeight: 'bold', fontSize: '25px' }}>
+  {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
+</span>
               </div>
             </div>
             <div>
