@@ -6,7 +6,7 @@
   <title>Account Login Notification</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Futura,Trebuchet MS,Arial,sans-serif;
       background-color: #f0f0f0;
       color: #333;
       margin: 0;
@@ -22,19 +22,19 @@
     }
 
     .header {
-      background-color: #3498db;
-      color: #fff;
-      padding: 20px;
+      background-color: #504099;
+      color: #FE7BE5;
+      padding: 15px;
       border-radius: 10px 10px 0 0;
     }
 
-    h1 {
+    {{!-- h1 {
       margin: 0;
       color: #fff;
-    }
+    } --}}
 
     .content {
-      padding: 20px;
+      padding: 15px;
     }
 
     p {
@@ -55,21 +55,21 @@
       display: inline-block;
       padding: 12px 24px;
       margin-top: 20px;
-      background-color: #e44d26;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
+      background-color: #504099;
+      color: #FE7BE5;
+      /*text-decoration: none;*/
+      /*border-radius: 5px;*/
       transition: background-color 0.3s ease;
     }
 
     .cta-button:hover {
-      background-color: #d33f21;
+      background-color: #313866;
     }
 
     .footer {
       color: #777;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -82,7 +82,7 @@
     <div class="content">
       <p>Hello {{ demo.name }},</p>
 
-      <p>We wanted to inform you that your account has been accessed. Below are the details of the login:</p>
+      <p>We wanted to inform you that your account has been accessed. Below are the details of the login event:</p>
 
       <ul>
         <li><strong>Date and Time:</strong> {{ demo.time }}</li>
@@ -98,7 +98,7 @@
 
     <div class="footer">
       <p>Thank you for choosing our services!</p>
-      <p>Best regards,<br>Stock MarketPrediction</p>
+      <p>Best regards,<br>Bear & Bull</p>
     </div>
   </div>
 </body>

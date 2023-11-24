@@ -26,7 +26,7 @@ const user_signup = async (req, res) => {
     // const email = req.body.email;
 
     const already_exist_email = await user.findOne({ email: req.body.email });
-
+    
 
 
     if (already_exist_email) {
