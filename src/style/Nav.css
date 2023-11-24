@@ -19,12 +19,15 @@
     font-weight: bold;
     padding: 4px 11px;
     margin-left: 30px;
+    height: 50px;
+    width: 150px;
+    
 }
 
 .nav-text {
     font-weight: bold;
     margin-left: 50px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     
 }
 

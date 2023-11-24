@@ -11,6 +11,7 @@ const Stock = (prop) => {
                 <div className="card-icon card-icon-large">
                   <i className="fas fa-users"></i>
                 </div>
+                <Link to={`/share/${prop.name}`}>
                 <div className="mb-4">
                   <h5 className="card-title mb-0">{prop.name}</h5>
                 </div>
@@ -25,8 +26,9 @@ const Stock = (prop) => {
                   </div>
                 </div>
                 <div>
-                    <Link to={`/share/${prop.name}`}><button>Redirect</button></Link>
+                    <button>Redirect</button>
                 </div>
+                    </Link>
               </div>
             </div>
             </div>
