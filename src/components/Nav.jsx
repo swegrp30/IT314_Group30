@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../style/Nav.css';
-import logo from '../Images/Logo.jpg';
+import logo from '../Images/TopLogo.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { to } from 'react-spring';

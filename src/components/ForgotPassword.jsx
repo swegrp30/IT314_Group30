@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Center } from '@chakra-ui/react';
 import axios from 'axios';
-import logo from '../Images/logo.png'
+import logo from '../Images/TopLogo.svg'
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 // import '../style/ForgotPassword.css'
