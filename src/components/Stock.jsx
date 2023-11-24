@@ -34,13 +34,13 @@ const Stock = (prop) => {
             <div className="mb-4">
               <h5 className="card-title mb-0">{prop.name}</h5>
             </div>
-            <div className="row align-items-center mb-2 d-flex">
+            <div className="row align-items-end mb-2 d-flex">
               <div className="col-8">
                 <h2 className="d-flex align-items-center mb-0">$ {prop.lastClose}</h2>
               </div>
-              <div className="col-4 text-right">
+              <div className="col-4 text-right" style={{ position: 'absolute', bottom: '10px', right: '0' }}>
                 <span className={percentageChangeColor} style={{ fontWeight: 'bold', fontSize: '20px' }}>
-                  {prop.lastChange}%<i className={`fa ${arrowIconClass}`}></i>
+                  {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
                 </span>
               </div>
             </div>
