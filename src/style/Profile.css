@@ -14,7 +14,6 @@
 }
 .editcomment{
 	width: 59rem;
-	/* display: flex; */
     justify-content: space-between;
 }
 .cancel{
@@ -36,14 +35,14 @@
   height: 30vh;
   border: "10px solid #CBC3E3";
 }
-/* Underline styles */
+
 .active-link {
 	display: block;
 	position: relative;
 	padding: 0.2em 0;
 }
 
-/* Fade in */
+
 .active-link::after {
 	content: '';
 	position: absolute;
@@ -73,4 +72,9 @@
     opacity: 1;
 	transform: translate3d(0, 0.1em, 0);
 }
+
+
+
+
+
 

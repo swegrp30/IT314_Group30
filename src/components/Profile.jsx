@@ -78,7 +78,7 @@ const Profile = () => {
                 <div className="fs-2 fw-bold" style={{ color: "white" }}>
                   {val.username}
                 </div>
-                <div className="fs-5 mt-2" style={{ color: "white" }}>
+                <div className="fs-5 mt-2" style={{ color: "white", maxWidth :'300px' }}>
                   {val.email}
                 </div>
                 <div className="fs-5" style={{ color: "white" }}>
