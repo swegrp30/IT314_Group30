@@ -5,20 +5,22 @@ const db = require("../connection/connect_ML_DB");
 
 
 const func = (async (req, res) => {
+    
+    const comp = req.body.company;
 
     try {
 
-        // Access the 'reliance' collection within the 'ml' database
-        const relianceCollection = db.collection('reliance');
+        // Access the 'comp' collection within the 'ml' database
+        const relianceCollection = db.collection(comp);
 
-        // Perform operations on the 'reliance' collection
+        // Perform operations on the 'comp' collection
         // For example:
-        // Query all documents in the 'reliance' collection
-        const allRelianceDocuments = await relianceCollection.find({}).toArray();
+        // Query all documents in the 'comp' collection
+        const allcompDocuments = await relianceCollection.find({}).toArray();
         res.status(200).send(allRelianceDocuments);
 
     } catch (error) {
-        console.log("This is error from reliance.js");
+        console.log("This is error from comp.js");
         console.log(error);
         res.status(400).send();
     }

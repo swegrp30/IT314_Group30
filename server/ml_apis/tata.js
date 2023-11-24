@@ -8,7 +8,7 @@ const func = (async (req, res) => {
 
     try {
 
-        // Access the 'reliance' collection within the 'ml' database
+        // Access the 'tata' collection within the 'ml' database
         const tataCollection = db.collection('tata');
 
         // Perform operations on the 'tata' collection
