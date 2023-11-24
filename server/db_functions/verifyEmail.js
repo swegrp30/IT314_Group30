@@ -32,6 +32,7 @@ const verifyEmail = (async (req, res) => {
         }
 
         const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false });
+        console.log(otp_number);
         const mailer = mail(email, otp_number);
         const data = new otp({
             email: email,
@@ -41,7 +42,7 @@ const verifyEmail = (async (req, res) => {
             const saved = await data.save();
             res.status(200).send()
         } catch (error) {
-            console.log("This is error from signup.js -> mailer part");
+            console.log("This is error from verifyEmail.js -> mailer part");
             console.log(error);
             res.status(400).send();
         }
