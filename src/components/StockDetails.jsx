@@ -136,6 +136,10 @@ const StockDetails = () => {
     fetchData();
   }, [params.id]);
 
+  const isPositiveChange = share.LastChange > 0;
+  const arrowIconClass = isPositiveChange ? "fa-arrow-up text-success" : "fa-arrow-down text-danger";
+  const percentageChangeColor = isPositiveChange ? "text-success" : "text-danger";
+
   return (
     <>
     <div className="container mt-4 stock-details-container">
@@ -146,7 +150,7 @@ const StockDetails = () => {
             <div className="stock-info">
               <h4 className="stock-price">${share.LastClose}</h4>
               <span className={`stock-change ${share.LastChange > 0 ? 'text-success' : 'text-danger'}`}>
-                {share.LastChange}%
+                {share.LastChange}% <i className={`fa ${arrowIconClass}`}></i>
               </span>
             </div>
           </div>
