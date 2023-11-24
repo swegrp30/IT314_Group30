@@ -85,7 +85,7 @@ const Profile = () => {
                   {val.phone}
                 </div>
               </div>
-              <div style={{ color: "white" }}>
+              <div style={{ color: "white", textAlign :"center" }}>
                 Member since :{" "}
                 <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
               </div>

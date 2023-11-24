@@ -109,6 +109,7 @@ const MyComments = () => {
                     <div className=" left d-flex flex-column align-items-center   h-75 w-100">
                         <img className=" avatar mt-5 rounded-circle" src={image} />
                         <div className="d-flex flex-column h-100 justify-content-around ">
+                            <ToastContainer />
                             <div className="d-flex flex-column align-items-center mt-3 ">
                                 <div className="fs-2 fw-bold" style={{ color: "white" }}>
                                     {val.username}
@@ -120,7 +121,7 @@ const MyComments = () => {
                                     {val.phone}
                                 </div>
                             </div>
-                            <div style={{ color: "white" }}>
+                            <div style={{ color: "white", textAlign :"center" }}>
                                 Member since :{" "}
                                 <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
                             </div>
