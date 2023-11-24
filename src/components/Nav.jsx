@@ -60,7 +60,7 @@ function Nav() {
                                 <Link
                                     className='nav-link'
                                     onClick={handleUnderline}
-                                    to='/news'
+                                    to='/tempnews'
                                 >
                                     News
                                 </Link>

@@ -49,7 +49,7 @@ function App() {
                     <Route path='/news' element={<News />} />
                     <Route path='/tempnews' element={<TempNewNews />} />
                     <Route path='/:companyName' element={<CompanyNewsPage />} />
-                  <Route path='/news/:title' element={<NewsDetail />} />
+                    <Route path='/news/:title' element={<NewsDetail />} />
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/login' element={<Login />} />
@@ -78,6 +78,7 @@ function App() {
                   <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/news/:title' element={<NewsDetail />} />
+                    <Route path='/tempnews' element={<TempNewNews />} />
                     <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
