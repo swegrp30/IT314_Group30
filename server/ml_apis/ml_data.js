@@ -6,7 +6,8 @@ const db = require("../connection/connect_ML_DB");
 
 const func = (async (req, res) => {
     
-    const comp = req.body.company;
+    const comp = req.query['company'];
+    console.log(comp);
 
     try {
 
