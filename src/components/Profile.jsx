@@ -159,7 +159,7 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="dob"
-                value={val.date}
+                value={user.dob}
               />
             </div>
             <div className="col-md-6">
