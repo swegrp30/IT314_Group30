@@ -6,19 +6,34 @@ import LineChart from './LineChart';
 
 const StockDetails = () => {
     const [share,setShare] = useState([]);
-
+    const token = localStorage.getItem('authToken');
+    const [plotgraph, setPlotgraph]= useState();
+    const [plotgraph2, setPlotgraph2]= useState();
+    const headers = {
+      "Content-Type": "application/json",
+      "auth-token": token,
+    };
     const params = useParams();
     useEffect(() => {    
         const handleClick =async()=>{
         const res = await axios.get('http://localhost:7000/getdata');
-        console.log(res.data)
+        // console.log(res.data)
         setShare(res.data);
         for(let i =0;i< res.data.length;i++){
             if(res.data[i].Ticker === params.id){
                 setShare(res.data[i])
             }
         }
-        
+        const graph = await axios.get('http://localhost:7000/ml_data?company=tata',{headers})
+        let data = graph.data[0].abc
+        const array =[];
+        const array2 =[];
+        for(let i =0 ; i< data.length;i++){
+               array[i] = data[i].value 
+               array2[i]=data[i].date
+        }
+        setPlotgraph(array)
+        setPlotgraph2(array2)
         
     }
     handleClick();
@@ -69,7 +84,7 @@ const StockDetails = () => {
 
 
 <div className="container-fluid border-1">
-<LineChart />
+<LineChart data ={plotgraph} label = {plotgraph2}/>
 </div>
 
         <Notes />  

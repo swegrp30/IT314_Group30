@@ -4,19 +4,34 @@ import { Line } from "react-chartjs-2";
 
 const labels = ["January", "February", "March", "April", "May", "June"];
 
+
+
+const LineChart = (props) => {
+  const labels = ["January", "February", "March", "April", "May", "June"];
+
 const data = {
-  labels: labels,
+  labels: props.label,
   datasets: [
     {
       label: "Price",
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(255, 99, 132)",
-      data: [0, 10, 5, 2, 20, 30, 45],
+      mode:"nearest",
+      borderColor: "rgb(0,255,0)",
+      data: props.data,
     },
   ],
+  options: {
+    // All of these (default) events trigger a hover and are passed to all plugins,
+    // unless limited at plugin options
+    events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+    plugins: {
+      tooltip: {
+        // Tooltip will only receive click events
+        events: ['click']
+      }
+    }
+  }
 };
 
-const LineChart = () => {
   return (
     <div>
       <Line data={data} />
