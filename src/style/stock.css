@@ -15,7 +15,7 @@
 }
 
 .l-bg-blue-dark {
-    background: linear-gradient(to right, #373b44, #aebed6) !important;
+    background: linear-gradient(to right, #1d5ffa, rgb(167, 189, 249)) !important;
     color: #fff;
 }
 
@@ -39,7 +39,7 @@
     margin-left: 15px;
     color: #000;
     position: absolute;
-    right: 100px;
+    right:85px;
     top: 30px;
     opacity: 0.1;
 }
