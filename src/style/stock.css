@@ -14,7 +14,7 @@
 }
 
 .l-bg-blue-dark {
-    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    background: linear-gradient(to right, #373b44, #aebed6) !important;
     color: #fff;
 }
 
@@ -55,10 +55,5 @@
 
 .l-bg-orange {
     background: linear-gradient(to right, #f9900e, #ffba56) !important;
-    color: #fff;
-}
-
-.l-bg-cyan {
-    background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
     color: #fff;
 }
