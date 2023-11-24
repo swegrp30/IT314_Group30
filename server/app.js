@@ -117,7 +117,7 @@ app.get("/getdata", getdata);
 
 // ML Routes
 
-app.get("/ml_data",company);
+app.get("/ml_data",auth,company);
 
 
 // app.post("/dlt",xxx);

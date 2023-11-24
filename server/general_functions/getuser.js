@@ -6,7 +6,7 @@ const user = require("../models/user");
 const getuser = (async (req, res) => {
 
     const data = req.userData;
-    console.log(data);
+    console.log(data);  
 
     try {
         const obj = await user.findOne({ username: data.username });
