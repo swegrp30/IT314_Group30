@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { to } from "react-spring";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Comments =  () => {
   const token = localStorage.getItem('authToken')
   
@@ -30,14 +34,43 @@ const Comments =  () => {
     console.log(error)
   }
   }
-  const handleAdd = async (e) => {
+  const handleAdd = async () => {
+    // Check if the comment is empty or contains only whitespace characters
+    if (!comments || !comments.trim()) {
+      // You can customize this error handling as per your requirements
+      // alert("Please enter a non-empty comment");
+
+      toast.error("Please enter a non-empty comment")
+      
+
+      return;
+    }
+  
     const username = await handleUser();
-    
-    
-    const res = await axios.post('http://localhost:7000/addComments', { comment: comments, company: 'SBI', username: username}, { headers: headers })
-    
-    setComments('')
-  }
+  
+    try {
+      const res = await axios.post(
+        'http://localhost:7000/addComments',
+        { comment: comments, company: 'SBI', username: username },
+        { headers: headers }
+      );
+  
+      setComments('');
+    } catch (error) {
+      console.error(error);
+      // Handle error appropriately, e.g., show an error message to the user
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault(); // prevent new line
+      handleAdd();
+    }
+  };
+
+  
+
   return (
     <div>
       <section>
@@ -47,6 +80,7 @@ const Comments =  () => {
               <div className="cardComment" >
                 <div className="card-footer py-3 border-0" style={{backgroundColor:"white"}}>
                   <div className="d-flex flex-column flex-start w-100">
+                    <ToastContainer/>
                     <h3>Add Comment</h3>
                     <div className="form-outline w-100">
                       <textarea
@@ -55,6 +89,7 @@ const Comments =  () => {
                         name="comments"
                         value={comments}
                         onChange={handleChange}
+                        onKeyPress={handleKeyPress}
                         rows="3"
                       ></textarea>
                     </div>

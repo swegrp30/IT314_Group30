@@ -85,7 +85,7 @@ const Profile = () => {
                   {val.phone}
                 </div>
               </div>
-              <div style={{ color: "white" }}>
+              <div style={{ color: "white", textAlign :"center" }}>
                 Member since :{" "}
                 <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
               </div>
@@ -159,7 +159,7 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="dob"
-                value={val.date}
+                value={user.dob}
               />
             </div>
             <div className="col-md-6">
@@ -205,14 +205,18 @@ const Profile = () => {
               <label htmlFor="inputEmail4" className="form-label">
                 Gender
               </label>
-              <input
+              <select 
                 type="text"
                 onChange={handleChange}
                 className="form-control"
                 id="inputEmail4"
                 name="gender"
-                value={user.gender}
-              />
+                value={user.gender}>
+                <option value="">-Select Gender-</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div className="col-md-6">
               <label htmlFor="inputPassword4" className="form-label">

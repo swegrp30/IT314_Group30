@@ -5,9 +5,10 @@ import image from "../Images/hero.png";
 import axios from "axios";
 import "../style/Profile.css";
 import { ToastContainer, toast } from "react-toastify";
-
+import secureLocalStorage from "react-secure-storage";
 function Changepassword() {
   const location = useLocation();
+  const val = secureLocalStorage.getItem("user");
   const [password, setPassword] = useState({
     oldPass: "",
     newPass: "",
@@ -86,18 +87,19 @@ function Changepassword() {
             <div className="d-flex flex-column h-100 justify-content-around ">
               <div className="d-flex flex-column align-items-center mt-3 ">
                 <div className="fs-2 fw-bold" style={{ color: "white" }}>
-                  Bhavya Shah
+                  {val.username}
                 </div>
                 <div className="fs-5 mt-2" style={{ color: "white" }}>
-                  202101426@daiict.ac.in
+                  {val.email}
                 </div>
                 <div className="fs-5" style={{ color: "white" }}>
-                  8200090380
+                  {val.phone}
                 </div>
               </div>
-              <div style={{ color: "white" }}>
-                Member since : 23 November, 2023
-              </div>
+              <div style={{ color: "white" ,textAlign :"center" }}>
+                                Member since :{" "}
+                                <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
+                            </div>
             </div>
           </div>
           <div

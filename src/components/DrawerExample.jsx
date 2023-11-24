@@ -131,12 +131,6 @@ function DrawerExample() {
                             </Button>
                             </Link>
 
-                            <Link to='/lytus'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Lytus Tech
-                            </Button>
-                            </Link>
-                            
 
                         </VStack>
 
