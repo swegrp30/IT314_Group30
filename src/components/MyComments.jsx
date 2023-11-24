@@ -49,7 +49,7 @@ const MyComments = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             getData();
-        }, 10);
+        }, 1000);
         return () => clearInterval(interval);
     }, [data]);
 
