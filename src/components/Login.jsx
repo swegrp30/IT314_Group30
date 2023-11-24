@@ -1,6 +1,6 @@
 import "../style/Login.css";
 import hero from "../Images/hero.png";
-import logo from "../Images/TopLogo.svg";
+import logo from "../Images/loginLOGO.svg";
 import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
