@@ -64,9 +64,9 @@ const getdata = require("./Stock_apis/stock_data");
 
 // ML APIS
 
-const reliance = require("./ml_apis/reliance");
+const company = require("./ml_apis/ml_data");
 
-const tata = require("./ml_apis/tata");
+
 
 
 
@@ -117,7 +117,7 @@ app.get("/getdata", getdata);
 
 // ML Routes
 
-app.get("/ml_data/reliance",reliance);
+app.get("/ml_data",company);
 
 
 // app.post("/dlt",xxx);
