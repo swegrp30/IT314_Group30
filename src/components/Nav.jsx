@@ -3,6 +3,9 @@ import '../style/Nav.css';
 import logo from '../Images/Logo.jpg';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { to } from 'react-spring';
+// import { Toast } from '@chakra-ui/react';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Nav() {
     const navigate = useNavigate();
@@ -19,8 +22,11 @@ function Nav() {
     const authToken = localStorage.getItem('authToken');
 
     const clearLocalStorage = () => {
-        localStorage.clear();
-        navigate('/');
+        toast.success('Logged out successfully');
+        setTimeout(function () {
+            localStorage.clear();
+            navigate('/')
+        }, 1000);
     };
 
     // Set initial underline when the component mounts
@@ -33,6 +39,7 @@ function Nav() {
 
     return (
         <div>
+            <ToastContainer />
             <div className='text-center'>
                 <img src={logo} onClick={() => navigate('/')} className='home-logo img-fluid' alt='' />
             </div>
@@ -103,7 +110,7 @@ function Nav() {
                                 </Link>
                             </li>
                         </ul>
-                        
+
                         {!authToken && (
                             <div className='d-flex me-5'>
                                 <button className='nav-button text-white me-3'>
@@ -122,9 +129,11 @@ function Nav() {
                             <div className='d-flex me-5'>
                                 <button
                                     onClick={clearLocalStorage}
+
                                     className='nav-button text-white'
                                 >
                                     Sign Out
+
                                 </button>
                             </div>
                         )}
