@@ -12,7 +12,7 @@ app.use(cors())
 
 require("./connection/conection");
 require("./connection/connect_ML_DB");
-
+require("./connection/connect_stock");
 
 
 
@@ -56,8 +56,9 @@ const verifyEmail = require("./db_functions/verifyEmail");
 
 const editProfile = require("./general_functions/editProfile");
 
+const editComment = require("./general_functions/editcomment");
 
-
+const getdata = require("./Stock_apis/stock_data");
 
 
 
@@ -78,43 +79,45 @@ const tata = require("./ml_apis/tata");
 
 
 
-app.post("/signup",signup);
+app.post("/signup", signup);
 
-app.post("/otp_verification",otp_verification);
+app.post("/otp_verification", otp_verification);
 
-app.post("/login",login);
+app.post("/login", login);
 
-app.get("/getuser",auth,getuser);
+app.get("/getuser", auth, getuser);
 
-app.post("/add-fav",auth,addFavourite);
+app.post("/add-fav", auth, addFavourite);
 
-app.post("/del-fav",auth,deleteFav);
+app.post("/del-fav", auth, deleteFav);
 
-app.post("/addComments",auth,addComments);
+app.post("/addComments", auth, addComments);
 
-app.post("/getComments",auth,getComments);
+app.post("/getComments", auth, getComments);
 
-app.get("/myComments",auth,myComments);
+app.get("/myComments", auth, myComments);
 
-app.get("/dltComments",auth,deleteComments);
+app.post("/dltComments", auth, deleteComments);
 
-app.post("/addReply",auth,addReplytoComment);
+app.post("/editComments", auth, editComment);
 
-app.post("/changePassword",auth,changePassword);
+app.post("/addReply", auth, addReplytoComment);
 
-app.post("/forgotPassword",forgotPassword);
+app.post("/changePassword", auth, changePassword);
 
-app.post("/updatePassword",updatePassword);
+app.post("/forgotPassword", forgotPassword);
 
-app.post("/verifyEmail",verifyEmail);
+app.post("/updatePassword", updatePassword);
 
-app.post("/editProfile",editProfile);
+app.post("/verifyEmail", verifyEmail);
+
+app.post("/editProfile", auth, editProfile);
+
+app.get("/getdata", getdata);
 
 // ML Routes
 
-app.get("/ml_data/reliance",auth,reliance);
-
-app.get("/ml_data/tata",auth,tata);
+app.get("/ml_data/reliance",reliance);
 
 
 // app.post("/dlt",xxx);
@@ -124,6 +127,6 @@ app.get("/ml_data/tata",auth,tata);
 
 
 
-app.listen(7000,()=>{
+app.listen(7000, () => {
     console.log("Listening on 7000");
 })
