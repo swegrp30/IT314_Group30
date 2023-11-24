@@ -26,6 +26,8 @@ import MyComments from './components/MyComments';
 import { useEffect, useState } from 'react';
 import TempNewNews from './components/TempNewNews';
 import CompanyNewsPage from './components/CompanyNewsPage';
+import PriceAnalysis from './components/PriceAnalysis'
+import StockDetails from './components/StockDetails.jsx'
 function App() {
   const isAuthenticated = () => {
     const authToken = localStorage.getItem('authToken');
@@ -57,12 +59,13 @@ function App() {
                     <Route path='/contactus' element={<ContactUs />} />
                     <Route path='/PriceAndAnalysis' element={<Share />} />
                     <Route path='/Profile' element={<Profile />} />
-                    <Route path='/share/:id' element={<ShareDetails />} />
+                    <Route path='/share/:id' element={<StockDetails />} />
                     <Route path='/changePassword' element={<Changepassword />} />
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
                     <Route path='/mycomments' element={<MyComments />} />
+                    <Route path='/priceanalysis' element={<PriceAnalysis />} />
 
                   </Routes>
                   <ShowFooter>
