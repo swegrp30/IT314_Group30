@@ -34,7 +34,7 @@ mailTransporter.use('compile', hbs({
         // layoutsDir: './mailer/',
         defaultLayout: false,
         // partialsDir: './mailer/',
-    }, viewPath: '../backend/mailer', extName: '.hbs'
+    }, viewPath: '../server/mailer', extName: '.hbs'
 }));
 
 // require("")
