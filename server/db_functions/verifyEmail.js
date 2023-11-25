@@ -9,39 +9,40 @@ const mail = x.signup;
 
 
 
-const verifyEmail = (async(req,res)=>{
+const verifyEmail = (async (req, res) => {
 
     const email = req.body.email;
 
-    const match = await user.findOne({email:email});
+    const match = await user.findOne({ email: email });
 
-    if(match){
+    if (match) {
         res.status(222).send("Email Already Exist");
     }
-    else{
-        const match = await otp.findOne({email:email});
+    else {
+        const match = await otp.findOne({ email: email });
         if (match) {
             try {
-              await otp.deleteOne({ email: email });
-              console.log("Document deleted successfully");
+                await otp.deleteOne({ email: email });
+                console.log("Document deleted successfully");
             } catch (error) {
-              console.log("Error deleting document:", error);
-              res.status(500).send("Internal Server Error");
-              return;
+                console.log("Error deleting document:", error);
+                res.status(500).send("Internal Server Error");
+                return;
             }
         }
 
-        const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets:false, upperCaseAlphabets: false, specialChars: false });
-        const mailer = mail(email,otp_number);
+        const otp_number = otpGenerator.generate(6, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false });
+        console.log(otp_number);
+        const mailer = mail(email, otp_number);
         const data = new otp({
-            email : email,
-            otp : otp_number
+            email: email,
+            otp: otp_number
         })
         try {
             const saved = await data.save();
             res.status(200).send()
         } catch (error) {
-            console.log("This is error from signup.js -> mailer part");
+            console.log("This is error from verifyEmail.js -> mailer part");
             console.log(error);
             res.status(400).send();
         }
