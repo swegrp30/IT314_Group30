@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+
+.signupform{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+.left {
+   background-image: linear-gradient(-45deg,  purple, rgb(53, 5, 53) );
+   justify-items: center;
+   align-items: center;
+   width: 40vw;
+}
+
+.text-header {
+   font-family: 'Poppins', sans-serif;
+   max-width: 5;
+   font-size: 2rem;
+   font-weight: 700;
+}
+
+.image-hero {
+   width: 26.151rem;
+   height: 26.151rem;
+}
+.right{
+    width: 60vw;
+    height: 100vh;
+    /* padding-left: 5vw; */
+
+}
+.quote-main {
+   font-family: 'Poppins', sans-serif;
+}
+
+.logo-main {
+   height: 8rem;
+}
+
+.button-signup {
+   font-family: 'Poppins', sans-serif;
+}
+
+.text-small {
+   max-width: 5;
+   font-family: 'Poppins', sans-serif;
+   /* font-weight: bold; */
+}
+.text-center{
+    font-family: 'Poppins', sans-serif;
+}
+.text-medium{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+.form-edit{
+    width: 50vw;
+}
+::placeholder {
+
+   padding: 10px;
+}
+
+::-webkit-input-placeholder {
+   /* Edge */
+   padding: 10px;
+}
+
+:-ms-input-placeholder {
+   /* Internet Explorer 10-11 */
+   padding: 10px;
+}
+.colorChange{
+    color:purple;
+    font-weight:bolder;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn{
+    width:24vw;
+}
+.btn-primary{
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #852683;
+    border:none;
+}
+.btn-secondary{
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: #2D3748;
+    border:none;
+}
+
+.form-control {
+   width:96%;
+}
+
+.form-control-login {
+   width:50%;
+}
+
+@media (max-width: 600px) {
+   .signupform {
+       flex-direction: column;
+   }
+   .left {
+      width:100%;
+   }
+   .right {
+      width: 100%;
+   }
+   .form-control-login {
+      width:100%;
+   }
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+.Home {
+    text-align: center;
+}
+
+.home-h1 {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    font-weight: 500;
+}
+
+.home-h4 {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(182, 181, 181);
+    margin-top: 20px;
+    width: 100%;
+    font-weight: 300;
+    
+}
+
+.home-search {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.home-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-search-bar {
+    background-image: linear-gradient(to right, white, rgb(238, 114, 238));
+    border: none;
+    width: 35%;
+}
+
+.btn-outline-success {
+    background-color: rgb(238, 114, 238);
+    color: white;
+    border:none;
+    border-radius: 0 10px  10px 0px;
+}
+.btn-outline-success:hover {
+    background-color: white;
+    color: rgb(172, 0, 172);
+}
+input{
+    height:5.1vh;
+    /* border-color: transparent; */
+}
+input:focus{
+    outline: none;
+}
+
+input::placeholder {
+    color: #777272;
+    padding-left: 40px;
+}
+
+.home-guide-image {
+    height: 396px;
+    width: 396px;
+}
+
+.home-para-brdr {
+    text-align: left !important;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 60px;
+    background-color: rgb(172, 0, 172);
+}
+
+.home-para-without-brdr {
+    text-align: left !important;
+    padding: 60px;
+}
+
+.col-3 {
+    background-color: black;
+}
+

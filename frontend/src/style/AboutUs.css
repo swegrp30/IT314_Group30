@@ -1,0 +1,84 @@
+.a {
+    text-align: center;
+    color: purple;
+    padding-top: 50px;
+    font-size: 30px;
+}
+
+.b {
+    font-size: 40px;
+    text-wrap: wrap;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.line {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.d {
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.e {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 50%;
+    align-items: center;
+    margin-left: 25%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: grey;
+    padding-bottom: 50px;
+}
+
+
+.f {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card {
+    flex: 1;
+    min-width: calc(33.33% - 20px);
+    /* 2 cards per row with spacing */
+    padding: 20px;
+    margin: 10px;
+    align-items: center;
+    border: 0;
+}
+
+.img1 {
+    width: 100px;
+    /* Adjust the image size as needed */
+    height: auto;
+
+}
+
+.title {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.disc {
+    font-size: 16px;
+    margin-top: 10px;
+    color: grey;
+}
+
+
+.g{
+    text-align: center;
+    font-size: 60px;
+    padding: 20px;
+    font-weight: bold;
+}

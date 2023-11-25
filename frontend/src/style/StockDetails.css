@@ -1,0 +1,65 @@
+/* StockDetails.css */
+.stock-details-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stock-header {
+    margin-bottom: 20px;
+  }
+  
+  .stock-title {
+    color: #343a40;
+  }
+  
+  .stock-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .stock-price {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #007bff;
+  }
+  
+  .stock-change {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .stock-data {
+    margin-top: 20px;
+  }
+  
+  .stock-label {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .stock-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  .stock-divider {
+    border: 1px solid #dee2e6;
+    margin: 30px 0;
+  }
+  
+  .stock-analysis-title {
+    color: #962b92;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .stock-last-updated {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #6c757d;
+  }
+  

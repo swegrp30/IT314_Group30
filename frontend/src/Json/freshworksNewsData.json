@@ -1,0 +1,175 @@
+{
+    "stories": [
+        {
+            "id": "1803057463921324544",
+            "title": "5 Ways To Leverage AI in Tech with Freshworks CIO Prasad Ramakrishnan",
+            "url": "https://www.saastr.com/5-ways-to-leverage-ai-in-tech-with-freshworks-cio-prasad-ramakrishnan/",
+            "site": "saastr.com",
+            "time": 1700584030000,
+            "favicon_url": "https://static.tickertick.com/website_icons/saastr.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "description": "The CIO and SVP of IT at Freshworks, Prasad Ramakrishnan, shares five ways organizations can leverage AI to solve problems and grow, including improving: user experience, onboarding, data analytics, GTM analysis and faster email communication. The post 5 Ways To Leverage AI in Tech with Freshworks CIO Prasad Ramakrishnan appeared first on SaaStr. People have said “AI” more this year than any other year combined. Everyone is looking forward to what AI can do for them in business. In a recent Workshop Wednesday, held every Wednesday at 10 a.m. PST, the CIO and SVP of IT at Freshworks, Prasad Ramakrishnan, shares five ways organizations can leverage AI to solve problems and grow. “Don’t be a solution looking for a problem,” Prasad says. Instead, look for a problem to solve. We’ve been through big data and tech hype cycles since the early 2000s — when businesses were considered dead if they didn’t have a website, and mobile was everything. But this AI wave is slightly different. It isn’t new! AI has been around for 30-40 years now. What’s different is the aspect of generative AI. Instead of using AI tools only to analyze and automate things, it’s being used to create content. AI is enabling businesses to do a lot more than they could on human power alone. So, let’s look at five tips for how you can access the true value of AI. Tip #1: Leverage AI to Enhance the User Experience (UX) From an overall value proposition perspective, every company wants to enhance the user experience. They want employees and customers to have the best possible experience. “User experience” wasn’t a mainstream term 5-6 years ago, and now it’s a primary focus for most companies. Without the users, you have no business. Let’s look at an example. When someone is asking for support, it can be frustrating to explain your situation over and over to multiple people. An AI-driven virtual agent eliminates that with a roundtrip conversation in a humanizing way. Back in the day, AI was “Press 1 for x. Press 2 for x. Press 0 to speak to an operator.” Everyone pressed zero because no one wanted to talk to a robot. Generative AI changes the game, though, because it provides a more intuitive human experience. And what about language translation? Many businesses have customers all over the world, and sometimes, they may not speak English. But you still have to be able to serve the needs of customers and employees in different geographic locations. But you can only hire so many translators. There is a linearity factor where you can’t 100x your employee count just because you went from $1M to $100M. Leveraging AI helps you achieve scale while still serving the needs of a broad customer base. The Takeaways — You don’t need to add more customer service agents. AI can humanize the experience from an end-user perspective and serve the needs of automating and expanding your reach with personalization. You can use AI to enhance user experiences through: Call deflection and virtual agents to humanize interactions. Providing local support in diverse global locations. Personalizing user experiences. Tip #2: Rapidly Scale Across The Globe With AI Onboarding and Training Imagine bringing a whole bunch of employees into your organization. Typically, when a person comes into your team, you buddy them up with an existing member to show how things are done. If you’re scaling across the globe with a team working remotely and in the office, you won’t always have a buddy to sit next to. So, how do you train and onboard new employees and make them productive? By having AI as the onboarding and training co-pilot. For example, if you’re composing an email to a prospect, a person making a buying decision, or even an angry customer, what is this new person to do? Lean into the AI co-pilot. It can generate a draft based on the context of the ticket, sales deal, marketing program you’re using, etc. Then, you, as the human, can enhance and further personalize and enable the sales engineer to become much more productive. The Takeaways — If you’re rapidly scaling and don’t want to scale your employees linearly, AI can play a huge role through: Integration of co-pilot functionality for onboarding. Helping sales, marketing, and support teams improve their communication. Quick and easy learning and training modules to get employees up to speed. Tip #3: Optimize Data Platforms with AI We have the ability to bring in large amounts of data, and the cost of processing and storage has dramatically reduced over the past 20 years. But how do you make sense of all of this excessive data from a bunch of different sources? AI can play a role. Rather than writing code from multiple structured and unstructured sources, you can tell the AI to write a piece of Python code to bring data from one source or another into your data lake. The Takeaway — AI would give you the starting points of code. It would also allow you to reduce cycle time to value from the point of view of bringing in data and analyzing that data. Tip #4: AI for Cause and Effect Analysis Most everyone has a data platform where they bring data from multiple sources and extract insights from it — like average customer satisfaction, deal lifecycle, etc. Let’s say the data shows 80% of your customers are happy, 10% are neutral, and 10% are extremely unhappy. What would you do? Focus on that remaining 10% to see why they’re unhappy and, ideally, increase that happiness. This is where AI can be deployed. Not only would it identify the patterns and correlation between the data to bring back these insights, but it would also provide insights into why those customers are unhappy in the first place. Instead of fishing for this information, AI serves it to you, and now you can make a data-driven decision for your company. This is where the cycle time between the time data is consumed and the time it is analyzed is shortened. The Takeaway — Say you learn that there are a lot of returns from a warehouse. With AI, you can identify this issue before it’s too late. You can change where you’re shipping from or solve the issue at the warehouse and save your business from a lot of problems. AI uses data from many sources and provides insights to save your business time, money, and headache. Tip #5: Manage and Summarize Emails with AI Thanks to ChatGPT and GPT4, you can create a lot of content. You can make movies with movie star look-alikes who are actually AI avatars. You can even have AI write entire fiction novels if you want it to. From an internal business context, you could also use it to summarize emails, support tickets, and meetings. For example, someone calls for support, and a level 1 agent takes care of it but can’t solve it. So, it goes to level 2 and so on. What happens is the level 1 or 2 person summarizes the issue to the next person, so the new agent doesn’t have to read through 500 chat messages. This is tedious. The Takeaway — AI can help summarize the context of a ticket, emails, meetings, and anything else, drastically reducing the time spent writing, summarizing, and trying to figure out what happened before a situation arises with a support person or salesperson. Key Takeaways for the True Value of AI Five ways you can or will be able to leverage AI very soon include: To enhance your user experience (UX). To seamlessly onboard and train for rapid growth. To optimize data platforms. For cause and effect analysis. To manage and summarize emails. The post 5 Ways To Leverage AI in Tech with Freshworks CIO Prasad Ramakrishnan appeared first on SaaStr.",
+            "tickers": [
+                "frsh"
+            ],
+            "img":"https://beamstart.com/image/aHR0cHM6Ly93d3cuc2Fhc3RyLmNvbS93cC1jb250ZW50L3VwbG9hZHMvMjAyMy8xMS9ZVC1UaHVtYm5haWwtV29ya3Nob3AtV2VkbmVzZGF5LVNwZWFrZXItU2NyZWVuc2hvdC02LnBuZw=="
+        },
+        {
+            "id": "1068125388660764130",
+            "title": "On-Demand Delivery Platform Lalamove Adopts Multiple Freshworks Products to Improve Sales Efficiency in Asia and LATAM",
+            "url": "https://www.globenewswire.com/en/news-release/2023/11/21/2783680/0/en/On-Demand-Delivery-Platform-Lalamove-Adopts-Multiple-Freshworks-Products-to-Improve-Sales-Efficiency-in-Asia-and-LATAM.html",
+            "site": "globenewswire.com",
+            "time": 1700532000000,
+            "favicon_url": "https://static.tickertick.com/website_icons/globenewswire.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "description": "Freshsales helps the company engage better with its business partners, improving sales conversion by 24% and Freshdesk boosts customer engagement up to 58% Freshsales helps the company engage better with its business partners, improving sales conversion by 24% and Freshdesk boosts customer engagement up to 58%",
+            "tickers": [
+                "frsh"
+            ]
+        },
+        {
+            "id": "3404105434074311389",
+            "title": "Freshworks to Participate in UBS Global Technology Conference",
+            "url": "https://www.globenewswire.com/en/news-release/2023/11/20/2783189/0/en/Freshworks-to-Participate-in-UBS-Global-Technology-Conference.html",
+            "site": "globenewswire.com",
+            "time": 1700485200000,
+            "favicon_url": "https://static.tickertick.com/website_icons/globenewswire.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "description": "Freshworks CFO Tyler Sloat is scheduled to participate in a fireside chat at the UBS Global Technology Conference on Tuesday, November 28.",
+            "tickers": [
+                "frsh"
+            ],
+            "img":"https://www.uctoday.com/wp-content/uploads/2018/10/FreshworksFreshconnect.jpg"
+        },
+        {
+            "id": "4086241078700334634",
+            "title": "Freshworks Inc (FRSH) volume hits 1.91 million: A New Opening for Investors",
+            "url": "https://newsdaemon.com/2023/11/17/freshworks-inc-frsh-volume-hits-1-91-million-a-new-opening-for-investors/",
+            "site": "newsdaemon.com",
+            "time": 1700220240000,
+            "favicon_url": "https://static.tickertick.com/website_icons/newsdaemon.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "description": "As on November 16, 2023, Freshworks Inc (NASDAQ: FRSH) started slowly as it slid -2.26% to $17.76. During the day, the stock rose to $18.06 and sunk to $17.505 before settling in for the price of $18.17 at the close. Taking a more long-term approach, FRSH posted a 52-week range of $12.22-$23.80. The Technology Sector […] The post Freshworks Inc (FRSH) volume hits 1.91 million: A New Opening for Investors first appeared on News Daemon. As on November 16, 2023, Freshworks Inc (NASDAQ: FRSH) started slowly as it slid -2.26% to $17.76. During the day, the stock rose to $18.06 and sunk to $17.505 before settling in for the price of $18.17 at the close. Taking a more long-term approach, FRSH posted a 52-week range of $12.22-$23.80. The Technology Sector giants’ yearly sales growth during the last 5-year period was 42.56%. Nevertheless, stock’s Earnings Per Share (EPS) this year is 439.46%. This publicly-traded company’s shares outstanding now amounts to $162.83 million, simultaneously with a float of $155.44 million. The organization now has a market capitalization sitting at $5.24 billion. At the time of writing, stock’s 50-day Moving Average stood at $18.92, while the 200-day Moving Average is $17.13. Let’s gauge the efficiency of the firm, which has a total of 5400 employees. It has generated 92,222 per worker during the last fiscal year. Meanwhile, its income per employee was -42,987. The stock had 7.97 Receivables turnover and 0.35 Total Asset turnover. For the Profitability, stocks gross margin was +80.69, operating margin was -46.86 and Pretax Margin of -44.34. Freshworks Inc (FRSH) Ownership Facts and Figures Another important factor to analyze is how key investors are playing towards the stock of the Software – Application industry. Freshworks Inc’s current insider ownership accounts for 47.28%, in contrast to 43.18% institutional ownership. According to the most recent insider trade that took place on Nov 10, this organization’s Director sold 7,035 shares at the rate of 17.41, making the entire transaction reach 122,479 in total value, affecting insider ownership by 19,081. Preceding that transaction, on Nov 10, Company’s Director sold 4,800 for 17.41, making the whole transaction’s value amount to 83,568. This particular insider is now the holder of 23,005 in total. Freshworks Inc (FRSH) Earnings and Revenue Records If we go through the results of last quarter, which was made public on 9/29/2023, the company posted $0.08 earnings per share (EPS) for the quarter, besting the agreed prediction (set at $0.05) by $0.03. This company achieved a net margin of -46.61 while generating a return on equity of -20.27. Wall Street market experts anticipate that the next fiscal year will bring earnings of 0.06 per share during the current fiscal year. Freshworks Inc’s EPS increase for this current 12-month fiscal period is 439.46% and is forecasted to reach 0.31 in the upcoming year. Freshworks Inc (NASDAQ: FRSH) Trading Performance Indicators Let’s observe the current performance indicators for Freshworks Inc (FRSH). It’s Quick Ratio in the last reported quarter now stands at 4.24. The Stock has managed to achieve an average true range (ATR) of 0.84. Another valuable indicator worth pondering is a publicly-traded company’s price to sales ratio for trailing twelve months, which is currently 9.20. Similarly, its price to free cash flow for trailing twelve months is now 98.29. In the same vein, FRSH’s Diluted EPS (Earnings per Share) trailing twelve months is recorded -0.57, a figure that is expected to reach 0.05 in the next quarter, and analysts are predicting that it will be 0.31 at the market close of one year from today. Technical Analysis of Freshworks Inc (FRSH) Through scrutinizing the latest numbers posted by the [Freshworks Inc, FRSH], it can be observed that its last 5-days Average volume of 2.27 million was better the volume of 2.26 million, it posted the year before. During the previous 9 days, stock’s Stochastic %D was recorded 53.32% While, its Average True Range was 0.86. Raw Stochastic average of Freshworks Inc (FRSH) in the period of the previous 100 days is set at 24.26%, which indicates a major fall in contrast to 39.17% during the last 2-weeks. If we go through the volatility metrics of the stock, In the past 14-days, Company’s historic volatility was 56.53% that was higher than 48.76% volatility it exhibited in the past 100-days period.The post Freshworks Inc (FRSH) volume hits 1.91 million: A New Opening for Investors first appeared on News Daemon.",
+            "tickers": [
+                "frsh"
+            ],
+            "img":"https://www.reuters.com/resizer/4Kk7CLEJ33CUHfRAIOvyEFOwdHU=/480x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/P7JULG5LJBLKXH3U3MQDLX3Z4U.jpg"
+        },
+        {
+            "id": "7086719336017862746",
+            "title": "Analysts’ Top Technology Picks: Knowles (KN), Freshworks (FRSH)",
+            "url": "https://blog.tipranks.com/analysts-top-technology-picks-knowles-kn-freshworks-frsh/",
+            "site": "tipranks.com",
+            "time": 1700137839000,
+            "favicon_url": "https://static.tickertick.com/website_icons/tipranks.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "tickers": [
+                "frsh"
+            ],
+            "img":"https://th.bing.com/th/id/OIP.7pEUPxz9MqSyqvkZVcKa5gHaEK?w=329&h=185&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+        },
+        {
+            "id": "2552800523480777947",
+            "title": "Freshworks Inc. (NASDAQ:FRSH) Director Sells $113,769.15 in Stock",
+            "url": "https://www.etfdailynews.com/2023/11/16/freshworks-inc-nasdaqfrsh-director-sells-113769-15-in-stock/",
+            "site": "etfdailynews.com",
+            "time": 1700134370000,
+            "favicon_url": "https://static.tickertick.com/website_icons/etfdailynews.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "description": "Freshworks Inc. (NASDAQ:FRSH – Get Free Report) Director Roxanne S. Austin sold 6,303 shares of Freshworks stock in a transaction dated Thursday, November 9th. The shares were sold at an average price of $18.05, for a total value of $113,769.15. Following the transaction, the director now directly owns 106,713 shares in the company, valued at […]",
+            "tickers": [
+                "frsh"
+            ]
+        },
+        {
+            "id": "-3375953689086837693",
+            "title": "Freshworks : Now Available as Part of AWS Marketplace Vendor Insights",
+            "url": "https://www.marketscreener.com/quote/stock/FRESHWORKS-INC-127173267/news/Freshworks-Now-Available-as-Part-of-AWS-Marketplace-Vendor-Insights-45370523/?utm_medium=RSS&utm_content=20231116",
+            "site": "marketscreener.com",
+            "time": 1700121962000,
+            "favicon_url": "https://static.tickertick.com/website_icons/marketscreener.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "description": "(marketscreener.com) Back to Press Releases Freshworks Now Available as Part of AWS Marketplace Vendor Insights Freshwork's modern and easy-to-use CRM solution Freshsales, powered by Freddy AI, now available on AWS unified web-based dashboard San Mateo, CalifNovember 16, 2023 Freshworks Inc. ...",
+            "tickers": [
+                "frsh"
+            ],
+            "img":"https://blog-assets.freshworks.com/freshworks/wp-content/uploads/2021/04/14073214/AWS2-1-2048x819.jpg"
+        },
+        {
+            "id": "-1263780083449872536",
+            "title": "Insider Sell Alert: Director Jennifer Taylor Offloads 7,035 Shares of Freshworks Inc (FRSH)",
+            "url": "https://finance.yahoo.com/news/insider-sell-alert-director-jennifer-120304915.html?.tsrc=rss",
+            "site": "yahoo.com",
+            "time": 1699963384000,
+            "favicon_url": "https://static.tickertick.com/website_icons/yahoo.com.ico",
+            "tags": [
+                "frsh"
+            ],
+            "description": "In the dynamic landscape of the stock market, insider transactions often provide valuable insights into the internal perspectives of a company's health and future prospects.",
+            "tickers": [
+                "frsh"
+            ]
+        },
+        {
+            "id": "-1190469129750581779",
+            "title": "Freshworks Inc.: Form 4 - Statement of changes in beneficial ownership of securities",
+            "url": "https://www.sec.gov/Archives/edgar/data/1544522/000120919123055096/0001209191-23-055096-index.htm",
+            "site": "sec.gov",
+            "time": 1699922121000,
+            "favicon_url": "https://static.tickertick.com/website_icons/sec.gov.ico",
+            "tags": [
+                "frsh"
+            ],
+            "tickers": [
+                "frsh"
+            ]
+        },
+        {
+            "id": "-2816391208383797634",
+            "title": "Freshworks Inc.: Form 4 - Statement of changes in beneficial ownership of securities",
+            "url": "https://www.sec.gov/Archives/edgar/data/1544522/000120919123055095/0001209191-23-055095-index.htm",
+            "site": "sec.gov",
+            "time": 1699921998000,
+            "favicon_url": "https://static.tickertick.com/website_icons/sec.gov.ico",
+            "tags": [
+                "frsh"
+            ],
+            "tickers": [
+                "frsh"
+            ]
+        },
+        {
+            "id": "6448495123617892899",
+            "title": "Freshworks Inc.: Form 4 - Statement of changes in beneficial ownership of securities",
+            "url": "https://www.sec.gov/Archives/edgar/data/1544522/000120919123055094/0001209191-23-055094-index.htm",
+            "site": "sec.gov",
+            "time": 1699921794000,
+            "favicon_url": "https://static.tickertick.com/website_icons/sec.gov.ico",
+            "tags": [
+                "frsh"
+            ],
+            "similar_stories": [
+                "-1190469129750581779",
+                "-2816391208383797634"
+            ],
+            "tickers": [
+                "frsh"
+            ]
+        }
+    ],
+    "last_id": "6448495123617892899"
+}
