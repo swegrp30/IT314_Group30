@@ -37,29 +37,39 @@ const Login = () => {
     }
 
     else {
-      const res = await axios
-        .post("http://localhost:7000/login", {
+      try
+      {
+        const res = await axios
+          .post("http://localhost:7000/login", {
 
-          email: form.email,
-          password: form.password
-        })
-      const token = res.data.token;
-      // console.log(res.data);
-      secureLocalStorage.setItem('user',res.data)
-      
-      
-      
-      if (token) {
-        toast.success("You have logged in successfully")
-        localStorage.setItem('authToken', token)
-        setTimeout(function () {
-          navigate('/')
-        }, 1000);
+            email: form.email,
+            password: form.password
+          })
+        const token = res.data.token;
+        // console.log(res.data);
+        secureLocalStorage.setItem('user',res.data)
+        
+        
+        
+        if (token) {
+          toast.success("You have logged in successfully")
+          localStorage.setItem('authToken', token)
+          setTimeout(function () {
+            navigate('/')
+          }, 1000);
 
 
+        }
+        else {
+          toast.error("Email or password incorrect ")
+        }
       }
-      else {
-        toast.error("Email or password incorrect ")
+      catch (err){
+          toast.error("Email ID not registered")
+          console.log(err.response.status);
+          console.log(err.message);
+          console.log(err.response.headers); // 👉️ {... response headers here}
+          console.log(err.response.data); // 👉️ {... response data here}
       }
     }
 
