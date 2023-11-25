@@ -67,6 +67,7 @@ function App() {
                     <Route path='/showcomments' element={<ShowComments />} />
                     <Route path='/mycomments' element={<MyComments />} />
                     {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
+                    
 
                   </Routes>
                   <ShowFooter>

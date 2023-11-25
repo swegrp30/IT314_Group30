@@ -30,9 +30,10 @@ const Stock = (prop) => {
           <div className="card-icon card-icon-large">
             <i className="fas fa-users"></i>
           </div>
-          <Link to={`/share/${prop.name}`}>
+          <Link to={`/share/${prop.ticker}`}>
             <div className="mb-4">
-              <h5 className="card-title mb-0">{prop.name}</h5>
+              <h3 className="card-title mb-0">{prop.name}</h3>
+              <h6 className="card-title mb-0">{prop.ticker}</h6>
             </div>
             <div className="row align-items-end mb-2 d-flex">
               <div className="col-8">
@@ -44,9 +45,7 @@ const Stock = (prop) => {
                 </span>
               </div>
             </div>
-            <div>
-              <button>Redirect</button>
-            </div>
+            
           </Link>
         </div>
       </div>

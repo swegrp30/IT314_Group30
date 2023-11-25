@@ -26,7 +26,7 @@ const ShowComments = () => {
       getData();
     }, 1000);
     return () => clearInterval(interval);
-  }, [data]);
+  }, []);
   //   window.addEventListener('load',getData())
   return (
     
