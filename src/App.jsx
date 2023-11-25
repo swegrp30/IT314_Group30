@@ -58,7 +58,7 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                     <Route path='/contactus' element={<ContactUs />} />
-                    <Route path='/PriceAndAnalysis' element={<PriceAnalysis />} />
+                    <Route path='/priceanalysis' element={<PriceAnalysis />} />
                     <Route path='/Profile' element={<Profile />} />
                     <Route path='/share/:id' element={<StockDetails />} />
                     <Route path='/changePassword' element={<Changepassword />} />
