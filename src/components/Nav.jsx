@@ -76,7 +76,7 @@ function Nav() {
                                 <Link
                                     className='nav-link'
                                     onClick={handleUnderline}
-                                    to='/PriceAndAnalysis'
+                                    to='/priceanalysis'
                                 >
                                     Price and Analysis
                                 </Link>

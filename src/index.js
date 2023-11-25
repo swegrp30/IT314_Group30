@@ -5,6 +5,8 @@ import App from './App';
 import React, { StrictMode } from 'react';
 import {ChakraProvider} from '@chakra-ui/react'
 import reportWebVitals from './reportWebVitals';
+import {registerLicense} from '@syncfusion/ej2-base'
+registerLicense('Ngo9BigBOggjHTQxAR8/V1NHaF1cWWhIfEx0QHxbf1xzZFRMZVVbRXNPMyBoS35RdURiW3pecXFcR2VVV0B/')
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
