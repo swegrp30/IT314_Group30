@@ -69,8 +69,8 @@ const Profile = () => {
 
   return (
     <div>
-      <div className="d-flex mx-4 flex-row justify-content-center mt-3 ">
-        <div className="d-flex flex-column w-25 " style={{ height: "100vh" }}>
+      <div className="page-container mx-4 mt-3 ">
+        <div className="Left d-flex flex-column " >
           <div className=" left d-flex flex-column align-items-center   h-75 w-100">
             <img className=" avatar mt-5 rounded-circle" src={image} />
             <div className="d-flex flex-column h-100 justify-content-around ">
@@ -117,12 +117,13 @@ const Profile = () => {
           </div>
         </div>
         <div
-          className="d-flex w-75 flex-column justify-content-start mt-5 align-items-center"
+          className="Right d-flex w-75 flex-column justify-content-start mt-5 align-items-center"
           style={{ height: "100vh" }}
         >
           <ToastContainer />
-          <div className="fs-2 fw-bold">Profile</div>
+          
           <form className="row g-5 w-75 mt-2">
+          <div className="fs-2 fw-bold">Profile</div>
             <div className="col-md-6">
               <label htmlFor="inputEmail4" className="form-label">
                 Name
