@@ -31,10 +31,10 @@ mailTransporter.verify((error, success) => {
 mailTransporter.use('compile', hbs({
     viewEngine: {
         extname: '.hbs',
-        layoutsDir: './mailer/',
+        layoutsDir: './',
         defaultLayout: false,
-        partialsDir: './mailer/',
-    }, viewPath: './mailer/', extName: '.hbs'
+        partialsDir: './',
+    }, viewPath: './', extName: '.hbs'
 }));
 
 
