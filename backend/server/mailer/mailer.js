@@ -92,7 +92,7 @@ const signup = (async (mail, otp) => {
     let mailDetails = {
         from: 'Stock Market',
         to: mail,
-        subject: 'SSS',
+        subject: 'Welcome to Bear&Bull',
         template: 'otp',
         context: {
             demo: data,
