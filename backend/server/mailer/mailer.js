@@ -53,8 +53,7 @@ mailTransporter.use('compile', hbs({
 const login = (async (name, username, email) => {
 
     const date = new Date();
-    const dateTime = date.toLocaleString("en-IN");
-    const istDateTime = new Date(dateTime).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+    const istDateTime = date.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
     console.log(istDateTime);
 
     const data = {
