@@ -14,7 +14,7 @@ const PriceAnalysis = () => {
     }
     handleClick();
     
-  }, []);
+  }, [share]);
   
   return (
 
@@ -23,7 +23,8 @@ const PriceAnalysis = () => {
             
         {share.map((item,index)=>
         
-               <Stock name={share[index].Ticker}
+               <Stock name={share[index].Name}
+               ticker = {share[index].Ticker}
                        lastClose ={share[index].LastClose}
         lastChange = {share[index].LastChange}
         >

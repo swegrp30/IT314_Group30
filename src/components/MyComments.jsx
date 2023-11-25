@@ -51,7 +51,7 @@ const MyComments = () => {
             getData();
         }, 1000);
         return () => clearInterval(interval);
-    }, [data]);
+    }, []);
 
     const handleEdit = async (e) => {
         // console.log(e)
