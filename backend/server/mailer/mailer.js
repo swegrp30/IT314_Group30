@@ -34,10 +34,10 @@ mailTransporter.use('compile', hbs({
         // layoutsDir: './mailer/',
         defaultLayout: false,
         // partialsDir: './mailer/',
-    }, viewPath: './mailer/', extName: '.hbs'
+    }, viewPath: '../mailer/', extName: '.hbs'
 }));
 
-
+// require("")
 
 // let mailDetails = {
 //     from: 'PayProtect',
