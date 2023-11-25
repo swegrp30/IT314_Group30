@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
+
 .signupform{
     height: 100vh;
     width: 100vw;
+    display: flex;
+    flex-direction: row;
 }
 .left {
    background-image: linear-gradient(-45deg,  purple, rgb(53, 5, 53) );
@@ -98,4 +101,19 @@
 
 .form-control-login {
    width:50%;
+}
+
+@media (max-width: 600px) {
+   .signupform {
+       flex-direction: column;
+   }
+   .left {
+      width:100%;
+   }
+   .right {
+      width: 100%;
+   }
+   .form-control-login {
+      width:100%;
+   }
 }
