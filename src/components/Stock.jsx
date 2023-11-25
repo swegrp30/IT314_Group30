@@ -19,7 +19,7 @@ const Stock = (prop) => {
   };
 
   const scaleStyle = isHovered ? { transform: 'scale(1.1)' } : {};
-
+  const Indian = ['Reliance Industries','Infosys','HDFC Bank','Tata Consultancy Services']
   return (
     <div className="col-lg-4 col-md-6 col-sm-12"
       style={{ transition: 'all 0.3s', ...scaleStyle }}
@@ -37,7 +37,7 @@ const Stock = (prop) => {
             </div>
             <div className="row align-items-end mb-2 d-flex">
               <div className="col-8">
-                <h2 className="d-flex align-items-center mb-0">$ {prop.lastClose}</h2>
+                <h2 className="d-flex align-items-center mb-0"> {Indian.includes(prop.name)?'₹':'$'} {prop.lastClose}</h2>
               </div>
               <div className="col-4 text-right" style={{ position: 'absolute', bottom: '10px', right: '0' }}>
                 <span className={percentageChangeColor} style={{ fontWeight: 'bold', fontSize: '20px' }}>
