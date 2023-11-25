@@ -1,10 +1,8 @@
 
-
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Stock from './Stock';
 import Loader from './Loader';
-import ErrorPage from './ErrorPage';
 import { toast } from 'react-toastify';
 
 const PriceAnalysis = () => {
@@ -37,22 +35,11 @@ const PriceAnalysis = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Check if data is available in session storage
-        const storedData = sessionStorage.getItem('priceAnalysisData');
-        if (storedData) {
-          setShare(JSON.parse(storedData));
-        } else {
-          // Fetch data from the server if not available in session storage
-          const res = await axios.get('http://localhost:7000/getdata');
-          const data = res.data;
-          setShare(data);
-
-          // Save data to session storage
-          sessionStorage.setItem('priceAnalysisData', JSON.stringify(data));
-        }
+        const res = await axios.get('http://localhost:7000/getdata');
+        const data = res.data;
+        setShare(data);
       } catch (error) {
         console.error('Error fetching data:', error);
-        
       } finally {
         setLoading(false);
       }
@@ -66,21 +53,17 @@ const PriceAnalysis = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className='row m-5'>
+        <div className='row m-2'>
           {share.map((item, index) => (
-            <React.Fragment key={index}>
+            <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
               <Stock
                 name={share[index].Name}
                 ticker={share[index].Ticker}
                 lastClose={share[index].LastClose}
                 lastChange={share[index].LastChange}
+                handleAddFav={() => handleaddfav(item.Name)}
               />
-              <div className='col-12 text-right'>
-                <button className='btn btn-primary' onClick={() => handleaddfav(item.Name)}>
-                  add-fav
-                </button>
-              </div>
-            </React.Fragment>
+            </div>
           ))}
         </div>
       )}
@@ -89,4 +72,3 @@ const PriceAnalysis = () => {
 };
 
 export default PriceAnalysis;
-
