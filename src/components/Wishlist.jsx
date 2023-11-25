@@ -3,6 +3,7 @@ import axios from 'axios';
 import ErrorPage from './ErrorPage';
 import '../style/Wishlist.css';
 import Stock from './Stock';
+import { toast } from 'react-toastify';
 
 const Wishlist = () => {
     const [share, setShare] = useState([]);
@@ -14,7 +15,25 @@ const Wishlist = () => {
         'Content-Type': 'application/json',
         'auth-token': token,
     };
-
+    const handledelfav = async (e) => {
+        try {
+            const res = await axios.post("http://localhost:7000/del-fav", {
+                company: e,
+            }, { headers });
+            const data = res.status;
+            if (data === 200) {
+                share.filter((item) => item !== e);
+                toast.success("Deleted from Favourites");
+            }
+        } catch (err) {
+            if (err.response) {
+                console.log(err.response.status);
+                console.log(err.message);
+                console.log(err.response.headers);
+                console.log(err.response.data);
+            }
+        }
+    };
     useEffect(() => {
         const getWishlistData = async () => {
             try {
@@ -37,7 +56,7 @@ const Wishlist = () => {
         };
 
         getWishlistData();
-    }, []);
+    }, [share]);
 
     if (loading) {
         return <div>Loading...</div>;
@@ -55,14 +74,22 @@ const Wishlist = () => {
             <div className="row m-5">
                 {share && share.map((item, index) => (
                     item ? (
-                        <Stock
-                          key={index}
-                          name={item.Ticker}
-                          lastClose={item.LastClose}
-                          lastChange={item.LastChange}
-                        />
-                      ) : null
-        ))}
+                        <>
+                            <Stock
+                                key={index}
+                                page={'wishlist'}
+                                name={item.Ticker}
+                                lastClose={item.LastClose}
+                                lastChange={item.LastChange}
+                            />
+                            <div className="col-12 text-right">
+                                <button className='btn btn-primary' onClick={handledelfav}>
+                                    remove-fav
+                                </button>
+                            </div>
+                        </>
+                    ) : null
+                ))}
             </div>
         </div>
     );
