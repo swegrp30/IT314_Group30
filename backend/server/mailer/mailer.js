@@ -31,9 +31,9 @@ mailTransporter.verify((error, success) => {
 mailTransporter.use('compile', hbs({
     viewEngine: {
         extname: '.hbs',
-        layoutsDir: './mailer/',
+        // layoutsDir: './mailer/',
         defaultLayout: false,
-        partialsDir: './mailer/',
+        // partialsDir: './mailer/',
     }, viewPath: './mailer/', extName: '.hbs'
 }));
 
