@@ -137,7 +137,7 @@ const PriceAnalysis = () => {
         }
       } catch (error) {
         console.error('Error fetching data:', error);
-        // Handle error state if needed
+        
       } finally {
         setLoading(false);
       }
