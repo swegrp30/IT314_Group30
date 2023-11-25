@@ -9,6 +9,13 @@ import "../style/Profile.css";
 // import valContext from "../Context/valContext";
 
 const Profile = () => {
+
+  const [editable,setEditable] = useState(false);
+  const handleEdit = (e) => {
+    e.preventDefault()
+    setEditable(true);
+  }
+
   const val = secureLocalStorage.getItem("user");
   const token = localStorage.getItem('authToken');
   
@@ -20,7 +27,7 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
+    setEditable(false);
     try {
         console.log(user)
       const res = await axios.post(
@@ -63,6 +70,7 @@ const Profile = () => {
     }
   }, [location.pathname]);
   const handleChange = (e) => {
+    e.preventDefault()
     setUser({ ...user, [e.target.name]: e.target.value });
     console.log(user);
   };
@@ -135,6 +143,7 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 value={user.name}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -148,6 +157,7 @@ const Profile = () => {
                 id="inputPassword4"
                 name="occupation"
                 value={user.occupation}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -161,6 +171,7 @@ const Profile = () => {
                 id="inputEmail4"
                 name="dob"
                 value={user.dob}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -174,6 +185,7 @@ const Profile = () => {
                 id="inputPassword4"
                 name="city"
                 value={user.city}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -187,6 +199,7 @@ const Profile = () => {
                 id="inputEmail4"
                 name="state"
                 value={user.state}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -200,6 +213,7 @@ const Profile = () => {
                 id="inputPassword4"
                 name="pincode"
                 value={user.pincode}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -212,11 +226,13 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="gender"
-                value={user.gender}>
+                value={user.gender}
+                disabled={!editable}>
                 <option value="">-Select Gender-</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
+                
               </select>
             </div>
             <div className="col-md-6">
@@ -230,16 +246,28 @@ const Profile = () => {
                 id="inputPassword4"
                 name="country"
                 value={user.country}
+                disabled={!editable}
               />
             </div>
-            <div className="col-md-6">
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={handleSubmit}
-              >
-                Save and Update
-              </button>
+            <div className="row-md-6">
+              {
+                editable?(
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={handleSubmit}
+                >
+                  Save and Update
+                </button>) :(
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={handleEdit}
+                >
+                  Edit Profile
+                </button>)
+              }
+
             </div>
           </form>
         </div>
