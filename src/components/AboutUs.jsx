@@ -17,8 +17,9 @@ const AboutUs = () => {
 
   const profiles = [
     {
-      name: 'Julie L. Arsenault',
-      username: 'Programmer',
+      name: 'Natvar Prajapati',
+      username: 'Natvar',
+      studentID: '202101402',
       imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
@@ -27,8 +28,9 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Frank A. Lopes',
-      username: 'Programmer',
+      name: 'Naman Modi',
+      username: 'Naman',
+      studentID: '202101421',
       imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
@@ -37,9 +39,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'James M. Hinkle',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(28).jpg',
+      name: 'Bhavya Shah',
+      username: 'Bhavya',
+      studentID: '202101426',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -47,9 +50,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Maria C. Boucher',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(27).jpg',
+      name: 'Dhairya Bhanvadiya',
+      username: 'Dhairya',
+      studentID: '202101436',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -57,9 +61,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Rasheed A. Harrison',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).jpg',
+      name: 'Aayush Patel',
+      username: 'Aayush',
+      studentID: '202101452',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -67,9 +72,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Karen I. McCluskey',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(25).jpg',
+      name: 'Priya Tank',
+      username: 'Priya',
+      studentID: '202101463',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -77,9 +83,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Michael K. Bayne',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(24).jpg',
+      name: 'Shubham Patel',
+      username: 'Shubham',
+      studentID: '202101464',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -87,9 +94,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Josephine S. Darakjy',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).jpg',
+      name: 'Darshana Chauhan',
+      username: 'Dharshana',
+      studentID: '202101467',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -97,9 +105,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Eddie L. Johnson',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(22).jpg',
+      name: 'Varun Vyas',
+      username: 'Lemon',
+      studentID: '202101468',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -107,9 +116,10 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Chloe A. Roberts',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(20).jpg',
+      name: 'Om Gor',
+      username: 'Om',
+      studentID: '202101484',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -117,18 +127,28 @@ const AboutUs = () => {
       ],
     },
     {
-      name: 'Thomas A. Anderson',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).jpg',
-      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' },],
+      name: 'Nisha Savaliya',
+      username: 'Nisha',
+      studentID: '202101486',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
+
+      ],
     },
     {
-      name: 'Cynthia J. Olson',
-      username: 'Programmer',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(16).jpg',
-      socialLinks: [{ icon: 'fa-github', url: '#' }, { icon: 'fa-linkedin', url: '#' }, ],
+      name: 'Vasu Golakiya',
+      username: 'Vasu',
+      studentID: '202101487',
+      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      socialLinks: [
+        { icon: 'fa-github', url: '#' },
+        { icon: 'fa-linkedin', url: '#' },
 
-    }
+      ],
+    },
+    
 
   ];
 
