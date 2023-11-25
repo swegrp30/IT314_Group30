@@ -134,7 +134,7 @@ const Signupemail = () => {
         <div className="d-none">
         <Signup email = {form.email}/>
         </div>
-    <div className="signupform d-flex flex-row">
+    <div className="signupform">
       <div className="left d-flex flex-column">
         <div className="text-header text-center mx-auto  text-white p-5">
           Predict and Visualize the stock price daily
