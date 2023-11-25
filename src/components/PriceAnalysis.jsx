@@ -56,11 +56,11 @@ const PriceAnalysis = () => {
               lastChange={share[index].LastChange}
             >
             </Stock>
-            <div className="col-12 text-right">
+            {/* <div className="col-12 text-right">
               <button className='btn btn-primary' onClick={()=>handleaddfav(item.Name)}>
                 add-fav
               </button>
-            </div>
+            </div> */}
           </>
         )}
 
