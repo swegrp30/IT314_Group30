@@ -30,7 +30,7 @@ const PriceAnalysis = () => {
       }
     }
   };
-
+  
   useEffect(() => {
     const handleClick = async () => {
       const res = await axios.get('http://localhost:7000/getdata');
@@ -50,7 +50,6 @@ const PriceAnalysis = () => {
         {share.map((item, index) =>
           <>
             <Stock
-              page='priceanalysis'
               name={share[index].Name}
               ticker={share[index].Ticker}
               lastClose={share[index].LastClose}
@@ -58,7 +57,7 @@ const PriceAnalysis = () => {
             >
             </Stock>
             <div className="col-12 text-right">
-              <button className='btn btn-primary' onClick={handleaddfav}>
+              <button className='btn btn-primary' onClick={()=>handleaddfav(item.Name)}>
                 add-fav
               </button>
             </div>

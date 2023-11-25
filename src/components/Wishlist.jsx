@@ -22,7 +22,7 @@ const Wishlist = () => {
             }, { headers });
             const data = res.status;
             if (data === 200) {
-                share.filter((item) => item !== e);
+                setShare(share.filter((item) => item !== e));
                 toast.success("Deleted from Favourites");
             }
         } catch (err) {
@@ -77,13 +77,12 @@ const Wishlist = () => {
                         <>
                             <Stock
                                 key={index}
-                                page={'wishlist'}
                                 name={item.Ticker}
                                 lastClose={item.LastClose}
                                 lastChange={item.LastChange}
                             />
                             <div className="col-12 text-right">
-                                <button className='btn btn-primary' onClick={handledelfav}>
+                                <button className='btn btn-primary' onClick={()=>handledelfav(item.Name)}>
                                     remove-fav
                                 </button>
                             </div>
