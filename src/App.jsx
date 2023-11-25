@@ -28,6 +28,7 @@ import TempNewNews from './components/TempNewNews';
 import CompanyNewsPage from './components/CompanyNewsPage';
 import PriceAnalysis from './components/PriceAnalysis'
 import StockDetails from './components/StockDetails.jsx'
+import Stock from './components/Stock.jsx';
 function App() {
   const isAuthenticated = () => {
     const authToken = localStorage.getItem('authToken');
@@ -48,10 +49,10 @@ function App() {
                   </ShowNavbar>
                   <Routes>
                     <Route path='/' element={<Home />} />
-                    <Route path='/news' element={<News />} />
-                    <Route path='/tempnews' element={<TempNewNews />} />
+                    {/* <Route path='/news' element={<News />} /> */}
+                    <Route path='/news' element={<TempNewNews />} />
                     <Route path='/:companyName' element={<CompanyNewsPage />} />
-                    <Route path='/news/:title' element={<NewsDetail />} />
+                    {/* <Route path='/news/:title' element={<NewsDetail />} /> */}
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/login' element={<Login />} />
@@ -65,6 +66,7 @@ function App() {
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
                     <Route path='/mycomments' element={<MyComments />} />
+                    {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
                     
 
                   </Routes>
@@ -89,7 +91,7 @@ function App() {
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     {/* <Route path='/Profile' element={<Profile />} /> */}
-                    <Route path='/news' element={<News />} />
+                    {/* <Route path='/news' element={<News />} /> */}
                     <Route path='*' element={<Error401 />} />
 
                   </Routes>
