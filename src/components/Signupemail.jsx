@@ -124,6 +124,11 @@ const Signupemail = () => {
   const backToSignup = () => {
     navigate('/signupwithemail')
   }
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleVerifyOTP(e);
+    }
+  };
   return (
     <div>
         <div className="d-none">
@@ -182,6 +187,7 @@ const Signupemail = () => {
                   className="form-control"
                   name="otp"
                   onChange={handleChange}
+                  onKeyPress={handleKeyPress} 
                 />
               </div>
               <div className="col-md-6 mt-3">
