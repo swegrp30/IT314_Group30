@@ -37,7 +37,7 @@ function DrawerExample() {
                         <Input p={'2'} placeholder='Type here...' />
                         <VStack p={'2'}>
 
-                        <Link to='/tempnews'> 
+                        <Link to='/news'> 
                             <Button w={'full'} colorScheme='green' mt={3} mb={3} >
                                 General News
                             </Button>
