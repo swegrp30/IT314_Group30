@@ -81,7 +81,7 @@
 @media (max-width: 800px) {
 	.page-container {
 		flex-direction: column;
-		margin-bottom: 20%;
+		margin-bottom: 100%;
 		width:100%;
 	}
 	.Left {
