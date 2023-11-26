@@ -38,7 +38,7 @@ const MyComments = () => {
       "Content-Type": "application/json",
       "auth-token": token,
     };
-    const res = await axios.get("http://localhost:7000/myComments", {
+    const res = await axios.get("https://sharebb-production.up.railway.app/myComments", {
       headers,
     });
     // console.log(res.data[0].comment);
