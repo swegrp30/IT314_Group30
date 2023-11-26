@@ -16,11 +16,22 @@ import { Link } from 'react-router-dom';
 function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
+    const [searchValue, setSearchValue] = useState('');
 
+    // List of companies
+    const companies = [
+        'Tesla', 'Apple', 'Amazon', 'Google', 'Netflix', 'Cnbc', 'HDFC', 'Reliance', 'Reliance Global',
+        'ICICI Bank', 'Infosys', 'Wipro', 'Make My Trip', 'Yatra', 'Sify Tech', 'Freshworks'
+    ];
+
+    // Filtered companies based on search value
+    const filteredCompanies = companies.filter(company =>
+        company.toLowerCase().includes(searchValue.toLowerCase())
+    );
     return (
         <>
-            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-                Companies
+            <Button ref={btnRef} style={{color:'white',background:'purple',margin:'10px'}} onClick={onOpen}>
+                Filter news by companies
             </Button>
             <Drawer
                 isOpen={isOpen}
@@ -34,104 +45,17 @@ function DrawerExample() {
                     <DrawerHeader>Companies </DrawerHeader>
 
                     <DrawerBody>
-                        <Input p={'2'} placeholder='Type here...' />
+                        <Input p={'2'} placeholder='Company Name...'  value={searchValue}
+                            onChange={(e) => setSearchValue(e.target.value)}
+                        />
                         <VStack p={'2'}>
-
-                        <Link to='/news'> 
-                            <Button w={'full'} colorScheme='green' mt={3} mb={3} >
-                                General News
-                            </Button>
-                            </Link>
-
-                            <Link to='/tesla'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Tesla
-                            </Button>
-                            </Link>
-
-                            <Link to='/Apple'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Apple
-                            </Button>
-                            </Link>
-                            <Link to='/amazon'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Amazon
-                            </Button>
-                            </Link>
-                            <Link to='/google'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Google
-                            </Button>
-                            </Link>
-                            <Link to='/netflix'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Netflix
-                            </Button>
-                            </Link>
-                            <Link to='/cnbc'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Cnbc
-                            </Button>
-                            </Link>
-                            <Link to='/hdfc'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                HDFC
-                            </Button>
-                            </Link>
-
-
-
-                            <Link to='/reliance'> 
-                            <Button w={'full'} colorScheme='blue' >
-                               Reliance 
-                            </Button>
-                            </Link>
-                            <Link to='/reliancegolbal'> 
-                            <Button w={'full'} colorScheme='blue' >
-                            Reliance Global
-                            </Button>
-                            </Link>
-                            <Link to='/icici'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                ICICI Bank
-                            </Button>
-                            </Link>
-                            <Link to='/infosys'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Infosys
-                            </Button>
-                            </Link>
-                            <Link to='/wipro'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Wipro
-                            </Button>
-                            </Link>
-                            <Link to='/makemytrip'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Make My Trip
-                            </Button>
-                            </Link>
-
-                            <Link to='/yatra'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Yatra
-                            </Button>
-                            </Link>
-
-                            <Link to='/sify'> 
-                            <Button w={'full'} colorScheme='blue' >
-                                Sify Tech
-                            </Button>
-                            </Link>
-
-                            <Link to='/freshworks'> 
-                            <Button w={'full'} colorScheme='blue' >
-                            Freshworks
-                            </Button>
-                            </Link>
-
-
+                            {filteredCompanies.map((company, index) => (
+                                <Link key={index} to={`/${company.toLowerCase()}`}>
+                                    <Button w={'full'} colorScheme='blue' mt={3} mb={3}>
+                                        {company}
+                                    </Button>
+                                </Link>
+                            ))}
                         </VStack>
 
                     </DrawerBody>
