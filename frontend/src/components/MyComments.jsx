@@ -38,7 +38,7 @@ const MyComments = () => {
       "Content-Type": "application/json",
       "auth-token": token,
     };
-    const res = await axios.get("https://sharebb-production.up.railway.app/myComments", {
+    const res = await axios.get("http://localhost:7000/myComments", {
       headers,
     });
     // console.log(res.data[0].comment);
@@ -65,7 +65,7 @@ const MyComments = () => {
       "auth-token": token,
     };
     const res = await axios.post(
-      "https://sharebb-production.up.railway.app/editComments",
+      "http://localhost:7000/editComments",
       { comment_id: e, new_comment: comment },
       { headers }
     );
@@ -87,7 +87,7 @@ const MyComments = () => {
       "auth-token": token,
     };
     const res = await axios.post(
-      "https://sharebb-production.up.railway.app/dltComments",
+      "http://localhost:7000/dltComments",
       { id: e },
       { headers }
     );
