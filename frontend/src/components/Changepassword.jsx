@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import image from "../Images/hero.png";
 import axios from "axios";
 import "../style/Profile.css";
 import { ToastContainer, toast } from "react-toastify";
 import secureLocalStorage from "react-secure-storage";
 function Changepassword() {
+  const navigate = useNavigate();
   const location = useLocation();
   const val = secureLocalStorage.getItem("user");
   const [password, setPassword] = useState({
@@ -35,7 +36,11 @@ function Changepassword() {
       toast.error("Password of atmost 10 characters is required");
     } else if (password.newPass != password.confirmPass) {
       toast.error("New password and confirm password should be same");
-    } else {
+    } 
+    else  if (password?.newPass===password?.oldPass) {
+      toast.error("New password can not be same as old password");
+    }
+    else {
       delete password.confirmPass;
       const token = localStorage.getItem("authToken");
       console.log(token);
@@ -55,11 +60,13 @@ function Changepassword() {
       inputs.forEach((input) => (input.value = ""));
       if(res.status === 200){
       toast.success("Password changed sucessfully");
+      navigate('/Profile')
       }
       else if(res.status === 202){
         toast.error("Enter correct current password")
       }
     }
+    
   };
 
   useEffect(() => {
