@@ -65,7 +65,7 @@ const MyComments = () => {
       "auth-token": token,
     };
     const res = await axios.post(
-      "http://localhost:7000/editComments",
+      "https://sharebb-production.up.railway.app/editComments",
       { comment_id: e, new_comment: comment },
       { headers }
     );
@@ -87,7 +87,7 @@ const MyComments = () => {
       "auth-token": token,
     };
     const res = await axios.post(
-      "http://localhost:7000/dltComments",
+      "https://sharebb-production.up.railway.app/dltComments",
       { id: e },
       { headers }
     );
