@@ -104,72 +104,65 @@ const MyComments = () => {
     return (
 
         <div>
-            <div className="d-flex mx-4 flex-row justify-content-center mt-3 ">
-                <div className="d-flex flex-column w-25 " style={{ height: "100vh" }}>
-                    <div className=" left d-flex flex-column align-items-center   h-75 w-100">
-                        <img className=" avatar mt-5 rounded-circle" src={image} />
-                        <div className="d-flex flex-column h-100 justify-content-around ">
-                            <ToastContainer />
-                            <div className="d-flex flex-column align-items-center mt-3 ">
-                                <div className="fs-2 fw-bold" style={{ color: "white" }}>
-                                    {val.username}
-                                </div>
-                                <div className="fs-5 mt-2" style={{ color: "white" }}>
-                                    {val.email}
-                                </div>
-                                <div className="fs-5" style={{ color: "white" }}>
-                                    {val.phone}
-                                </div>
-                            </div>
-                            <div style={{ color: "white", textAlign :"center" }}>
-                                Member since :{" "}
-                                <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        className="d-flex flex-column h-25 align-items-center"
-
-                    >
-                        <Link
-                            className="active-link hoverClass  text-center p-3 fs-5 w-100"
-                            to="/Profile"
-                        >
-                            Profile
-                        </Link>
-
-                        <Link
-                            className="active-link text-center hoverClass p-3 fs-5 w-100"
-                            to="/mycomments"
-                        >
-                            My Comments
-                        </Link>
-                        <Link
-                            className="active-link  text-center hoverClass  p-3 fs-5 w-100 "
-                            to="/changePassword"
-                        >
-                            Change Password
-                        </Link>
-                    </div>
+            <div className="page-container mx-4 justify-content-center mt-3 ">
+            <div className="Left d-flex flex-column ">
+          <div className=" left d-flex flex-column align-items-center   h-75 w-100">
+            <img className=" avatar mt-5 rounded-circle" src={image} />
+            <div className="d-flex flex-column h-100 justify-content-around ">
+              <div className="d-flex flex-column align-items-center mt-3 ">
+                <div className="fs-2 fw-bold" style={{ color: "white" }}>
+                  {val.username}
                 </div>
-                <div className="container mt-5 comments-container">
+                <div
+                  className="fs-6 mt-2"
+                  style={{ color: "white", maxWidth: "300px" }}
+                >
+                  {val.email}
+                </div>
+                <div className="fs-6" style={{ color: "white" }}>
+                  {val.phone}
+                </div>
+              </div>
+              <div style={{ color: "white", textAlign: "center" }}>
+                Member since :{" "}
+                <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
+              </div>
+            </div>
+          </div>
+          <div className="d-flex flex-column h-25 align-items-center">
+            <Link
+              className="active-link hoverClass  text-center p-3 fs-5 w-100"
+              to="/Profile"
+            >
+              Profile
+            </Link>
+
+            <Link
+              className="active-link text-center hoverClass p-3 fs-5 w-100"
+              to="/mycomments"
+            >
+              My Comments
+            </Link>
+            <Link
+              className="active-link  text-center hoverClass  p-3 fs-5 w-100 "
+              to="/changePassword"
+            >
+              Change Password
+            </Link>
+          </div>
+        </div>
+                <div className="Right container mt-5 comments-container">
 
                     {data.length > 0 &&
                         data.map((dataItem, index) => {
                             return (
                                 <div>
                                     <div className="card-body mt-3">
-                                        <div className="d-flex flex-start align-items-center">
-                                            <div>
-                                                <h6 className="d-flex fw-bold  mb-1 usernameComment">
+                                        <div className="card-head">
+                                                <div className="d-flex fw-bold  mb-1 usernameComment">
                                                     {data[index].username}
-                                                    <div className="d-flex margin-cl">
-                                                        {index != isediting && <button className="btn btn-primary btn-ead" onClick={() => handleEdit(index)}>Edit</button>}
-                                                        {index == isediting && <button className="btn btn-primary btn-ead" onClick={() => handleSubmitchange(dataItem.comment_id)}>Change</button>}
-                                                        <button className="btn btn-primary btn-ead" onClick={() => handleDelete(dataItem.comment_id)}>Delete</button>
-                                                    </div>
-                                                </h6>
-                                                <p className="text-muted small mb-0">
+                                                </div>
+                                                <div className="text-muted small mb-0">
                                                     Shared on{" "}
                                                     <span className="datetime">
                                                         {data[index].created_at.slice(0, 10)}
@@ -178,26 +171,34 @@ const MyComments = () => {
                                                     <span className="datetime">
                                                         {data[index].created_at.slice(11, 19)}{" "}
                                                     </span>
-                                                </p>
-                                            </div>
+                                                </div>
+                                                <div className="">
+                                                        {index !== isediting && <button className="btn btn-primary btn-ead" onClick={() => handleEdit(index)}>Edit</button>}
+                                                        {index === isediting && <button className="btn btn-primary btn-ead" onClick={() => handleSubmitchange(dataItem.comment_id)}>Change</button>}
+                                                        <button className="btn btn-primary btn-ead" onClick={() => handleDelete(dataItem.comment_id)}>Delete</button>
+                                                </div>
+                                                
                                         </div>
 
+                                        
+
+                                    </div>
+                                    <div className="card-body">
                                         {index != isediting && <p className="comment mt-3 mb-2 pb-2">{data[index].comment}</p>}
-                                        {index == isediting && <div className="editcomment">
-                                            <button className="btn btn-primary btn-ead cancel" onClick={() => handleCancel(index)}>
-                                                Cancel
-                                            </button>
-                                            <textarea
-                                                className="form-control mt-3 mb-2 pb-2"
-                                                id="comments"
-                                                name="comments"
-                                                value={comment}
-                                                onChange={handleChange}
-                                                rows="3"
-                                            ></textarea>
-                                        </div>
-                                        }
-
+                                            {index == isediting && <div className="editcomment">
+                                                <button className="btn btn-primary btn-ead cancel" onClick={() => handleCancel(index)}>
+                                                    Cancel
+                                                </button>
+                                                <textarea
+                                                    className="form-control mt-3 mb-2 pb-2"
+                                                    id="comments"
+                                                    name="comments"
+                                                    value={comment}
+                                                    onChange={handleChange}
+                                                    rows="3"
+                                                ></textarea>
+                                            </div>
+                                            }
                                     </div>
                                 </div>
                             );
