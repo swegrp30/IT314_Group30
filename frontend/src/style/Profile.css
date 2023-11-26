@@ -95,9 +95,25 @@
 .card-head {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	flex-wrap: wrap;
+	align-items: start;
 }
+
+.userInfo {
+	display: flex;
+	align-items: baseline;
+	width: 70%;
+}
+
+.usernameComment {
+	margin-right: 5%;
+}
+
+.commentModify { 
+	display: flex;
+	width: 30%;
+}
+
 
 
 @media (max-width: 700px) {

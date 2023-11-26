@@ -159,20 +159,22 @@ const MyComments = () => {
                                 <div>
                                     <div className="card-body mt-3">
                                         <div className="card-head">
-                                                <div className="d-flex fw-bold  mb-1 usernameComment">
-                                                    {data[index].username}
+                                                <div className="userInfo">
+                                                    <div className="d-flex fw-bold  mb-1 usernameComment">
+                                                        {data[index].username}
+                                                    </div>
+                                                    <div className="text-muted small mb-0">
+                                                        Shared on{" "}
+                                                        <span className="datetime">
+                                                            {data[index].created_at.slice(0, 10)}
+                                                        </span>{" "}
+                                                        at{" "}
+                                                        <span className="datetime">
+                                                            {data[index].created_at.slice(11, 19)}{" "}
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                                <div className="text-muted small mb-0">
-                                                    Shared on{" "}
-                                                    <span className="datetime">
-                                                        {data[index].created_at.slice(0, 10)}
-                                                    </span>{" "}
-                                                    at{" "}
-                                                    <span className="datetime">
-                                                        {data[index].created_at.slice(11, 19)}{" "}
-                                                    </span>
-                                                </div>
-                                                <div className="">
+                                                <div className="commentModify">
                                                         {index !== isediting && <button className="btn btn-primary btn-ead" onClick={() => handleEdit(index)}>Edit</button>}
                                                         {index === isediting && <button className="btn btn-primary btn-ead" onClick={() => handleSubmitchange(dataItem.comment_id)}>Change</button>}
                                                         <button className="btn btn-primary btn-ead" onClick={() => handleDelete(dataItem.comment_id)}>Delete</button>
