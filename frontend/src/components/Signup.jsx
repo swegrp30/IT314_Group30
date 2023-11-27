@@ -21,7 +21,8 @@ const Signup = (props) => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    
+    const regex =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
     if (!data?.name) {
       toast.error("Name is required");
     } else if (!data?.username) {
@@ -32,10 +33,9 @@ const Signup = (props) => {
       toast.error("Phone Number not valid");
     } else if (!data?.password) {
       toast.error("Password  is required");
-    } else if (data?.password.length < 4) {
-      toast.error("Password  of atleast 4 characters is required");
-    } else if (!data?.password.length > 10) {
-      toast.error("Password of atmost 10 characters is required");
+      
+    } else if (!regex.test(data?.password)) {
+      toast.error("Password should atleast have one uppercase, one lower case, one digit, atleast 8 digit long ");
     } else {
       // console.log(data)
       try {
