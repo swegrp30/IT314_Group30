@@ -25,12 +25,12 @@ function Changepassword() {
     if (!password?.oldPass) {
       toast.error("Old Password  is required");
     } 
-    else if (!regex.test(data?.oldPass)) {
+    else if (!regex.test(password?.oldPass)) {
       toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
     } else if (!password?.newPass) {
       toast.error("New Password  is required");
     } 
-    else if (!regex.test(data?.newPass)) {
+    else if (!regex.test(password?.newPass)) {
       toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
     } else if (password.newPass != password.confirmPass) {
       toast.error("New password and confirm password should be same");
