@@ -50,6 +50,9 @@ const Signupemail = () => {
           changeClass1.classList.add("d-none");
           changeClass2.classList.remove("d-none");
         }
+        else if( data === 222 ){
+          toast.error("Email already registered. Please Login.")
+        }
       } catch (err) {
         if (err.response) {
           // ✅ log status code here
@@ -161,7 +164,7 @@ const Signupemail = () => {
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control toClear"
                   name="email"
                   onChange={handleChange}
                 />

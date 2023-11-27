@@ -9,6 +9,13 @@ import "../style/Profile.css";
 // import valContext from "../Context/valContext";
 
 const Profile = () => {
+
+  const [editable,setEditable] = useState(false);
+  const handleEdit = (e) => {
+    e.preventDefault()
+    setEditable(true);
+  }
+
   const val = secureLocalStorage.getItem("user");
   const token = localStorage.getItem('authToken');
   
@@ -20,7 +27,7 @@ const Profile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
+    setEditable(false);
     try {
         console.log(user)
       const res = await axios.post(
@@ -63,14 +70,15 @@ const Profile = () => {
     }
   }, [location.pathname]);
   const handleChange = (e) => {
+    e.preventDefault()
     setUser({ ...user, [e.target.name]: e.target.value });
     console.log(user);
   };
 
   return (
     <div>
-      <div className="d-flex mx-4 flex-row justify-content-center mt-3 ">
-        <div className="d-flex flex-column w-25 " style={{ height: "100vh" }}>
+      <div className="page-container mx-4 mt-3 ">
+        <div className="Left d-flex flex-column " >
           <div className=" left d-flex flex-column align-items-center   h-75 w-100">
             <img className=" avatar mt-5 rounded-circle" src={image} />
             <div className="d-flex flex-column h-100 justify-content-around ">
@@ -117,12 +125,13 @@ const Profile = () => {
           </div>
         </div>
         <div
-          className="d-flex w-75 flex-column justify-content-start mt-5 align-items-center"
+          className="Right d-flex w-75 flex-column justify-content-start mt-5 align-items-center"
           style={{ height: "100vh" }}
         >
           <ToastContainer />
-          <div className="fs-2 fw-bold">Profile</div>
+          
           <form className="row g-5 w-75 mt-2">
+          <div className="fs-2 fw-bold">Profile</div>
             <div className="col-md-6">
               <label htmlFor="inputEmail4" className="form-label">
                 Name
@@ -134,6 +143,7 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 value={user.name}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -147,6 +157,7 @@ const Profile = () => {
                 id="inputPassword4"
                 name="occupation"
                 value={user.occupation}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -160,6 +171,7 @@ const Profile = () => {
                 id="inputEmail4"
                 name="dob"
                 value={user.dob}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -173,6 +185,7 @@ const Profile = () => {
                 id="inputPassword4"
                 name="city"
                 value={user.city}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -186,6 +199,7 @@ const Profile = () => {
                 id="inputEmail4"
                 name="state"
                 value={user.state}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -199,6 +213,7 @@ const Profile = () => {
                 id="inputPassword4"
                 name="pincode"
                 value={user.pincode}
+                disabled={!editable}
               />
             </div>
             <div className="col-md-6">
@@ -211,11 +226,13 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="gender"
-                value={user.gender}>
+                value={user.gender}
+                disabled={!editable}>
                 <option value="">-Select Gender-</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
+                
               </select>
             </div>
             <div className="col-md-6">
@@ -229,16 +246,28 @@ const Profile = () => {
                 id="inputPassword4"
                 name="country"
                 value={user.country}
+                disabled={!editable}
               />
             </div>
-            <div className="col-md-6">
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={handleSubmit}
-              >
-                Save and Update
-              </button>
+            <div className="row-md-6">
+              {
+                editable?(
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={handleSubmit}
+                >
+                  Save and Update
+                </button>) :(
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={handleEdit}
+                >
+                  Edit Profile
+                </button>)
+              }
+
             </div>
           </form>
         </div>

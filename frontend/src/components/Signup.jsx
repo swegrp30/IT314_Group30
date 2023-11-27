@@ -58,6 +58,12 @@ const Signup = (props) => {
       } catch (err) {
         if (err.response) {
           // ✅ log status code here
+          if(err.response.status===412){
+            toast.error("Username not available.");
+          }
+          else if(err.response.status===411){
+            toast.error("Phone number already registered.");
+          }
           console.log(err.response.status);
           console.log(err.message);
           console.log(err.response.headers); // 👉️ {... response headers here}

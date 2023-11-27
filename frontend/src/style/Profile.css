@@ -73,8 +73,26 @@
 	transform: translate3d(0, 0.1em, 0);
 }
 
+.page-container {
+	display: flex;
+	flex-direction: row;
+}
 
-
-
-
-
+@media (max-width: 800px) {
+	.page-container {
+		flex-direction: column;
+		margin-bottom: 100%;
+		width:100%;
+	}
+	.Left {
+		width: 100%;
+		margin:0;
+	}
+	.left {
+		width: 100%;
+		margin:0;
+	}
+	.form-control-login {
+	   width:100%;
+	}
+ }

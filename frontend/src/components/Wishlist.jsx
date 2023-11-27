@@ -4,6 +4,7 @@ import ErrorPage from './ErrorPage';
 import '../style/Wishlist.css';
 import Stock from './Stock';
 import { toast } from 'react-toastify';
+import Loader from './Loader';
 
 const Wishlist = () => {
     const [share, setShare] = useState([]);
@@ -59,7 +60,9 @@ const Wishlist = () => {
     }, [share]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>
+            <Loader/>
+        </div>;
     }
 
     if (error) {
