@@ -35,7 +35,7 @@ const Signup = (props) => {
       toast.error("Password  is required");
       
     } else if (!regex.test(data?.password)) {
-      toast.error("Password should atleast have one uppercase, one lower case, one digit, atleast 8 digit long ");
+      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
     } else {
       // console.log(data)
       try {

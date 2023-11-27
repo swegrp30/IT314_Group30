@@ -21,19 +21,17 @@ function Changepassword() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    const regex =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
     if (!password?.oldPass) {
       toast.error("Old Password  is required");
-    } else if (password?.oldPass.length < 4) {
-      toast.error("Password  of atleast 4 characters is required");
-    } else if (password?.oldPass.length > 10) {
-      toast.error("Password  of atmost 10 characters is required");
+    } 
+    else if (!regex.test(data?.oldPass)) {
+      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
     } else if (!password?.newPass) {
       toast.error("New Password  is required");
-    } else if (password?.newPass.length < 4) {
-      toast.error("Password  of atleast 4 characters is required");
-    } else if (!password?.newPass.length > 10) {
-      toast.error("Password of atmost 10 characters is required");
+    } 
+    else if (!regex.test(data?.newPass)) {
+      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
     } else if (password.newPass != password.confirmPass) {
       toast.error("New password and confirm password should be same");
     } 
