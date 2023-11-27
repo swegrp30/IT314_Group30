@@ -40,7 +40,7 @@ const Signupemail = () => {
       toast.error("Invalid Email");
     } else {
       try {
-        const res = await axios.post("http://localhost:7000/verifyEmail", {
+        const res = await axios.post("https://sharebb-production.up.railway.app/verifyEmail", {
           email: form.email,
         });
         const data = res.status;
@@ -70,7 +70,7 @@ const Signupemail = () => {
     e.preventDefault()
     setShowTimer(true);
     try {
-        const res = await axios.post("http://localhost:7000/verifyEmail", {
+        const res = await axios.post("https://sharebb-production.up.railway.app/verifyEmail", {
           email: form.email,
         });
         console.log("OTP Resent")
@@ -93,7 +93,7 @@ const Signupemail = () => {
         toast.error("OTP is required");
       } else {
         try {
-          const res = await axios.post("http://localhost:7000/otp_verification", {
+          const res = await axios.post("https://sharebb-production.up.railway.app/otp_verification", {
             email: form.email,
             otp:form.otp
           });

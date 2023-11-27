@@ -17,7 +17,7 @@ const PriceAnalysis = () => {
 
   const handleaddfav = async (e) => {
     try {
-      const res = await axios.post('http://localhost:7000/add-fav', { company: e }, { headers });
+      const res = await axios.post('https://sharebb-production.up.railway.app/add-fav', { company: e }, { headers });
       const data = res.status;
       if (data === 200) {
         toast.success('Added to Favourites');
@@ -35,7 +35,7 @@ const PriceAnalysis = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:7000/getdata');
+        const res = await axios.get('https://sharebb-production.up.railway.app/getdata');
         const data = res.data;
         setShare(data);
       } catch (error) {

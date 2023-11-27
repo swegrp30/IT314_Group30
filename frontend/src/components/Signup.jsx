@@ -40,7 +40,7 @@ const Signup = (props) => {
       // console.log(data)
       try {
         const res = await axios
-          .post("http://localhost:7000/signup", {
+          .post("https://sharebb-production.up.railway.app/signup", {
             name: data.name,
             username: data.username,
             email: data.email,

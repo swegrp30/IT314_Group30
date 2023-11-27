@@ -40,7 +40,7 @@ const Login = () => {
       try
       {
         const res = await axios
-          .post("http://localhost:7000/login", {
+          .post("https://sharebb-production.up.railway.app/login", {
 
             email: form.email,
             password: form.password

@@ -13,7 +13,7 @@ const ShowComments = () => {
       "auth-token": token,
     };
     const res = await axios.post(
-      "http://localhost:7000/getComments",
+      "https://sharebb-production.up.railway.app/getComments",
       { company: "SBI" },
       { headers }
     );
