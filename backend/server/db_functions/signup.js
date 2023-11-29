@@ -36,6 +36,8 @@ const user_signup = async (req, res) => {
 
         console.log(data);
 
+        console.log(data.dob);
+
         const new_user = new user({
             id: uuidv4(),
             name: data.name,
