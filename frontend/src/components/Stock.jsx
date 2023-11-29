@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../style/stock.css";
@@ -24,45 +22,60 @@ const Stock = (prop) => {
   };
 
   const scaleStyle = isHovered ? { transform: "scale(1.1)" } : {};
-  const Indian = ["Reliance Industries", "Infosys", "HDFC Bank", "Tata Consultancy Services"];
+  const Indian = [
+    "Reliance Industries",
+    "Infosys",
+    "HDFC Bank",
+    "Tata Consultancy Services",
+  ];
 
   return (
     <div
-      className="card l-bg-blue-dark mb-3"
+      className="card l-bg-web mb-3"
       style={{ transition: "all 0.3s", ...scaleStyle }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className="card-statistic-3 p-4">
-        <div className="card-icon card-icon-large">
-          <i className="fas fa-users"></i>
-        </div>
-        <Link to={`/share/${prop.ticker}`} className="text-decoration-none text-white">
-          <div className="mb-4">
-            <h3 className="card-title mb-0">{prop.name}</h3>
-            <h6 className="card-title mb-0">{prop.ticker}</h6>
-          </div>
-          <div className="row align-items-end mb-2">
-            <div className="col-8">
-              <h2 className="d-flex align-items-center mb-0">
-                {Indian.includes(prop.name) ? "₹" : "$"} {prop.lastClose}
-              </h2>
+        <Link
+          to={`/share/${prop.ticker}`}
+          className="text-decoration-none text-white"
+        >
+          <div className="cardContainer">
+          <div className="stockLeft">
+            <div className="mb-4">
+              <h3 className="card-title mb-0">{prop.name}</h3>
+              <h6 className="card-title mb-0">{prop.ticker}</h6>
             </div>
-            <div className="col-4 text-right">
-              <span
+            <div className="row align-items-end mb-2">
+              <div className="col-8">
+                <h2 className="d-flex align-items-center mb-0">
+                  {Indian.includes(prop.name) ? "₹" : "$"} {prop.lastClose}
+                </h2>
+              </div>
+            </div>
+            <div className="col-7 text-right mt-4">
+              <h4
                 className={`${percentageChangeColor} font-weight-bold`}
-                style={{ fontSize: "20px" }}
+                // style={{ fontSize: "25px", fontWeight:1000 }}
               >
                 {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
-              </span>
+              </h4>
             </div>
           </div>
+          <div className="stockRight">
+            <div className="text-right mt-3">
+              {/* <button className="btn btn-primary " onClick={prop.handleAddFav}>
+                Add to Favorites
+              </button> */}
+              <i
+                class="fa-solid fa-star fa-2xl"
+                style={{ color: "white" }}
+              ></i>
+            </div>
+          </div>
+          </div>
         </Link>
-        <div className="text-right mt-3">
-          <button className="btn btn-primary" onClick={prop.handleAddFav}>
-            Add to Favorites
-          </button>
-        </div>
       </div>
     </div>
   );
