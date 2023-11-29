@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -98,7 +99,7 @@ function Changepassword() {
       <div className="page-container mx-4 mt-3 ">
         <div className="Left d-flex flex-column ">
           <div className=" left d-flex flex-column align-items-center   h-75 w-100">
-            <img className=" avatar mt-5 rounded-circle" src={image} />
+            <img className=" avatar mt-5 rounded-circle" src={image} alt="Hero Image"/>
             <div className="d-flex flex-column h-100 justify-content-around ">
               <div className="d-flex flex-column align-items-center mt-3 ">
                 <div className="fs-2 fw-bold" style={{ color: "white" }}>

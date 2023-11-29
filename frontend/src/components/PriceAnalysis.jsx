@@ -15,6 +15,8 @@ const PriceAnalysis = () => {
     'auth-token': token,
   };
 
+
+  
   const handleaddfav = async (e) => {
     try {
       const res = await axios.post('https://sharebb-production.up.railway.app/add-fav', { company: e }, { headers });
