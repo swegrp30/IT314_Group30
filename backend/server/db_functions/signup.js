@@ -80,7 +80,7 @@ const user_signup = async (req, res) => {
                     // console.log(err);
                     if (err.hasOwnProperty('email') == true && err.email == 1) {
                         res.status(410).send();
-                    }
+                    } 
                     else if (err.hasOwnProperty('phone') == true && err.phone == 1) {
                         res.status(411).send();
                     }
