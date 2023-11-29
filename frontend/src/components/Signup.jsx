@@ -1,16 +1,20 @@
 import "../style/Login.css";
+import "../style/App.css";
 import hero from "../Images/hero.png";
 import logo from "../Images/loginLOGO.svg";
-import google from "../Images/google.png";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-
+import PasswordChecklist from "react-password-checklist";
 import React from "react";
 
 const Signup = (props) => {
-  const email=localStorage.getItem('email')
+  const email = localStorage.getItem('email')
+  // var lowerCase = /[a-z]/g;
+  // var upperCase = /[A-Z]/g;
+  // var numbers = /[0-9]/g;
+  // let bool = new_pass.match(regex)
   const [data, setData] = useState({
     name: "",
     username: "",
@@ -21,8 +25,8 @@ const Signup = (props) => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const regex =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+
+    const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
     if (!data?.name) {
       toast.error("Name is required");
     } else if (!data?.username) {
@@ -33,9 +37,8 @@ const Signup = (props) => {
       toast.error("Phone Number not valid");
     } else if (!data?.password) {
       toast.error("Password  is required");
-      
     } else if (!regex.test(data?.password)) {
-      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
+      toast.error("Password doesn't match the requirements");
     } else {
       // console.log(data)
       try {
@@ -47,24 +50,24 @@ const Signup = (props) => {
             password: data.password,
             phone: data.phone,
           })
-          const token = res.data.token
-          localStorage.clear()
-          localStorage.setItem("authToken", token);
-          toast.success("You have signed up successfully")
-          setTimeout(()=>{
-            navigate('/login')
-          },1000)
-          
+        const token = res.data.token
+        localStorage.clear()
+        localStorage.setItem("authToken", token);
+        toast.success("You have signed up successfully")
+        setTimeout(() => {
+          navigate('/login')
+        }, 1000)
+
       } catch (err) {
         if (err.response) {
 
-          if(err.response.status===412){
+          if (err.response.status === 412) {
             toast.error("Username not available.");
           }
-          else if(err.response.status===411){
+          else if (err.response.status === 411) {
             toast.error("Phone number already registered.");
           }
-          
+
         }
       }
     }
@@ -78,7 +81,7 @@ const Signup = (props) => {
     navigate('/signupwithemail')
   }
   return (
-    <div className="signupform d-flex flex-row">
+    <div className="signupform ">
       <div className="left d-flex flex-column">
         <div className="text-header text-center mx-auto  text-white p-5">
           Predict and Visualize the stock price daily
@@ -135,7 +138,14 @@ const Signup = (props) => {
                 type="password"
                 className="form-control"
                 name="password"
+                pattern
                 onChange={handleChange}
+              />
+
+              <PasswordChecklist
+                rules={["capital", "specialChar", "minLength", "number"]}
+                minLength={8}
+                value={data.password}
               />
             </div>
             <div className="col-md-6">
@@ -164,12 +174,12 @@ const Signup = (props) => {
                 Create Account
               </button>
               <button
-                  type="submit"
-                  className="btn btn-primary mt-3"
-                    onClick={backToSignup}
-                >
-                  Back
-                </button>
+                type="submit"
+                className="btn btn-primary mt-3"
+                onClick={backToSignup}
+              >
+                Back
+              </button>
             </div>
             {/* <div className="col-md-6">
             <button  className="btn btn-secondary">Sign in with Google </button>

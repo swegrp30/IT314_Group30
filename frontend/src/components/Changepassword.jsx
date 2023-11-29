@@ -32,7 +32,7 @@ function Changepassword() {
     } 
     else if (!regex.test(password?.newPass)) {
       toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
-    } else if (password.newPass != password.confirmPass) {
+    } else if (password.newPass !== password.confirmPass) {
       toast.error("New password and confirm password should be same");
     } 
     else  if (password?.newPass===password?.oldPass) {
@@ -88,7 +88,7 @@ function Changepassword() {
       <div className="page-container mx-4 mt-3 ">
       <div className="Left d-flex flex-column ">
           <div className=" left d-flex flex-column align-items-center   h-75 w-100">
-            <img className=" avatar mt-5 rounded-circle" src={image} />
+            <img className=" avatar mt-5 rounded-circle" src={image} alt="Hero Image"/>
             <div className="d-flex flex-column h-100 justify-content-around ">
               <div className="d-flex flex-column align-items-center mt-3 ">
                 <div className="fs-2 fw-bold" style={{ color: "white" }}>

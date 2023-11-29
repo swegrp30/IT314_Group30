@@ -90,7 +90,7 @@ const Login = () => {
       </div>
       <div className="right d-flex flex-column align-items-start">
         <ToastContainer />
-        <div className="detailform my-2 mx-5 w-100">
+        <div className="detailform my-5 mx-5 w-100">
           <div className="logo">
             <img src={logo} className="logo-main" alt="" />
           </div>
