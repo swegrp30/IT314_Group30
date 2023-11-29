@@ -2,14 +2,13 @@ import "../style/Login.css";
 import "../style/App.css";
 import hero from "../Images/hero.png";
 import logo from "../Images/loginLOGO.svg";
-import google from "../Images/google.png";
-import { useState } from "react";
+import React,{ useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Signup from "./Signup";
 import axios from "axios";
 import { HStack } from "@chakra-ui/layout";
-import React from "react";
+
 import Timer from "./Timer";
 
 const Signupemail = () => {
@@ -49,6 +48,7 @@ const Signupemail = () => {
           const changeClass2 = document.querySelector(".verify"); 
           changeClass1.classList.add("d-none");
           changeClass2.classList.remove("d-none");
+          toast.success("OTP sent")
         }
         else if( data === 222 ){
           toast.error("Email already registered. Please Login.")
@@ -70,6 +70,7 @@ const Signupemail = () => {
           email: form.email,
         });
         toast.success("OTP resent");
+        
 
   }
   catch (err) {
@@ -182,11 +183,11 @@ const Signupemail = () => {
                   onKeyPress={handleKeyPress} 
                 />
               </div>
-              <div className="col-md-6 mt-3">
+              <div className="col-12 mt-3">
                 <HStack>
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary sizing"
                   onClick={handleVerifyOTP}
                 >
                   Verify OTP
@@ -199,9 +200,9 @@ const Signupemail = () => {
                 >
                   Back
                 </button>
-                {showTimer && <Timer onComplete={handleTimerComplete} />}
 
                 </HStack>
+                {showTimer && <Timer  onComplete={handleTimerComplete} />}
 
                 
               </div>
