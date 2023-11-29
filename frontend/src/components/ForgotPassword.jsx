@@ -5,6 +5,8 @@ import axios from 'axios';
 import logo from '../Images/loginLOGO.svg'
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import hero from '../Images/hero.png'
+import '../style/Login.css'
 // import '../style/ForgotPassword.css'
 
 function Forgotpassword() {
@@ -121,6 +123,15 @@ function Forgotpassword() {
         }
     }
     return (
+        <div className='signupform'>
+        <div className="left d-flex flex-column">
+          <div className="text-header text-center mx-auto  text-white p-5">
+            Predict and Visualize the stock price daily
+          </div>
+          <div className="hero mx-auto my-auto">
+            <img className="image-hero" src={hero} />
+          </div>
+        </div>
         <div className="d-flex h-100 w-100  justify-content-center align-items-center">
             <ToastContainer />
             <div className="d-flex align-items-center justify-content-center">
@@ -236,7 +247,7 @@ function Forgotpassword() {
                 </div>
             </div>
         </div>
-
+        </div>
     )
 
 }
