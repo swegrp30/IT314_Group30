@@ -147,7 +147,7 @@ useEffect(() => {
             </div>
             <div className="col-7 text-right mt-4">
             <Link
-              to={`/share/${prop.ticker}`}
+              to={`/share/${prop.name}`}
               
             >
               Check Trends   <i class="fa-solid fa-arrow-right fa-beat"></i>

@@ -22,7 +22,6 @@ const Profile = () => {
     "auth-token": token,
   };
   const [user, setUser] = useState(val);
-  console.log(user.dob.slice(1,10))
   
   const handleSubmit = async (e) => {
     e.preventDefault();

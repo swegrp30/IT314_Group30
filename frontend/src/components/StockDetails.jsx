@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 import Notes from "./Notes";
 import Future from "./Future";
 import Past from "./Past";
@@ -13,38 +14,42 @@ const StockDetails = () => {
   const [share, setShare] = useState({});
   const [chartData, setChartData] = useState();
   const [futureData, setFutureData] = useState();
-  const [boolPred,setBoolPred]= useState(true);
+  const [boolPred, setBoolPred] = useState(true);
 
-  const Indian = ["Reliance Industries", "Infosys", "HDFC Bank", "Tata Consultancy Services"];
+  const Indian = [
+    "Reliance Industries",
+    "Infosys",
+    "HDFC Bank",
+    "Tata Consultancy Services",
+  ];
   const token = localStorage.getItem("authToken");
   const headers = {
     "Content-Type": "application/json",
     "auth-token": token,
   };
   const params = useParams();
-  const handleClick =()=>{
+  const handleClick = () => {
     let x = document.getElementById("myBtn").textContent;
-    if(x=='Past Analysis'){
-      document.getElementById("myBtn").textContent="Future Prediction";
+    if (x == "Past Analysis") {
+      document.getElementById("myBtn").textContent = "Future Prediction";
+    } else {
+      document.getElementById("myBtn").textContent = "Past Analysis";
     }
-    else{
-      document.getElementById("myBtn").textContent="Past Analysis";
-    }
-    setBoolPred(!boolPred)
-  }
+    setBoolPred(!boolPred);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://sharebb-production.up.railway.app/getdata");
+        const res = await axios.get(
+          "https://sharebb-production.up.railway.app/getdata"
+        );
         const res2 = await axios.get(
-          `https://sharebb-production.up.railway.app/ml_data?company=tata`,
+          `https://sharebb-production.up.railway.app/ml_data?company=${params.id.toLowerCase()}`,
           { headers }
         );
 
-        const selectedShare = res.data.find(
-          (item) => item.Ticker === params.id
-        );
+        const selectedShare = res.data.find((item) => item.Name === params.id);
         setShare(selectedShare);
         setChartData(selectedShare["Historical Data"]);
         setFutureData(res2.data[0].abc);
@@ -77,7 +82,10 @@ const StockDetails = () => {
               <h3 className="stock-title">{share.Name}</h3>
               <h6 className="stock-title">{share.Ticker}</h6>
               <div className="stock-info">
-                <h4 className="stock-price">{Indian.includes(share.Name)?'₹':'$'}{share.LastClose}</h4>
+                <h4 className="stock-price">
+                  {Indian.includes(share.Name) ? "₹" : "$"}
+                  {share.LastClose}
+                </h4>
                 <span
                   className={`stock-change ${
                     share.LastChange > 0 ? "text-success" : "text-danger"
@@ -90,7 +98,10 @@ const StockDetails = () => {
             <div className="stock-data">
               <p className="stock-label">
                 Opening Price:{" "}
-                <span className="stock-value">{Indian.includes(share.Name)?'₹':'$'}{share.LastOpen}</span>
+                <span className="stock-value">
+                  {Indian.includes(share.Name) ? "₹" : "$"}
+                  {share.LastOpen}
+                </span>
               </p>
               <p className="stock-label">
                 Circulating Supply:{" "}
@@ -99,7 +110,8 @@ const StockDetails = () => {
               <p className="stock-label">
                 Market Cap:{" "}
                 <span className="stock-value">
-                {Indian.includes(share.Name)?'₹':'$'}{(share.LastVolume * share.LastClose).toFixed(2)}
+                  {Indian.includes(share.Name) ? "₹" : "$"}
+                  {(share.LastVolume * share.LastClose).toFixed(2)}
                 </span>
               </p>
             </div>
@@ -110,13 +122,19 @@ const StockDetails = () => {
               <div className="col-md-6">
                 <p className="stock-label">
                   Daily High:{" "}
-                  <span className="stock-value">{Indian.includes(share.Name)?'₹':'$'}{share.LastHigh}</span>
+                  <span className="stock-value">
+                    {Indian.includes(share.Name) ? "₹" : "$"}
+                    {share.LastHigh}
+                  </span>
                 </p>
               </div>
               <div className="col-md-6">
                 <p className="stock-label">
                   Daily Low:{" "}
-                  <span className="stock-value">{Indian.includes(share.Name)?'₹':'$'}{share.LastLow}</span>
+                  <span className="stock-value">
+                    {Indian.includes(share.Name) ? "₹" : "$"}
+                    {share.LastLow}
+                  </span>
                 </p>
               </div>
             </div>
@@ -124,7 +142,9 @@ const StockDetails = () => {
         </div>
 
         <hr className="stock-divider" />
-        <button className="btn btn-primary" id = "myBtn" onClick={handleClick}>Future Prediction</button>
+        <button className="btn btn-primary" id="myBtn" onClick={handleClick}>
+          Future Prediction
+        </button>
 
         {boolPred ? (
           <div className="past">
@@ -136,7 +156,7 @@ const StockDetails = () => {
             </small>
 
             <div className="container-fluid border-1 mt-4">
-             <Past chartData={chartData}/>
+              <Past chartData={chartData} />
             </div>
           </div>
         ) : (
@@ -149,7 +169,7 @@ const StockDetails = () => {
             </small>
 
             <div className="container-fluid border-1 mt-4">
-              <Future futureData={futureData}/>
+              <Future futureData={futureData} />
             </div>
           </div>
         )}

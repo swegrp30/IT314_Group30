@@ -158,6 +158,9 @@ const MyComments = () => {
                         <div className="d-flex fw-bold  mb-1 usernameComment">
                           {data[index].username}
                         </div>
+                        <div className="d-flex fw-bold  mb-1 usernameComment">
+                        <span className="text-muted"> Commented on: &nbsp; </span>  {data[index].company}
+                        </div>
                         <div className="text-muted small mb-0">
                           Shared on{" "}
                           <span className="datetime">
