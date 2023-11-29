@@ -130,7 +130,13 @@
 		margin:0;
 	}
 	.Right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		margin: 5%;
+	}
+	.header{
+		text-align: center;
 	}
 	
  }

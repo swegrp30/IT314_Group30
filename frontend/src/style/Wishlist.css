@@ -13,3 +13,9 @@
     min-height: calc(80vh - 80px); 
     overflow-y: auto; 
 }
+
+.wishlistHeader {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 600;
+}
