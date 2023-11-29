@@ -90,7 +90,7 @@ const Login = () => {
       </div>
       <div className="right d-flex flex-column align-items-start">
         <ToastContainer />
-        <div className="detailform my-5 mx-5 w-100">
+        <div className="detailform my-2 mx-5 w-100">
           <div className="logo">
             <img src={logo} className="logo-main" alt="" />
           </div>
@@ -132,20 +132,20 @@ const Login = () => {
           </form>
 
           <div>
-            <div className="mt-1">
+            <div className="mt-3">
               Don't have an account?
               <button className="colorChange" onClick={() => navigate("/signupwithemail")}>
                 <span> &nbsp; Sign Up</span>
               </button>
             </div>
-            <div className="mt-0">
+            <div className="mt-2">
               Go to
              <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
                {" "}
                 Home
              </span>
             </div>
-            <div className="mt-0">
+            <div className="mt-2">
               <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
                 <span>  Forgot Password?</span>
               </button>
