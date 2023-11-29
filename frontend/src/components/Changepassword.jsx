@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,7 @@ import axios from "axios";
 import "../style/Profile.css";
 import { ToastContainer, toast } from "react-toastify";
 import secureLocalStorage from "react-secure-storage";
+import PasswordChecklist from "react-password-checklist";
 function Changepassword() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -13,6 +15,7 @@ function Changepassword() {
   const [password, setPassword] = useState({
     oldPass: "",
     newPass: "",
+    confirmPass:""
   });
 
   const handleChange = (e) => {
@@ -21,22 +24,30 @@ function Changepassword() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const regex =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+    const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
     if (!password?.oldPass) {
       toast.error("Old Password  is required");
-    } 
-    else if (!regex.test(password?.oldPass)) {
-      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
-    } else if (!password?.newPass) {
-      toast.error("New Password  is required");
-    } 
-    else if (!regex.test(password?.newPass)) {
-      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
-    } else if (password.newPass !== password.confirmPass) {
-      toast.error("New password and confirm password should be same");
-    } 
-    else  if (password?.newPass===password?.oldPass) {
+    }
+    else if (!password?.newPass) {
+      toast.error('New Password  is required')
+    }
+    else if (!password?.confirmPass) {
+      toast.error('Confirm Password  is required')
+    }
+    else if (password?.newPass.length < 8) {
+      toast.error('New Password  of atleast 8 characters is required')
+    }
+    else if (password?.newPass.length > 16) {
+      toast.error('New Password  of atmost 16 characters is required')
+    }
+    else if (password.newPass != password.confirmPass) {
+      toast.error('New password and confirm password should be same')
+    }
+    else if (password?.newPass === password?.oldPass) {
       toast.error("New password can not be same as old password");
+    }
+    else if (!regex.test(password?.newPass)) {
+      toast.error("Password doesn't match the requirements");
     }
     else {
       delete password.confirmPass;
@@ -56,15 +67,15 @@ function Changepassword() {
       console.log(res.status);
       var inputs = document.querySelectorAll('input');
       inputs.forEach((input) => (input.value = ""));
-      if(res.status === 200){
-      toast.success("Password changed sucessfully");
-      navigate('/Profile')
+      if (res.status === 200) {
+        toast.success("Password changed sucessfully");
+        navigate('/Profile')
       }
-      else if(res.status === 202){
+      else if (res.status === 202) {
         toast.error("Enter correct current password")
       }
     }
-    
+
   };
 
   useEffect(() => {
@@ -86,7 +97,7 @@ function Changepassword() {
   return (
     <div>
       <div className="page-container mx-4 mt-3 ">
-      <div className="Left d-flex flex-column ">
+        <div className="Left d-flex flex-column ">
           <div className=" left d-flex flex-column align-items-center   h-75 w-100">
             <img className=" avatar mt-5 rounded-circle" src={image} alt="Hero Image"/>
             <div className="d-flex flex-column h-100 justify-content-around ">
@@ -174,6 +185,14 @@ function Changepassword() {
                 placeholder="Confirm Password"
                 onChange={handleChange}
               />
+              <div className="mt-4">
+                <PasswordChecklist
+                  rules={["capital", "specialChar", "minLength", "number", "match"]}
+                  minLength={8}
+                  value={password.newPass}
+                  valueAgain={password.confirmPass}
+                />
+              </div>
             </div>
             <div className="row-md-6">
               <button

@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import Signup from "./Signup";
 import axios from "axios";
 import { HStack } from "@chakra-ui/layout";
-
 import Timer from "./Timer";
 
 const Signupemail = () => {
@@ -62,6 +61,7 @@ const Signupemail = () => {
   const handleResubmit = async (e) => {
     e.preventDefault();
     setShowTimer(true);
+    setResend(false);
     try {
       const res = await axios.post(
         "https://sharebb-production.up.railway.app/verifyEmail",
