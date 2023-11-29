@@ -23,7 +23,9 @@ const Timer = ({ onComplete }) => {
 
     return (
         <>
-            <p className="text-2xl mt-4 font-bold ">{formatTime(seconds)}</p>
+            <p className='fs-5 fw-bold mt-3 ' style={{color:"purple"}}>OTP Timer -  <span className="fs-5 fw-normal " style={{color:"black"}}>{formatTime(seconds)}</span> </p>
+            
+            
         </>
     );
 };

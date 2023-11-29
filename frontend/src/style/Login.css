@@ -6,6 +6,7 @@
     width: 100vw;
     display: flex;
     flex-direction: row;
+    overflow-x: hidden;
 }
 .left {
    background-image: linear-gradient(-45deg,  purple, rgb(53, 5, 53) );
@@ -18,13 +19,13 @@
 .text-header {
    font-family: 'Poppins', sans-serif;
    max-width: 5;
-   font-size: 2rem;
+   font-size: 2em;
    font-weight: 700;
 }
 
 .image-hero {
-   width: 26.151rem;
-   height: 26.151rem;
+   width: 30vw;
+   
 }
 .right{
     width: 60vw;
@@ -79,22 +80,11 @@
     font-weight:bolder;
     font-family: 'Poppins', sans-serif;
 }
+.already{
+   padding: 10;
+}
 
-.btn{
-    width:24vw;
-}
-.btn-primary{
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    background-color: #852683;
-    border:none;
-}
-.btn-secondary{
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    background-color: #2D3748;
-    border:none;
-}
+
 
 .form-control {
    width:96%;
@@ -104,7 +94,7 @@
    width:50%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
    .signupform {
        flex-direction: column;
    }
@@ -115,11 +105,16 @@
    .image-hero{
       display: none;
    }
-   
+   .text-header{
+      font-size: 25px;
+   }
    .right {
       width: 100%;
    }
    .form-control-login {
       width:100%;
+   }
+   .sizing{
+      width: 200vw;
    }
 }

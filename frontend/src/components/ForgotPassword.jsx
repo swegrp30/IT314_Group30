@@ -33,16 +33,13 @@ function Forgotpassword() {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log("Hlel")
+        
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        const pass =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
-
+        
         if (!regex.test(form?.email)) {
             toast.error('Invalid Email')
         }
-        else if (!regex.test(form?.pass)) {
-            toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
-          }
+        
         else {
             const res = await axios
                 .post("https://sharebb-production.up.railway.app/forgotPassword", {
@@ -72,11 +69,7 @@ function Forgotpassword() {
                 }
             } catch (err) {
                 if (err.response) {
-                    // ✅ log status code here
-                    console.log(err.response.status);
-                    console.log(err.message);
-                    console.log(err.response.headers); // 👉️ {... response headers here}
-                    console.log(err.response.data); // 👉️ {... response data here}
+                    toast.error("Something went wrong")
                 }
             }
 
@@ -84,6 +77,8 @@ function Forgotpassword() {
     }
     const handlePass = async (e) => {
         e.preventDefault();
+        const pass =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+
         if (!password?.newPass) {
             toast.error('New Password  is required')
         }
@@ -113,11 +108,7 @@ function Forgotpassword() {
             }
             catch (err) {
                 if (err.response) {
-                    // ✅ log status code here
-                    console.log(err.response.status);
-                    console.log(err.message);
-                    console.log(err.response.headers); // 👉️ {... response headers here}
-                    console.log(err.response.data); // 👉️ {... response data here}
+                    toast.error("Something went wrong")
                 }
             }
         }
@@ -132,9 +123,9 @@ function Forgotpassword() {
             <img className="image-hero" src={hero} />
           </div>
         </div>
-        <div className="d-flex h-100 w-100  justify-content-center align-items-center">
+        <div className="right d-flex h-100 w-100  justify-content-start align-items-center">
             <ToastContainer />
-            <div className="d-flex align-items-center justify-content-center">
+            <div className="d-flex align-items-center mx-5 my-5 justify-content-center">
                 <div className="d-flex align-items-center justify-content-center flex-column detailform">
                     <div className="logo">
                         <img src={logo} className="logo-main" alt="" />
