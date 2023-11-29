@@ -1,13 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { Center } from '@chakra-ui/react';
 import axios from 'axios';
 import logo from '../Images/loginLOGO.svg'
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import hero from '../Images/hero.png'
 import '../style/Login.css'
-// import '../style/ForgotPassword.css'
+
 
 function Forgotpassword() {
     const navigate = useNavigate();
@@ -88,7 +87,7 @@ function Forgotpassword() {
         else if (password?.newPass.length > 10) {
             toast.error('New Password  of atmost 10 characters is required')
         }
-        else if (password.newPass != password.confirmPass) {
+        else if (password.newPass !== password.confirmPass) {
             toast.error('New password and confirm password should be same')
         }
         else {
@@ -120,7 +119,7 @@ function Forgotpassword() {
             Predict and Visualize the stock price daily
           </div>
           <div className="hero mx-auto my-auto">
-            <img className="image-hero" src={hero} />
+            <img className="image-hero" src={hero} alt='hero' />
           </div>
         </div>
         <div className="right d-flex h-100 w-100  justify-content-start align-items-center">
