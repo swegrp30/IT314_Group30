@@ -18,6 +18,7 @@ const forgotPassword =(async(req,res)=>{
         const x = await user.findOne({email:email});
 
         if(x !== undefined){
+
             const match = await otp.findOne({email:email});
             if (match) {
                 try {
@@ -39,7 +40,7 @@ const forgotPassword =(async(req,res)=>{
                 const saved = await data.save();
                 res.status(200).send()
             } catch (error) {
-                console.log("This is error from signup.js -> mailer part");
+                console.log("This is error from forgotPassword.js -> mailer part");
                 console.log(error);
                 res.status(400).send();
             }
