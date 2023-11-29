@@ -28,7 +28,7 @@ const Stock = (prop) => {
 
   return (
     <div
-      className="card l-bg-blue-dark mb-3"
+      className="card l-bg-web mb-3"
       style={{ transition: "all 0.3s", ...scaleStyle }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -48,20 +48,23 @@ const Stock = (prop) => {
                 {Indian.includes(prop.name) ? "₹" : "$"} {prop.lastClose}
               </h2>
             </div>
-            <div className="col-4 text-right">
-              <span
+            
+          </div>
+          <div className="col-4 text-right">
+              <h3
                 className={`${percentageChangeColor} font-weight-bold`}
                 style={{ fontSize: "20px" }}
               >
                 {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
-              </span>
-            </div>
+              </h3>
           </div>
         </Link>
-        <div className="text-right mt-3">
-          <button className="btn btn-primary" onClick={prop.handleDelFav}>
-           Remove from Favorites
-          </button>
+        <div className="text-right mt-3 star">
+          <i
+                class="fa-solid fa-star fa-2xl"
+                style={{ color: "white" }}
+                onClick={prop.handleDelFav}
+              ></i>
         </div>
       </div>
     </div>

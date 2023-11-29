@@ -6,14 +6,15 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import hero from '../Images/hero.png'
 import '../style/Login.css'
-
+import PasswordChecklist from "react-password-checklist";
+// import '../style/ForgotPassword.css'
 
 function Forgotpassword() {
     const navigate = useNavigate();
 
     const backToForgotpw = () => {
         navigate('/Forgotpassword')
-      }
+    }
     const [password, setPassword] = useState({
         confirmPass: "",
         newPass: "",
@@ -32,13 +33,13 @@ function Forgotpassword() {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
+
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        
+
         if (!regex.test(form?.email)) {
             toast.error('Invalid Email')
         }
-        
+
         else {
             const res = await axios
                 .post("https://sharebb-production.up.railway.app/forgotPassword", {
@@ -76,19 +77,25 @@ function Forgotpassword() {
     }
     const handlePass = async (e) => {
         e.preventDefault();
-        const pass =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+        const pass = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
 
         if (!password?.newPass) {
             toast.error('New Password  is required')
         }
-        else if (password?.newPass.length < 4) {
-            toast.error('New Password  of atleast 4 characters is required')
+        else if (!password?.confirmPass) {
+            toast.error('Confirm Password  is required')
         }
-        else if (password?.newPass.length > 10) {
-            toast.error('New Password  of atmost 10 characters is required')
+        else if (password?.newPass.length < 8) {
+            toast.error('New Password  of atleast 8 characters is required')
+        }
+        else if (password?.newPass.length > 16) {
+            toast.error('New Password  of atmost 16 characters is required')
         }
         else if (password.newPass !== password.confirmPass) {
             toast.error('New password and confirm password should be same')
+        }
+        else if(!pass.test(password?.newPass)){
+            toast.error("Password doesn't match the requirements")
         }
         else {
             try {
@@ -114,139 +121,147 @@ function Forgotpassword() {
     }
     return (
         <div className='signupform'>
-        <div className="left d-flex flex-column">
-          <div className="text-header text-center mx-auto  text-white p-5">
-            Predict and Visualize the stock price daily
-          </div>
-          <div className="hero mx-auto my-auto">
-            <img className="image-hero" src={hero} alt='hero' />
-          </div>
-        </div>
-        <div className="right d-flex h-100 w-100  justify-content-start align-items-center">
-            <ToastContainer />
-            <div className="d-flex align-items-center mx-5 my-5 justify-content-center">
-                <div className="d-flex align-items-center justify-content-center flex-column detailform">
-                    <div className="logo">
-                        <img src={logo} className="logo-main" alt="" />
-                    </div>
-                    <div className="text-medium text-black">Forgot Password</div>
-
-                    <form className="h-100 w-100 form-edit col justify-content-center align-items-center g-3 mt-5">
-                        {!gotEmail && <><div className="col-md-12 text-center">
-                            <label htmlFor="name" className="form-label">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                name="email"
-                                placeholder='Email'
-                                onChange={handleChange}
-                            />
-                        </div>
-                            <div className="col-md-6 mt-3 text-center">
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary mt-3"
-                                    onClick={handleSubmit}
-                                >
-                                    Send OTP
-                                </button>
-
-                            </div>
-                        </>}
-
-                        {gotEmail&& !gotOTP&& <><div className="col-md-12 text-center">
-                            <label htmlFor="name" className="form-label">
-                                OTP
-                            </label>
-                            <input
-                                type="number"
-                                className="form-control"
-                                name="otp"
-                                placeholder='OTP'
-                                onChange={handleChange}
-                            />
-                        </div>
-                            <div className="row-md-6 mt-3 text-center">
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary mt-3"
-                                    style={{width:150, marginRight:2}}
-                                    onClick={handleOTP}
-                                >
-                                    Submit
-                                </button>
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary mt-3"
-                                    style={{width:150, marginLeft:2}}
-                                    onClick={backToForgotpw}
-                                >
-                                    Change Email
-                                </button>
-
-                            </div>
-                        </>}
-                        {gotOTP && <>
-                        <div className="col-md-12 text-center">
-                            <label htmlFor="name" className="form-label text-lg">
-                                New Password
-                            </label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                name="newPass"
-                                placeholder='New Password'
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className="col-md-12 text-center mt-3">
-                            <label htmlFor="name" className="form-label text-lg">
-                                Confirm Password
-                            </label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                name="confirmPass"
-                                placeholder='Confirm Password'
-                                onChange={handleChange}
-                            />
-                        </div>
-                            <div className="row-md-6 mt-3 text-center">
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary mt-3"
-                                    style={{width:150, marginLeft:2}}
-                                    onClick={handlePass}
-                                >
-                                    Confirm 
-                                </button>
-                                <button
-                                    type="submit"
-                                    className="btn btn-primary mt-3"
-                                    style={{width:150, marginLeft:2}}
-                                    onClick={backToForgotpw}
-                                >
-                                    Change Email
-                                </button>
-                            </div>
-                        </>}
-                        <div className="mt-2">
-                            Go to
-                            <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/login")}>
-                            {" "}
-                                Login
-                            </span>
-                        </div>
-                    </form>
-            
+            <div className="left d-flex flex-column">
+                <div className="text-header text-center mx-auto  text-white p-5">
+                    Predict and Visualize the stock price daily
                 </div>
-                
+                <div className="hero mx-auto my-auto">
+                    <img className="image-hero" src={hero} />
+                </div>
             </div>
-            
-        </div>
-        
+            <div className="right d-flex h-100 w-100  justify-content-start align-items-center">
+                <ToastContainer />
+                <div className="d-flex align-items-center mx-5 my-5 justify-content-center">
+                    <div className="d-flex align-items-center justify-content-center flex-column detailform">
+                        <div className="logo">
+                            <img src={logo} className="logo-main" alt="" />
+                        </div>
+                        <div className="text-medium text-black">Forgot Password</div>
+
+                        <form className="h-100 w-100 form-edit col justify-content-center align-items-center g-3 mt-5">
+                            {!gotEmail && <><div className="col-md-12 text-center">
+                                <label htmlFor="name" className="form-label">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    name="email"
+                                    placeholder='Email'
+                                    onChange={handleChange}
+                                />
+                            </div>
+                                <div className="col-md-6 mt-3 text-center">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary mt-3"
+                                        onClick={handleSubmit}
+                                    >
+                                        Send OTP
+                                    </button>
+
+                                </div>
+                            </>}
+
+                            {gotEmail && !gotOTP && <><div className="col-md-12 text-center">
+                                <label htmlFor="name" className="form-label">
+                                    OTP
+                                </label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    name="otp"
+                                    placeholder='OTP'
+                                    onChange={handleChange}
+                                />
+                            </div>
+                                <div className="row-md-6 mt-3 text-center">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary mt-3"
+                                        style={{ width: 150, marginRight: 2 }}
+                                        onClick={handleOTP}
+                                    >
+                                        Submit
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary mt-3"
+                                        style={{ width: 150, marginLeft: 2 }}
+                                        onClick={backToForgotpw}
+                                    >
+                                        Change Email
+                                    </button>
+
+                                </div>
+                            </>}
+                            {gotOTP && <>
+                                <div className="col-md-12 text-center">
+                                    <label htmlFor="name" className="form-label text-lg">
+                                        New Password
+                                    </label>
+                                    <input
+                                        type="password"
+                                        className="form-control"
+                                        name="newPass"
+                                        placeholder='New Password'
+                                        onChange={handleChange}
+                                    />
+                                </div>
+                                <div className="col-md-12 text-center mt-3">
+                                    <label htmlFor="name" className="form-label text-lg">
+                                        Confirm Password
+                                    </label>
+                                    <input
+                                        type="password"
+                                        className="form-control"
+                                        name="confirmPass"
+                                        placeholder='Confirm Password'
+                                        onChange={handleChange}
+                                    />
+                                    <div className="mt-4">
+                                    <PasswordChecklist
+                                        rules={["capital", "specialChar", "minLength", "number","match"]}
+                                        minLength={8}
+                                        value={password.newPass}
+                                        valueAgain = {password.confirmPass}
+                                    />
+                                    </div>
+                                </div>
+                                <div className="row-md-6 mt-3 text-center">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary mt-3"
+                                        style={{ width: 150, marginLeft: 2 }}
+                                        onClick={handlePass}
+                                    >
+                                        Confirm
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary mt-3"
+                                        style={{ width: 150, marginLeft: 2 }}
+                                        onClick={backToForgotpw}
+                                    >
+                                        Change Email
+                                    </button>
+                                </div>
+                            </>}
+                            <div className="mt-2">
+                                Go to
+                                <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/login")}>
+                                    {" "}
+                                    Login
+                                </span>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     )
 
