@@ -7,7 +7,7 @@ describe("Testing of Login", () => {
   const host = 'http://localhost:7000';
   const path = '/login';
 
-  it("Admin With All valid Credentials", (done) => {
+  it("With All valid Credentials", (done) => {
     chai
       .request(host)
       .post(path)
@@ -22,7 +22,7 @@ describe("Testing of Login", () => {
         done();
       });
   });
-  it("Admin with Invalid Credentials", (done) => {
+  it("With Invalid Credentials", (done) => {
     chai
       .request(host)
       .post(path)
@@ -37,7 +37,7 @@ describe("Testing of Login", () => {
         done();
       });
   });
-  it("Admin With  Invalid Credentials", (done) => {
+  it("With  Invalid Credentials", (done) => {
     chai
       .request(host)
       .post(path)
@@ -53,7 +53,7 @@ describe("Testing of Login", () => {
       });
   });
   
-  it("Admin With All Invalid Credentials", (done) => {
+  it("With All Invalid Credentials", (done) => {
     chai
       .request(host)
       .post(path)

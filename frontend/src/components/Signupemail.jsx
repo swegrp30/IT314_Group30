@@ -20,13 +20,9 @@ const Signupemail = () => {
   const [showTimer, setShowTimer] = useState(false);
   const [showResend, setResend] = useState(false);
 
-
-
-
   const handleTimerComplete = () => {
     setShowTimer(false);
     setResend(true);
-    
   };
 
   const navigate = useNavigate();
@@ -39,13 +35,16 @@ const Signupemail = () => {
       toast.error("Invalid Email");
     } else {
       try {
-        const res = await axios.post("https://sharebb-production.up.railway.app/verifyEmail", {
-          email: form.email,
-        });
+        const res = await axios.post(
+          "https://sharebb-production.up.railway.app/verifyEmail",
+          {
+            email: form.email,
+          }
+        );
         const data = res.status;
         if (data === 200) {
           const changeClass1 = document.querySelector(".send");
-          const changeClass2 = document.querySelector(".verify"); 
+          const changeClass2 = document.querySelector(".verify");
           changeClass1.classList.add("d-none");
           changeClass2.classList.remove("d-none");
           toast.success("OTP sent")
@@ -58,15 +57,15 @@ const Signupemail = () => {
           toast.error("Something went wrong");
         }
       }
-
-      
     }
   };
-  const handleResubmit = async(e)=>{
-    e.preventDefault()
+  const handleResubmit = async (e) => {
+    e.preventDefault();
     setShowTimer(true);
     try {
-        const res = await axios.post("https://sharebb-production.up.railway.app/verifyEmail", {
+      const res = await axios.post(
+        "https://sharebb-production.up.railway.app/verifyEmail",
+        {
           email: form.email,
         });
         toast.success("OTP resent");
@@ -84,30 +83,29 @@ const Signupemail = () => {
 
     e.preventDefault();
     if (!form.otp) {
-        toast.error("OTP is required");
-      } else {
-        try {
-          const res = await axios.post("https://sharebb-production.up.railway.app/otp_verification", {
+      toast.error("OTP is required");
+    } else {
+      try {
+        const res = await axios.post(
+          "https://sharebb-production.up.railway.app/otp_verification",
+          {
             email: form.email,
-            otp:form.otp
-          });
-          const data = res.status;
-          if(data===200){
-            localStorage.setItem('email',form.email)
-            navigate('/signup')
+            otp: form.otp,
           }
-          else if(data===288){
-            toast.error("Incorrect OTP. Please enter again.")
-          }
-        } catch (err) {
-          if (err.response) {
-              console.log("Something went wrong")
-          }
+        );
+        const data = res.status;
+        if (data === 200) {
+          localStorage.setItem("email", form.email);
+          navigate("/signup");
+        } else if (data === 288) {
+          toast.error("Incorrect OTP. Please enter again.");
         }
-  
-        
+      } catch (err) {
+        if (err.response) {
+          console.log("Something went wrong");
+        }
       }
-
+    }
   };
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -115,10 +113,10 @@ const Signupemail = () => {
   };
 
   const backToSignup = () => {
-    navigate('/signupwithemail')
-  }
+    navigate("/signupwithemail");
+  };
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleVerifyOTP(e);
     }
   };

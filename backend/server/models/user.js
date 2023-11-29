@@ -68,7 +68,15 @@ const schema = mongoose.Schema({
         type:String
     },
     dob:{
-        type:Date
+        type:Date,
+        validate(m) {
+            if (validator.isDate(m)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     },
     created_at:{
         type:Date,
