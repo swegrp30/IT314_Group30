@@ -1,12 +1,12 @@
 import "../style/Login.css";
+import "../style/App.css";
 import hero from "../Images/hero.png";
 import logo from "../Images/loginLOGO.svg";
 import google from "../Images/google.png";
-import { useState,useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Signup from "./Signup";
-//import {FcGoogle} from 'react-icons/fc';
 import axios from "axios";
 import { HStack } from "@chakra-ui/layout";
 import React from "react";
@@ -55,11 +55,7 @@ const Signupemail = () => {
         }
       } catch (err) {
         if (err.response) {
-          // ✅ log status code here
-          console.log(err.response.status);
-          console.log(err.message);
-          console.log(err.response.headers); // 👉️ {... response headers here}
-          console.log(err.response.data); // 👉️ {... response data here}
+          toast.error("Something went wrong");
         }
       }
 
@@ -73,16 +69,13 @@ const Signupemail = () => {
         const res = await axios.post("https://sharebb-production.up.railway.app/verifyEmail", {
           email: form.email,
         });
-        console.log("OTP Resent")
+        toast.success("OTP resent");
 
   }
   catch (err) {
     if (err.response) {
-      // ✅ log status code here
-      console.log(err.response.status);
-      console.log(err.message);
-      console.log(err.response.headers); // 👉️ {... response headers here}
-      console.log(err.response.data); // 👉️ {... response data here}
+      console.log("Something went wrong");
+      
     }
   }
 }
@@ -107,11 +100,7 @@ const Signupemail = () => {
           }
         } catch (err) {
           if (err.response) {
-            // ✅ log status code here
-            console.log(err.response.status);
-            console.log(err.message);
-            console.log(err.response.headers); // 👉️ {... response headers here}
-            console.log(err.response.data); // 👉️ {... response data here}
+              console.log("Something went wrong")
           }
         }
   

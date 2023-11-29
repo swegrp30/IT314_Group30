@@ -12,6 +12,7 @@
    justify-items: center;
    align-items: center;
    width: 40vw;
+   height: 100vh;
 }
 
 .text-header {
@@ -107,9 +108,14 @@
    .signupform {
        flex-direction: column;
    }
-   .left {
-      width:100%;
+   .left{
+      height: 20vh;
+      justify-content: center;
    }
+   .image-hero{
+      display: none;
+   }
+   
    .right {
       width: 100%;
    }
