@@ -233,11 +233,21 @@ function Forgotpassword() {
                                 </button>
                             </div>
                         </>}
+                        <div className="mt-2">
+                            Go to
+                            <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/login")}>
+                            {" "}
+                                Login
+                            </span>
+                        </div>
                     </form>
-
+            
                 </div>
+                
             </div>
+            
         </div>
+        
         </div>
     )
 
