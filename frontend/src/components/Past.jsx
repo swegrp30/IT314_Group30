@@ -15,6 +15,7 @@ import {
     HiloSeries,
     RangeAreaSeries,
     Trendlines,
+    Zoom
   } from "@syncfusion/ej2-react-charts";
   import {
     EmaIndicator,
@@ -33,8 +34,16 @@ import {
 const Past = (props) => {
     const primaryXAxis = {
         valueType: "DateTime",
+        majorTickLines : {
+          color : 'blue',
+          width : 5
+      },
+      minorTickLines : {
+          color : 'red',
+          width : 0
+      }
       };
-      const crosshair = { enable: true };
+      const crosshair = { enable: true ,lineType:'Both'};
       const tooltip = { enable: true };
       const periodselector = [
         { text: "1M", interval: 1, intervalType: "Months" },
