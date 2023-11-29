@@ -66,7 +66,7 @@ const Profile = () => {
   const handleChange = (e) => {
     e.preventDefault();
     setUser({ ...user, [e.target.name]: e.target.value });
-    console.log(user);
+    console.log(user.dob);
   };
 
   return (

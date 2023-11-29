@@ -214,14 +214,14 @@ const Signupemail = () => {
           </div>
             </div>
           </form>
-          <div className="pt-3">
+          <div className="already mt-3">
             Already have account?
             <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/login")}>
               {" "}
               Log in
             </span>
           </div>
-          <div className="pt-3">
+          <div className="mt-3">
             Go to
             <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/")}>
               {" "}

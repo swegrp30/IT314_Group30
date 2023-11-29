@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Timer = ({ onComplete }) => {
-    const [seconds, setSeconds] = useState(10);
+    const [seconds, setSeconds] = useState(180);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -23,7 +23,7 @@ const Timer = ({ onComplete }) => {
 
     return (
         <>
-            <p className='fs-5 fw-bold mt-3'>OTP Timer -  <span className="fs-5 fw-normal ">{formatTime(seconds)}</span> </p>
+            <p className='fs-5 fw-bold mt-3 ' style={{color:"purple"}}>OTP Timer -  <span className="fs-5 fw-normal " style={{color:"black"}}>{formatTime(seconds)}</span> </p>
             
             
         </>

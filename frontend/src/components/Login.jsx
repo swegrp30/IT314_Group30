@@ -1,10 +1,10 @@
 import "../style/Login.css";
 import hero from "../Images/hero.png";
 import logo from "../Images/loginLOGO.svg";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
-import  secureLocalStorage  from  "react-secure-storage";
+import secureLocalStorage from "react-secure-storage";
 
 import axios from "axios";
 
@@ -37,8 +37,7 @@ const Login = () => {
     }
 
     else {
-      try
-      {
+      try {
         const res = await axios
           .post("https://sharebb-production.up.railway.app/login", {
 
@@ -47,10 +46,10 @@ const Login = () => {
           })
         const token = res.data.token;
         // console.log(res.data);
-        secureLocalStorage.setItem('user',res.data)
-        
-        
-        
+        secureLocalStorage.setItem('user', res.data)
+
+
+
         if (token) {
           toast.success("You have logged in successfully")
           localStorage.setItem('authToken', token)
@@ -64,12 +63,12 @@ const Login = () => {
           toast.error("Email or password incorrect ")
         }
       }
-      catch (err){
-          toast.error("Email ID not registered")
-          console.log(err.response.status);
-          console.log(err.message);
-          console.log(err.response.headers); // 👉️ {... response headers here}
-          console.log(err.response.data); // 👉️ {... response data here}
+      catch (err) {
+        toast.error("Email ID not registered")
+        console.log(err.response.status);
+        console.log(err.message);
+        console.log(err.response.headers); // 👉️ {... response headers here}
+        console.log(err.response.data); // 👉️ {... response data here}
       }
     }
 
@@ -131,18 +130,26 @@ const Login = () => {
             </div>
 
           </form>
-          <div className="pt-3">
+          <div className="align">
+          <div className="mx-">
             Don't have an account?
             <button className="colorChange" onClick={() => navigate("/signupwithemail")}>
-              <p> &nbsp; Sign Up</p>
+              <span> &nbsp; Sign Up</span>
             </button>
           </div>
-
-          <div className="pt-4">
+          <div className="mx-auto">
+            Go to
+            <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
+              {" "}
+              Home
+            </span>
+          </div>
+          <div className="">
 
             <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
               <p> &nbsp; Forgot Password?</p>
             </button>
+          </div>
           </div>
         </div>
       </div>
