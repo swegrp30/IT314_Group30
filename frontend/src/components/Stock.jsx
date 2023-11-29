@@ -71,6 +71,7 @@ const Stock = (prop) => {
               <i
                 class="fa-solid fa-star fa-2xl"
                 style={{ color: "white" }}
+                onClick={prop.handleAddFav}
               ></i>
             </div>
           </div>
