@@ -45,7 +45,7 @@ const StockDetails = () => {
           "https://sharebb-production.up.railway.app/getdata"
         );
         const res2 = await axios.get(
-          `https://sharebb-production.up.railway.app/ml_data?company=${params.id.toLowerCase()}`,
+          `https://sharebb-production.up.railway.app/ml_data?company=${params.id}`,
           { headers }
         );
 
