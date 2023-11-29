@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import secureLocalStorage from "react-secure-storage";
 import { ToastContainer, toast } from "react-toastify";
-
 import image from "../Images/hero.png";
 import axios from "axios";
 import "../style/Profile.css";
-// import valContext from "../Context/valContext";
+
 
 const Profile = () => {
   const [editable, setEditable] = useState(false);
@@ -17,13 +16,14 @@ const Profile = () => {
 
   const val = secureLocalStorage.getItem("user");
   const token = localStorage.getItem("authToken");
-
+  
   const headers = {
     "Content-Type": "application/json",
     "auth-token": token,
   };
   const [user, setUser] = useState(val);
-
+  console.log(user.dob.slice(1,10))
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setEditable(false);
@@ -119,13 +119,13 @@ const Profile = () => {
           </div>
         </div>
         <div
-          className="Right mt-5 align-items-center"
+          className="Right mt-5"
           
         >
           <ToastContainer />
 
           <form className="row g-5 w-75 mt-2">
-            <div className="fs-2 fw-bold">Profile</div>
+            <div className="header fs-2 fw-bold">Profile</div>
             <div className="col-md-6">
               <label htmlFor="inputEmail4" className="form-label">
                 Name
@@ -164,7 +164,7 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="dob"
-                value={user.dob}
+                value={user.dob.slice(0,10)}
                 disabled={!editable}
               />
             </div>
