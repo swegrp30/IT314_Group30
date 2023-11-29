@@ -97,7 +97,8 @@ const Wishlist = () => {
                         <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
                             <Stock
                                 key={index}
-                                name={item.Ticker}
+                                name={item.Name}
+                                ticker={item.Ticker}
                                 lastClose={item.LastClose}
                                 lastChange={item.LastChange}
                                 handleDelFav={() => handledelfav(item.Name)}

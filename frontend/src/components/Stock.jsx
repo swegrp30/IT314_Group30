@@ -1,5 +1,10 @@
-import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
+
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Loader from './Loader';
+import { toast } from 'react-toastify';
 import "../style/stock.css";
 
 const Stock = (prop) => {
@@ -12,10 +17,91 @@ const Stock = (prop) => {
     : "text-danger";
 
   const [isHovered, setIsHovered] = useState(false);
-
+  
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
+  const [WishlistShare, setWishlistShare] = useState([]);
+  const [error, setError] = useState(false);
+  const [allCompaniesData, setAllCompaniesData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem('authToken');
+
+  const headers = {
+    'Content-Type': 'application/json',
+    'auth-token': token,
+  };
+  const handledelfav = async (e) => {
+    try {
+        const res = await axios.post("https://sharebb-production.up.railway.app/del-fav", {
+            company: e,
+        }, { headers });
+        const data = res.status;
+        if (data === 200) {
+            setWishlistShare(WishlistShare.filter((item) => item !== e));
+            toast.success("Deleted from Favourites");
+        }
+    } catch (err) {
+        if (err.response) {
+            console.log(err.response.status);
+            console.log(err.message);
+            console.log(err.response.headers);
+            console.log(err.response.data);
+        }
+    }
+};
+const getWishlistData = async () => {
+    try {
+        const res = await axios.get('https://sharebb-production.up.railway.app/getuser', { headers });
+        console.log(res.data.favourites);
+        const favoriteCompanies = res.data.favourites;
+        // const allCompaniesData = await axios.get('https://sharebb-production.up.railway.app/getdata');
+        const storedData = sessionStorage.getItem('wishlistData');
+        if (storedData) {
+            setAllCompaniesData(JSON.parse(storedData));
+            // setShare(JSON.parse(storedData));
+        }
+        else {
+            // Fetch data from the server if not available in session storage
+            const res = await axios.get('https://sharebb-production.up.railway.app/getdata');
+            const data = res.data;
+            setAllCompaniesData(data);
+            // setShare(data);
+
+            // Save data to session storage
+            sessionStorage.setItem('wishlistData', JSON.stringify(data));
+        }
+        console.log(allCompaniesData);
+        const shareData = favoriteCompanies.map((companyName) => {
+            console.log(companyName);
+            const filteredData = allCompaniesData.filter(item => item.Name === companyName);
+            return filteredData[0];
+        });
+        //console.log(shareData);
+        setWishlistShare(shareData);
+        setLoading(false);
+    } catch (error) {
+        console.error('Error fetching wishlist data', error);
+        setError(true);
+        setLoading(false);
+    }
+};
+
+const inWishlist = () => {
+  console.log(WishlistShare)
+  // for(let i = 0;i<WishlistShare.length;i++){
+  //     if(prop.name===WishlistShare[i].Name)
+  //     return true
+    
+    
+  // }
+  return false;
+}
+
+useEffect(() => {
+
+  getWishlistData();
+}, [headers]);
 
   const handleMouseLeave = () => {
     setIsHovered(false);
@@ -68,11 +154,20 @@ const Stock = (prop) => {
               {/* <button className="btn btn-primary " onClick={prop.handleAddFav}>
                 Add to Favorites
               </button> */}
+              <div> {inWishlist() && 
+              <i
+                class="fa-solid fa-star fa-2xl"
+                style={{ color: "white" }}
+                onClick={prop.handleDelFav}
+              ></i>}
+              </div>
+              <div> {!inWishlist() && 
               <i
                 class="fa-regular fa-star fa-2xl"
                 style={{ color: "white" }}
                 onClick={prop.handleAddFav}
-              ></i>
+              ></i>}
+              </div>
             </div>
           </div>
           </div>

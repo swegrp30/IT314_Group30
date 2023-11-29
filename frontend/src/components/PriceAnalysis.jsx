@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const PriceAnalysis = () => {
   const [share, setShare] = useState([]);
+  
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem('authToken');
 
