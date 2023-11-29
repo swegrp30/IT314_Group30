@@ -1,6 +1,7 @@
 import React , {useContext} from 'react';
 import Tour from "../Images/Tour.jpg"
 import '../style/Home.css';
+import '../style/App.css'
 import search from '../Images/search.png'
 import Nav from './Nav';
 import Footer from './Footer';
