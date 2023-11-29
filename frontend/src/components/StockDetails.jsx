@@ -4,38 +4,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Notes from "./Notes";
-// import { chartData } from "./Data";
-// import LineChart from './LineChart';
-import {
-  StockChartComponent,
-  StockChartSeriesCollectionDirective,
-  StockChartSeriesDirective,
-  Inject,
-  DateTime,
-  Tooltip,
-  RangeTooltip,
-  Crosshair,
-  LineSeries,
-  SplineSeries,
-  CandleSeries,
-  HiloOpenCloseSeries,
-  HiloSeries,
-  RangeAreaSeries,
-  Trendlines,
-} from "@syncfusion/ej2-react-charts";
-import {
-  EmaIndicator,
-  RsiIndicator,
-  BollingerBands,
-  TmaIndicator,
-  MomentumIndicator,
-  SmaIndicator,
-  AtrIndicator,
-  AccumulationDistributionIndicator,
-  MacdIndicator,
-  StochasticIndicator,
-  Export,
-} from "@syncfusion/ej2-react-charts";
+import Future from "./Future";
+import Past from "./Past";
 
 import "../style/StockDetails.css"; // Import your custom styles
 
@@ -46,19 +16,6 @@ const StockDetails = () => {
   const [boolPred,setBoolPred]= useState(true);
 
   const Indian = ["Reliance Industries", "Infosys", "HDFC Bank", "Tata Consultancy Services"];
-  const primaryXAxis = {
-    valueType: "DateTime",
-  };
-  const crosshair = { enable: true };
-  const tooltip = { enable: true };
-  const periodselector = [
-    { text: "1M", interval: 1, intervalType: "Months" },
-    { text: "3M", interval: 3, intervalType: "Months" },
-    { text: "6M", interval: 6, intervalType: "Months" },
-    { text: "1Y", interval: 1, intervalType: "Years" },
-    { text: "2Y", interval: 2, intervalType: "Years", selected: true },
-    { text: "All" },
-  ];
   const token = localStorage.getItem("authToken");
   const headers = {
     "Content-Type": "application/json",
@@ -81,7 +38,7 @@ const StockDetails = () => {
       try {
         const res = await axios.get("https://sharebb-production.up.railway.app/getdata");
         const res2 = await axios.get(
-          "https://sharebb-production.up.railway.app/ml_data?company=tata",
+          `https://sharebb-production.up.railway.app/ml_data?company=tata`,
           { headers }
         );
 
@@ -179,47 +136,7 @@ const StockDetails = () => {
             </small>
 
             <div className="container-fluid border-1 mt-4">
-              <StockChartComponent
-                primaryXAxis={primaryXAxis}
-                crosshair={crosshair}
-                tooltip={tooltip}
-                periods={periodselector}
-                title="Price Analysis"
-              >
-                <Inject
-                  services={[
-                    DateTime,
-                    Tooltip,
-                    RangeTooltip,
-                    Crosshair,
-                    LineSeries,
-                    SplineSeries,
-                    CandleSeries,
-                    HiloOpenCloseSeries,
-                    HiloSeries,
-                    RangeAreaSeries,
-                    Trendlines,
-                    EmaIndicator,
-                    RsiIndicator,
-                    BollingerBands,
-                    TmaIndicator,
-                    MomentumIndicator,
-                    SmaIndicator,
-                    AtrIndicator,
-                    Export,
-                    AccumulationDistributionIndicator,
-                    MacdIndicator,
-                    StochasticIndicator,
-                  ]}
-                />
-                <StockChartSeriesCollectionDirective>
-                  <StockChartSeriesDirective
-                    dataSource={chartData}
-                    type="Candle"
-                    xName="x"
-                  ></StockChartSeriesDirective>
-                </StockChartSeriesCollectionDirective>
-              </StockChartComponent>
+             <Past chartData={chartData}/>
             </div>
           </div>
         ) : (
@@ -232,17 +149,7 @@ const StockDetails = () => {
             </small>
 
             <div className="container-fluid border-1 mt-4">
-              <StockChartComponent title=" Analysis">
-                <Inject services={[LineSeries, DateTime]} />
-                <StockChartSeriesCollectionDirective>
-                  <StockChartSeriesDirective
-                    dataSource={futureData}
-                    type="Line"
-                    xName="date"
-                    yName="value"
-                  ></StockChartSeriesDirective>
-                </StockChartSeriesCollectionDirective>
-              </StockChartComponent>
+              <Future futureData={futureData}/>
             </div>
           </div>
         )}

@@ -59,7 +59,7 @@ const PriceAnalysis = () => {
         <div className='row m-2'>
           {share.map((item, index) => (
             <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
-              <Stock
+              <Stock  
                 name={share[index].Name}
                 ticker={share[index].Ticker}
                 lastClose={share[index].LastClose}
