@@ -66,10 +66,7 @@ const Login = () => {
       }
       catch (err){
           toast.error("Email ID not registered")
-          console.log(err.response.status);
-          console.log(err.message);
-          console.log(err.response.headers); // 👉️ {... response headers here}
-          console.log(err.response.data); // 👉️ {... response data here}
+
       }
     }
 
@@ -91,7 +88,7 @@ const Login = () => {
       </div>
       <div className="right d-flex flex-column align-items-start">
         <ToastContainer />
-        <div className="detailform my-5 mx-5 w-100">
+        <div className="detailform my-4 mx-5 w-100">
           <div className="logo">
             <img src={logo} className="logo-main" alt="" />
           </div>
@@ -138,7 +135,7 @@ const Login = () => {
             </button>
           </div>
 
-          <div className="pt-4">
+          <div className="">
 
             <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
               <p> &nbsp; Forgot Password?</p>
