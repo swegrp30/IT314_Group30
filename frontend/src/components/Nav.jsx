@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import '../style/Nav.css';
+import '../style/App.css'
 import logo from '../Images/TopLogo.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { to } from 'react-spring';
-// import { Toast } from '@chakra-ui/react';
+
 import { ToastContainer, toast } from 'react-toastify';
 
 function Nav() {
@@ -113,12 +113,12 @@ function Nav() {
 
                         {!authToken && (
                             <div className='d-flex me-5'>
-                                <button className='nav-button text-white me-3'>
+                                <button className='btn btn-primary  me-3'>
                                     <Link to='/signupwithemail' onClick={handleUnderline}>
                                         Sign Up
                                     </Link>
                                 </button>
-                                <button className='nav-button text-white'>
+                                <button className='btn btn-primary'>
                                     <Link to='/login' onClick={handleUnderline}>
                                         Sign In
                                     </Link>
@@ -130,7 +130,7 @@ function Nav() {
                                 <button
                                     onClick={clearLocalStorage}
 
-                                    className='nav-button text-white'
+                                    className='btn btn-primary'
                                 >
                                     Sign Out
 
