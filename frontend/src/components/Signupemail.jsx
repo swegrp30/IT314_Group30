@@ -214,20 +214,27 @@ const Signupemail = () => {
           </div>
             </div>
           </form>
-          <div className="already mt-3">
-            Already have account?
-            <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/login")}>
-              {" "}
-              Log in
-            </span>
+
+          <div className="extras">
+            <div className="mt-3">
+              Already have account?
+              <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/login")}>
+                {" "}
+                Log in
+              </span>
+            </div>
+            <div className="mt-2">
+              Go to
+              <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/")}>
+                {" "}
+                Home
+              </span>
+            </div>
+            <div>
+
+            </div>
           </div>
-          <div className="mt-3">
-            Go to
-            <span className="colorChange" style={{ cursor: 'pointer'}}  onClick={() => navigate("/")}>
-              {" "}
-              Home
-            </span>
-          </div>
+          
         </div>
       </div>
     </div>

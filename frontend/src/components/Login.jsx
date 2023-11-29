@@ -123,34 +123,35 @@ const Login = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-5">
               <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
                 Sign In
               </button>
             </div>
 
           </form>
-          <div className="align">
-          <div className="mx-">
-            Don't have an account?
-            <button className="colorChange" onClick={() => navigate("/signupwithemail")}>
-              <span> &nbsp; Sign Up</span>
-            </button>
-          </div>
-          <div className="mx-auto">
-            Go to
-            <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
-              {" "}
-              Home
-            </span>
-          </div>
-          <div className="">
 
-            <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
-              <p> &nbsp; Forgot Password?</p>
-            </button>
+          <div>
+            <div className="mt-1">
+              Don't have an account?
+              <button className="colorChange" onClick={() => navigate("/signupwithemail")}>
+                <span> &nbsp; Sign Up</span>
+              </button>
+            </div>
+            <div className="mt-0">
+              Go to
+             <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
+               {" "}
+                Home
+             </span>
+            </div>
+            <div className="mt-0">
+              <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
+                <span>  Forgot Password?</span>
+              </button>
+            </div>
           </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -158,3 +159,4 @@ const Login = () => {
 };
 
 export default Login;
+
