@@ -21,7 +21,8 @@ const Signup = (props) => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    
+    const regex =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
     if (!data?.name) {
       toast.error("Name is required");
     } else if (!data?.username) {
@@ -32,15 +33,14 @@ const Signup = (props) => {
       toast.error("Phone Number not valid");
     } else if (!data?.password) {
       toast.error("Password  is required");
-    } else if (data?.password.length < 4) {
-      toast.error("Password  of atleast 4 characters is required");
-    } else if (!data?.password.length > 10) {
-      toast.error("Password of atmost 10 characters is required");
+      
+    } else if (!regex.test(data?.password)) {
+      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
     } else {
       // console.log(data)
       try {
         const res = await axios
-          .post("http://localhost:7000/signup", {
+          .post("https://sharebb-production.up.railway.app/signup", {
             name: data.name,
             username: data.username,
             email: data.email,

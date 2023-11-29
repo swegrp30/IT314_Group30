@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import secureLocalStorage from "react-secure-storage";
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer, toast } from "react-toastify";
 
 import image from "../Images/hero.png";
 import axios from "axios";
@@ -9,16 +9,15 @@ import "../style/Profile.css";
 // import valContext from "../Context/valContext";
 
 const Profile = () => {
-
-  const [editable,setEditable] = useState(false);
+  const [editable, setEditable] = useState(false);
   const handleEdit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setEditable(true);
-  }
+  };
 
   const val = secureLocalStorage.getItem("user");
-  const token = localStorage.getItem('authToken');
-  
+  const token = localStorage.getItem("authToken");
+
   const headers = {
     "Content-Type": "application/json",
     "auth-token": token,
@@ -26,26 +25,21 @@ const Profile = () => {
   const [user, setUser] = useState(val);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setEditable(false);
     try {
-        console.log(user)
-      const res = await axios.post(
-        "http://localhost:7000/editProfile",
-         user,
-        { headers }
-      );
-      if(res.status===200){
-      toast.success('Change Successfully ')
-      localStorage.clear()
-      localStorage.setItem('authToken',token)
-      secureLocalStorage.setItem('user',user)
-    }
-    else{
-        toast.success('Try Again')
-    }
-
-
+      console.log(user);
+      const res = await axios.post("https://sharebb-production.up.railway.app/editProfile", user, {
+        headers,
+      });
+      if (res.status === 200) {
+        toast.success("Change Successfully ");
+        localStorage.clear();
+        localStorage.setItem("authToken", token);
+        secureLocalStorage.setItem("user", user);
+      } else {
+        toast.success("Try Again");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -70,7 +64,7 @@ const Profile = () => {
     }
   }, [location.pathname]);
   const handleChange = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setUser({ ...user, [e.target.name]: e.target.value });
     console.log(user);
   };
@@ -78,7 +72,7 @@ const Profile = () => {
   return (
     <div>
       <div className="page-container mx-4 mt-3 ">
-        <div className="Left d-flex flex-column " >
+        <div className="Left d-flex flex-column ">
           <div className=" left d-flex flex-column align-items-center   h-75 w-100">
             <img className=" avatar mt-5 rounded-circle" src={image} />
             <div className="d-flex flex-column h-100 justify-content-around ">
@@ -86,23 +80,23 @@ const Profile = () => {
                 <div className="fs-2 fw-bold" style={{ color: "white" }}>
                   {val.username}
                 </div>
-                <div className="fs-5 mt-2" style={{ color: "white", maxWidth :'300px' }}>
+                <div
+                  className="fs-6 mt-2"
+                  style={{ color: "white", maxWidth: "300px" }}
+                >
                   {val.email}
                 </div>
-                <div className="fs-5" style={{ color: "white" }}>
+                <div className="fs-6" style={{ color: "white" }}>
                   {val.phone}
                 </div>
               </div>
-              <div style={{ color: "white", textAlign :"center" }}>
+              <div style={{ color: "white", textAlign: "center" }}>
                 Member since :{" "}
                 <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
               </div>
             </div>
           </div>
-          <div
-            className="d-flex flex-column h-25 align-items-center"
-            
-          >
+          <div className="d-flex flex-column h-25 align-items-center">
             <Link
               className="active-link hoverClass  text-center p-3 fs-5 w-100"
               to="/Profile"
@@ -125,13 +119,13 @@ const Profile = () => {
           </div>
         </div>
         <div
-          className="Right d-flex w-75 flex-column justify-content-start mt-5 align-items-center"
-          style={{ height: "100vh" }}
+          className="Right mt-5 align-items-center"
+          
         >
           <ToastContainer />
-          
+
           <form className="row g-5 w-75 mt-2">
-          <div className="fs-2 fw-bold">Profile</div>
+            <div className="fs-2 fw-bold">Profile</div>
             <div className="col-md-6">
               <label htmlFor="inputEmail4" className="form-label">
                 Name
@@ -220,19 +214,19 @@ const Profile = () => {
               <label htmlFor="inputEmail4" className="form-label">
                 Gender
               </label>
-              <select 
+              <select
                 type="text"
                 onChange={handleChange}
                 className="form-control"
                 id="inputEmail4"
                 name="gender"
                 value={user.gender}
-                disabled={!editable}>
+                disabled={!editable}
+              >
                 <option value="">-Select Gender-</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
-                
               </select>
             </div>
             <div className="col-md-6">
@@ -250,24 +244,23 @@ const Profile = () => {
               />
             </div>
             <div className="row-md-6">
-              {
-                editable?(
+              {editable ? (
                 <button
                   type="submit"
                   className="btn btn-primary"
                   onClick={handleSubmit}
                 >
                   Save and Update
-                </button>) :(
+                </button>
+              ) : (
                 <button
                   type="submit"
                   className="btn btn-primary"
                   onClick={handleEdit}
                 >
                   Edit Profile
-                </button>)
-              }
-
+                </button>
+              )}
             </div>
           </form>
         </div>

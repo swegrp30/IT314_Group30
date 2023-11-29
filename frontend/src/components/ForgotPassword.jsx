@@ -33,13 +33,17 @@ function Forgotpassword() {
         e.preventDefault()
         console.log("Hlel")
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        const pass =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
 
         if (!regex.test(form?.email)) {
             toast.error('Invalid Email')
         }
+        else if (!regex.test(form?.pass)) {
+            toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
+          }
         else {
             const res = await axios
-                .post("http://localhost:7000/forgotPassword", {
+                .post("https://sharebb-production.up.railway.app/forgotPassword", {
                     email: form.email,
                 })
             toast.success('Otp sent')
@@ -52,7 +56,7 @@ function Forgotpassword() {
             toast.error("OTP is required");
         } else {
             try {
-                const res = await axios.post("http://localhost:7000/otp_verification", {
+                const res = await axios.post("https://sharebb-production.up.railway.app/otp_verification", {
                     email: form.email,
                     otp: form.otp
                 });
@@ -92,7 +96,7 @@ function Forgotpassword() {
         }
         else {
             try {
-                const res = await axios.post("http://localhost:7000/updatePassword", {
+                const res = await axios.post("https://sharebb-production.up.railway.app/updatePassword", {
                     email: form.email,
                     newPass: password.newPass
                 });

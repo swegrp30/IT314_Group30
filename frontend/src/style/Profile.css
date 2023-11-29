@@ -1,23 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
+.page-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.Left {
+	width: 30%;
+}
+
+.Right {
+	width: 100%;
+	margin: 10%;
+}
+
+
 .margin-cl{
-	margin-left:630px;
+	margin-left:150%;
 	height: 28px;
-	width: 200px;
+	width: 100%;
 }
 .btn-ead{
 	border-radius: 50px;
 	margin-left: 10px;
 	margin-right: 10px;
-	width: 100px;
+	
 	padding: 1px;
 }
 .editcomment{
-	width: 59rem;
+	width: 70%;
     justify-content: space-between;
 }
 .cancel{
-	margin-left: 50rem;
+	margin-left: 112%;
     margin-right: 0;
 }
 .btn-ead:hover
@@ -26,10 +41,14 @@
     background-color: white;
     color: rgb(172, 0, 172) !important;
 }
+
 .left {
-  font-family: "Poppins",sans-serif;
-  background: "purple";
-}
+	font-family: "Poppins",sans-serif;
+	
+	background: "purple";
+	width: 80%;
+  }
+
 
 .avatar {
   height: 30vh;
@@ -73,26 +92,45 @@
 	transform: translate3d(0, 0.1em, 0);
 }
 
-.page-container {
+.card-head {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: start;
 }
 
-@media (max-width: 800px) {
+.userInfo {
+	display: flex;
+	align-items: baseline;
+	width: 70%;
+}
+
+.usernameComment {
+	margin-right: 5%;
+}
+
+.commentModify { 
+	display: flex;
+	width: 30%;
+}
+
+
+
+@media (max-width: 700px) {
 	.page-container {
 		flex-direction: column;
-		margin-bottom: 100%;
-		width:100%;
+		align-items: center;
+		justify-content: center;
 	}
 	.Left {
 		width: 100%;
-		margin:0;
 	}
 	.left {
 		width: 100%;
 		margin:0;
 	}
-	.form-control-login {
-	   width:100%;
+	.Right {
+		margin: 5%;
 	}
+	
  }
