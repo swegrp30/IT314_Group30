@@ -19,7 +19,7 @@ function DrawerExample() {
 
     return (
         <>
-            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+            <Button ref={btnRef} colorScheme='teal' onClick={onOpen} mt={5} ml={5}>
                 Companies
             </Button>
             <Drawer
@@ -31,7 +31,7 @@ function DrawerExample() {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerCloseButton />
-                    <DrawerHeader>Companies </DrawerHeader>
+                    <DrawerHeader> Companies </DrawerHeader>
 
                     <DrawerBody>
                         <Input p={'2'} placeholder='Type here...' />
