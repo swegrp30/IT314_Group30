@@ -117,16 +117,13 @@ useEffect(() => {
 
   return (
     <div
-      className="card l-bg-web mb-3"
+      className="card l-bg-web mb-3 text-decoration-none text-white"
       style={{ transition: "all 0.3s", ...scaleStyle }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className="card-statistic-3 p-4">
-        <Link
-          to={`/share/${prop.ticker}`}
-          className="text-decoration-none text-white"
-        >
+        
           <div className="cardContainer">
           <div className="stockLeft">
             <div className="mb-4">
@@ -147,6 +144,14 @@ useEffect(() => {
               >
                 {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
               </h4>
+            </div>
+            <div className="col-7 text-right mt-4">
+            <Link
+              to={`/share/${prop.ticker}`}
+              
+            >
+              Check Trends   <i class="fa-solid fa-arrow-right fa-beat"></i>
+              </Link>
             </div>
           </div>
           <div className="stockRight">
@@ -171,7 +176,7 @@ useEffect(() => {
             </div>
           </div>
           </div>
-        </Link>
+        
       </div>
     </div>
   );
