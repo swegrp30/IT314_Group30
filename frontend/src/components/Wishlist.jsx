@@ -88,8 +88,8 @@ const Wishlist = () => {
 
     return (
         <div className="wishlist-container">
-            <div className="wishlist-header">
-                <h2>Your Wishlist</h2>
+            <div className="wishlistHeader">
+                Your Wishlist
             </div>
             <div className="row m-5">
                 {share && share.map((item, index) => (

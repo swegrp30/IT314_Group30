@@ -64,12 +64,12 @@ const Stock = (prop) => {
             </div>
           </div>
           <div className="stockRight">
-            <div className="text-right mt-3">
+            <div className="text-right mt-3 star">
               {/* <button className="btn btn-primary " onClick={prop.handleAddFav}>
                 Add to Favorites
               </button> */}
               <i
-                class="fa-solid fa-star fa-2xl"
+                class="fa-regular fa-star fa-2xl"
                 style={{ color: "white" }}
                 onClick={prop.handleAddFav}
               ></i>
