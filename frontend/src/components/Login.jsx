@@ -5,6 +5,9 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
 import secureLocalStorage from "react-secure-storage";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 
 import axios from "axios";
 
@@ -19,6 +22,17 @@ const Login = () => {
 
 
   })
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(eyeOff);
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon(eye);
+      setType('text')
+    } else {
+      setIcon(eyeOff)
+      setType('password')
+    }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -116,12 +130,15 @@ const Login = () => {
                 Password
               </label>
               <input
-                type="password"
+                type={type}
                 className="form-control form-control-login"
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
               />
+              <span className="" onClick={handleToggle}>
+                <Icon className="mt-2" icon={icon} size={25} />
+              </span>
             </div>
             <div className="col-md-5">
               <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
@@ -140,10 +157,10 @@ const Login = () => {
             </div>
             <div className="mt-2">
               Go to
-             <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
-               {" "}
+              <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
+                {" "}
                 Home
-             </span>
+              </span>
             </div>
             <div className="mt-2">
               <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
@@ -151,7 +168,7 @@ const Login = () => {
               </button>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>

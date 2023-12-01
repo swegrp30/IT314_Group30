@@ -8,6 +8,9 @@ import hero from "../Images/hero.png";
 import "../style/Login.css";
 import PasswordChecklist from "react-password-checklist";
 import Timer from "./Timer";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 
 function Forgotpassword() {
   const navigate = useNavigate();
@@ -30,6 +33,28 @@ function Forgotpassword() {
     email: "",
     otp: "",
   });
+  const [type1, setType1] = useState('password');
+  const [type2, setType2] = useState('password');
+  const [icon1, setIcon1] = useState(eyeOff);
+  const [icon2, setIcon2] = useState(eyeOff);
+  const handleToggle1 = () => {
+    if (type1 === 'password') {
+      setIcon1(eye);
+      setType1('text')
+    } else {
+      setIcon1(eyeOff)
+      setType1('password')
+    }
+  }
+  const handleToggle2 = () => {
+    if (type2 === 'password') {
+      setIcon2(eye);
+      setType2('text')
+    } else {
+      setIcon2(eyeOff)
+      setType2('password')
+    }
+  }
   const handleChange = (e) => {
     setEmail({ ...form, [e.target.name]: e.target.value });
     setPassword({ ...password, [e.target.name]: e.target.value });
@@ -90,17 +115,17 @@ function Forgotpassword() {
         {
           email: form.email,
         });
-        toast.success("OTP resent");
-        
+      toast.success("OTP resent");
 
-  }
-  catch (err) {
-    if (err.response) {
-      console.log("Something went wrong");
-      
+
+    }
+    catch (err) {
+      if (err.response) {
+        console.log("Something went wrong");
+
+      }
     }
   }
-}
   const handlePass = async (e) => {
     e.preventDefault();
     const pass = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
@@ -220,10 +245,10 @@ function Forgotpassword() {
                   </div>
                   {showTimer && <Timer onComplete={handleTimerComplete} />}
                   {
-              showResend && <p className="colorChange" style={{ cursor: 'pointer'}} onClick={handleResubmit} >
-              Resend OTP
-            </p>
-            }
+                    showResend && <p className="colorChange" style={{ cursor: 'pointer' }} onClick={handleResubmit} >
+                      Resend OTP
+                    </p>
+                  }
                 </>
               )}
               {gotOTP && (
@@ -233,24 +258,30 @@ function Forgotpassword() {
                       New Password
                     </label>
                     <input
-                      type="password"
+                      type={type1}
                       className="form-control"
                       name="newPass"
                       placeholder="New Password"
                       onChange={handleChange}
                     />
+                    <span className="" onClick={handleToggle1}>
+                      <Icon className="mt-2" icon={icon1} size={25} />
+                    </span>
                   </div>
                   <div className="col-md-12 text-center mt-3">
                     <label htmlFor="name" className="form-label text-lg">
                       Confirm Password
                     </label>
                     <input
-                      type="password"
+                      type={type2}
                       className="form-control"
                       name="confirmPass"
                       placeholder="Confirm Password"
                       onChange={handleChange}
                     />
+                    <span className="" onClick={handleToggle2}>
+                      <Icon className="mt-2" icon={icon2} size={25} />
+                    </span>
                     <div className="mt-4">
                       <PasswordChecklist
                         rules={[
@@ -284,7 +315,7 @@ function Forgotpassword() {
                       Change Email
                     </button>
                   </div>
-                  
+
                 </>
               )}
               <div className="mt-2">
@@ -299,7 +330,7 @@ function Forgotpassword() {
                 </span>
               </div>
             </form>
-            
+
           </div>
         </div>
       </div>

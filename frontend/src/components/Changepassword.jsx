@@ -8,6 +8,10 @@ import "../style/Profile.css";
 import { ToastContainer, toast } from "react-toastify";
 import secureLocalStorage from "react-secure-storage";
 import PasswordChecklist from "react-password-checklist";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
+
 function Changepassword() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -17,6 +21,40 @@ function Changepassword() {
     newPass: "",
     confirmPass:""
   });
+
+  const [type1, setType1] = useState('password');
+  const [type2, setType2] = useState('password');
+  const [type3, setType3] = useState('password');
+  const [icon1, setIcon1] = useState(eyeOff);
+  const [icon2, setIcon2] = useState(eyeOff);
+  const [icon3, setIcon3] = useState(eyeOff);
+  const handleToggle1 = () => {
+    if (type1 === 'password') {
+      setIcon1(eye);
+      setType1('text')
+    } else {
+      setIcon1(eyeOff)
+      setType1('password')
+    }
+  }
+  const handleToggle2 = () => {
+    if (type2 === 'password') {
+      setIcon2(eye);
+      setType2('text')
+    } else {
+      setIcon2(eyeOff)
+      setType2('password')
+    }
+  }
+  const handleToggle3 = () => {
+    if (type3 === 'password') {
+      setIcon3(eye);
+      setType3('text')
+    } else {
+      setIcon3(eyeOff)
+      setType3('password')
+    }
+  }
 
   const handleChange = (e) => {
     setPassword({ ...password, [e.target.name]: e.target.value });
@@ -155,36 +193,45 @@ function Changepassword() {
                 Old Password
               </label>
               <input
-                type="password"
+                type={type1}
                 className="form-control"
                 name="oldPass"
                 placeholder="Old Password"
                 onChange={handleChange}
               />
+              <span className="" onClick={handleToggle1}>
+                <Icon className="mt-2" icon={icon1} size={25} />
+              </span>
             </div>
             <div className="mb-3">
               <label htmlFor="newpassword" className="form-label">
                 New Password
               </label>
               <input
-                type="password"
+                type={type2}
                 className="form-control"
                 name="newPass"
                 placeholder="New Password"
                 onChange={handleChange}
               />
+              <span className="" onClick={handleToggle2}>
+                <Icon className="mt-2" icon={icon2} size={25} />
+              </span>
             </div>
             <div className="mb-3">
               <label htmlFor="newpassword" className="form-label">
                 Confirm Password
               </label>
               <input
-                type="password"
+                type={type3}
                 className="form-control"
                 name="confirmPass"
                 placeholder="Confirm Password"
                 onChange={handleChange}
               />
+              <span className="" onClick={handleToggle3}>
+                <Icon className="mt-2" icon={icon3} size={25} />
+              </span>
               <div className="mt-4">
                 <PasswordChecklist
                   rules={["capital", "specialChar", "minLength", "number", "match"]}

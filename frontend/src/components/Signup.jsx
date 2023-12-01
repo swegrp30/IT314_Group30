@@ -8,13 +8,23 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import PasswordChecklist from "react-password-checklist";
 import React from "react";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 
 const Signup = (props) => {
   const email = localStorage.getItem('email')
-  // var lowerCase = /[a-z]/g;
-  // var upperCase = /[A-Z]/g;
-  // var numbers = /[0-9]/g;
-  // let bool = new_pass.match(regex)
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(eyeOff);
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon(eye);
+      setType('text')
+    } else {
+      setIcon(eyeOff)
+      setType('password')
+    }
+  }
   const [data, setData] = useState({
     name: "",
     username: "",
@@ -141,13 +151,15 @@ const Signup = (props) => {
                 Password
               </label>
               <input
-                type="password"
+                type={type}
                 className="form-control"
                 name="password"
                 pattern
                 onChange={handleChange}
               />
-
+              <span className="" onClick={handleToggle}>
+                <Icon className="mt-2" icon={icon} size={25} />
+              </span>
               <PasswordChecklist
                 rules={["capital", "specialChar", "minLength", "number"]}
                 minLength={8}
