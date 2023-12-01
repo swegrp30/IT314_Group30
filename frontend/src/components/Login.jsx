@@ -8,6 +8,7 @@ import secureLocalStorage from "react-secure-storage";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
+import { HStack } from "@chakra-ui/react"
 
 import axios from "axios";
 
@@ -129,6 +130,7 @@ const Login = () => {
               <label htmlFor="password" className="form-label">
                 Password
               </label>
+              <HStack>
               <input
                 type={type}
                 className="form-control form-control-login"
@@ -136,9 +138,10 @@ const Login = () => {
                 placeholder="Password"
                 onChange={handleChange}
               />
-              <span className="" onClick={handleToggle}>
-                <Icon className="mt-2" icon={icon} size={25} />
-              </span>
+                <Icon onClick={handleToggle} className="mt-2" icon={icon} size={25} />
+
+              </HStack>
+              
             </div>
             <div className="col-md-5">
               <button type="submit" className="btn btn-primary" onClick={handleSubmit}>

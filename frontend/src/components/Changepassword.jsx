@@ -11,6 +11,7 @@ import PasswordChecklist from "react-password-checklist";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
+import { HStack } from "@chakra-ui/react";
 
 function Changepassword() {
   const navigate = useNavigate();
@@ -192,6 +193,7 @@ function Changepassword() {
               <label htmlFor="password" className="form-label">
                 Old Password
               </label>
+              <HStack>
               <input
                 type={type1}
                 className="form-control"
@@ -202,11 +204,13 @@ function Changepassword() {
               <span className="" onClick={handleToggle1}>
                 <Icon className="mt-2" icon={icon1} size={25} />
               </span>
+              </HStack>
             </div>
             <div className="mb-3">
               <label htmlFor="newpassword" className="form-label">
                 New Password
               </label>
+              <HStack>
               <input
                 type={type2}
                 className="form-control"
@@ -217,11 +221,13 @@ function Changepassword() {
               <span className="" onClick={handleToggle2}>
                 <Icon className="mt-2" icon={icon2} size={25} />
               </span>
+              </HStack>
             </div>
             <div className="mb-3">
               <label htmlFor="newpassword" className="form-label">
                 Confirm Password
               </label>
+              <HStack>
               <input
                 type={type3}
                 className="form-control"
@@ -232,6 +238,7 @@ function Changepassword() {
               <span className="" onClick={handleToggle3}>
                 <Icon className="mt-2" icon={icon3} size={25} />
               </span>
+              </HStack>
               <div className="mt-4">
                 <PasswordChecklist
                   rules={["capital", "specialChar", "minLength", "number", "match"]}

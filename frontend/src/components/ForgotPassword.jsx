@@ -11,7 +11,7 @@ import Timer from "./Timer";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
-
+import { HStack } from "@chakra-ui/react";
 function Forgotpassword() {
   const navigate = useNavigate();
   const [showTimer, setShowTimer] = useState(false);
@@ -253,10 +253,10 @@ function Forgotpassword() {
               )}
               {gotOTP && (
                 <>
-                  <div className="col-md-12 text-center">
                     <label htmlFor="name" className="form-label text-lg">
                       New Password
                     </label>
+                  <HStack className="col-md-12 text-center">
                     <input
                       type={type1}
                       className="form-control"
@@ -267,11 +267,12 @@ function Forgotpassword() {
                     <span className="" onClick={handleToggle1}>
                       <Icon className="mt-2" icon={icon1} size={25} />
                     </span>
-                  </div>
-                  <div className="col-md-12 text-center mt-3">
+                  </HStack>
+                  <div className="col-md-12  mt-3">
                     <label htmlFor="name" className="form-label text-lg">
                       Confirm Password
                     </label>
+                    <HStack>
                     <input
                       type={type2}
                       className="form-control"
@@ -282,6 +283,9 @@ function Forgotpassword() {
                     <span className="" onClick={handleToggle2}>
                       <Icon className="mt-2" icon={icon2} size={25} />
                     </span>
+                    </HStack>
+                    
+
                     <div className="mt-4">
                       <PasswordChecklist
                         rules={[
