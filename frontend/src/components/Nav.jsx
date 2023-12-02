@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../style/Nav.css';
+import '../style/App.css';
 import logo from '../Images/TopLogo.svg';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -133,12 +134,12 @@ function Nav() {
                     </ul>
                     {!authToken && (
                         <div className='d-flex me-5'>
-                            <button className='nav-button text-white me-3'>
+                            <button className='btn btn-primary text-white me-3'>
                                 <Link to='/signupwithemail' onClick={handleUnderline}>
                                     Sign Up
                                 </Link>
                             </button>
-                            <button className='nav-button text-white'>
+                            <button className='btn btn-primary text-white'>
                                 <Link to='/login' onClick={handleUnderline}>
                                     Sign In
                                 </Link>
@@ -147,7 +148,7 @@ function Nav() {
                     )}
                     {authToken && (
                         <div className='d-flex me-5'>
-                            <button onClick={clearLocalStorage} className='nav-button text-white'>
+                            <button onClick={clearLocalStorage} className='btn btn-primary text-white'>
                                 Sign Out
                             </button>
                         </div>

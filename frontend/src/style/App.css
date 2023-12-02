@@ -1,29 +1,32 @@
-.btn{
-   width:10rem;
-    border-radius:20px;
+.btn {
+    width: 10rem;
+    border-radius: 20px;
 }
 
-.btn-primary{
+.btn-primary {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     background-color: #852683;
-    border:none;
+    border: none;
 }
-.btn-secondary{
+
+.btn-secondary {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     background-color: #2D3748;
-    border:none;
+    border: none;
 }
 
-.btn-primary:focus,.btn-primary:active{
+.btn-primary:focus,
+.btn-primary:active {
     background-color: #852683;
-    color:white;    
-        }
-.btn-primary:hover{
-    
-border:1px solid black;
-background-color: white;
-color: #852683;
-font-weight: 600;    
+    color: white;
+}
+
+.btn-primary:hover {
+
+    border: 1px solid black;
+    background-color: white;
+    color: #852683;
+    font-weight: 600;
 }
