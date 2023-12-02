@@ -29,6 +29,7 @@ import CompanyNewsPage from './components/CompanyNewsPage';
 import PriceAnalysis from './components/PriceAnalysis'
 import StockDetails from './components/StockDetails.jsx'
 import Stock from './components/Stock.jsx';
+import NewHome from './components/NewHome.jsx';
 function App() {
   const isAuthenticated = () => {
     const authToken = localStorage.getItem('authToken');
@@ -49,6 +50,7 @@ function App() {
                   </ShowNavbar>
                   <Routes>
                     <Route path='/' element={<Home />} />
+                    <Route path='/newhome' element={<NewHome />} />
                     {/* <Route path='/news' element={<News />} /> */}
                     <Route path='/news' element={<TempNewNews />} />
                     <Route path='/:companyName' element={<CompanyNewsPage />} />

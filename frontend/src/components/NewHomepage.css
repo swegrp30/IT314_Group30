@@ -1,0 +1,24 @@
+.text-content {
+    padding: 20px;
+
+  }
+
+    .text-content h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #962B92;
+    }
+
+  .main-image {
+    overflow: hidden;
+   
+    
+  }
+
+
+
+  .image-hover:hover {
+    transform: scale(1.05); /* Adjust the scaling factor as needed */
+    transition: transform 0.2s ease-in-out;
+  }
