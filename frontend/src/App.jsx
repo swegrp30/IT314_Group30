@@ -30,6 +30,7 @@ import PriceAnalysis from './components/PriceAnalysis'
 import StockDetails from './components/StockDetails.jsx'
 import Stock from './components/Stock.jsx';
 import NewHome from './components/NewHome.jsx';
+import FAQs from './components/FAQs.jsx';
 function App() {
   const isAuthenticated = () => {
     const authToken = localStorage.getItem('authToken');
@@ -68,6 +69,7 @@ function App() {
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
                     <Route path='/mycomments' element={<MyComments />} />
+                    <Route path='/faqs' element={<FAQs />} />
                     {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
                     
 
@@ -95,7 +97,7 @@ function App() {
                     {/* <Route path='/Profile' element={<Profile />} /> */}
                     {/* <Route path='/news' element={<News />} /> */}
                     <Route path='*' element={<Error401 />} />
-
+                    <Route path='/faqs' element={<FAQs />} />
                   </Routes>
                   <ShowFooter>
                     <Footer />
