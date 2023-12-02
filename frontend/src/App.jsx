@@ -1,7 +1,7 @@
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import News from './components/News';
 import NewsDetail from './components/NewsDetail';
@@ -36,83 +36,109 @@ function App() {
     const authToken = localStorage.getItem('authToken');
     return authToken !== null && authToken !== undefined;
   };
+  // useEffect(() => {
+  //   // Function to clear localStorage
+  //   // Check and clear localStorage when the component mounts
+  //   // checkAndClearLocalStorage();
 
+  //   // Attach the event listener to the window
+  //   // window.addEventListener('beforeunload', clearLocalStorage);
+
+  //   // Cleanup function to remove the event listener when the component is unmounted
+  //   // return () => {
+  //     // window.removeEventListener('beforeunload', clearLocalStorage);
+  //   };
+  // }, []);
+  const clearLocalStorage = () => {
+    localStorage.clear();
+  };
+  const checkAndClearLocalStorage = () => {
+    const currentTime = new Date().getTime();
+    const storedTime = localStorage.getItem('storageInitializedTime');
+    console.log(currentTime);
+    console.log(storedTime);
+    if (storedTime && currentTime - parseInt(storedTime, 10) > 3600*1000) {
+      // Clear localStorage if more than an hour has passed
+      clearLocalStorage();
+    }
+  };
   const [token, setToken] = useState(isAuthenticated())
   setInterval(() => { setToken(isAuthenticated()) }, 1000);
+  setInterval(() => { checkAndClearLocalStorage() }, 5000);
   return (
     <>
 
-        <Router>
-            {
-              token ? (
-                <>
-                  <ShowNavbar>
-                    <Nav />
-                  </ShowNavbar>
-                  <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/newhome' element={<NewHome />} />
-                    {/* <Route path='/news' element={<News />} /> */}
-                    <Route path='/news' element={<TempNewNews />} />
-                    <Route path='/:companyName' element={<CompanyNewsPage />} />
-                    {/* <Route path='/news/:title' element={<NewsDetail />} /> */}
-                    <Route path='/wishlist' element={<Wishlist />} />
-                    <Route path='/aboutus' element={<AboutUs />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/signup' element={<Signup />} />
-                    <Route path='/contactus' element={<ContactUs />} />
-                    <Route path='/priceanalysis' element={<PriceAnalysis />} />
-                    <Route path='/Profile' element={<Profile />} />
-                    <Route path='/share/:id' element={<StockDetails />} />
-                    <Route path='/changePassword' element={<Changepassword />} />
-                    <Route path='/forgotPassword' element={<Forgotpassword />} />
-                    <Route path='/signupwithemail' element={<Signupemail />} />
-                    <Route path='/showcomments' element={<ShowComments />} />
-                    <Route path='/mycomments' element={<MyComments />} />
-                    <Route path='*' element={<Error404 />} />
-                    {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
-                    
+      <Router>
+        {
+          token ? (
+            <>
+              <ShowNavbar>
+                <Nav />
+              </ShowNavbar>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/newhome' element={<NewHome />} />
+                {/* <Route path='/news' element={<News />} /> */}
+                <Route path='/news' element={<TempNewNews />} />
+                <Route path='/:companyName' element={<CompanyNewsPage />} />
+                {/* <Route path='/news/:title' element={<NewsDetail />} /> */}
+                <Route path='/wishlist' element={<Wishlist />} />
+                <Route path='/aboutus' element={<AboutUs />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
+                <Route path='/contactus' element={<ContactUs />} />
+                <Route path='/priceanalysis' element={<PriceAnalysis />} />
+                <Route path='/Profile' element={<Profile />} />
+                <Route path='/share/:id' element={<StockDetails />} />
+                <Route path='/changePassword' element={<Changepassword />} />
+                <Route path='/forgotPassword' element={<Forgotpassword />} />
+                <Route path='/signupwithemail' element={<Signupemail />} />
+                <Route path='/showcomments' element={<ShowComments />} />
+                <Route path='/mycomments' element={<MyComments />} />
+                <Route path='*' element={<Error404 />} />
+                {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
 
-                  </Routes>
-                  <ShowFooter>
-                    <Footer />
-                  </ShowFooter>
 
-                </>
-              ) : (
-                <>
-                  <ShowNavbar>
-                    <Nav />
-                  </ShowNavbar>
-                  <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/news/:title' element={<NewsDetail />} />
-                    <Route path='/tempnews' element={<TempNewNews />} />
-                    <Route path='/aboutus' element={<AboutUs />} />
-                    <Route path='/login' element={<Login />} />
-                    <Route path='/signup' element={<Signup />} />
-                    <Route path='/contactus' element={<ContactUs />} />
-                    <Route path='/forgotPassword' element={<Forgotpassword />} />
-                    <Route path='/signupwithemail' element={<Signupemail />} />
-                    <Route path='/share/:id' element={<Error401 />} />
-                    <Route path='/changePassword' element={<Error401 />} />
-                    <Route path='/showcomments' element={<Error401 />} />
-                    <Route path='/mycomments' element={<Error401 />} />
-                    <Route path='/priceanalysis' element={<Error401 />} />
-                    <Route path='/Profile' element={<Error401 />} />
-                    <Route path='/wishlist' element={<Error401 />} />
-                    {/* <Route path='/Profile' element={<Profile />} /> */}
-                    {/* <Route path='/news' element={<News />} /> */}
-                    <Route path='*' element={<Error404 />} />
+              </Routes>
+              <ShowFooter>
+                <Footer />
+              </ShowFooter>
 
-                  </Routes>
-                  <ShowFooter>
-                    <Footer />
-                  </ShowFooter>
-                </>
-              )
-            }
-        </Router>
+            </>
+          ) : (
+            <>
+              <ShowNavbar>
+                <Nav />
+              </ShowNavbar>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/news/:title' element={<NewsDetail />} />
+                <Route path='/tempnews' element={<TempNewNews />} />
+                <Route path='/aboutus' element={<AboutUs />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
+                <Route path='/contactus' element={<ContactUs />} />
+                <Route path='/forgotPassword' element={<Forgotpassword />} />
+                <Route path='/signupwithemail' element={<Signupemail />} />
+                <Route path='/share/:id' element={<Error401 />} />
+                <Route path='/changePassword' element={<Error401 />} />
+                <Route path='/showcomments' element={<Error401 />} />
+                <Route path='/mycomments' element={<Error401 />} />
+                <Route path='/priceanalysis' element={<Error401 />} />
+                <Route path='/Profile' element={<Error401 />} />
+                <Route path='/wishlist' element={<Error401 />} />
+                {/* <Route path='/Profile' element={<Profile />} /> */}
+                {/* <Route path='/news' element={<News />} /> */}
+                <Route path='*' element={<Error404 />} />
+
+              </Routes>
+              <ShowFooter>
+                <Footer />
+              </ShowFooter>
+            </>
+          )
+        }
+      </Router>
 
     </>
   );

@@ -68,6 +68,7 @@ const Login = () => {
         if (token) {
           toast.success("You have logged in successfully")
           localStorage.setItem('authToken', token)
+          localStorage.setItem('storageInitializedTime',new Date().getTime().toString())
           setTimeout(function () {
             navigate('/')
           }, 1000);
