@@ -36,16 +36,17 @@ const TempNewNews = () => {
     );
 
     return (
-        <div>
+        <div className='d-flex flex-column'>
+            <div>
             <DrawerExample />
-            
-            <section >
+            </div>
+            <div className='mt-5' >
                 <div className="container">
                     <div className="articles">
                         {newsData.map((article) => createArticle(article))}
                     </div>
                 </div>
-            </section>
+            </div>
 
         </div>
     )

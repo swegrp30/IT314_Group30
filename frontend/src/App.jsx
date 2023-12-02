@@ -1,5 +1,4 @@
 import Nav from './components/Nav';
-import Home from './components/Home';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,7 +50,7 @@ function App() {
                     <Nav />
                   </ShowNavbar>
                   <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<NewHome />} />
                     <Route path='/newhome' element={<NewHome />} />
                     {/* <Route path='/news' element={<News />} /> */}
                     <Route path='/news' element={<TempNewNews />} />
@@ -87,7 +86,7 @@ function App() {
                     <Nav />
                   </ShowNavbar>
                   <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<NewHome />} />
                     <Route path='/news/:title' element={<NewsDetail />} />
                     <Route path='/tempnews' element={<TempNewNews />} />
                     <Route path='/aboutus' element={<AboutUs />} />
