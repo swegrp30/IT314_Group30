@@ -1,0 +1,41 @@
+/*======================
+    404 page
+=======================*/
+
+
+.page_404 {
+    background: #fff;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Arvo', serif;
+}
+
+.page_404 img {
+    width: 100%;
+}
+
+.four_zero_four_bg {
+
+    background-image: url(https://media.giphy.com/media/C21GGDOpKT6Z4VuXyn/giphy.gif);
+    height: 400px;
+    width: 400px;
+    background-position: center;
+}
+
+
+.four_zero_four_bg h1 {
+    font-size: 3rem;
+}
+
+.four_zero_four_bg h3 {
+    font-size: 2rem;
+}
+
+.link_404 {
+    color: #fff !important;
+    padding: 10px 20px;
+    background: purple;
+    /* margin: 20px 0; */
+    display: inline-block;
+}
+

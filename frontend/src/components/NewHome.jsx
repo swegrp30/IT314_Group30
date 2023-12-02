@@ -5,14 +5,21 @@ import stockAnalysingImage from "../Images/stock.jpeg";
 import computerImage from "../Images/personStock.svg";
 import './NewHomepage.css'; // Import the CSS file
 import video from "../Images/stock.mp4";
+import Tour from "../Images/Tour.jpg"
 const NewHome = () => {
   return (
 
     <>
-    <video autoPlay loop width="100%" height="100%" muted className=''>
-        <source src={video} type="video/mp4" />
-        </video>
-   
+
+<div>
+                <h1 className='home-h1'>Stock market analysis for the <br /> serious part-time investor</h1>
+                <h4 className='home-h4'>We use intuitive data visualizations and automated stock analysis to help <br /> you understand a stock's fundamentals within minutes.</h4>
+            </div>
+
+            <div>
+                <h1 className='home-h1'>A quick guide to our product</h1>
+                <img src={Tour} className="home-guide-image rounded mx-auto d-block" alt="" />
+            </div>
     <div className='mt-3'>
       {/* Navbar (Assuming you already have one) */}
       {/* Add your existing navbar code here */}
