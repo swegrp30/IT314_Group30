@@ -29,7 +29,7 @@ function Footer() {
                             <ul className='footer-ul'>
                                 <li><Link to="/aboutus">About Us</Link></li>
                                 <li><Link to="#">Careers</Link></li>
-                                <li><Link to="#">FAQs</Link></li>
+                                <li><Link to="/faqs">FAQs</Link></li>
                                 <li><Link to="#">Teams</Link></li>
                                 <li><Link to="/contactus">Contact Us</Link></li>
                             </ul>
