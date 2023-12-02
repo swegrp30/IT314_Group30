@@ -23,7 +23,7 @@ const ContactUs = () => {
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">123-456-789</div>
+                        <div class="accordion-body">+91-8200090380</div>
                     </div>
                 </div>
                 <div class="accordion-item contactus-sub-container">
