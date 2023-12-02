@@ -96,7 +96,7 @@ const AboutUs = () => {
     },
     {
       name: 'Darshana Chauhan',
-      username: 'Dharshana',
+      username: 'Darshana',
       studentID: '202101467',
       imageSrc: 7,
       socialLinks: [
