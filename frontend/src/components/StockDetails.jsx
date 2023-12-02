@@ -3,39 +3,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 import Notes from "./Notes";
-// import { chartData } from "./Data";
-// import LineChart from './LineChart';
-import {
-  StockChartComponent,
-  StockChartSeriesCollectionDirective,
-  StockChartSeriesDirective,
-  Inject,
-  DateTime,
-  Tooltip,
-  RangeTooltip,
-  Crosshair,
-  LineSeries,
-  SplineSeries,
-  CandleSeries,
-  HiloOpenCloseSeries,
-  HiloSeries,
-  RangeAreaSeries,
-  Trendlines,
-} from "@syncfusion/ej2-react-charts";
-import {
-  EmaIndicator,
-  RsiIndicator,
-  BollingerBands,
-  TmaIndicator,
-  MomentumIndicator,
-  SmaIndicator,
-  AtrIndicator,
-  AccumulationDistributionIndicator,
-  MacdIndicator,
-  StochasticIndicator,
-  Export,
-} from "@syncfusion/ej2-react-charts";
+import Future from "./Future";
+import Past from "./Past";
 
 import "../style/StockDetails.css"; // Import your custom styles
 
@@ -43,21 +14,13 @@ const StockDetails = () => {
   const [share, setShare] = useState({});
   const [chartData, setChartData] = useState();
   const [futureData, setFutureData] = useState();
-  const [boolPred,setBoolPred]= useState(true);
+  const [boolPred, setBoolPred] = useState(true);
 
-  const Indian = ["Reliance Industries", "Infosys", "HDFC Bank", "Tata Consultancy Services"];
-  const primaryXAxis = {
-    valueType: "DateTime",
-  };
-  const crosshair = { enable: true };
-  const tooltip = { enable: true };
-  const periodselector = [
-    { text: "1M", interval: 1, intervalType: "Months" },
-    { text: "3M", interval: 3, intervalType: "Months" },
-    { text: "6M", interval: 6, intervalType: "Months" },
-    { text: "1Y", interval: 1, intervalType: "Years" },
-    { text: "2Y", interval: 2, intervalType: "Years", selected: true },
-    { text: "All" },
+  const Indian = [
+    "Reliance Industries",
+    "Infosys",
+    "HDFC Bank",
+    "Tata Consultancy Services",
   ];
   const token = localStorage.getItem("authToken");
   const headers = {
@@ -65,29 +28,28 @@ const StockDetails = () => {
     "auth-token": token,
   };
   const params = useParams();
-  const handleClick =()=>{
+  const handleClick = () => {
     let x = document.getElementById("myBtn").textContent;
-    if(x=='Past Analysis'){
-      document.getElementById("myBtn").textContent="Future Prediction";
+    if (x == "Past Analysis") {
+      document.getElementById("myBtn").textContent = "Future Prediction";
+    } else {
+      document.getElementById("myBtn").textContent = "Past Analysis";
     }
-    else{
-      document.getElementById("myBtn").textContent="Past Analysis";
-    }
-    setBoolPred(!boolPred)
-  }
+    setBoolPred(!boolPred);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://sharebb-production.up.railway.app/getdata");
+        const res = await axios.get(
+          "https://sharebb-production.up.railway.app/getdata"
+        );
         const res2 = await axios.get(
-          "https://sharebb-production.up.railway.app/ml_data?company=tata",
+          `https://sharebb-production.up.railway.app/ml_data?company=${params.id}`,
           { headers }
         );
 
-        const selectedShare = res.data.find(
-          (item) => item.Ticker === params.id
-        );
+        const selectedShare = res.data.find((item) => item.Name === params.id);
         setShare(selectedShare);
         setChartData(selectedShare["Historical Data"]);
         setFutureData(res2.data[0].abc);
@@ -120,7 +82,10 @@ const StockDetails = () => {
               <h3 className="stock-title">{share.Name}</h3>
               <h6 className="stock-title">{share.Ticker}</h6>
               <div className="stock-info">
-                <h4 className="stock-price">{Indian.includes(share.Name)?'₹':'$'}{share.LastClose}</h4>
+                <h4 className="stock-price">
+                  {Indian.includes(share.Name) ? "₹" : "$"}
+                  {share.LastClose}
+                </h4>
                 <span
                   className={`stock-change ${
                     share.LastChange > 0 ? "text-success" : "text-danger"
@@ -133,7 +98,10 @@ const StockDetails = () => {
             <div className="stock-data">
               <p className="stock-label">
                 Opening Price:{" "}
-                <span className="stock-value">{Indian.includes(share.Name)?'₹':'$'}{share.LastOpen}</span>
+                <span className="stock-value">
+                  {Indian.includes(share.Name) ? "₹" : "$"}
+                  {share.LastOpen}
+                </span>
               </p>
               <p className="stock-label">
                 Circulating Supply:{" "}
@@ -142,7 +110,8 @@ const StockDetails = () => {
               <p className="stock-label">
                 Market Cap:{" "}
                 <span className="stock-value">
-                {Indian.includes(share.Name)?'₹':'$'}{(share.LastVolume * share.LastClose).toFixed(2)}
+                  {Indian.includes(share.Name) ? "₹" : "$"}
+                  {(share.LastVolume * share.LastClose).toFixed(2)}
                 </span>
               </p>
             </div>
@@ -153,13 +122,19 @@ const StockDetails = () => {
               <div className="col-md-6">
                 <p className="stock-label">
                   Daily High:{" "}
-                  <span className="stock-value">{Indian.includes(share.Name)?'₹':'$'}{share.LastHigh}</span>
+                  <span className="stock-value">
+                    {Indian.includes(share.Name) ? "₹" : "$"}
+                    {share.LastHigh}
+                  </span>
                 </p>
               </div>
               <div className="col-md-6">
                 <p className="stock-label">
                   Daily Low:{" "}
-                  <span className="stock-value">{Indian.includes(share.Name)?'₹':'$'}{share.LastLow}</span>
+                  <span className="stock-value">
+                    {Indian.includes(share.Name) ? "₹" : "$"}
+                    {share.LastLow}
+                  </span>
                 </p>
               </div>
             </div>
@@ -167,7 +142,9 @@ const StockDetails = () => {
         </div>
 
         <hr className="stock-divider" />
-        <button className="btn btn-primary" id = "myBtn" onClick={handleClick}>Future Prediction</button>
+        <button className="btn btn-primary" id="myBtn" onClick={handleClick}>
+          Future Prediction
+        </button>
 
         {boolPred ? (
           <div className="past">
@@ -179,47 +156,7 @@ const StockDetails = () => {
             </small>
 
             <div className="container-fluid border-1 mt-4">
-              <StockChartComponent
-                primaryXAxis={primaryXAxis}
-                crosshair={crosshair}
-                tooltip={tooltip}
-                periods={periodselector}
-                title="Price Analysis"
-              >
-                <Inject
-                  services={[
-                    DateTime,
-                    Tooltip,
-                    RangeTooltip,
-                    Crosshair,
-                    LineSeries,
-                    SplineSeries,
-                    CandleSeries,
-                    HiloOpenCloseSeries,
-                    HiloSeries,
-                    RangeAreaSeries,
-                    Trendlines,
-                    EmaIndicator,
-                    RsiIndicator,
-                    BollingerBands,
-                    TmaIndicator,
-                    MomentumIndicator,
-                    SmaIndicator,
-                    AtrIndicator,
-                    Export,
-                    AccumulationDistributionIndicator,
-                    MacdIndicator,
-                    StochasticIndicator,
-                  ]}
-                />
-                <StockChartSeriesCollectionDirective>
-                  <StockChartSeriesDirective
-                    dataSource={chartData}
-                    type="Candle"
-                    xName="x"
-                  ></StockChartSeriesDirective>
-                </StockChartSeriesCollectionDirective>
-              </StockChartComponent>
+              <Past chartData={chartData} />
             </div>
           </div>
         ) : (
@@ -232,17 +169,7 @@ const StockDetails = () => {
             </small>
 
             <div className="container-fluid border-1 mt-4">
-              <StockChartComponent title=" Analysis">
-                <Inject services={[LineSeries, DateTime]} />
-                <StockChartSeriesCollectionDirective>
-                  <StockChartSeriesDirective
-                    dataSource={futureData}
-                    type="Line"
-                    xName="date"
-                    yName="value"
-                  ></StockChartSeriesDirective>
-                </StockChartSeriesCollectionDirective>
-              </StockChartComponent>
+              <Future futureData={futureData} />
             </div>
           </div>
         )}

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../style/showComments.css";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 const ShowComments = () => {
   const token = localStorage.getItem("authToken");
   // console.log(token)
+  const params = useParams();
   const [data, setData] = useState([]);
   const getData = async (e) => {
     // e.preventDefault();
@@ -14,7 +16,7 @@ const ShowComments = () => {
     };
     const res = await axios.post(
       "https://sharebb-production.up.railway.app/getComments",
-      { company: "SBI" },
+      { company: `${params.id}` },
       { headers }
     );
     // console.log(res.data[0].comment);

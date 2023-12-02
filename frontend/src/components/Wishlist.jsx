@@ -88,8 +88,8 @@ const Wishlist = () => {
 
     return (
         <div className="wishlist-container">
-            <div className="wishlist-header">
-                <h2>Your Wishlist</h2>
+            <div className="wishlistHeader">
+                Your Wishlist
             </div>
             <div className="row m-5">
                 {share && share.map((item, index) => (
@@ -97,7 +97,8 @@ const Wishlist = () => {
                         <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
                             <Stock
                                 key={index}
-                                name={item.Ticker}
+                                name={item.Name}
+                                ticker={item.Ticker}
                                 lastClose={item.LastClose}
                                 lastChange={item.LastChange}
                                 handleDelFav={() => handledelfav(item.Name)}

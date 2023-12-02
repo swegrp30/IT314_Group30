@@ -5,6 +5,10 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify'
 import secureLocalStorage from "react-secure-storage";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
+import { HStack } from "@chakra-ui/react"
 
 import axios from "axios";
 
@@ -19,6 +23,17 @@ const Login = () => {
 
 
   })
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(eyeOff);
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon(eye);
+      setType('text')
+    } else {
+      setIcon(eyeOff)
+      setType('password')
+    }
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -90,7 +105,7 @@ const Login = () => {
       </div>
       <div className="right d-flex flex-column align-items-start">
         <ToastContainer />
-        <div className="detailform my-2 mx-5 w-100">
+        <div className="detailform my-5 mx-5 w-100">
           <div className="logo">
             <img src={logo} className="logo-main" alt="" />
           </div>
@@ -115,13 +130,18 @@ const Login = () => {
               <label htmlFor="password" className="form-label">
                 Password
               </label>
+              <HStack>
               <input
-                type="password"
+                type={type}
                 className="form-control form-control-login"
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
               />
+                <Icon onClick={handleToggle} className="mt-2" icon={icon} size={25} />
+
+              </HStack>
+              
             </div>
             <div className="col-md-5">
               <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
@@ -140,10 +160,10 @@ const Login = () => {
             </div>
             <div className="mt-2">
               Go to
-             <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
-               {" "}
+              <span className="colorChange" style={{ cursor: 'pointer' }} onClick={() => navigate("/")}>
+                {" "}
                 Home
-             </span>
+              </span>
             </div>
             <div className="mt-2">
               <button className="colorChange" onClick={() => navigate("/Forgotpassword")}>
@@ -151,7 +171,7 @@ const Login = () => {
               </button>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>

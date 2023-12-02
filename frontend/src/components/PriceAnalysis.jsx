@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const PriceAnalysis = () => {
   const [share, setShare] = useState([]);
+  
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem('authToken');
 
@@ -15,22 +16,6 @@ const PriceAnalysis = () => {
     'auth-token': token,
   };
 
-  const handleaddfav = async (e) => {
-    try {
-      const res = await axios.post('https://sharebb-production.up.railway.app/add-fav', { company: e }, { headers });
-      const data = res.status;
-      if (data === 200) {
-        toast.success('Added to Favourites');
-      }
-    } catch (err) {
-      if (err.response) {
-        console.log(err.response.status);
-        console.log(err.message);
-        console.log(err.response.headers);
-        console.log(err.response.data);
-      }
-    }
-  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,12 +41,11 @@ const PriceAnalysis = () => {
         <div className='row m-2'>
           {share.map((item, index) => (
             <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
-              <Stock
+              <Stock  
                 name={share[index].Name}
                 ticker={share[index].Ticker}
                 lastClose={share[index].LastClose}
                 lastChange={share[index].LastChange}
-                handleAddFav={() => handleaddfav(item.Name)}
               />
             </div>
           ))}

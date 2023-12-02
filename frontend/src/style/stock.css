@@ -77,3 +77,8 @@
 .stockRight {
     width: 20%;
 }
+
+.star {
+    cursor: pointer;
+}
+

@@ -2,78 +2,41 @@ import React, { useState, useEffect } from 'react';
 import '../style/ContactUs.css';
 
 const ContactUs = () => {
-    const [formData, setFormData] = useState({
-        email: '',
-        subject: '',
-        message: ''
-    });
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // code for handle the form submission will be added here
-        console.log('Form data submitted:', formData);
-
-        // Scroll to the top of the page after form submission
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    useEffect(() => {
-        // Scroll to the top when the component is mounted
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
-        <div className="contact-us-container">
-            <h2>Contact Us</h2>
-            <p>
-                Fill out the form below or email us at{' '}
-                <a href="abc@gmail.com">abc@gmail.com</a>
-            </p>
-            <form onSubmit={handleSubmit} className="contactus-form">
-                <div className="contactus-field">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
+        <div className='contactus-container '>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item contactus-sub-container">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Email
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"> swegrp30@gmail.com </div>
+                    </div>
                 </div>
-                <div className="contactus-field">
-                    <label htmlFor="subject">Subject:</label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                    />
+                <div class="accordion-item contactus-sub-container">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Phone Number
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">123-456-789</div>
+                    </div>
                 </div>
-                <div className="contactus-field">
-                    <label htmlFor="message">Message:</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                    />
+                <div class="accordion-item contactus-sub-container">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Address
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"> DAIICT, Reliance Cross Rd, Gandhinagar, Gujarat 382007 </div>
+                    </div>
                 </div>
-                <button className="contactus-button" type="submit">
-                    Submit
-                </button>
-            </form>
+            </div>
         </div>
     );
 };

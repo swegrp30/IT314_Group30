@@ -1,16 +1,30 @@
 import "../style/Login.css";
+import "../style/App.css";
 import hero from "../Images/hero.png";
 import logo from "../Images/loginLOGO.svg";
-import google from "../Images/google.png";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
-
+import PasswordChecklist from "react-password-checklist";
 import React from "react";
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 
 const Signup = (props) => {
-  const email=localStorage.getItem('email')
+  const email = localStorage.getItem('email')
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(eyeOff);
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon(eye);
+      setType('text')
+    } else {
+      setIcon(eyeOff)
+      setType('password')
+    }
+  }
   const [data, setData] = useState({
     name: "",
     username: "",
@@ -21,8 +35,8 @@ const Signup = (props) => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const regex =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+
+    const regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
     if (!data?.name) {
       toast.error("Name is required");
     } else if (!data?.username) {
@@ -32,10 +46,15 @@ const Signup = (props) => {
     } else if (data?.phone.length != 10) {
       toast.error("Phone Number not valid");
     } else if (!data?.password) {
-      toast.error("Password  is required");
-      
-    } else if (!regex.test(data?.password)) {
-      toast.error("Password must contain one digit from 1 to 9, one lowercase letter, one uppercase letter, one special character, no space, and it must be 8-16 characters long.");
+      toast.error("Password is required");
+    } else if (data?.password.length < 8) {
+      toast.error('Password of atleast 8 characters is required')
+    }
+    else if (data?.password.length > 16) {
+      toast.error('Password of atmost 16 characters is required')
+    }
+    else if (!regex.test(data?.password)) {
+      toast.error("Password doesn't match the requirements");
     } else {
       // console.log(data)
       try {
@@ -47,24 +66,24 @@ const Signup = (props) => {
             password: data.password,
             phone: data.phone,
           })
-          const token = res.data.token
-          localStorage.clear()
-          localStorage.setItem("authToken", token);
-          toast.success("You have signed up successfully")
-          setTimeout(()=>{
-            navigate('/login')
-          },1000)
-          
+        const token = res.data.token
+        localStorage.clear()
+        localStorage.setItem("authToken", token);
+        toast.success("You have signed up successfully")
+        setTimeout(() => {
+          navigate('/login')
+        }, 1000)
+
       } catch (err) {
         if (err.response) {
 
-          if(err.response.status===412){
+          if (err.response.status === 412) {
             toast.error("Username not available.");
           }
-          else if(err.response.status===411){
+          else if (err.response.status === 411) {
             toast.error("Phone number already registered.");
           }
-          
+
         }
       }
     }
@@ -78,7 +97,7 @@ const Signup = (props) => {
     navigate('/signupwithemail')
   }
   return (
-    <div className="signupform d-flex flex-row">
+    <div className="signupform ">
       <div className="left d-flex flex-column">
         <div className="text-header text-center mx-auto  text-white p-5">
           Predict and Visualize the stock price daily
@@ -132,10 +151,19 @@ const Signup = (props) => {
                 Password
               </label>
               <input
-                type="password"
+                type={type}
                 className="form-control"
                 name="password"
+                pattern
                 onChange={handleChange}
+              />
+              <span className="" onClick={handleToggle}>
+                <Icon className="mt-2" icon={icon} size={25} />
+              </span>
+              <PasswordChecklist
+                rules={["capital", "specialChar", "minLength", "number"]}
+                minLength={8}
+                value={data.password}
               />
             </div>
             <div className="col-md-6">
@@ -164,12 +192,12 @@ const Signup = (props) => {
                 Create Account
               </button>
               <button
-                  type="submit"
-                  className="btn btn-primary mt-3"
-                    onClick={backToSignup}
-                >
-                  Back
-                </button>
+                type="submit"
+                className="btn btn-primary mt-3"
+                onClick={backToSignup}
+              >
+                Back
+              </button>
             </div>
             {/* <div className="col-md-6">
             <button  className="btn btn-secondary">Sign in with Google </button>

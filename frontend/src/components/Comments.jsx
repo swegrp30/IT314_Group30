@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { to } from "react-spring";
+import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Comments =  () => {
   const token = localStorage.getItem('authToken')
-  
+  const params = useParams();
   const headers = {
     'Content-Type': 'application/json',
     'auth-token': token,
@@ -51,7 +51,7 @@ const Comments =  () => {
     try {
       const res = await axios.post(
         'https://sharebb-production.up.railway.app/addComments',
-        { comment: comments, company: 'SBI', username: username },
+        { comment: comments, company: `${params.id}`, username: username },
         { headers: headers }
       );
   
