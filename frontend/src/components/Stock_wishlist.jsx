@@ -31,16 +31,13 @@ const Stock = (prop) => {
 
   return (
     <div
-      className="card l-bg-web mb-3"
+      className="card l-bg-web mb-3 l-bg-web mb-3 text-decoration-none text-white"
       style={{ transition: "all 0.3s", ...scaleStyle }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div className="card-statistic-3 p-4">
-        <Link
-          to={`/share/${prop.ticker}`}
-          className="text-decoration-none text-white"
-        >
+        
           <div className="cardContainer">
             <div className="stockLeft">
               <div className="mb-4">
@@ -48,7 +45,7 @@ const Stock = (prop) => {
                 <h6 className="card-title mb-0">{prop.ticker}</h6>
               </div>
               <div className="row align-items-end mb-2">
-                <div className="col-8">
+                <div className="col-10">
                   <h2 className="d-flex align-items-center mb-0">
                     {Indian.includes(prop.name) ? "₹" : "$"} {prop.lastClose}
                   </h2>
@@ -62,6 +59,13 @@ const Stock = (prop) => {
                   {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
                 </h3>
               </div>
+              <div className="col-7 text-right mt-4">
+              <Link
+                to={`/share/${prop.name}`}
+              >
+                Check Trends   <i class="fa-solid fa-arrow-right fa-beat"></i>
+              </Link>
+            </div>
             </div>
 
             <div className="stockRight">
@@ -74,7 +78,6 @@ const Stock = (prop) => {
               </div>
             </div>
           </div>
-        </Link>
       </div>
     </div>
   );
