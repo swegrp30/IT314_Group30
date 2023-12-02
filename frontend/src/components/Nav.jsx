@@ -17,8 +17,8 @@ function Nav() {
             nav_link.classList.remove('specialClass');
         });
         event.target.classList.add('specialClass');
-        setUnderlineWidth(event.target.offsetWidth); 
-        setNavOpen(false); 
+        setUnderlineWidth(event.target.offsetWidth);
+        setNavOpen(false);
     };
 
     const authToken = localStorage.getItem('authToken');
@@ -32,10 +32,15 @@ function Nav() {
     };
 
     useEffect(() => {
-        const currentLink = document.querySelector(`.nav-link[href="${location.pathname}"]`);
+        const currentLink = document.querySelector('.nav-link.specialClass');
         if (currentLink) {
-            currentLink.classList.add('specialClass');
-            setUnderlineWidth(currentLink.offsetWidth); 
+            currentLink.classList.remove('specialClass');
+        }
+
+        const newLink = document.querySelector(`.nav-link[href="${location.pathname}"]`);
+        if (newLink) {
+            newLink.classList.add('specialClass');
+            setUnderlineWidth(newLink.offsetWidth);
         }
     }, [location.pathname]);
 
@@ -43,7 +48,6 @@ function Nav() {
         <div>
             <ToastContainer />
             <div className='text-center'>
-
                 <img
                     src={logo}
                     onClick={() => navigate('/')}
