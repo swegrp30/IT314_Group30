@@ -53,8 +53,8 @@ const NewHome = () => {
           </div>
           <div className="col-md-6 pt-5">
             <div className="text-content align-middle">
-              <h1>Real-Time Data at Your Fingertips</h1>
-              <p>Stay updated with real-time stock information. React to market changes instantly. Our user-friendly interface provides seamless access to the latest market trends.</p>
+              <h1>Empower Your Investment Journey</h1>
+              <p>Stay updated with stock information. Our user-friendly interface provides seamless access to the latest market news and prediction.</p>
             </div>
           </div>
         </div>
