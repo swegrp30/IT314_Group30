@@ -51,7 +51,7 @@ const Stock = (prop) => {
                   </h2>
                 </div>
               </div>
-              <div className="col-4 text-right">
+              <div className="col-6 text-right">
                 <h3
                   className={`${percentageChangeColor} font-weight-bold`}
                   style={{ fontSize: "20px" }}
