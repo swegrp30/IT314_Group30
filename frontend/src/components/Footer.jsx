@@ -18,9 +18,9 @@ function Footer() {
                             <ul className='footer-ul'>
                                 <li><Link to="https://github.com/swegrp30/IT314_Group30">Github</Link></li>
                                 <li><Link to="#">ML Model</Link></li>
-                                <li><Link to="#">Slack</Link></li>
-                                <li><Link to="#">Hosting</Link></li>
-                                <li><Link to="#">Database</Link></li>
+                                <li><Link to="https://join.slack.com/t/it314g30/shared_invite/zt-286xv20yb-oooZZ00az8YvWw714476vA">Slack</Link></li>
+                                <li><Link to="https://vercel.com/">Hosting</Link></li>
+                                <li><Link to="https://www.mongodb.com/atlas/database">Database</Link></li>
                             </ul>
                         </div>
 
@@ -38,12 +38,9 @@ function Footer() {
                         <div className="footer-col-social">
                             <h4>Let's do it!</h4>
                             <div className="social-links">
-                                <Link to="https://github.com/swegrp30/IT314_Group30"><i className='fab fa-facebook-f'></i></Link>
-                                <Link to="https://github.com/swegrp30/IT314_Group30"><i className='fab fa-twitter'></i></Link>
                                 <Link to="https://github.com/swegrp30/IT314_Group30"><i className='fab fa-github'></i></Link>
-                                <Link to="https://github.com/swegrp30/IT314_Group30"><i className='fab fa-telegram'></i></Link>
-                                <Link to="https://github.com/swegrp30/IT314_Group30"><i className='fab fa-instagram'></i></Link>
-                                <Link to="https://github.com/swegrp30/IT314_Group30"><i className='fab fa-figma'></i></Link>
+                                <Link to="https://join.slack.com/t/it314g30/shared_invite/zt-286xv20yb-oooZZ00az8YvWw714476vA"><i className='fab fa-telegram'></i></Link>
+                                <Link to="https://www.figma.com/file/VbamMeEzCesYcFCOzmVa2c/Bull-and-Bears?type=design&node-id=0-1&mode=design&t=gpOVDjSrd4J9LYV4-0"><i className='fab fa-figma'></i></Link>
                             </div>
                         </div>
                     </div>
