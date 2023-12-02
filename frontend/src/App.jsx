@@ -22,6 +22,7 @@ import { WishlistProvider, useWishlist, Wishlist } from './components/Wishlist';
 import Signupemail from './components/Signupemail'
 import ShowComments from './components/ShowComments';
 import Error401 from './components/Error401';
+import Error404 from './components/Error404';
 import MyComments from './components/MyComments';
 import { useEffect, useState } from 'react';
 import TempNewNews from './components/TempNewNews';
@@ -68,6 +69,7 @@ function App() {
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
                     <Route path='/mycomments' element={<MyComments />} />
+                    <Route path='*' element={<Error404 />} />
                     {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
                     
 
@@ -92,9 +94,16 @@ function App() {
                     <Route path='/contactus' element={<ContactUs />} />
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
+                    <Route path='/share/:id' element={<Error401 />} />
+                    <Route path='/changePassword' element={<Error401 />} />
+                    <Route path='/showcomments' element={<Error401 />} />
+                    <Route path='/mycomments' element={<Error401 />} />
+                    <Route path='/priceanalysis' element={<Error401 />} />
+                    <Route path='/Profile' element={<Error401 />} />
+                    <Route path='/wishlist' element={<Error401 />} />
                     {/* <Route path='/Profile' element={<Profile />} /> */}
                     {/* <Route path='/news' element={<News />} /> */}
-                    <Route path='*' element={<Error401 />} />
+                    <Route path='*' element={<Error404 />} />
 
                   </Routes>
                   <ShowFooter>
