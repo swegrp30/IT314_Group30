@@ -7,14 +7,15 @@ import Loader from "./Loader";
 import Notes from "./Notes";
 import Future from "./Future";
 import Past from "./Past";
-
-import "../style/StockDetails.css"; // Import your custom styles
+import "../style/StockDetails.css"; 
 
 const StockDetails = () => {
   const [share, setShare] = useState({});
   const [chartData, setChartData] = useState();
   const [futureData, setFutureData] = useState();
   const [boolPred, setBoolPred] = useState(true);
+  const [loading, setLoading] = useState(true); 
+  
 
   const Indian = [
     "Reliance Industries",
@@ -53,17 +54,16 @@ const StockDetails = () => {
         setShare(selectedShare);
         setChartData(selectedShare["Historical Data"]);
         setFutureData(res2.data[0].abc);
-        // console.log(res2.data[0].abc);
-        // setFutureData(res2.)
       } catch (error) {
         console.error("Error fetching data:", error);
+        
+      } 
+      finally{
+        setLoading(false);
       }
     };
     fetchData();
-    // const interval = setInterval(() => {
-    //     fetchData();
-    // }, 1000);
-    // return () => clearInterval(interval);
+ 
   }, []);
   const isPositiveChange = share.LastChange > 0;
   const arrowIconClass = isPositiveChange
@@ -75,6 +75,9 @@ const StockDetails = () => {
 
   return (
     <>
+    {loading ? (
+        <Loader />
+      ) : (
       <div className="container mt-4 stock-details-container">
         <div className="row">
           <div className="col-md-6">
@@ -174,9 +177,12 @@ const StockDetails = () => {
           </div>
         )}
       </div>
+      )}
       <Notes />
     </>
+    
   );
+  
 };
 
 export default StockDetails;
