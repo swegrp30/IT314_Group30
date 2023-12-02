@@ -1,8 +1,12 @@
 .contactus-container {
-    border: 2px solid black;
+    border: 3px solid black;
     margin: auto;
     align-items: center;
     justify-content: center;
     width: 50%;
     margin-top: 40px;
+}
+
+.contactus-sub-container {
+    border: 3px solid black;
 }

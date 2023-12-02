@@ -6,7 +6,7 @@ const ContactUs = () => {
     return (
         <div className='contactus-container '>
             <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
+                <div class="accordion-item contactus-sub-container">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             Email
@@ -16,7 +16,7 @@ const ContactUs = () => {
                         <div class="accordion-body"> swegrp30@gmail.com </div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item contactus-sub-container">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                             Phone Number
@@ -26,7 +26,7 @@ const ContactUs = () => {
                         <div class="accordion-body">123-456-789</div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item contactus-sub-container">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                             Address
