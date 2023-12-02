@@ -16,9 +16,34 @@
     
   }
 
+  .home-h1 {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    font-weight: 700;
+    color: #962B92;
+    font-size: 2.5rem;
+
+}
+
 
 
   .image-hover:hover {
     transform: scale(1.05); /* Adjust the scaling factor as needed */
     transition: transform 0.2s ease-in-out;
   }
+
+  .home-h4 {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    color: black;
+    
+}
+
+.home-guide-image {
+    height: 396px;
+    width: 396px;
+}

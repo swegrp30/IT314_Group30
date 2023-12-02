@@ -11,7 +11,7 @@ const { v4: uuidv4 } = require('uuid');
 const addcomments = async (req, res) => {
     const data = req.body;
 
-    console.log(data);
+    // console.log(data);
 
     const cmnt_id = uuidv4();
 
@@ -19,8 +19,8 @@ const addcomments = async (req, res) => {
         comment_id: cmnt_id,
         comment: data.comment,
         company: data.company,
-        username: data.username,
-        replies:data.replies
+        username: req.userData.username,
+        // replies:data.replies
     })
     try {
         const save = await new_comment.save()

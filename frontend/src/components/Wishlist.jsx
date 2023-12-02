@@ -6,6 +6,7 @@ import Stock from './Stock_wishlist';
 import { toast } from 'react-toastify';
 import Loader from './Loader';
 import { Navigate } from 'react-router-dom';
+import Search from './Search';
 
 const Wishlist = () => {
     const [share, setShare] = useState([]);
@@ -95,6 +96,8 @@ const Wishlist = () => {
             <div className="wishlistHeader">
                 Your Wishlist
             </div>
+            <Search />
+            <div className="row height  d-flex justify-content-center align-items-center  ">
             <div className="row m-5">
                 {share && share.map((item, index) => (
                     item ? (
@@ -111,6 +114,7 @@ const Wishlist = () => {
                     ) : null
                 ))}
             </div>
+        </div>
         </div>
     );
 };

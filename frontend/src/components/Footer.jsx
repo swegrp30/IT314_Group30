@@ -29,7 +29,7 @@ function Footer() {
                             <ul className='footer-ul'>
                                 <li><Link to="/aboutus">About Us</Link></li>
                                 <li><Link to="#">Careers</Link></li>
-                                <li><Link to="#">FAQs</Link></li>
+                                <li><Link to="/faqs">FAQs</Link></li>
                                 <li><Link to="#">Teams</Link></li>
                                 <li><Link to="/contactus">Contact Us</Link></li>
                             </ul>
@@ -39,7 +39,7 @@ function Footer() {
                             <h4>Let's do it!</h4>
                             <div className="social-links">
                                 <Link to="https://github.com/swegrp30/IT314_Group30"><i className='fab fa-github'></i></Link>
-                                <Link to="https://join.slack.com/t/it314g30/shared_invite/zt-286xv20yb-oooZZ00az8YvWw714476vA"><i className='fab fa-telegram'></i></Link>
+                                <Link to="https://join.slack.com/t/it314g30/shared_invite/zt-286xv20yb-oooZZ00az8YvWw714476vA"><i className='fab fa-slack'></i></Link>
                                 <Link to="https://www.figma.com/file/VbamMeEzCesYcFCOzmVa2c/Bull-and-Bears?type=design&node-id=0-1&mode=design&t=gpOVDjSrd4J9LYV4-0"><i className='fab fa-figma'></i></Link>
                             </div>
                         </div>
