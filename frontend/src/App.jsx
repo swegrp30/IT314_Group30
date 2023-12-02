@@ -1,6 +1,6 @@
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import Notes from './components/Notes';
 import Comments from './components/Comments';
@@ -32,9 +32,35 @@ function App() {
     const authToken = localStorage.getItem('authToken');
     return authToken !== null && authToken !== undefined;
   };
+  // useEffect(() => {
+  //   // Function to clear localStorage
+  //   // Check and clear localStorage when the component mounts
+  //   // checkAndClearLocalStorage();
 
+  //   // Attach the event listener to the window
+  //   // window.addEventListener('beforeunload', clearLocalStorage);
+
+  //   // Cleanup function to remove the event listener when the component is unmounted
+  //   // return () => {
+  //     // window.removeEventListener('beforeunload', clearLocalStorage);
+  //   };
+  // }, []);
+  const clearLocalStorage = () => {
+    localStorage.clear();
+  };
+  const checkAndClearLocalStorage = () => {
+    const currentTime = new Date().getTime();
+    const storedTime = localStorage.getItem('storageInitializedTime');
+    console.log(currentTime);
+    console.log(storedTime);
+    if (storedTime && currentTime - parseInt(storedTime, 10) > 3600*1000) {
+      // Clear localStorage if more than an hour has passed
+      clearLocalStorage();
+    }
+  };
   const [token, setToken] = useState(isAuthenticated())
   setInterval(() => { setToken(isAuthenticated()) }, 1000);
+  setInterval(() => { checkAndClearLocalStorage() }, 5000);
   return (
     <>
 
@@ -70,10 +96,10 @@ function App() {
                     {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
                     
 
-                  </Routes>
-                  <ShowFooter>
-                    <Footer />
-                  </ShowFooter>
+              </Routes>
+              <ShowFooter>
+                <Footer />
+              </ShowFooter>
 
                 </>
               ) : (
@@ -102,14 +128,14 @@ function App() {
                     {/* <Route path='/news' element={<News />} /> */}
                     <Route path='*' element={<Error401 />} />
 
-                  </Routes>
-                  <ShowFooter>
-                    <Footer />
-                  </ShowFooter>
-                </>
-              )
-            }
-        </Router>
+              </Routes>
+              <ShowFooter>
+                <Footer />
+              </ShowFooter>
+            </>
+          )
+        }
+      </Router>
 
     </>
   );
