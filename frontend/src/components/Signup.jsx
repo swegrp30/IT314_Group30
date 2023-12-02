@@ -11,7 +11,7 @@ import React from "react";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
-
+import {HStack} from "@chakra-ui/react"
 const Signup = (props) => {
   const email = localStorage.getItem('email')
   const [type, setType] = useState('password');
@@ -150,6 +150,7 @@ const Signup = (props) => {
               <label htmlFor="password" className="form-label">
                 Password
               </label>
+              <HStack>
               <input
                 type={type}
                 className="form-control"
@@ -160,11 +161,14 @@ const Signup = (props) => {
               <span className="" onClick={handleToggle}>
                 <Icon className="mt-2" icon={icon} size={25} />
               </span>
+              </HStack>
+              <div className="pt-3"> 
               <PasswordChecklist
                 rules={["capital", "specialChar", "minLength", "number"]}
                 minLength={8}
                 value={data.password}
               />
+               </div>
             </div>
             <div className="col-md-6">
               <label htmlFor="firstname" className="form-label">
