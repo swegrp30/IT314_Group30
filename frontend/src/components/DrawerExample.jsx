@@ -30,9 +30,24 @@ function DrawerExample() {
     );
     return (
         <>
-            <Button ref={btnRef} style={{color:'white',background:'purple',margin:'10px'}} onClick={onOpen}>
-                Filter news by companies
+            <Button
+                ref={btnRef}
+                style={{
+                    color: 'white',
+                    background: 'purple',
+                    margin: '10px',
+                    borderRadius: '50%',
+                    width: '40px',
+                    height: '40px',
+                    position: 'absolute',
+                    right: '10px', 
+                    zIndex: '1'
+                }}
+                onClick={onOpen}
+            >
+                hh
             </Button>
+
             <Drawer
                 isOpen={isOpen}
                 placement='left'
@@ -45,7 +60,7 @@ function DrawerExample() {
                     <DrawerHeader>Companies </DrawerHeader>
 
                     <DrawerBody>
-                        <Input p={'2'} placeholder='Company Name...'  value={searchValue}
+                        <Input p={'2'} placeholder='Company Name...' value={searchValue}
                             onChange={(e) => setSearchValue(e.target.value)}
                         />
                         <VStack p={'2'}>

@@ -38,7 +38,8 @@ const TempNewNews = () => {
     return (
         <div>
             <DrawerExample />
-            <section>
+            
+            <section >
                 <div className="container">
                     <div className="articles">
                         {newsData.map((article) => createArticle(article))}
