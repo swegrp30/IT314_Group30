@@ -28,9 +28,9 @@ function Footer() {
                             <h4>Company</h4>
                             <ul className='footer-ul'>
                                 <li><Link to="/aboutus">About Us</Link></li>
-                                <li><Link to="#">Careers</Link></li>
+                                
                                 <li><Link to="/faqs">FAQs</Link></li>
-                                <li><Link to="#">Teams</Link></li>
+                                
                                 <li><Link to="/contactus">Contact Us</Link></li>
                             </ul>
                         </div>
@@ -47,11 +47,8 @@ function Footer() {
 
                     <div className="copy-right">
                         <div className='footer-copy-right-text'>
-                            <div className='footer-bottom-left'>
-                                <a href="">&nbsp; &nbsp; Privacy Policy &nbsp; &nbsp; </a>
-                                <a href="">Terms of Use</a>
-                            </div>
-                            <div className='footer-bottom-right'>
+                            
+                            <div className='footer-bottom-left text-white'>
                                 <p>© {year} All Rights Reserved</p>
                             </div>
                         </div>
