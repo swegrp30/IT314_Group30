@@ -17,14 +17,14 @@ const Stock = (prop) => {
     : "text-danger";
 
   const [isHovered, setIsHovered] = useState(false);
-  
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
   const [WishlistShare, setWishlistShare] = useState([]);
   const [error, setError] = useState(false);
-  const [allCompaniesData, setAllCompaniesData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [favoriteCompanies, setFavoriteCompanies] = useState([]);
+  const [loading, setLoading] = useState(true);  
   const token = localStorage.getItem('authToken');
 
   const headers = {
@@ -33,75 +33,45 @@ const Stock = (prop) => {
   };
   const handledelfav = async (e) => {
     try {
-        const res = await axios.post("https://sharebb-production.up.railway.app/del-fav", {
-            company: e,
-        }, { headers });
-        const data = res.status;
-        if (data === 200) {
-            setWishlistShare(WishlistShare.filter((item) => item !== e));
-            toast.success("Deleted from Favourites");
-        }
+      const res = await axios.post("https://sharebb-production.up.railway.app/del-fav", {
+        company: e,
+      }, { headers });
+      const data = res.status;
+      if (data === 200) {
+        setWishlistShare(WishlistShare.filter((item) => item !== e));
+        toast.success("Deleted from Favourites");
+      }
     } catch (err) {
-        if (err.response) {
-            console.log(err.response.status);
-            console.log(err.message);
-            console.log(err.response.headers);
-            console.log(err.response.data);
-        }
+      if (err.response) {
+        console.log(err.response.status);
+        console.log(err.message);
+        console.log(err.response.headers);
+        console.log(err.response.data);
+      }
     }
-};
-const getWishlistData = async () => {
+  };
+  const getWishlistData = async () => {
     try {
-        const res = await axios.get('https://sharebb-production.up.railway.app/getuser', { headers });
-        console.log(res.data.favourites);
-        const favoriteCompanies = res.data.favourites;
-        // const allCompaniesData = await axios.get('https://sharebb-production.up.railway.app/getdata');
-        const storedData = sessionStorage.getItem('wishlistData');
-        if (storedData) {
-            setAllCompaniesData(JSON.parse(storedData));
-            // setShare(JSON.parse(storedData));
-        }
-        else {
-            // Fetch data from the server if not available in session storage
-            const res = await axios.get('https://sharebb-production.up.railway.app/getdata');
-            const data = res.data;
-            setAllCompaniesData(data);
-            // setShare(data);
-
-            // Save data to session storage
-            sessionStorage.setItem('wishlistData', JSON.stringify(data));
-        }
-        console.log(allCompaniesData);
-        const shareData = favoriteCompanies.map((companyName) => {
-            console.log(companyName);
-            const filteredData = allCompaniesData.filter(item => item.Name === companyName);
-            return filteredData[0];
-        });
-        //console.log(shareData);
-        setWishlistShare(shareData);
-        setLoading(false);
+      const res = await axios.get('https://sharebb-production.up.railway.app/getuser', { headers });
+      console.log(res.data.favourites);
+      setFavoriteCompanies(res.data.favourites);
     } catch (error) {
-        console.error('Error fetching wishlist data', error);
-        setError(true);
-        setLoading(false);
+      console.error('Error fetching wishlist data', error);
+      setError(true);
+      setLoading(false);
     }
-};
+  };
 
-const inWishlist = () => {
-  console.log(WishlistShare)
-  // for(let i = 0;i<WishlistShare.length;i++){
-  //     if(prop.name===WishlistShare[i].Name)
-  //     return true
-    
-    
-  // }
-  return false;
-}
+  const inWishlist = (e) => {
+    if (favoriteCompanies.includes(e)) {
+      return true;
+    }
+    return false;
+  }
 
-useEffect(() => {
-
-  getWishlistData();
-}, [headers]);
+  useEffect(() => {
+    getWishlistData();
+  }, [headers]);
 
   const handleMouseLeave = () => {
     setIsHovered(false);
@@ -123,8 +93,8 @@ useEffect(() => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="card-statistic-3 p-4">
-        
-          <div className="cardContainer">
+
+        <div className="cardContainer">
           <div className="stockLeft">
             <div className="mb-4">
               <h3 className="card-title mb-0">{prop.name}</h3>
@@ -140,17 +110,16 @@ useEffect(() => {
             <div className="col-7 text-right mt-4">
               <h4
                 className={`${percentageChangeColor} font-weight-bold`}
-                // style={{ fontSize: "25px", fontWeight:1000 }}
+              // style={{ fontSize: "25px", fontWeight:1000 }}
               >
                 {prop.lastChange}% <i className={`fa ${arrowIconClass}`}></i>
               </h4>
             </div>
             <div className="col-7 text-right mt-4">
-            <Link
-              to={`/share/${prop.name}`}
-              
-            >
-              Check Trends   <i class="fa-solid fa-arrow-right fa-beat"></i>
+              <Link
+                to={`/share/${prop.name}`}
+              >
+                Check Trends   <i class="fa-solid fa-arrow-right fa-beat"></i>
               </Link>
             </div>
           </div>
@@ -159,24 +128,24 @@ useEffect(() => {
               {/* <button className="btn btn-primary " onClick={prop.handleAddFav}>
                 Add to Favorites
               </button> */}
-              <div> {inWishlist() && 
-              <i
-                class="fa-solid fa-star fa-2xl"
-                style={{ color: "white" }}
-                onClick={prop.handleDelFav}
-              ></i>}
+              <div> {inWishlist(prop.name) &&
+                <i
+                  class="fa-solid fa-star fa-2xl"
+                  style={{ color: "white" }}
+                  onClick={prop.handleDelFav}
+                ></i>}
               </div>
-              <div> {!inWishlist() && 
-              <i
-                class="fa-regular fa-star fa-2xl"
-                style={{ color: "white" }}
-                onClick={prop.handleAddFav}
-              ></i>}
+              <div> {!inWishlist(prop.name) &&
+                <i
+                  class="fa-regular fa-star fa-2xl"
+                  style={{ color: "white" }}
+                  onClick={prop.handleAddFav}
+                ></i>}
               </div>
             </div>
           </div>
-          </div>
-        
+        </div>
+
       </div>
     </div>
   );

@@ -17,7 +17,25 @@ const PriceAnalysis = () => {
   };
 
 
-  
+  const handledelfav = async (e) => {
+    try {
+        const res = await axios.post("https://sharebb-production.up.railway.app/del-fav", {
+            company: e,
+        }, { headers });
+        const data = res.status;
+        if (data === 200) {
+            setShare(share.filter((item) => item !== e));
+            toast.success("Deleted from Favourites");
+        }
+    } catch (err) {
+        if (err.response) {
+            console.log(err.response.status);
+            console.log(err.message);
+            console.log(err.response.headers);
+            console.log(err.response.data);
+        }
+    }
+};
   const handleaddfav = async (e) => {
     try {
       const res = await axios.post('https://sharebb-production.up.railway.app/add-fav', { company: e }, { headers });
@@ -65,6 +83,7 @@ const PriceAnalysis = () => {
                 lastClose={share[index].LastClose}
                 lastChange={share[index].LastChange}
                 handleAddFav={() => handleaddfav(item.Name)}
+                handleDelFav={() => handledelfav(item.Name)}
               />
             </div>
           ))}
