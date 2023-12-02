@@ -51,7 +51,7 @@ function Footer() {
                     <div className="copy-right">
                         <div className='footer-copy-right-text'>
                             <div className='footer-bottom-left'>
-                                <a href="">Privacy Policy</a>
+                                <a href="">&nbsp; &nbsp; Privacy Policy &nbsp; &nbsp; </a>
                                 <a href="">Terms of Use</a>
                             </div>
                             <div className='footer-bottom-right'>
