@@ -9,6 +9,7 @@ import img4 from '../Images/wallet.svg'
 import img5 from '../Images/forum.svg'
 import img6 from '../Images/feedback.svg'
 import ProfileCard from './ProfileCard';
+
 import { HStack, VStack } from '@chakra-ui/react';
 
 
@@ -20,21 +21,21 @@ const AboutUs = () => {
       name: 'Natvar Prajapati',
       username: 'Natvar',
       studentID: '202101402',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp',
+      imageSrc: 0,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/natvar55' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/natvar-prajapati-b0b344236' },
 
       ],
     },
     {
       name: 'Naman Modi',
-      username: 'Naman',
+      username: 'Naman9119',
       studentID: '202101421',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 1,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/naman9119' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/naman-modi' },
 
       ],
     },
@@ -42,10 +43,10 @@ const AboutUs = () => {
       name: 'Bhavya Shah',
       username: 'Bhavya',
       studentID: '202101426',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 2,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/Bhavya418' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/bhavya-shah-9a7550233/' },
 
       ],
     },
@@ -53,10 +54,10 @@ const AboutUs = () => {
       name: 'Dhairya Bhanvadia',
       username: 'Dhairya',
       studentID: '202101436',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 3,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/dhairya-bh' },
+        { icon: 'fa-linkedin', url: 'http://www.linkedin.com/in/dhairya-bhanavadia-a1783b283' },
 
       ],
     },
@@ -64,7 +65,7 @@ const AboutUs = () => {
       name: 'Aayush Patel',
       username: 'Aayush',
       studentID: '202101452',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 4,
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -75,7 +76,7 @@ const AboutUs = () => {
       name: 'Priya Tank',
       username: 'Priya',
       studentID: '202101463',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 5,
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -84,12 +85,12 @@ const AboutUs = () => {
     },
     {
       name: 'Shubham Patel',
-      username: 'Shubham',
+      username: 'Bot-Binary',
       studentID: '202101464',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 6,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/Bot-Binary' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/shubham-patel-853266241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
 
       ],
     },
@@ -97,10 +98,10 @@ const AboutUs = () => {
       name: 'Darshana Chauhan',
       username: 'Dharshana',
       studentID: '202101467',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 7,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/DarshanaChauhan' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/darshana-chauhan-662995280' },
 
       ],
     },
@@ -108,7 +109,7 @@ const AboutUs = () => {
       name: 'Varun Vyas',
       username: 'Lemon',
       studentID: '202101468',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 8,
       socialLinks: [
         { icon: 'fa-github', url: '#' },
         { icon: 'fa-linkedin', url: '#' },
@@ -117,34 +118,34 @@ const AboutUs = () => {
     },
     {
       name: 'Om Gor',
-      username: 'Om',
+      username: 'OGplayer',
       studentID: '202101484',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 9,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/GOR-OM' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/om-gor/' },
 
       ],
     },
     {
       name: 'Nisha Savaliya',
-      username: 'Nisha',
+      username: 'Nishh3370',
       studentID: '202101486',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 10,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/Niisha3370' },
+        { icon: 'fa-linkedin', url: 'www.linkedin.com/in/nishasavaliya3370' },
 
       ],
     },
     {
       name: 'Vasu Golakiya',
-      username: 'Vasu',
+      username: 'Vasu2344',
       studentID: '202101487',
-      imageSrc: 'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(30).jpg',
+      imageSrc: 11,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/VasuGolakiya' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/vasu-golakiya-86161b221' },
 
       ],
     },
