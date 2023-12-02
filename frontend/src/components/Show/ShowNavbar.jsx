@@ -13,7 +13,7 @@ const ShowNavbar = ({children}) => {
         if(location.pathname==='/login'||location.pathname==='/signupwithemail'||location.pathname==='/signup'){
             setNoNavbar(false)
         }
-        else if(!isAuthenticated() && location.pathname!=='/'&& location.pathname!=='/tempnews'&&location.pathname!=='/aboutus'){
+        else if(!isAuthenticated() && location.pathname!=='/'&& location.pathname!=='/tempnews'&&location.pathname!=='/aboutus'&&location.pathname!=='/faqs'){
           setNoNavbar(false)
         }
         else{

@@ -34,8 +34,9 @@ const ProfileCard = ({ name, username, imageSrc, socialLinks, studentID }) => {
             <img
               src={image[imageSrc]}
               className="rounded mx-auto d-block"
-              style={{ width: "100px" }}
+              style={{height:"200px", width:"200px", aspectRatio:"1" }}
               alt="Profile Image"
+              
             />
           </div>
           <h4 className="mb-2">{name}</h4>
