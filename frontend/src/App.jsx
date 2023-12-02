@@ -1,16 +1,11 @@
 import Nav from './components/Nav';
-import Home from './components/Home';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import News from './components/News';
-import NewsDetail from './components/NewsDetail';
 import Notes from './components/Notes';
 import Comments from './components/Comments';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
-import Share from './components/Share';
-import ShareDetails from './components/ShareDetails';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ShowNavbar from './components/Show/ShowNavbar';
@@ -22,6 +17,7 @@ import { WishlistProvider, useWishlist, Wishlist } from './components/Wishlist';
 import Signupemail from './components/Signupemail'
 import ShowComments from './components/ShowComments';
 import Error401 from './components/Error401';
+import Error404 from './components/Error404';
 import MyComments from './components/MyComments';
 import { useEffect, useState } from 'react';
 import TempNewNews from './components/TempNewNews';
@@ -30,6 +26,7 @@ import PriceAnalysis from './components/PriceAnalysis'
 import StockDetails from './components/StockDetails.jsx'
 import Stock from './components/Stock.jsx';
 import NewHome from './components/NewHome.jsx';
+import FAQs from './components/FAQs.jsx';
 function App() {
   const isAuthenticated = () => {
     const authToken = localStorage.getItem('authToken');
@@ -49,12 +46,12 @@ function App() {
                     <Nav />
                   </ShowNavbar>
                   <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<NewHome />} />
                     <Route path='/newhome' element={<NewHome />} />
-                    {/* <Route path='/news' element={<News />} /> */}
+                    
                     <Route path='/news' element={<TempNewNews />} />
                     <Route path='/:companyName' element={<CompanyNewsPage />} />
-                    {/* <Route path='/news/:title' element={<NewsDetail />} /> */}
+                   
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/login' element={<Login />} />
@@ -68,6 +65,8 @@ function App() {
                     <Route path='/signupwithemail' element={<Signupemail />} />
                     <Route path='/showcomments' element={<ShowComments />} />
                     <Route path='/mycomments' element={<MyComments />} />
+                    <Route path='/faqs' element={<FAQs />} />
+                    <Route path='*' element={<Error404 />} />
                     {/* <Route path='/priceanalysis' element={<PriceAnalysis />} /> */}
                     
 
@@ -83,8 +82,7 @@ function App() {
                     <Nav />
                   </ShowNavbar>
                   <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/news/:title' element={<NewsDetail />} />
+                    <Route path='/' element={<NewHome />} />
                     <Route path='/tempnews' element={<TempNewNews />} />
                     <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/login' element={<Login />} />
@@ -92,6 +90,14 @@ function App() {
                     <Route path='/contactus' element={<ContactUs />} />
                     <Route path='/forgotPassword' element={<Forgotpassword />} />
                     <Route path='/signupwithemail' element={<Signupemail />} />
+                    <Route path='/share/:id' element={<Error401 />} />
+                    <Route path='/changePassword' element={<Error401 />} />
+                    <Route path='/showcomments' element={<Error401 />} />
+                    <Route path='/mycomments' element={<Error401 />} />
+                    <Route path='/priceanalysis' element={<Error401 />} />
+                    <Route path='/Profile' element={<Error401 />} />
+                    <Route path='/wishlist' element={<Error401 />} />
+                    <Route path='/faqs' element={<FAQs />} />
                     {/* <Route path='/Profile' element={<Profile />} /> */}
                     {/* <Route path='/news' element={<News />} /> */}
                     <Route path='*' element={<Error401 />} />
