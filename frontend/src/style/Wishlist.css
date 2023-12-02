@@ -1,6 +1,7 @@
 .wishlist-container {
     min-height: calc(80vh - 80px); 
     overflow-y: auto; 
+    overflow-x: hidden;
 }
 
 .wishlistHeader {
