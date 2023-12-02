@@ -62,7 +62,7 @@ const PriceAnalysis = () => {
                 <input
                   type="text"
                   className="form-control form-input"
-                  placeholder="Search anything..."
+                  placeholder="Search Stock..."
                   value={searchInput}
                   onChange={handleSearchInputChange}
                 />
