@@ -20,7 +20,7 @@ const addcomments = async (req, res) => {
         comment: data.comment,
         company: data.company,
         username: req.userData.username,
-        replies:data.replies
+        // replies:data.replies
     })
     try {
         const save = await new_comment.save()
