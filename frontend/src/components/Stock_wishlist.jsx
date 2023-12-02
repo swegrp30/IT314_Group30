@@ -45,7 +45,7 @@ const Stock = (prop) => {
                 <h6 className="card-title mb-0">{prop.ticker}</h6>
               </div>
               <div className="row align-items-end mb-2">
-                <div className="col-8">
+                <div className="col-10">
                   <h2 className="d-flex align-items-center mb-0">
                     {Indian.includes(prop.name) ? "₹" : "$"} {prop.lastClose}
                   </h2>
