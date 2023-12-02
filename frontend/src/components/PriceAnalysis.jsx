@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Stock from './Stock';
 import Loader from './Loader';
 import { toast } from 'react-toastify';
-
+import { HStack } from '@chakra-ui/react';
+import "../style/search.css";
 const PriceAnalysis = () => {
   const [share, setShare] = useState([]);
   
@@ -38,6 +39,18 @@ const PriceAnalysis = () => {
       {loading ? (
         <Loader />
       ) : (
+        <>
+        
+  <div className="row height  d-flex justify-content-center align-items-center  ">
+    <div className="col-md-6 ">
+      <div className="form ">
+        <i className="fa fa-search"></i>
+        <input type="text" className="form-control form-input" placeholder="Search anything..." />
+        <span className="left-pan"></span>
+      </div>
+    </div>
+  </div>
+        
         <div className='row m-2'>
           {share.map((item, index) => (
             <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
@@ -50,7 +63,9 @@ const PriceAnalysis = () => {
             </div>
           ))}
         </div>
+        </>
       )}
+      
     </div>
   );
 };

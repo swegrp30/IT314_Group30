@@ -1,6 +1,5 @@
 
 import { Link } from "react-router-dom";
-
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Loader from './Loader';
@@ -108,6 +107,9 @@ const Stock = (prop) => {
   ];
 
   return (
+    <>
+    
+    
     <div
       className="card l-bg-web mb-3 text-decoration-none text-white"
       style={{ transition: "all 0.3s", ...scaleStyle }}
@@ -141,7 +143,7 @@ const Stock = (prop) => {
               <Link
                 to={`/share/${prop.name}`}
               >
-                Check Trends   <i class="fa-solid fa-arrow-right fa-beat"></i>
+                Check Trends   <i ClassName="fa-solid fa-arrow-right fa-beat"></i>
               </Link>
             </div>
           </div>
@@ -152,14 +154,14 @@ const Stock = (prop) => {
               </button> */}
               <div> {isFav &&
                 <i
-                  class="fa-solid fa-star fa-2xl"
+                  ClassName="fa-solid fa-star fa-2xl"
                   style={{ color: "white" }}
                   onClick={()=>handledelfav(prop.name)}
                 ></i>}
               </div>
               <div> {!isFav &&
                 <i
-                  class="fa-regular fa-star fa-2xl"
+                  ClassName="fa-regular fa-star fa-2xl"
                   style={{ color: "white" }}
                   onClick={()=>handleaddfav(prop.name)}
                 ></i>}
@@ -170,6 +172,7 @@ const Stock = (prop) => {
 
       </div>
     </div>
+    </>
   );
 };
 
