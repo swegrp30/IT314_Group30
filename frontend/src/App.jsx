@@ -103,6 +103,7 @@ function App() {
                     <Route path='/priceanalysis' element={<Error401 />} />
                     <Route path='/Profile' element={<Error401 />} />
                     <Route path='/wishlist' element={<Error401 />} />
+                    <Route path='/faqs' element={<FAQs />} />
                     {/* <Route path='/Profile' element={<Profile />} /> */}
                     {/* <Route path='/news' element={<News />} /> */}
                     <Route path='*' element={<Error401 />} />
