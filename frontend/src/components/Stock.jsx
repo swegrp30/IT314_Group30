@@ -21,10 +21,11 @@ const Stock = (prop) => {
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-  const [WishlistShare, setWishlistShare] = useState([]);
+  // const [WishlistShare, setWishlistShare] = useState([]);
   const [error, setError] = useState(false);
   const [favoriteCompanies, setFavoriteCompanies] = useState([]);
   const [loading, setLoading] = useState(true);  
+  const [isFav, setIsFav] = useState(false);
   const token = localStorage.getItem('authToken');
 
   const headers = {
@@ -38,7 +39,8 @@ const Stock = (prop) => {
       }, { headers });
       const data = res.status;
       if (data === 200) {
-        setWishlistShare(WishlistShare.filter((item) => item !== e));
+        setIsFav(false);
+        // setWishlistShare(WishlistShare.filter((item) => item !== e));
         toast.success("Deleted from Favourites");
       }
     } catch (err) {
@@ -50,6 +52,25 @@ const Stock = (prop) => {
       }
     }
   };
+
+  const handleaddfav = async (e) => {
+    try {
+      const res = await axios.post('https://sharebb-production.up.railway.app/add-fav', { company: e }, { headers });
+      const data = res.status;
+      if (data === 200) {
+        setIsFav(true);
+        toast.success('Added to Favourites');
+      }
+    } catch (err) {
+      if (err.response) {
+        console.log(err.response.status);
+        console.log(err.message);
+        console.log(err.response.headers);
+        console.log(err.response.data);
+      }
+    }
+  };
+
   const getWishlistData = async () => {
     try {
       const res = await axios.get('https://sharebb-production.up.railway.app/getuser', { headers });
@@ -71,6 +92,7 @@ const Stock = (prop) => {
 
   useEffect(() => {
     getWishlistData();
+    inWishlist(prop.name) ? setIsFav(true) : setIsFav(false);
   }, [headers]);
 
   const handleMouseLeave = () => {
@@ -128,18 +150,18 @@ const Stock = (prop) => {
               {/* <button className="btn btn-primary " onClick={prop.handleAddFav}>
                 Add to Favorites
               </button> */}
-              <div> {inWishlist(prop.name) &&
+              <div> {isFav &&
                 <i
                   class="fa-solid fa-star fa-2xl"
                   style={{ color: "white" }}
-                  onClick={prop.handleDelFav}
+                  onClick={()=>handledelfav(prop.name)}
                 ></i>}
               </div>
-              <div> {!inWishlist(prop.name) &&
+              <div> {!isFav &&
                 <i
                   class="fa-regular fa-star fa-2xl"
                   style={{ color: "white" }}
-                  onClick={prop.handleAddFav}
+                  onClick={()=>handleaddfav(prop.name)}
                 ></i>}
               </div>
             </div>
