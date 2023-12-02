@@ -134,12 +134,12 @@ function Nav() {
                     </ul>
                     {!authToken && (
                         <div className='d-flex me-5'>
-                            <button className='btn btn-primary text-white me-3'>
+                            <button className='btn btn-primary me-3'>
                                 <Link to='/signupwithemail' onClick={handleUnderline}>
                                     Sign Up
                                 </Link>
                             </button>
-                            <button className='btn btn-primary text-white'>
+                            <button className='btn btn-primary'>
                                 <Link to='/login' onClick={handleUnderline}>
                                     Sign In
                                 </Link>
@@ -148,7 +148,7 @@ function Nav() {
                     )}
                     {authToken && (
                         <div className='d-flex me-5'>
-                            <button onClick={clearLocalStorage} className='btn btn-primary text-white'>
+                            <button onClick={clearLocalStorage} className='btn btn-primary'>
                                 Sign Out
                             </button>
                         </div>
