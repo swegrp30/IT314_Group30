@@ -5,6 +5,7 @@ import '../style/Wishlist.css';
 import Stock from './Stock_wishlist';
 import { toast } from 'react-toastify';
 import Loader from './Loader';
+import { Navigate } from 'react-router-dom';
 
 const Wishlist = () => {
     const [share, setShare] = useState([]);
@@ -38,6 +39,9 @@ const Wishlist = () => {
     const getWishlistData = async () => {
         try {
             const res = await axios.get('https://sharebb-production.up.railway.app/getuser', { headers });
+            if(res.status === 401){
+                Navigate('*')
+            }
             console.log(res.data.favourites);
             const favoriteCompanies = res.data.favourites;
             // const allCompaniesData = await axios.get('https://sharebb-production.up.railway.app/getdata');
