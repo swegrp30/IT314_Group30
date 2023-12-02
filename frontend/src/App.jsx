@@ -2,14 +2,10 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import News from './components/News';
-import NewsDetail from './components/NewsDetail';
 import Notes from './components/Notes';
 import Comments from './components/Comments';
 import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
-import Share from './components/Share';
-import ShareDetails from './components/ShareDetails';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import ShowNavbar from './components/Show/ShowNavbar';
@@ -52,10 +48,10 @@ function App() {
                   <Routes>
                     <Route path='/' element={<NewHome />} />
                     <Route path='/newhome' element={<NewHome />} />
-                    {/* <Route path='/news' element={<News />} /> */}
+                    
                     <Route path='/news' element={<TempNewNews />} />
                     <Route path='/:companyName' element={<CompanyNewsPage />} />
-                    {/* <Route path='/news/:title' element={<NewsDetail />} /> */}
+                   
                     <Route path='/wishlist' element={<Wishlist />} />
                     <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/login' element={<Login />} />
@@ -87,7 +83,6 @@ function App() {
                   </ShowNavbar>
                   <Routes>
                     <Route path='/' element={<NewHome />} />
-                    <Route path='/news/:title' element={<NewsDetail />} />
                     <Route path='/tempnews' element={<TempNewNews />} />
                     <Route path='/aboutus' element={<AboutUs />} />
                     <Route path='/login' element={<Login />} />
