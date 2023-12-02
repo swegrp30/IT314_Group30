@@ -1,11 +1,11 @@
 Footer {
-    margin-top: 80px;
+    margin-top: 40px;
     padding: 20px;
     background-color: rgb(80, 0, 80);
 }
 
 .footer-logo {
-    margin-top: 50px;
+    margin-top: 40px;
     height: 75px;
     width: 235px;
     pointer-events: none;
