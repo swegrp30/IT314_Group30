@@ -10,7 +10,7 @@ import "../style/Profile.css";
 
 const Profile = () => {
 
-  const [editable,setEditable] = useState(false);
+  const [editable, setEditable] = useState(false);
   const handleEdit = (e) => {
     e.preventDefault()
     setEditable(true);
@@ -18,32 +18,43 @@ const Profile = () => {
 
   const val = secureLocalStorage.getItem("user");
   const token = localStorage.getItem('authToken');
-  
+
   const headers = {
     "Content-Type": "application/json",
     "auth-token": token,
   };
-  const [user, setUser] = useState(val);
+  const formatDate = (inputDate) => {
+    const date = new Date(inputDate);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  const [user, setUser] = useState({
+    ...val,
+    dob: formatDate(val.dob), // Format the date initially
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setEditable(false);
     try {
-        console.log(user)
+      console.log(user)
       const res = await axios.post(
         "http://localhost:7000/editProfile",
-         user,
+        user,
         { headers }
       );
-      if(res.status===200){
-      toast.success('Change Successfully ')
-      localStorage.clear()
-      localStorage.setItem('authToken',token)
-      secureLocalStorage.setItem('user',user)
-    }
-    else{
+      if (res.status === 200) {
+        toast.success('Change Successfully ')
+        localStorage.clear()
+        localStorage.setItem('authToken', token)
+        secureLocalStorage.setItem('user', user)
+      }
+      else {
         toast.success('Try Again')
-    }
+      }
 
 
     } catch (error) {
@@ -51,7 +62,7 @@ const Profile = () => {
     }
   };
 
-  // console.log(user)
+  console.log(user)
   const location = useLocation();
 
   useEffect(() => {
@@ -86,14 +97,14 @@ const Profile = () => {
                 <div className="fs-2 fw-bold" style={{ color: "white" }}>
                   {val.username}
                 </div>
-                <div className="fs-5 mt-2" style={{ color: "white", maxWidth :'300px' }}>
+                <div className="fs-5 mt-2" style={{ color: "white", maxWidth: '300px' }}>
                   {val.email}
                 </div>
                 <div className="fs-5" style={{ color: "white" }}>
                   {val.phone}
                 </div>
               </div>
-              <div style={{ color: "white", textAlign :"center" }}>
+              <div style={{ color: "white", textAlign: "center" }}>
                 Member since :{" "}
                 <span className="fw-bold">{val.created_at.slice(0, 10)}</span>
               </div>
@@ -101,7 +112,7 @@ const Profile = () => {
           </div>
           <div
             className="d-flex flex-column h-25 align-items-center"
-            
+
           >
             <Link
               className="active-link hoverClass  text-center p-3 fs-5 w-100"
@@ -129,9 +140,9 @@ const Profile = () => {
           style={{ height: "100vh" }}
         >
           <ToastContainer />
-          
+
           <form className="row g-5 w-75 mt-2">
-          <div className="fs-2 fw-bold">Profile</div>
+            <div className="fs-2 fw-bold">Profile</div>
             <div className="col-md-6">
               <label htmlFor="inputEmail4" className="form-label">
                 Name
@@ -220,7 +231,7 @@ const Profile = () => {
               <label htmlFor="inputEmail4" className="form-label">
                 Gender
               </label>
-              <select 
+              <select
                 type="text"
                 onChange={handleChange}
                 className="form-control"
@@ -232,7 +243,7 @@ const Profile = () => {
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
-                
+
               </select>
             </div>
             <div className="col-md-6">
@@ -251,21 +262,21 @@ const Profile = () => {
             </div>
             <div className="row-md-6">
               {
-                editable?(
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={handleSubmit}
-                >
-                  Save and Update
-                </button>) :(
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={handleEdit}
-                >
-                  Edit Profile
-                </button>)
+                editable ? (
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    onClick={handleSubmit}
+                  >
+                    Save and Update
+                  </button>) : (
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    onClick={handleEdit}
+                  >
+                    Edit Profile
+                  </button>)
               }
 
             </div>
