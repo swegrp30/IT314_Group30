@@ -111,8 +111,8 @@ const AboutUs = () => {
       studentID: '202101468',
       imageSrc: 8,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/LVarunL' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/varun-vyas-b36012232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
 
       ],
     },
