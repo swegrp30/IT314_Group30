@@ -1,11 +1,11 @@
 Footer {
-    margin-top: 80px;
+    margin-top: 40px;
     padding: 20px;
     background-color: rgb(80, 0, 80);
 }
 
 .footer-logo {
-    margin-top: 50px;
+    margin-top: 40px;
     height: 75px;
     width: 235px;
     pointer-events: none;
@@ -109,6 +109,14 @@ Footer {
     background-color: #ffffff;
 }
 
+
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
 .copy-right {
     margin-top: 50px;
     border-top: 2px solid white;
@@ -117,27 +125,28 @@ Footer {
 .footer-copy-right-text {
     margin-top: 20px;
     display: flex;
+    flex-direction: row; /* Adjust the layout to be column-based on smaller screens */
+    align-items: center; /* Center align content on smaller screens */
+}
+
+.footer-bottom-left, .footer-bottom-right {
+    margin-top: 10px; /* Add spacing between the sections on smaller screens */
+    text-align: center; /* Center align text on smaller screens */
 }
 
 .footer-bottom-left a {
-    margin-left: 30px;
+    display: inline-flex; 
+    margin-bottom: 10px; 
     color: #ffffff;
     text-decoration: none;
     font-weight: 300;
 }
 
-.footer-bottom-right{
+.footer-bottom-right {
     color: white;
-    text-align: right;
+    text-align: center; /* Center align text on smaller screens */
     margin-left: auto;
-    margin-right: 20px;
-}
-
-@media(max-width: 767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
-    }
+    margin-right: auto;
 }
 
 @media(max-width: 574px) {
@@ -156,5 +165,24 @@ Footer {
 @media(max-width: 574px) {
     .footer-col-social {
         width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-copy-right-text {
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+
+    .footer-bottom-left a {
+        /* margin-bottom: 0;  */
+        margin-left: 30px;
+        margin-right: 20px;
+    }
+
+    .footer-bottom-right {
+        text-align: right;
+        margin-left: auto;
+        margin-right: 20px;
     }
 }
