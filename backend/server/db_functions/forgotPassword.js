@@ -13,11 +13,12 @@ const forgotPassword =(async(req,res)=>{
 
     const email = req.body.email;
 
+
     try {
         
         const x = await user.findOne({email:email});
-
-        if(x !== undefined){
+        
+        if(x){
 
             const match = await otp.findOne({email:email});
             if (match) {
