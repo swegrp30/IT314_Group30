@@ -2,6 +2,7 @@
 ##  Stock market prediction and analysis 📊📈📢
 
 > Link to the website : https://bearandbull.vercel.app/
+> Link to the youtube video : 
 
 > This is a repository for the group project of Software Engineering created under the mentorship of Prof. Saurabh  Tiwari.
 
