@@ -116,14 +116,81 @@
 **Link** : [https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Sequence Diagrams.pdf](https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Sequence%20Diagrams.pdf)
 
 ## Contributions :
-* Design Thinking activity - Everyone contributed as this was a lab activity.
-* User Stories - Everyone contributed as this was a lab activity.
-* Concept Mapping - Everyone contributed as this was a lab activity.
-* Activity Diagram - Everyone contributed as this was a lab activity.
-* Class Diagram - Natvar, Dhairya, Om, Vasu
-* Use Case Diagram - Naman, Ayush, Varun, Bhavya
-* Use Case Documentation - Naman, Ayush, Varun, Bhavya
-* Sequence Diagram - Nisha, Darshana, Priya, Shubham
+### Natvar Prajapati
+  * Backend
+  * Integration(Connecting APIs)
+  * Responsiveness
+
+
+### Naman Modi
+  * Machine Learning
+  * Testing(System testing)
+  * Documentation(SRS, MOM, etc)
+
+
+### Bhavya Shah
+  * Frontend
+  * Integration(Connecting APIs)
+  * Ui/Ux
+  * Hosting (Vercel + Railway)
+
+
+### Dhairya Bhanavadia
+  * Backend
+  * Integration(Connecting APIs)
+  * Responsiveness
+  * Hosting (Vercel + Railway)
+
+
+### Aayush Patel
+  * Machine Learning
+  * Testing(Non-functional Testing)
+  * Documentation
+
+
+### Priya tank
+  * Documentation(SRS)
+  * Testing
+
+
+### Shubham Patel
+  * Backend
+  * Integration
+  * Hosting (Vercel + Railway)
+  * Testing
+
+
+### Darshana Chauhan
+  * Frontend
+  * Documentation
+  * Testing (Unit-testing)
+
+
+### Varun Vyas
+  * Frontend
+  * Integration(Connecting APIs)
+  * Responsiveness
+
+
+### Om Gor
+  * Frontend
+  * Integration(Connecting APIs)
+  * Responsiveness
+  * Hosting (Vercel + Railway)
+
+
+### Nisha Savaliya
+  * Documentation
+  * Testing(GUI testing)
+  * Ui/Ux
+
+
+### Vasu Golakiya
+  * Frontend
+  * Integration(Connecting APIs)
+  * Responsiveness
+
+
 
 
 ## Formated By :
