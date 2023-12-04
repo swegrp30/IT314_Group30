@@ -163,7 +163,7 @@ const Profile = () => {
                 className="form-control"
                 id="inputEmail4"
                 name="dob"
-                value={user.dob.slice(0,10)}
+                value={user.dob?user.dob.slice(0,10):null}
                 disabled={!editable}
               />
             </div>

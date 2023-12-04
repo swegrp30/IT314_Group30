@@ -15,7 +15,7 @@ const ShowFooter = ({children}) => {
       if(location.pathname==='/login'||location.pathname==='/signup'||location.pathname==='/signupwithemail'){
           setNoFooter(false)
       }
-       else if(!isAuthenticated()&&location.pathname!=='/'&&location.pathname!=='/tempnews'&&location.pathname!=='/aboutus'&&location.pathname!=='/faqs'){
+       else if(!isAuthenticated()&&location.pathname!=='/'&&location.pathname!=='/tempnews'&&location.pathname!=='/aboutus'&&location.pathname!=='/faqs'&&location.pathname!=='/contactus'){
           // console.log(isAuthenticated())
           setNoFooter(false)
         }
