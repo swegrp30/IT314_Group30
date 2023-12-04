@@ -1,11 +1,12 @@
 # IT314_Group30
+![Logo](https://github.com/swegrp30/IT314_Group30/assets/97342196/284393a5-07f9-43ba-a23f-a646aeff681c)
+
 ##  Stock market prediction and analysis 📊📈📢
 
 > Link to the website : https://bearandbull.vercel.app/
 
-> Link to the youtube video : https://www.youtube.com/watch?v=Z-kGjVJtEMo
+> Link to the demo video : https://www.youtube.com/watch?v=Z-kGjVJtEMo
 
-> This is a repository for the group project of Software Engineering created under the mentorship of Prof. Saurabh  Tiwari.
 
 ## Description of the project:
 > In this project, we are designing and developing the web-based application where a user can visit and check for stock patterns and predictions. Application covers features such as Newbie Manual, Visualization of stock trends, Personalized portfolio, Comments, Feedback and many more 🚀🚀🚀
@@ -20,6 +21,8 @@
 ![image](https://github.com/swegrp30/IT314_Group30/assets/97342196/ff7fdea2-41f6-427c-929f-0e9aedb29605)
 
 
+## Faculty Mentor 
+### Prof. Saurabh Tiwari
 
 ## Group Members 🏆
 * Natvar Prajapati **(202101402)**
@@ -39,7 +42,6 @@
 * Meet Desai **(202311031)**
 
 
-## Work Done 
 
 ### Design Thinking Activity
 
@@ -90,6 +92,7 @@
   - Node.js
   - MongoDB
   - HBS (Handlebars) files for templating
+  - REST API
     
 - Testing:
   - Selenium
@@ -216,8 +219,6 @@
   * Frontend
   * Integration(Connecting APIs)
   * Responsiveness
-
-
 
 
 ## Formated By :
