@@ -10,6 +10,12 @@
 
 ![giphy](https://github.com/swegrp30/IT314_Group30/assets/141057186/041136ec-e692-4a70-bfb4-412cd87da5ed)
 
+## WebShots
+![image](https://github.com/swegrp30/IT314_Group30/assets/97342196/4f9ed5af-c986-46fc-b7b7-22fee8371f7c)
+
+![image](https://github.com/swegrp30/IT314_Group30/assets/97342196/de71bc77-479d-4578-a3db-11892d113837)
+
+![image](https://github.com/swegrp30/IT314_Group30/assets/97342196/ff7fdea2-41f6-427c-929f-0e9aedb29605)
 
 
 
