@@ -1,6 +1,7 @@
 # IT314_Group30
 ##  Stock market prediction and analysis 📊📈📢
 
+> Link to the website : https://bearandbull.vercel.app/
 > This is a repository for the group project of Software Engineering created under the mentorship of Prof. Saurabh  Tiwari.
 
 ## Description of the project:
