@@ -115,6 +115,32 @@
 
 **Link** : [https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Sequence Diagrams.pdf](https://github.com/swegrp30/IT314_Group30/blob/main/Diagrams/Sequence%20Diagrams.pdf)
 
+## Technologies Used
+
+- Frontend:
+  - React
+  - HTML
+  - CSS
+  - JavaScript
+
+- Backend:
+  - Node.js
+  - MongoDB
+  - HBS (Handlebars) files for templating
+    
+- Testing:
+  - Selenium
+  - Jmeter
+  - Mocha, Chai
+  - Postman
+ 
+- Deployment:
+  - bbvercel
+  - onrender
+ 
+  
+
+
 ## Contributions :
 ### Natvar Prajapati
   * Backend
