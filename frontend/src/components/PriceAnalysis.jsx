@@ -62,7 +62,7 @@ const PriceAnalysis = () => {
                 <input
                   type="text"
                   className="form-control form-input"
-                  placeholder="Search anything..."
+                  placeholder="Search Stock..."
                   value={searchInput}
                   onChange={handleSearchInputChange}
                 />
@@ -72,7 +72,7 @@ const PriceAnalysis = () => {
           </div>
 
           <div className='row m-2'>
-            {filteredShares.map((item, index) => (
+            {filteredShares.length>0 ? (filteredShares.map((item, index) => (
               <div key={index} className='col-lg-4 col-md-6 col-sm-12'>
                 <Stock
                   name={item.Name}
@@ -81,7 +81,11 @@ const PriceAnalysis = () => {
                   lastChange={item.LastChange}
                 />
               </div>
-            ))}
+            ))) : (
+              <div className="col-12 text-center">
+                <p>No matching items found.</p>
+              </div>
+            )}
           </div>
         </>
       )}

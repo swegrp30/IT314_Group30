@@ -1,12 +1,26 @@
-.contactus-container {
-    border: 3px solid black;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    margin-top: 40px;
-}
 
-.contactus-sub-container {
-    border: 3px solid black;
-}
+.contactus-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .contactus-sub-container {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .accordion-button {
+    background-color: #f8f9fa; /* Light gray background color for buttons */
+    color: #007bff; /* Blue text color for buttons */
+  }
+  
+  .accordion-button:hover {
+    background-color: #e2e6ea; /* Darker background color on hover */
+  }
+  
+  .accordion-body {
+    padding: 10px;
+  }
+  
