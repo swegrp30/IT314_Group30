@@ -67,8 +67,8 @@ const AboutUs = () => {
       studentID: '202101452',
       imageSrc: 4,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/Aayush121202' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/aayush-patel-57284a220/' },
 
       ],
     },
@@ -78,8 +78,8 @@ const AboutUs = () => {
       studentID: '202101463',
       imageSrc: 5,
       socialLinks: [
-        { icon: 'fa-github', url: '#' },
-        { icon: 'fa-linkedin', url: '#' },
+        { icon: 'fa-github', url: 'https://github.com/Piyu021' },
+        { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/priya-tank-4375b223a/' },
 
       ],
     },
